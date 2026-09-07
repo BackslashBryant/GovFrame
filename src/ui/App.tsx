@@ -773,7 +773,15 @@ export function App() {
         <SiteFooter
           onNavigate={navigate}
           suppressSupportAsk={
-            viewState.view === "not-found" || viewState.view === "retired"
+            viewState.view === "not-found"
+            || viewState.view === "retired"
+            // A record id that resolves to nothing renders the not-found view
+            // inside the library-detail route, so gating on the route alone
+            // left the donation ask on the failed lookup - the one place the
+            // review named it as poorly timed.
+            || (viewState.view === "library-detail"
+              && Boolean(bundle)
+              && !bundle?.runtime.getNode(viewState.node))
           }
         />
       ) : null}

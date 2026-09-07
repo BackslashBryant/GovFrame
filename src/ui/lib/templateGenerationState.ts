@@ -6,6 +6,25 @@ export type TemplateInputOption =
   | "selected_stigs"
   | "environment_archetype";
 
+/**
+ * The name each input carries on the page, so the blocking message names the
+ * field a reader can actually see. Emitting the option key put "framework" in
+ * front of a control labelled "Catalog or program" - a raw identifier in
+ * user-facing copy, which the design principles rule out.
+ */
+const INPUT_OPTION_LABELS: Record<TemplateInputOption, string> = {
+  framework: "Catalog or program",
+  baseline: "Baseline",
+  control_family: "Control family",
+  selected_controls: "Controls",
+  selected_stigs: "STIG benchmarks",
+  environment_archetype: "Environment",
+};
+
+export function templateInputLabel(option: string): string {
+  return INPUT_OPTION_LABELS[option as TemplateInputOption] || option;
+}
+
 type TemplateDefinition = {
   name: string;
   input_options: TemplateInputOption[];
@@ -127,9 +146,9 @@ export function resolveTemplateGenerationState(
 ) {
   const previewAvailable = snapshot.validation.valid && Boolean(result.preview);
   const status = snapshot.validation.missing.length
-    ? `Select required inputs: ${snapshot.validation.missing.join(", ")}.`
+    ? `Choose ${snapshot.validation.missing.map(templateInputLabel).join(" and ")} to enable the download.`
     : snapshot.validation.invalid.length
-      ? `Remove invalid inputs: ${snapshot.validation.invalid.join(", ")}.`
+      ? `Remove invalid inputs: ${snapshot.validation.invalid.map(templateInputLabel).join(", ")}.`
     : result.error || (previewAvailable ? "Preview ready." : "Preview unavailable.");
   return {
     snapshotId: snapshot.id,
