@@ -96,6 +96,20 @@ kbd,
   font-size: 0.9em;
 }
 
+/* A search match is marked, not shouted. Unstyled, <mark> takes the browser
+   default of pure yellow on black - the one element on the page not drawn from
+   the palette, on the screen the product is used through most. */
+mark {
+  padding: 0 0.15em;
+  border-radius: 2px;
+  /* 35% is the strongest tint that still clears 4.5:1 against body text on the
+     card surface; the underline carries the rest of the emphasis so the match
+     reads without the fill having to shout. */
+  background: color-mix(in srgb, var(--ca-primary) 35%, transparent);
+  box-shadow: inset 0 -2px 0 color-mix(in srgb, var(--ca-primary) 85%, transparent);
+  color: inherit;
+}
+
 a {
   color: var(--ca-secondary);
   text-decoration: none;

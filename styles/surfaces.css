@@ -1921,6 +1921,11 @@ li {
 .badge {
   display: inline-flex;
   align-items: center;
+  /* A pill sizes to its content. As a flex item in a narrow rail it was being
+     squeezed below that, so a three-digit count broke across two lines inside
+     the pill - "135" read as "13" over "5". */
+  flex: 0 0 auto;
+  white-space: nowrap;
   border-radius: 999px;
   padding: var(--ca-space-1) var(--ca-space-3);
   background: color-mix(in srgb, var(--ca-accent) 18%, transparent);
@@ -8166,7 +8171,12 @@ button.atlas-leverage-row:hover {
   margin-top: var(--ca-space-6);
 }
 
-.compare-flow-support {
+/* Qualified with .panel deliberately. A later `.panel { position: relative }`
+   rule matches this element at equal specificity and won, so the rail was not
+   sticky at all - and because `top` still applied, relative positioning pushed
+   it 85px below the panel it sits beside. Two bordered surfaces side by side
+   started on different lines on Compare, Start here and Templates alike. */
+.compare-flow-support.panel {
   position: sticky;
   top: var(--ca-header-safe-offset);
   padding: 24px;
@@ -8403,7 +8413,7 @@ button.atlas-leverage-row:hover {
     grid-template-columns: 1fr;
   }
 
-  .compare-flow-support {
+  .compare-flow-support.panel {
     order: 2;
     position: static;
   }
