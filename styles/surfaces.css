@@ -10648,44 +10648,25 @@ input[type="checkbox"] {
   gap: var(--ca-space-4);
 }
 
+/* These four are peers of the facets either side of them, so the group they
+   are wrapped in for labelling must not also change their spacing: a tighter
+   gap inside made the rail read as two clusters rather than one list. */
 .workspace-primary-taxonomy-facets {
   display: grid;
-  gap: var(--ca-space-2);
+  gap: var(--ca-space-4);
 }
 
+/* The taxonomy facets are peers of Content kind and Area, so they take the
+   same flush disclosure rather than the bordered card they used to draw. Only
+   the scrolling panel is particular to them: these lists can run long. */
 .workspace-compact-tag-facet {
   min-width: 0;
-  border: 1px solid var(--ca-border);
-  border-radius: var(--ca-radius-sm);
-  background: var(--ca-surface);
-}
-
-.workspace-compact-tag-facet[open] {
-  border-color: var(--ca-border-strong);
-}
-
-.workspace-compact-tag-facet > summary {
-  display: flex;
-  min-height: var(--ca-touch-target);
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--ca-space-2);
-  padding: var(--ca-space-2) var(--ca-space-3);
-  cursor: pointer;
-  color: var(--ca-text);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.workspace-compact-tag-facet > summary small {
-  color: var(--ca-text-muted);
-  font: 600 0.65rem/1 var(--ca-font-mono);
 }
 
 .workspace-compact-tag-facet__panel {
   max-height: min(22rem, 60vh);
   overflow-y: auto;
-  padding: 0 var(--ca-space-3) var(--ca-space-3);
+  padding: 0 0 var(--ca-space-2) var(--ca-space-4);
 }
 
 .workspace-advanced-facets {
