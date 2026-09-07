@@ -187,7 +187,11 @@ export function TagFacet(props: {
 
   return (
     <details
-      className="workspace-compact-tag-facet"
+      // Peer facets in the rail share one affordance. These four used to be
+      // bordered cards beside the flush disclosures used by Content kind and
+      // Area, which gave the same kind of control three visual weights and no
+      // way to tell which one mattered.
+      className="workspace-compact-tag-facet workspace-facet-group"
       data-taxonomy-dimension={props.dimensionId}
       onKeyDown={(event) => {
         if (event.key !== "Escape" || !detailsRef.current?.open) return;
@@ -198,9 +202,11 @@ export function TagFacet(props: {
       ref={detailsRef}
     >
       <summary>
-        <span>{props.label}</span>
+        <span className="workspace-facet-group__label">{props.label}</span>
         {props.selected.length ? (
-          <small>{props.selected.length} selected</small>
+          <span className="workspace-facet-group__selection">
+            {props.selected.length} selected
+          </span>
         ) : null}
       </summary>
       <div className="workspace-compact-tag-facet__panel">{facet}</div>
