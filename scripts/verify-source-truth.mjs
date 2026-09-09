@@ -327,7 +327,7 @@ for (const id of ["mitre-attack-enterprise", "mitre-attack-ics"]) {
   }
 }
 const d3fend = sourceRegistry.sources.find((entry) => entry.id === "mitre-d3fend-ontology");
-if (d3fend?.artifact_url !== "https://d3fend.mitre.org/ontologies/d3fend.json" || d3fend.version !== "1.5.0") fail("D3FEND is not sourced from the reviewed 1.5.0 ontology JSON-LD artifact");
+if (d3fend?.artifact_url !== "https://d3fend.mitre.org/ontologies/d3fend.json" || d3fend.version !== "1.6.0") fail("D3FEND is not sourced from the reviewed 1.6.0 ontology JSON-LD artifact");
 const fedrampLegacy = sourceRegistry.sources.find((entry) => entry.id === "fedramp-rev5");
 const fedrampCurrent = sourceRegistry.sources.find((entry) => entry.id === "fedramp-2026-rules");
 if (fedrampLegacy?.lifecycle_status !== "historical" || fedrampCurrent?.lifecycle_status !== "active") fail("FedRAMP current and historical source roles are not explicit");

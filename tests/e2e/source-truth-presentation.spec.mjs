@@ -91,7 +91,7 @@ test('Source Register separates current, historical, mapping, and reproducible e
   await gotoApp(page, '/#/sources?source=mitre-d3fend-ontology');
   await waitForAppReady(page);
   const d3fendInspector = page.locator('.sources-inspector-pane .source-inspector--inline');
-  await expect(d3fendInspector).toContainText('Version 1.5.0');
+  await expect(d3fendInspector).toContainText('Version 1.6.0');
   await expect(d3fendInspector).toContainText(/SHA-256 [a-f0-9]{12}…/);
   await expect(d3fendInspector).toContainText('committed ontology capture');
 });

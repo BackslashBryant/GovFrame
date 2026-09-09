@@ -182,7 +182,8 @@ test("V1 workflow 08 — inspect a source and how it is used", async ({ page }) 
   await open(page, "/#/sources?source=nist-800-53a-assessment-procedures");
   const assessmentDetail = page.getByRole("region", { name: "Source status summary" });
   await expect(assessmentDetail).toContainText("Revision 5, Release 5.2.0");
-  await expect(assessmentDetail).toContainText("Aug 13, 2026");
+  // Shape, not a frozen value: this date advances with every source refresh.
+  await expect(assessmentDetail).toContainText(/\w{3} \d{1,2}, \d{4}/);
   await expect(assessmentDetail).toContainText("1,014 normalized records");
 });
 
@@ -435,7 +436,9 @@ test("source review presents lifecycle and version disposition honestly", async 
     "Version / current through2021-01",
   );
   await expect(page.getByRole("region", { name: "Source status summary" })).toContainText(
-    /Source freshnessChecked\s+Aug 13, 2026/,
+    // nist-800-53a-assessment-procedures is auto_synced, so its checked date
+    // advances with every refresh. Assert the rendered shape, not a frozen day.
+    /Source freshnessChecked\s+\w{3} \d{1,2}, \d{4}/,
   );
 
   await open(page, "/#/record/nist-800-171-rev2/3.1.1");
@@ -449,7 +452,7 @@ test("source review presents lifecycle and version disposition honestly", async 
     );
     const facts = page.getByRole("region", { name: "Source status summary" });
     await expect(facts).toContainText("Revision 5, Release 5.2.0");
-    await expect(facts).toContainText("Aug 13, 2026");
+    await expect(facts).toContainText(/\w{3} \d{1,2}, \d{4}/);
     expect(
       await page.evaluate(
         () =>

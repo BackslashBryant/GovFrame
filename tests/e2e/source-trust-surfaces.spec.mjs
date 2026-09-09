@@ -23,7 +23,11 @@ test("source register, inspector, catalog, and record use one official publicati
   await expect(page.getByRole("heading", { name: "DISA Public STIG Library", level: 1 })).toBeVisible();
   const summary = page.locator(".catalog-facts");
   await expect(summary).toContainText("Status Active");
-  await expect(summary).toContainText("Source last checked Aug 13, 2026");
+  // A rendered "last checked" date moves on every refresh by design, so assert
+  // that a real date is rendered rather than freezing one -- the same shape-not-
+  // value idiom this suite already uses for SHA-256 digests. Pinning the literal
+  // made a successful refresh fail the browser contracts.
+  await expect(summary).toContainText(/Source last checked \w{3} \d{1,2}, \d{4}/);
   await expect(page.getByRole("link", { name: "Review source details" })).toBeVisible();
 
   await open(page, "/#/record/disa-stig/V-256609");
@@ -31,7 +35,7 @@ test("source register, inspector, catalog, and record use one official publicati
   const facts = page.locator(".record-template-sidebar .record-source-facts");
   await expect(facts).toContainText("PublicationDISA Public STIG Library · V3R7");
   await expect(facts).toContainText("StatusActive");
-  await expect(facts).toContainText("Source last checkedAug 13, 2026");
+  await expect(facts).toContainText(/Source last checked\w{3} \d{1,2}, \d{4}/);
 });
 
 test("NIST publication headings and OSCAL mapping evidence keep distinct identities", async ({ page }) => {

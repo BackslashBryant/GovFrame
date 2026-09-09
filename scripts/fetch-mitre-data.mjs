@@ -37,11 +37,8 @@ const ATTACK_RELEASE_COMMIT = '6cda5ad8462c79e14fbb872f4e09059b18e0cfc4';
 // The reviewed D3FEND release, used as the label only when the publisher's
 // version endpoint is unreachable. verify-source-truth.mjs pins the same value
 // against the registry, so when a refresh records a genuinely newer upstream
-// version the pin fails loudly and a person reviews the bump. Upstream was
-// already 1.6.0 on 2026-09-09; that bump is deliberately not taken here,
-// because the registry checksum and record count for 1.6.0 must come from a
-// real fetch rather than be typed in by hand.
-const D3FEND_RELEASE = '1.5.0';
+// version the pin fails loudly and a person reviews the bump.
+const D3FEND_RELEASE = '1.6.0';
 
 const REMOTE = {
   enterpriseAttack:

@@ -101,7 +101,7 @@ test('reviewed publication identity stays distinct from parser artifacts', () =>
   assert.equal(byId.get('artifact-dod-rai-toolkit').source_role, 'reference_only');
 
   const d3fend = byId.get('mitre-d3fend-ontology');
-  assert.equal(d3fend.version, '1.5.0');
+  assert.equal(d3fend.version, '1.6.0');
   assert.equal(d3fend.catalog_browse_url, 'https://d3fend.mitre.org/');
   assert.equal(d3fend.artifact_url, 'https://d3fend.mitre.org/ontologies/d3fend.json');
 
@@ -355,7 +355,7 @@ test('current, historical, mapping, and immutable source roles remain explicit',
   assert.equal(iot.mapping_source_ids.length, 2);
   assert.equal(iot.expected_inventory.primary_extraction_status, 'not_performed');
   const d3fend = registry.artifacts.find((entry) => entry.id === 'artifact-mitre-d3fend-ontology');
-  assert.equal(d3fend.version, '1.5.0');
+  assert.equal(d3fend.version, '1.6.0');
   assert.match(d3fend.sha256, /^sha256:[a-f0-9]{64}$/);
   assert.equal(d3fend.metadata.immutable_capture_path, 'data/d3fend-countermeasures.json');
 });
