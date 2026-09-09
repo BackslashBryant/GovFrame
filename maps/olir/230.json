@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "olir_id": 230,
+  "source_artifact": "https://raw.githubusercontent.com/OraclesTech/guardian-sdk/main/docs/compliance/olir/SP%20800-53/GuardianSDK_800-53r5.2.0_OLIR_Submission.xlsx",
+  "sha256": "sha256:8cf5588ff068a6d942f7a5621ea7485bc4ed9189a81a5f2a865287f50682f899",
+  "byte_length": 154777,
+  "parser": "olir-xlsx",
+  "relationships": [
+    {
+      "focal_id": "AC-03",
+      "reference_id": "GS-AG-01",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-16"
+    },
+    {
+      "focal_id": "AC-04",
+      "reference_id": "GS-AG-01",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-30"
+    },
+    {
+      "focal_id": "AC-06(09)",
+      "reference_id": "GS-AG-01",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-71"
+    },
+    {
+      "focal_id": "AC-04",
+      "reference_id": "GS-AG-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-133"
+    }
+  ]
+}

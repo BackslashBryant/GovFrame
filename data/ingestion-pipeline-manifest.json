@@ -1,0 +1,628 @@
+{
+  "schema_version": "1.0",
+  "pipeline": "Control Atlas public-source ingestion",
+  "stages": [
+    "discover",
+    "acquire",
+    "attest",
+    "parse",
+    "normalize",
+    "structure",
+    "relationships",
+    "presentation",
+    "reconcile",
+    "publish"
+  ],
+  "started_at": "2026-09-09T20:52:34.497Z",
+  "completed_at": "2026-09-09T20:56:19.884Z",
+  "status": "complete",
+  "failed_task": null,
+  "results": [
+    {
+      "task_id": "discover-nist-pages",
+      "script": "discover-nist-pages.mjs",
+      "args": [],
+      "stages": [
+        "discover"
+      ],
+      "scope": [
+        "nist-pages"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 451
+    },
+    {
+      "task_id": "discover-nist-structured-assets",
+      "script": "discover-nist-structured-assets.mjs",
+      "args": [],
+      "stages": [
+        "discover"
+      ],
+      "scope": [
+        "nist-pages"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 22197
+    },
+    {
+      "task_id": "triage-nist-structured-assets",
+      "script": "triage-nist-structured-assets.mjs",
+      "args": [],
+      "stages": [
+        "discover"
+      ],
+      "scope": [
+        "nist-pages"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 41
+    },
+    {
+      "task_id": "observe-disa-sources",
+      "script": "fetch-stig-source-observations.mjs",
+      "args": [],
+      "stages": [
+        "discover"
+      ],
+      "scope": [
+        "disa-stig",
+        "disa-srg"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 2136
+    },
+    {
+      "task_id": "fetch-framework-catalogs",
+      "script": "fetch-framework-catalogs.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "framework-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 6214
+    },
+    {
+      "task_id": "fetch-fedramp-rules",
+      "script": "fetch-fedramp-2026-rules.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "fedramp-20x"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 606
+    },
+    {
+      "task_id": "fetch-nara-cui",
+      "script": "fetch-nara-cui-registry.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "cui-policy"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1312
+    },
+    {
+      "task_id": "fetch-olir-catalog",
+      "script": "fetch-olir-catalog.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "olir"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 50444
+    },
+    {
+      "task_id": "fetch-olir-mappings",
+      "script": "fetch-olir-mappings.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse",
+        "relationships"
+      ],
+      "scope": [
+        "olir"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 499
+    },
+    {
+      "task_id": "fetch-ccis",
+      "script": "fetch-ccis.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse",
+        "relationships"
+      ],
+      "scope": [
+        "disa-cci"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1131
+    },
+    {
+      "task_id": "fetch-disa-library",
+      "script": "fetch-disa-stigs.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "disa-stig",
+        "disa-srg"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 15449
+    },
+    {
+      "task_id": "fetch-mitre",
+      "script": "fetch-mitre-data.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse",
+        "relationships"
+      ],
+      "scope": [
+        "mitre-attack",
+        "mitre-d3fend"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 3493
+    },
+    {
+      "task_id": "fetch-zero-trust-workbooks",
+      "script": "fetch-zero-trust-workbooks.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse",
+        "relationships"
+      ],
+      "scope": [
+        "nist-zt",
+        "microsoft-zt-maturity"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1655
+    },
+    {
+      "task_id": "fetch-nist-zero-trust",
+      "script": "fetch-nist-zero-trust-pages.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "nist-zt"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 9394
+    },
+    {
+      "task_id": "fetch-nist-structured-catalogs",
+      "script": "fetch-nist-structured-catalogs.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse",
+        "relationships"
+      ],
+      "scope": [
+        "nist-iot-cybersecurity",
+        "nist-mobile-threats"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1148
+    },
+    {
+      "task_id": "extract-dod-zero-trust",
+      "script": "extract-dod-zt.mjs",
+      "args": [],
+      "stages": [
+        "parse"
+      ],
+      "scope": [
+        "dod-zt"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 249
+    },
+    {
+      "task_id": "sync-zero-trust-registry",
+      "script": "sync-zero-trust-source-registry.mjs",
+      "args": [],
+      "stages": [
+        "attest"
+      ],
+      "scope": [
+        "dod-zt",
+        "nist-zt",
+        "microsoft-zt-maturity",
+        "nist-iot-cybersecurity",
+        "nist-mobile-threats"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 59
+    },
+    {
+      "task_id": "sync-source-bundles",
+      "script": "sync-catalog-source-bundles.mjs",
+      "args": [],
+      "stages": [
+        "attest"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 53
+    },
+    {
+      "task_id": "build-source-inventory",
+      "script": "build-catalog-source-inventory.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "normalize",
+        "reconcile"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 570
+    },
+    {
+      "task_id": "sync-inventory-contracts",
+      "script": "sync-catalog-inventory-contracts.mjs",
+      "args": [],
+      "stages": [
+        "attest",
+        "reconcile"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 41
+    },
+    {
+      "task_id": "hydrate-artifacts",
+      "script": "hydrate-artifacts.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "attest"
+      ],
+      "scope": [
+        "all-artifacts"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 19997
+    },
+    {
+      "task_id": "reconcile-freshness",
+      "script": "reconcile-source-freshness.mjs",
+      "args": [],
+      "stages": [
+        "attest",
+        "reconcile"
+      ],
+      "scope": [
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1054
+    },
+    {
+      "task_id": "build-taxonomy-registry",
+      "script": "build-taxonomy-registry.mjs",
+      "args": [],
+      "stages": [
+        "normalize",
+        "structure"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 67
+    },
+    {
+      "task_id": "build-framework-data",
+      "script": "build-framework-data.mjs",
+      "args": [],
+      "stages": [
+        "normalize",
+        "structure",
+        "relationships",
+        "presentation",
+        "publish"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 15406
+    },
+    {
+      "task_id": "enrich-commons-resources",
+      "script": "enrich-commons-resources.mjs",
+      "args": [
+        "--refresh"
+      ],
+      "stages": [
+        "acquire",
+        "attest",
+        "parse",
+        "presentation"
+      ],
+      "scope": [
+        "all-resources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 59772
+    },
+    {
+      "task_id": "migrate-source-truth-profiles",
+      "script": "migrate-source-truth-profiles.mjs",
+      "args": [],
+      "stages": [
+        "normalize",
+        "presentation"
+      ],
+      "scope": [
+        "all-resources",
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 189
+    },
+    {
+      "task_id": "build-commons-index",
+      "script": "build-commons-index.mjs",
+      "args": [],
+      "stages": [
+        "normalize",
+        "structure",
+        "relationships",
+        "publish"
+      ],
+      "scope": [
+        "all-resources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 201
+    },
+    {
+      "task_id": "build-source-count-ledger",
+      "script": "reconcile-artifact-counts.mjs",
+      "args": [],
+      "stages": [
+        "reconcile"
+      ],
+      "scope": [
+        "all-sources",
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 3467
+    },
+    {
+      "task_id": "check-data-size",
+      "script": "check-data-size.mjs",
+      "args": [],
+      "stages": [
+        "publish"
+      ],
+      "scope": [
+        "runtime-bundles"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 805
+    },
+    {
+      "task_id": "audit-coverage",
+      "script": "audit-coverage.mjs",
+      "args": [],
+      "stages": [
+        "reconcile"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 2051
+    },
+    {
+      "task_id": "verify-discovery",
+      "script": "verify-discovery.mjs",
+      "args": [],
+      "stages": [
+        "discover"
+      ],
+      "scope": [
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 43
+    },
+    {
+      "task_id": "verify-manifests",
+      "script": "verify-manifests.mjs",
+      "args": [],
+      "stages": [
+        "attest",
+        "reconcile"
+      ],
+      "scope": [
+        "all-sources",
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1724
+    },
+    {
+      "task_id": "build-publication-identity-index",
+      "script": "build-publication-identity-index.mjs",
+      "args": [],
+      "stages": [
+        "structure",
+        "publish"
+      ],
+      "scope": [
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 77
+    },
+    {
+      "task_id": "build-publication-audit-report",
+      "script": "build-publication-audit-report.mjs",
+      "args": [],
+      "stages": [
+        "reconcile",
+        "publish"
+      ],
+      "scope": [
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 68
+    },
+    {
+      "task_id": "build-source-semantic-audit",
+      "script": "build-source-semantic-audit.mjs",
+      "args": [],
+      "stages": [
+        "reconcile",
+        "publish"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 632
+    },
+    {
+      "task_id": "build-discovery-index",
+      "script": "build-discovery-index.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "publish"
+      ],
+      "scope": [
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 426
+    },
+    {
+      "task_id": "verify-completeness",
+      "script": "verify-completeness.mjs",
+      "args": [],
+      "stages": [
+        "reconcile"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 35
+    },
+    {
+      "task_id": "verify-ingestion-contract",
+      "script": "verify-ingestion-pipeline.mjs",
+      "args": [],
+      "stages": [
+        "presentation",
+        "reconcile"
+      ],
+      "scope": [
+        "all-sources",
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 2125
+    },
+    {
+      "task_id": "verify-resource-ingestion",
+      "script": "verify-resource-ingestion.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "attest",
+        "presentation",
+        "reconcile"
+      ],
+      "scope": [
+        "all-resources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 80
+    }
+  ]
+}

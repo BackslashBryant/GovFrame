@@ -139,21 +139,24 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.01.13",
-      "family": "Access Control"
+      "family": "Access Control",
+      "description": ""
     },
     {
       "id": "3.1.14",
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.01.14",
-      "family": "Access Control"
+      "family": "Access Control",
+      "description": ""
     },
     {
       "id": "3.1.15",
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.01.15",
-      "family": "Access Control"
+      "family": "Access Control",
+      "description": ""
     },
     {
       "id": "3.1.16",
@@ -171,7 +174,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.01.17",
-      "family": "Access Control"
+      "family": "Access Control",
+      "description": ""
     },
     {
       "id": "3.1.18",
@@ -189,7 +193,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.01.19",
-      "family": "Access Control"
+      "family": "Access Control",
+      "description": ""
     },
     {
       "id": "3.1.20",
@@ -207,7 +212,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.01.21",
-      "family": "Access Control"
+      "family": "Access Control",
+      "description": ""
     },
     {
       "id": "3.1.22",
@@ -247,7 +253,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.02.03",
-      "family": "Awareness and Training"
+      "family": "Awareness and Training",
+      "description": ""
     },
     {
       "id": "3.3.1",
@@ -342,7 +349,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.03.09",
-      "family": "Audit and Accountability"
+      "family": "Audit and Accountability",
+      "description": ""
     },
     {
       "id": "3.4.1",
@@ -415,7 +423,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.04.07",
-      "family": "Configuration Management"
+      "family": "Configuration Management",
+      "description": ""
     },
     {
       "id": "3.4.8",
@@ -433,7 +442,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.04.09",
-      "family": "Configuration Management"
+      "family": "Configuration Management",
+      "description": ""
     },
     {
       "id": "3.4.10",
@@ -528,7 +538,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.05.06",
-      "family": "Identification and Authentication"
+      "family": "Identification and Authentication",
+      "description": ""
     },
     {
       "id": "3.5.7",
@@ -546,21 +557,24 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.05.08",
-      "family": "Identification and Authentication"
+      "family": "Identification and Authentication",
+      "description": ""
     },
     {
       "id": "3.5.9",
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.05.09",
-      "family": "Identification and Authentication"
+      "family": "Identification and Authentication",
+      "description": ""
     },
     {
       "id": "3.5.10",
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.05.10",
-      "family": "Identification and Authentication"
+      "family": "Identification and Authentication",
+      "description": ""
     },
     {
       "id": "3.5.11",
@@ -644,21 +658,24 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.07.01",
-      "family": "Maintenance"
+      "family": "Maintenance",
+      "description": ""
     },
     {
       "id": "3.7.2",
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.07.02",
-      "family": "Maintenance"
+      "family": "Maintenance",
+      "description": ""
     },
     {
       "id": "3.7.3",
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.07.03",
-      "family": "Maintenance"
+      "family": "Maintenance",
+      "description": ""
     },
     {
       "id": "3.7.4",
@@ -753,7 +770,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.08.06",
-      "family": "Media Protection"
+      "family": "Media Protection",
+      "description": ""
     },
     {
       "id": "3.8.7",
@@ -771,7 +789,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.08.08",
-      "family": "Media Protection"
+      "family": "Media Protection",
+      "description": ""
     },
     {
       "id": "3.8.9",
@@ -833,21 +852,24 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.10.03",
-      "family": "Physical Protection"
+      "family": "Physical Protection",
+      "description": ""
     },
     {
       "id": "3.10.4",
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.10.04",
-      "family": "Physical Protection"
+      "family": "Physical Protection",
+      "description": ""
     },
     {
       "id": "3.10.5",
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.10.05",
-      "family": "Physical Protection"
+      "family": "Physical Protection",
+      "description": ""
     },
     {
       "id": "3.10.6",
@@ -909,7 +931,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.11.03",
-      "family": "Risk Assessment"
+      "family": "Risk Assessment",
+      "description": ""
     },
     {
       "id": "3.11.4",
@@ -960,7 +983,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.12.04",
-      "family": "Security Assessment and Monitoring"
+      "family": "Security Assessment and Monitoring",
+      "description": ""
     },
     {
       "id": "3.12.5",
@@ -989,14 +1013,16 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.13.02",
-      "family": "System and Communications Protection"
+      "family": "System and Communications Protection",
+      "description": ""
     },
     {
       "id": "3.13.3",
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.13.03",
-      "family": "System and Communications Protection"
+      "family": "System and Communications Protection",
+      "description": ""
     },
     {
       "id": "3.13.4",
@@ -1014,7 +1040,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.13.05",
-      "family": "System and Communications Protection"
+      "family": "System and Communications Protection",
+      "description": ""
     },
     {
       "id": "3.13.6",
@@ -1032,7 +1059,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.13.07",
-      "family": "System and Communications Protection"
+      "family": "System and Communications Protection",
+      "description": ""
     },
     {
       "id": "3.13.8",
@@ -1105,7 +1133,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.13.14",
-      "family": "System and Communications Protection"
+      "family": "System and Communications Protection",
+      "description": ""
     },
     {
       "id": "3.13.15",
@@ -1123,7 +1152,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.13.16",
-      "family": "System and Communications Protection"
+      "family": "System and Communications Protection",
+      "description": ""
     },
     {
       "id": "3.14.1",
@@ -1163,14 +1193,16 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.14.04",
-      "family": "System and Information Integrity"
+      "family": "System and Information Integrity",
+      "description": ""
     },
     {
       "id": "3.14.5",
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.14.05",
-      "family": "System and Information Integrity"
+      "family": "System and Information Integrity",
+      "description": ""
     },
     {
       "id": "3.14.6",
@@ -1188,7 +1220,8 @@
       "type": "800-171-requirement",
       "framework": "800-171",
       "title": "03.14.07",
-      "family": "System and Information Integrity"
+      "family": "System and Information Integrity",
+      "description": ""
     },
     {
       "id": "3.14.8",

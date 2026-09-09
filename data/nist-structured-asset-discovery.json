@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
   "source_inventory": "data/nist-pages-discovery.json",
-  "source_inventory_sha256": "sha256:c326e8abdc8d31e9bd46e07af58c2d19a1bd5e8080accaac2795bacb52664066",
+  "source_inventory_sha256": "sha256:ecb0fd5985fbad5b9ab7d3c835c8ae7f6537f8d4598a3e5470b837d2d0331864",
   "reconciliation": {
     "projects_discovered": 262,
     "project_landing_pages_attempted": 262,
-    "pages_attempted": 342,
+    "pages_attempted": 343,
     "pages_fetched": 338,
-    "pages_failed": 4,
+    "pages_failed": 5,
     "structured_assets_discovered": 28,
     "spreadsheets_discovered": 8,
     "csv_files_discovered": 4
@@ -454,6 +454,14 @@
       "structured_assets": 0
     },
     {
+      "requested_url": "https://pages.nist.gov/ACMVPDocs/te-tables/te-table9.html",
+      "url": "https://pages.nist.gov/ACMVPDocs/te-tables/te-table9.html",
+      "project": "ACMVPDocs",
+      "depth": 1,
+      "status": "fetched",
+      "structured_assets": 0
+    },
+    {
       "requested_url": "https://pages.nist.gov/ACVP/",
       "url": "https://pages.nist.gov/ACVP/",
       "project": "ACVP",
@@ -579,7 +587,7 @@
       "project": "biometrics-edu",
       "depth": 0,
       "status": "failed",
-      "reason": "The operation was aborted due to timeout",
+      "reason": "The user aborted a request.",
       "structured_assets": 0
     },
     {
@@ -2029,7 +2037,8 @@
       "url": "https://pages.nist.gov/OSCAL-Pages/",
       "project": "OSCAL-Pages",
       "depth": 0,
-      "status": "fetched",
+      "status": "failed",
+      "reason": "Invalid response body while trying to fetch https://pages.nist.gov/OSCAL-Pages/: Cache input stream was empty",
       "structured_assets": 0
     },
     {

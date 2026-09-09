@@ -2,9 +2,9 @@
   "schema_version": "1.0",
   "source": {
     "url": "https://pages.nist.gov/pages-root/",
-    "retrieved_at": "2026-08-12T11:56:03.226Z",
-    "byte_length": 32996,
-    "sha256": "sha256:c326e8abdc8d31e9bd46e07af58c2d19a1bd5e8080accaac2795bacb52664066"
+    "retrieved_at": "2026-09-09T20:52:34.937Z",
+    "byte_length": 32947,
+    "sha256": "sha256:ecb0fd5985fbad5b9ab7d3c835c8ae7f6537f8d4598a3e5470b837d2d0331864"
   },
   "reconciliation": {
     "discovered_projects": 262,
@@ -425,7 +425,7 @@
     {
       "repo_name": "ACMVPDocs",
       "url": "https://pages.nist.gov/ACMVPDocs/",
-      "description": "Automation of the NIST Cryptographic Module Validation Program — Automated Cryptographic Module Validation Project  documentation",
+      "description": "Automation of the NIST Cryptographic Module Validation Program — Automated Cryptographic Module Validation Project",
       "disposition": "candidate",
       "topics": [
         "cryptography"
@@ -671,7 +671,7 @@
     {
       "repo_name": "cookiecutter-nist-python",
       "url": "https://pages.nist.gov/cookiecutter-nist-python/",
-      "description": "cookiecutter-nist-python — cookiecutter-nist-python 0.14.2 documentation",
+      "description": "cookiecutter-nist-python — cookiecutter-nist-python 0.14.3 documentation",
       "disposition": "excluded",
       "topics": [],
       "reason": "no-cybersecurity-or-governance-title-signal"
@@ -883,7 +883,7 @@
     {
       "repo_name": "feasst",
       "url": "https://pages.nist.gov/feasst/",
-      "description": "FEASST: Free Energy and Advanced Sampling Simulation Toolkit — FEASST 0.25.19 0.25.19 documentation",
+      "description": "FEASST: Free Energy and Advanced Sampling Simulation Toolkit — FEASST 0.25.20 0.25.20 documentation",
       "disposition": "excluded",
       "topics": [],
       "reason": "no-cybersecurity-or-governance-title-signal"
@@ -928,7 +928,7 @@
     {
       "repo_name": "fireflow",
       "url": "https://pages.nist.gov/fireflow/",
-      "description": "Welcome to pyreflow — pyreflow 0.1.0 documentation",
+      "description": "Fireflow Documentation",
       "disposition": "excluded",
       "topics": [],
       "reason": "no-cybersecurity-or-governance-title-signal"
@@ -1786,7 +1786,7 @@
     {
       "repo_name": "pyproject2conda",
       "url": "https://pages.nist.gov/pyproject2conda/",
-      "description": "pyproject2conda — pyproject2conda 0.23.1 documentation",
+      "description": "pyproject2conda — pyproject2conda 0.23.2 documentation",
       "disposition": "excluded",
       "topics": [],
       "reason": "no-cybersecurity-or-governance-title-signal"

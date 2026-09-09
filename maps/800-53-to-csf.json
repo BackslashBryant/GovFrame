@@ -3,7 +3,7 @@
   "source_key": "nist-olir-csf2-to-sp800-53",
   "source_artifact": "https://csrc.nist.gov/csrc/media/projects/olir/documents/submissions/Cybersecurity_Framework_v2-0_Concept_Crosswalk_800-53_5_2_0_draft.xlsx",
   "source_version": "2.0-final",
-  "snapshot_date": "2026-08-09",
+  "snapshot_date": "2026-09-09",
   "checksum": "sha256:5521fa73ace64d8a3014a7b1e971f0f20d32df5ff5e174632723bda09e7e908f",
   "provenance": "Official NIST Cybersecurity Framework 2.0 to SP 800-53 Rev 5.2.0 Concept Crosswalk (Final, OLIR catalog #186)",
   "olir_status": "final",

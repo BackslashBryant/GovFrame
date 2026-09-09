@@ -29,7 +29,8 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.01.03E",
-      "family": "Access Control"
+      "family": "Access Control",
+      "description": ""
     },
     {
       "id": "3.1.4E",
@@ -278,7 +279,8 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.04.01E",
-      "family": "Configuration Management"
+      "family": "Configuration Management",
+      "description": ""
     },
     {
       "id": "3.4.2E",
@@ -538,14 +540,16 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.09.01E",
-      "family": "Personnel Security"
+      "family": "Personnel Security",
+      "description": ""
     },
     {
       "id": "3.9.2E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.09.02E",
-      "family": "Personnel Security"
+      "family": "Personnel Security",
+      "description": ""
     },
     {
       "id": "3.9.3E",
@@ -629,28 +633,32 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.11.04E",
-      "family": "Risk Assessment"
+      "family": "Risk Assessment",
+      "description": ""
     },
     {
       "id": "3.11.5E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.11.05E",
-      "family": "Risk Assessment"
+      "family": "Risk Assessment",
+      "description": ""
     },
     {
       "id": "3.11.6E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.11.06E",
-      "family": "Risk Assessment"
+      "family": "Risk Assessment",
+      "description": ""
     },
     {
       "id": "3.11.7E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.11.07E",
-      "family": "Risk Assessment"
+      "family": "Risk Assessment",
+      "description": ""
     },
     {
       "id": "3.11.8E",
@@ -943,14 +951,16 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.14.02E",
-      "family": "System and Information Integrity"
+      "family": "System and Information Integrity",
+      "description": ""
     },
     {
       "id": "3.14.3E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.14.03E",
-      "family": "System and Information Integrity"
+      "family": "System and Information Integrity",
+      "description": ""
     },
     {
       "id": "3.14.4E",
@@ -979,14 +989,16 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.14.06E",
-      "family": "System and Information Integrity"
+      "family": "System and Information Integrity",
+      "description": ""
     },
     {
       "id": "3.14.7E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.14.07E",
-      "family": "System and Information Integrity"
+      "family": "System and Information Integrity",
+      "description": ""
     },
     {
       "id": "3.14.8E",

@@ -2,10 +2,10 @@
   "discovery_source": "https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/",
   "artifact_url": "https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_SRG-STIG_Library_July_2026.zip",
   "byte_length": 368971055,
-  "retrieval_timestamp": "2026-08-12T11:42:14.255Z",
+  "retrieval_timestamp": "2026-09-09T20:54:14.947Z",
   "checksum": "sha256:df371dc0ebb163e1a0434b141bc2f16b56c97b2062622d6811191fbe4f093c01",
   "reconciliation": {
-    "discovered_urls": 1015,
+    "discovered_urls": 1009,
     "compilation_entries": 2616,
     "ingested_files": 379,
     "excluded_files": 84,

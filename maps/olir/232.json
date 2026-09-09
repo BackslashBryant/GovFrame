@@ -1,0 +1,1226 @@
+{
+  "schema_version": "1.0",
+  "olir_id": 232,
+  "source_artifact": "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/swg/nist-sp800-53r5.2-to-nerc-cip-olir-mapping.xlsx",
+  "sha256": "sha256:c73b9736a139b5f833a1930a01987ee23d0068b7d4dffc20ebba22a65fe82323",
+  "byte_length": 3012257,
+  "parser": "olir-xlsx",
+  "relationships": [
+    {
+      "focal_id": "AC-01",
+      "reference_id": "CIP-003-9",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-2"
+    },
+    {
+      "focal_id": "AC-01",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": "R2. mapping has a moderate relationship - SOR 5\r\nR4, R5, R6. mapping has a strong relationship - SOR 8",
+      "source_locator": "Relationships-AC#row-3"
+    },
+    {
+      "focal_id": "AC-01",
+      "reference_id": "CIP-005-7",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-4"
+    },
+    {
+      "focal_id": "AC-01",
+      "reference_id": "CIP-007-6",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "Mapping has a moderate relationship - SOR 5",
+      "source_locator": "Relationships-AC#row-5"
+    },
+    {
+      "focal_id": "AC-01",
+      "reference_id": "CIP-013-2",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "Control Discussion includes, \"Procedures can be documented in system security and privacy plans or in one or more separate documents.\"\r\n\r\nR1. mapping has a moderate relationship - SOR 5, but\r\nR1.2.3 and 1.2.6. mapping have a weak relationship - SOR 2",
+      "source_locator": "Relationships-AC#row-6"
+    },
+    {
+      "focal_id": "AC-02",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": "R3.5 mapping is a moderate relationship - SOR 5\r\n\r\nR4/R5/R6 mapping has a strong relationship - SOR 8",
+      "source_locator": "Relationships-AC#row-7"
+    },
+    {
+      "focal_id": "AC-02",
+      "reference_id": "CIP-007-6",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "Mapping has a moderate relationship - SOR 5\r\n\r\nR5.2, R5.3 mapping have a strong relationship - SOR 8",
+      "source_locator": "Relationships-AC#row-8"
+    },
+    {
+      "focal_id": "AC-02(01)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not require automated mechanisms to manage system accounts; however, it does require documented processes for access management in CIP-004-7:\r\nR4. Implement documented access management programs\r\nR6. Implement documented access management programs to authorize, verify, and revoke provisioned access to BCSI\r\nCIP-007-6:\r\nR5.2. Identify and inventory all known enabled default or other generic account types, either by system, by groups of systems, by location, or by system types\r\nR5.3. Identify individuals who have authorized access to shared accounts\r\n\r\nModerate relationship - SOR 5",
+      "source_locator": "Relationships-AC#row-9"
+    },
+    {
+      "focal_id": "AC-02(02)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not require automatic removal or disabling temporary or emergency accounts after defined time period; however, it does require documented processes for access revocation: \r\nCIP-004-7\r\nR5. Implement documented access revocation programs\r\nR6.3. For termination actions, remove the individual’s ability to use provisioned access to information (BCSI) \r\n\r\nMapping has a weak relationship - SOR 2",
+      "source_locator": "Relationships-AC#row-10"
+    },
+    {
+      "focal_id": "AC-02(03)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-11"
+    },
+    {
+      "focal_id": "AC-02(04)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not require automatic audit of account creation, modification, enabling, disabling, and removal actions",
+      "source_locator": "Relationships-AC#row-12"
+    },
+    {
+      "focal_id": "AC-02(05)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not require users to log out on pre-determined time or description.",
+      "source_locator": "Relationships-AC#row-13"
+    },
+    {
+      "focal_id": "AC-02(06)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address dynamic access control approaches.",
+      "source_locator": "Relationships-AC#row-14"
+    },
+    {
+      "focal_id": "AC-02(07)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": "EC is more specific than CIP.  CIP is broader but could include the specificity of the EC making the relationship weak.",
+      "source_locator": "Relationships-AC#row-15"
+    },
+    {
+      "focal_id": "AC-02(07)",
+      "reference_id": "CIP-007-6",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": "R4 pertains to monitoring and logging events regarding access. \r\n\r\nR5 typically includes shared accounts, user accounts, admin account with elevated privileges, system accounts, application accounts, guest accounts, remote access, and  generic accounts.  \r\n\r\nEC is more specific than CIP.  CIP is broader but could include the specificity of the EC making the relationship weak.",
+      "source_locator": "Relationships-AC#row-16"
+    },
+    {
+      "focal_id": "AC-02(08)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address dynamic access control approaches.",
+      "source_locator": "Relationships-AC#row-17"
+    },
+    {
+      "focal_id": "AC-02(09)",
+      "reference_id": "CIP-007-6",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-18"
+    },
+    {
+      "focal_id": "AC-02(11)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": "CIP does not address usage conditions.",
+      "source_locator": "Relationships-AC#row-19"
+    },
+    {
+      "focal_id": "AC-02(12)",
+      "reference_id": "CIP-015-1",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "NOTE: CIP-015-1 effective 10/01/2028",
+      "source_locator": "Relationships-AC#row-20"
+    },
+    {
+      "focal_id": "AC-02(13)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": "CIP does not address high-risk individuals (insider threat) but not deleting accounts within the required timefame poses a risk.",
+      "source_locator": "Relationships-AC#row-21"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "Provides the approved authorizations which is part of enforcement.",
+      "source_locator": "Relationships-AC#row-22"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "CIP-005-7",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "Provides the enforcement of approved authorizations.",
+      "source_locator": "Relationships-AC#row-23"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "CIP-007-6",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": "Provides the enforcement of approved authorizations.",
+      "source_locator": "Relationships-AC#row-24"
+    },
+    {
+      "focal_id": "AC-03(02)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not require dual (two-person) auhtorization.",
+      "source_locator": "Relationships-AC#row-25"
+    },
+    {
+      "focal_id": "AC-03(03)",
+      "reference_id": "CIP-011-3",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-26"
+    },
+    {
+      "focal_id": "AC-03(04)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address discretionary access.",
+      "source_locator": "Relationships-AC#row-27"
+    },
+    {
+      "focal_id": "AC-03(05)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not identify security-relevant information nor specifically address preventing access to security-relevent information.",
+      "source_locator": "Relationships-AC#row-28"
+    },
+    {
+      "focal_id": "AC-03(07)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": "CIP does not specifically require enforcing role-based access control, but rather leaves it to companies to implement access controls based on need.",
+      "source_locator": "Relationships-AC#row-29"
+    },
+    {
+      "focal_id": "AC-03(08)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-30"
+    },
+    {
+      "focal_id": "AC-03(09)",
+      "reference_id": "CIP-011-3",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-31"
+    },
+    {
+      "focal_id": "AC-03(09)",
+      "reference_id": "CIP-012-2",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-32"
+    },
+    {
+      "focal_id": "AC-03(10)",
+      "reference_id": "CIP-003-9",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "CIP Exceptional Circumstance defined:\r\nA situation that involves or threatens to involve one or more of the following, or similar, conditions that impact safety or BES reliability: a risk of injury or death; a natural disaster; civil unrest; an imminent or existing hardware, software, or equipment failure; a Cyber Security Incident requiring emergency assistance; a response by emergency services; the enactment of a mutual assistance agreement; or an impediment of large scale workforce availability.",
+      "source_locator": "Relationships-AC#row-33"
+    },
+    {
+      "focal_id": "AC-03(11)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": "Mapping has a strong relationship - SOR 8",
+      "source_locator": "Relationships-AC#row-34"
+    },
+    {
+      "focal_id": "AC-03(11)",
+      "reference_id": "CIP-011-3",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": "Protect and securely handle BCSI during storage, transit, and use.",
+      "source_locator": "Relationships-AC#row-35"
+    },
+    {
+      "focal_id": "AC-03(12)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address requiring applications to assert the access needed to exisitng system applications and functions.",
+      "source_locator": "Relationships-AC#row-36"
+    },
+    {
+      "focal_id": "AC-03(13)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": "CIP does not specifically require enforcing attribute-based access control, but rather leaves it to companies to implement access controls based on need.",
+      "source_locator": "Relationships-AC#row-37"
+    },
+    {
+      "focal_id": "AC-03(14)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address personnally identifiable information.",
+      "source_locator": "Relationships-AC#row-38"
+    },
+    {
+      "focal_id": "AC-03(15)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address discretionary access controls, but access based on need:\r\nCIP-004-7 \r\nR4.1. Process to authorize based on need:\r\n4.1.1. Electronic access\r\n4.1.2. Unescorted physical access into a Physical Security Perimeter\r\n\r\nSOR 2",
+      "source_locator": "Relationships-AC#row-39"
+    },
+    {
+      "focal_id": "AC-04",
+      "reference_id": "CIP-005-7",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-40"
+    },
+    {
+      "focal_id": "AC-04",
+      "reference_id": "CIP-012-2",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-41"
+    },
+    {
+      "focal_id": "AC-04(01)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-42"
+    },
+    {
+      "focal_id": "AC-04(02)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-43"
+    },
+    {
+      "focal_id": "AC-04(03)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-44"
+    },
+    {
+      "focal_id": "AC-04(04)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-45"
+    },
+    {
+      "focal_id": "AC-04(05)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-46"
+    },
+    {
+      "focal_id": "AC-04(06)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-47"
+    },
+    {
+      "focal_id": "AC-04(07)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-48"
+    },
+    {
+      "focal_id": "AC-04(08)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-49"
+    },
+    {
+      "focal_id": "AC-04(09)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-50"
+    },
+    {
+      "focal_id": "AC-04(10)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-51"
+    },
+    {
+      "focal_id": "AC-04(11)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-52"
+    },
+    {
+      "focal_id": "AC-04(12)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-53"
+    },
+    {
+      "focal_id": "AC-04(13)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-54"
+    },
+    {
+      "focal_id": "AC-04(14)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-55"
+    },
+    {
+      "focal_id": "AC-04(15)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-56"
+    },
+    {
+      "focal_id": "AC-04(17)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-57"
+    },
+    {
+      "focal_id": "AC-04(19)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-58"
+    },
+    {
+      "focal_id": "AC-04(20)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-59"
+    },
+    {
+      "focal_id": "AC-04(21)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-60"
+    },
+    {
+      "focal_id": "AC-04(22)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-61"
+    },
+    {
+      "focal_id": "AC-04(23)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-62"
+    },
+    {
+      "focal_id": "AC-04(24)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-63"
+    },
+    {
+      "focal_id": "AC-04(25)",
+      "reference_id": "CIP-003-9",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-64"
+    },
+    {
+      "focal_id": "AC-04(25)",
+      "reference_id": "CIP-010-4",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-65"
+    },
+    {
+      "focal_id": "AC-04(25)",
+      "reference_id": "CIP-011-3",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-66"
+    },
+    {
+      "focal_id": "AC-04(26)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-67"
+    },
+    {
+      "focal_id": "AC-04(27)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-68"
+    },
+    {
+      "focal_id": "AC-04(28)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-69"
+    },
+    {
+      "focal_id": "AC-04(29)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-70"
+    },
+    {
+      "focal_id": "AC-04(30)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-71"
+    },
+    {
+      "focal_id": "AC-04(31)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-72"
+    },
+    {
+      "focal_id": "AC-04(32)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-73"
+    },
+    {
+      "focal_id": "AC-05",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not specifically address seperation of duties.",
+      "source_locator": "Relationships-AC#row-74"
+    },
+    {
+      "focal_id": "AC-06",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not specifically address the principle of least privilege.",
+      "source_locator": "Relationships-AC#row-75"
+    },
+    {
+      "focal_id": "AC-06(01)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-76"
+    },
+    {
+      "focal_id": "AC-06(02)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not specifically address the use of non-privileged accounts when accessing nonsecurity functions.",
+      "source_locator": "Relationships-AC#row-77"
+    },
+    {
+      "focal_id": "AC-06(03)",
+      "reference_id": "CIP-005-7",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-78"
+    },
+    {
+      "focal_id": "AC-06(04)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-79"
+    },
+    {
+      "focal_id": "AC-06(05)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-80"
+    },
+    {
+      "focal_id": "AC-06(06)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-81"
+    },
+    {
+      "focal_id": "AC-06(07)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-82"
+    },
+    {
+      "focal_id": "AC-06(08)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-83"
+    },
+    {
+      "focal_id": "AC-06(09)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "Logging is not enough to correlate these NIST to CIP controls here.",
+      "source_locator": "Relationships-AC#row-84"
+    },
+    {
+      "focal_id": "AC-06(10)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-85"
+    },
+    {
+      "focal_id": "AC-07",
+      "reference_id": "CIP-007-6",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-86"
+    },
+    {
+      "focal_id": "AC-07(02)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-87"
+    },
+    {
+      "focal_id": "AC-07(03)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-88"
+    },
+    {
+      "focal_id": "AC-07(04)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-89"
+    },
+    {
+      "focal_id": "AC-08",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address displaying system use notification (message or banner) to users.",
+      "source_locator": "Relationships-AC#row-90"
+    },
+    {
+      "focal_id": "AC-09",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address user access notification.",
+      "source_locator": "Relationships-AC#row-91"
+    },
+    {
+      "focal_id": "AC-09(01)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-92"
+    },
+    {
+      "focal_id": "AC-09(02)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-93"
+    },
+    {
+      "focal_id": "AC-09(03)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-94"
+    },
+    {
+      "focal_id": "AC-09(04)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-95"
+    },
+    {
+      "focal_id": "AC-10",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP dos not address limiting concurrent sessions.",
+      "source_locator": "Relationships-AC#row-96"
+    },
+    {
+      "focal_id": "AC-11",
+      "reference_id": "CIP-007-6",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "One of the measures includes the documentation of account-lockout parameters.  \r\n\r\nMapping has a moderate relationship - SOR 5",
+      "source_locator": "Relationships-AC#row-97"
+    },
+    {
+      "focal_id": "AC-11(01)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-98"
+    },
+    {
+      "focal_id": "AC-12",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not require automated user session termination capability; however, it does require a documented process for disabling active vendor remote sessions:\r\nCIP-005-7\r\nR2.5. Methods to disable active vendor remote access including Interactive Remote Access and system-to-system remote access\r\nR3.2. Methods to terminate authenticated vendor-initiated remote connections\r\n\r\nModerate relatinship - SOR 5",
+      "source_locator": "Relationships-AC#row-99"
+    },
+    {
+      "focal_id": "AC-12(01)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-100"
+    },
+    {
+      "focal_id": "AC-12(02)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-101"
+    },
+    {
+      "focal_id": "AC-12(03)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-102"
+    },
+    {
+      "focal_id": "AC-14",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-103"
+    },
+    {
+      "focal_id": "AC-16",
+      "reference_id": "CIP-011-3",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-104"
+    },
+    {
+      "focal_id": "AC-16(01)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address dynamically associating security and privacy attributes.",
+      "source_locator": "Relationships-AC#row-105"
+    },
+    {
+      "focal_id": "AC-16(02)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-106"
+    },
+    {
+      "focal_id": "AC-16(03)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-107"
+    },
+    {
+      "focal_id": "AC-16(04)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-108"
+    },
+    {
+      "focal_id": "AC-16(05)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-109"
+    },
+    {
+      "focal_id": "AC-16(06)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-110"
+    },
+    {
+      "focal_id": "AC-16(07)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-111"
+    },
+    {
+      "focal_id": "AC-16(08)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-112"
+    },
+    {
+      "focal_id": "AC-16(09)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-113"
+    },
+    {
+      "focal_id": "AC-16(10)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-114"
+    },
+    {
+      "focal_id": "AC-17",
+      "reference_id": "CIP-003-9",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "CIP considers these controls are related to a network security perimeter as opposed to host-based ports and services.",
+      "source_locator": "Relationships-AC#row-115"
+    },
+    {
+      "focal_id": "AC-17",
+      "reference_id": "CIP-005-7",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": "CIP considers these controls are related to a network security perimeter as opposed to host-based ports and services.",
+      "source_locator": "Relationships-AC#row-116"
+    },
+    {
+      "focal_id": "AC-17(01)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not require automated mechanisms to monitor and control remote access; however, it does require a documented process for remote access monitoring:\r\nCIP-003-9 R2, Attachment 1:\r\nSection 6 \r\n6.1. Methods for determining vendor electronic remote access\r\n6.2. Methods for disabling vendor electronic remote access\r\nCIP-005-7\r\nR2. Implement documented processes for Remote Access Management\r\nR3. Implement documented processes that for Vendor Remote Access Management\r\n\r\nWeak relationship - SOR 2",
+      "source_locator": "Relationships-AC#row-117"
+    },
+    {
+      "focal_id": "AC-17(02)",
+      "reference_id": "CIP-012-2",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": "CIP is not as specific as NIST Enhanced Control.",
+      "source_locator": "Relationships-AC#row-118"
+    },
+    {
+      "focal_id": "AC-17(02)",
+      "reference_id": "CIP-005-7",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-119"
+    },
+    {
+      "focal_id": "AC-17(03)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address managed access control points using Trusted Internet Connections (TIC). NIST control is very specific to TIC and so too far removed from ESP / EAP concepts to be applicable or tangential.",
+      "source_locator": "Relationships-AC#row-120"
+    },
+    {
+      "focal_id": "AC-17(04)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-121"
+    },
+    {
+      "focal_id": "AC-17(06)",
+      "reference_id": "CIP-011-3",
+      "relationship_type": "2",
+      "raw_relationship_type": "2",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-122"
+    },
+    {
+      "focal_id": "AC-17(09)",
+      "reference_id": "CIP-005-7",
+      "relationship_type": "8",
+      "raw_relationship_type": "8",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-123"
+    },
+    {
+      "focal_id": "AC-17(10)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address authenticating remote commands.",
+      "source_locator": "Relationships-AC#row-124"
+    },
+    {
+      "focal_id": "AC-18",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address establishing configuration, connection requirments for wireless access.",
+      "source_locator": "Relationships-AC#row-125"
+    },
+    {
+      "focal_id": "AC-18(01)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-126"
+    },
+    {
+      "focal_id": "AC-18(03)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-127"
+    },
+    {
+      "focal_id": "AC-18(04)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-128"
+    },
+    {
+      "focal_id": "AC-18(05)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-129"
+    },
+    {
+      "focal_id": "AC-19",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not address connections authorizatin of mobile devices to systems.",
+      "source_locator": "Relationships-AC#row-130"
+    },
+    {
+      "focal_id": "AC-19(04)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-131"
+    },
+    {
+      "focal_id": "AC-19(05)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-132"
+    },
+    {
+      "focal_id": "AC-20",
+      "reference_id": "CIP-003-9",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-133"
+    },
+    {
+      "focal_id": "AC-20",
+      "reference_id": "CIP-010-4",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-134"
+    },
+    {
+      "focal_id": "AC-20(01)",
+      "reference_id": "CIP-003-9",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-135"
+    },
+    {
+      "focal_id": "AC-20(01)",
+      "reference_id": "CIP-010-4",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-136"
+    },
+    {
+      "focal_id": "AC-20(02)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-137"
+    },
+    {
+      "focal_id": "AC-20(03)",
+      "reference_id": "CIP-003-9",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-138"
+    },
+    {
+      "focal_id": "AC-20(03)",
+      "reference_id": "CIP-010-4",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-139"
+    },
+    {
+      "focal_id": "AC-20(03)",
+      "reference_id": "CIP-011-3",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "BCSI in the cloud",
+      "source_locator": "Relationships-AC#row-140"
+    },
+    {
+      "focal_id": "AC-20(03)",
+      "reference_id": "CIP-004-7",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "BCSI in the cloud",
+      "source_locator": "Relationships-AC#row-141"
+    },
+    {
+      "focal_id": "AC-20(03)",
+      "reference_id": "CIP-013-2",
+      "relationship_type": "5",
+      "raw_relationship_type": "5",
+      "rationale": "The enhanced control focuses on restriciting the use of non-organizationally owned systems and CIP focuses on allowing controlled remote access.",
+      "source_locator": "Relationships-AC#row-142"
+    },
+    {
+      "focal_id": "AC-20(04)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-143"
+    },
+    {
+      "focal_id": "AC-20(05)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-144"
+    },
+    {
+      "focal_id": "AC-21",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": "CIP does not require automated mechanisms to manage information sharing; however, it does require a documented process to protect and securely handle BCSI to mitigate risks of compromising confidentiality, but not specifically sharing BCSI:\r\nCIP-011-3\r\nR1.2. Methods to protect and securely handle BCSI to mitigate risks of compromising confidentiality",
+      "source_locator": "Relationships-AC#row-145"
+    },
+    {
+      "focal_id": "AC-21(01)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-146"
+    },
+    {
+      "focal_id": "AC-21(02)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-147"
+    },
+    {
+      "focal_id": "AC-22",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-148"
+    },
+    {
+      "focal_id": "AC-23",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-149"
+    },
+    {
+      "focal_id": "AC-24",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-150"
+    },
+    {
+      "focal_id": "AC-24(01)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-151"
+    },
+    {
+      "focal_id": "AC-24(02)",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-152"
+    },
+    {
+      "focal_id": "AC-25",
+      "reference_id": "No Mapping",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "rationale": null,
+      "source_locator": "Relationships-AC#row-153"
+    }
+  ]
+}

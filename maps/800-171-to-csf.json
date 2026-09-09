@@ -3,7 +3,7 @@
   "source_key": "nist-olir-csf2-to-sp800-171",
   "source_artifact": "https://csrc.nist.gov/csrc/media/Projects/olir/documents/submissions/CSFv2.0_Concept_Crosswalk_SP171r3_OLIR.xlsx",
   "source_version": "2.0-final",
-  "snapshot_date": "2026-08-09",
+  "snapshot_date": "2026-09-09",
   "checksum": "sha256:08e50ecfe201417d1b7e257d5b68ee8a69686c8a31d1521c722892732809f0a0",
   "provenance": "Official NIST Cybersecurity Framework 2.0 to SP 800-171 Rev. 3 Concept Crosswalk (Final, OLIR catalog #179)",
   "olir_status": "final",

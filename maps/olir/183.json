@@ -243,7 +243,7 @@
       "reference_id": "12.5.3",
       "relationship_type": "Supportive",
       "raw_relationship_type": "is supported by",
-      "rationale": "This PCI DSS requirement is for service providers only. \nGV.RM-03 requires that cybersecurity risk activities and outcomes are included in enterprise risk management (ERM). PCI DSS v4 does not require ERM integration; it prescribes control implementation for the cardholder data environment. PCI’s “risk-based” elements (e.g., targeted risk analyses, risk-based frequencies, vulnerability risk ranking) are implementation-level and within PCI scope, not enterprise-level governance. PCI does not establish risk appetite/tolerance, ERM roles, enterprise risk registers, portfolio aggregation, or formal ERM reporting/escalation. Where overlap exists (e.g., internal reviews/exec communication), it is illustrative or precedes ERM inclusion rather than being integral to achieving it. Therefore these mappings are “example of” only - useful inputs that an organization may feed into ERM, but not required by PCI and not sufficient to satisfy GV.RM-03 on their own.",
+      "rationale": "This PCI DSS requirement is for service providers only. \r\nGV.RM-03 requires that cybersecurity risk activities and outcomes are included in enterprise risk management (ERM). PCI DSS v4 does not require ERM integration; it prescribes control implementation for the cardholder data environment. PCI’s “risk-based” elements (e.g., targeted risk analyses, risk-based frequencies, vulnerability risk ranking) are implementation-level and within PCI scope, not enterprise-level governance. PCI does not establish risk appetite/tolerance, ERM roles, enterprise risk registers, portfolio aggregation, or formal ERM reporting/escalation. Where overlap exists (e.g., internal reviews/exec communication), it is illustrative or precedes ERM inclusion rather than being integral to achieving it. Therefore these mappings are “example of” only - useful inputs that an organization may feed into ERM, but not required by PCI and not sufficient to satisfy GV.RM-03 on their own.",
       "source_locator": "Relationships#row-35"
     },
     {
@@ -939,7 +939,7 @@
       "reference_id": "12.4.2",
       "relationship_type": "Supportive",
       "raw_relationship_type": "is supported by",
-      "rationale": "This PCI DSS requirement is for service providers only.\nPCI DSS v4 contains several operational feedback loops (TRA validity reviews, IR lessons learned, periodic management reviews). These illustrate reviewing outcomes and can inform adjustments, but PCI does not require an enterprise-level review of strategy outcomes.",
+      "rationale": "This PCI DSS requirement is for service providers only.\r\nPCI DSS v4 contains several operational feedback loops (TRA validity reviews, IR lessons learned, periodic management reviews). These illustrate reviewing outcomes and can inform adjustments, but PCI does not require an enterprise-level review of strategy outcomes.",
       "source_locator": "Relationships#row-126"
     },
     {
@@ -947,7 +947,7 @@
       "reference_id": "12.4.2.1",
       "relationship_type": "Supportive",
       "raw_relationship_type": "is supported by",
-      "rationale": "This PCI DSS requirement is for service providers only.\nPCI DSS v4 contains several operational feedback loops (TRA validity reviews, IR lessons learned, periodic management reviews). These illustrate reviewing outcomes and can inform adjustments, but PCI does not require an enterprise-level review of strategy outcomes.",
+      "rationale": "This PCI DSS requirement is for service providers only.\r\nPCI DSS v4 contains several operational feedback loops (TRA validity reviews, IR lessons learned, periodic management reviews). These illustrate reviewing outcomes and can inform adjustments, but PCI does not require an enterprise-level review of strategy outcomes.",
       "source_locator": "Relationships#row-127"
     },
     {
@@ -955,7 +955,7 @@
       "reference_id": "10.7.1",
       "relationship_type": "Supportive",
       "raw_relationship_type": "is supported by",
-      "rationale": "This PCI DSS requirement is for service providers only.\nPCI DSS v4 contains several operational feedback loops (TRA validity reviews, IR lessons learned, periodic management reviews). These illustrate reviewing outcomes and can inform adjustments, but PCI does not require an enterprise-level review of strategy outcomes.",
+      "rationale": "This PCI DSS requirement is for service providers only.\r\nPCI DSS v4 contains several operational feedback loops (TRA validity reviews, IR lessons learned, periodic management reviews). These illustrate reviewing outcomes and can inform adjustments, but PCI does not require an enterprise-level review of strategy outcomes.",
       "source_locator": "Relationships#row-128"
     },
     {

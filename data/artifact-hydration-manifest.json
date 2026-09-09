@@ -1,38 +1,8 @@
 {
-  "generated_at": "2026-09-09T19:44:17.935Z",
-  "hydrated": 4,
+  "generated_at": "2026-09-09T20:54:51.633Z",
+  "hydrated": 87,
   "removed_orphans": [],
   "results": [
-    {
-      "id": "artifact-nist-800-171-rev2",
-      "status": "OK",
-      "http": 200,
-      "url": "https://csrc.nist.gov/files/pubs/sp/800/171/r2/upd1/final/docs/sp800-171r2-security-reqs.csv",
-      "sha256": "sha256:0f4d59413bbcc9998da80495ce46ebfe0475e392803c4d2ed38d9941d83f138d",
-      "byte_length": 113309,
-      "record_count": 117,
-      "retrieved_at": "2026-08-07"
-    },
-    {
-      "id": "artifact-nist-ai-rmf-playbook",
-      "status": "OK",
-      "http": 200,
-      "url": "https://airc.nist.gov/docs/playbook.json",
-      "sha256": "sha256:aecbee3d3c8820816d295b11d10fb61324b17c25c2ff39ee95e2aa5654555bba",
-      "byte_length": 413720,
-      "record_count": 72,
-      "retrieved_at": "2026-08-07"
-    },
-    {
-      "id": "artifact-fedramp-2026-rules",
-      "status": "OK",
-      "http": 200,
-      "url": "https://raw.githubusercontent.com/FedRAMP/rules/main/fedramp-consolidated-rules.json",
-      "sha256": "sha256:135707003f0aaa5ceb10d7d32c2681e5b1585a4eaf4403d0d135837787e5ae8e",
-      "byte_length": 567435,
-      "record_count": 5,
-      "retrieved_at": "2026-08-07"
-    },
     {
       "id": "artifact-mitre-attack-enterprise",
       "status": "OK",
@@ -72,6 +42,36 @@
       "byte_length": 38722880,
       "record_count": 3927,
       "retrieved_at": "2026-08-25"
+    },
+    {
+      "id": "artifact-nist-800-171-rev2",
+      "status": "OK",
+      "http": 200,
+      "url": "https://csrc.nist.gov/files/pubs/sp/800/171/r2/upd1/final/docs/sp800-171r2-security-reqs.csv",
+      "sha256": "sha256:0f4d59413bbcc9998da80495ce46ebfe0475e392803c4d2ed38d9941d83f138d",
+      "byte_length": 113309,
+      "record_count": 117,
+      "retrieved_at": "2026-08-07"
+    },
+    {
+      "id": "artifact-nist-ai-rmf-playbook",
+      "status": "OK",
+      "http": 200,
+      "url": "https://airc.nist.gov/docs/playbook.json",
+      "sha256": "sha256:aecbee3d3c8820816d295b11d10fb61324b17c25c2ff39ee95e2aa5654555bba",
+      "byte_length": 413720,
+      "record_count": 72,
+      "retrieved_at": "2026-08-07"
+    },
+    {
+      "id": "artifact-fedramp-2026-rules",
+      "status": "OK",
+      "http": 200,
+      "url": "https://raw.githubusercontent.com/FedRAMP/rules/main/fedramp-consolidated-rules.json",
+      "sha256": "sha256:135707003f0aaa5ceb10d7d32c2681e5b1585a4eaf4403d0d135837787e5ae8e",
+      "byte_length": 567435,
+      "record_count": 5,
+      "retrieved_at": "2026-08-07"
     },
     {
       "id": "artifact-disa-cci-list",
@@ -418,6 +418,16 @@
       "retrieved_at": "2026-08-07"
     },
     {
+      "id": "artifact-ai-mil-responsible-ai",
+      "status": "OK",
+      "http": 200,
+      "url": "https://www.ai.mil/Initiatives/About/Resources/Pathway-to-AI-Readiness/Responsible-AI/",
+      "sha256": "sha256:0b4ddcdb3b2ed67c4f5786a769d430196219cdca98f8fc1c031ab55c481df097",
+      "byte_length": 105052,
+      "record_count": null,
+      "retrieved_at": "2026-09-09"
+    },
+    {
       "id": "artifact-isoo-cui-regulation",
       "status": "OK",
       "http": 200,
@@ -452,10 +462,10 @@
       "status": "OK",
       "http": 200,
       "url": "https://csrc.nist.gov/extensions/nudp/services/json/csf/download?olirids=all",
-      "sha256": "sha256:33db9e0c23644dcd909d2681448ff7870cc3ed4590939b65eada773eae8bbe3c",
+      "sha256": "sha256:8c1c03b12c7ba95029041166e79373793c7d0aa0405baffafc2e5b563afbc1c6",
       "byte_length": 144519,
       "record_count": null,
-      "retrieved_at": "2026-08-13"
+      "retrieved_at": "2026-09-09"
     },
     {
       "id": "artifact-nist-fips-199",
@@ -495,7 +505,7 @@
       "sha256": "sha256:df371dc0ebb163e1a0434b141bc2f16b56c97b2062622d6811191fbe4f093c01",
       "byte_length": 368971055,
       "record_count": 0,
-      "retrieved_at": "2026-08-12",
+      "retrieved_at": "2026-09-09",
       "attestation": "fresh DISA compilation range download and parse"
     },
     {
@@ -503,10 +513,10 @@
       "status": "OK",
       "http": "local",
       "url": "https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_SRG-STIG_Library_July_2026.zip",
-      "sha256": "sha256:5f3a1dd589648482eca10a9fe9a20e030b8ad53dd0907c8711fe078b59344ce5",
-      "byte_length": 52649168,
+      "sha256": "sha256:7f213e611a8dee13aad088a057205904f21ab55c3fe6217e00e32f315f2b3a9c",
+      "byte_length": 52649162,
       "record_count": null,
-      "retrieved_at": "2026-08-12"
+      "retrieved_at": "2026-09-09"
     },
     {
       "id": "artifact-disa-srg-library",
@@ -516,7 +526,7 @@
       "sha256": "sha256:12620195626af0b981d4738e9083c5cc33224b0d538d3658c569dbaa2b2ea5da",
       "byte_length": 6596282,
       "record_count": null,
-      "retrieved_at": "2026-08-12"
+      "retrieved_at": "2026-08-13"
     },
     {
       "id": "artifact-disa-stig-srg-cci-references",
@@ -533,20 +543,20 @@
       "status": "OK",
       "http": "local",
       "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/v1.5.0/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json",
-      "sha256": "sha256:d13eb0fa6b0d386cdb424fbcdd7f8d7d213a07e73f985ad22e22c5911413c08c",
+      "sha256": "sha256:fbc493581a615e71f2780516e720c33df7e629e63d2a48440209ab1a8a91f4ad",
       "byte_length": 1865,
       "record_count": null,
-      "retrieved_at": "2026-08-13"
+      "retrieved_at": "2026-09-09"
     },
     {
       "id": "artifact-control-atlas-structure",
       "status": "OK",
       "http": "local",
       "url": "https://github.com/rambulls/control-atlas/blob/main/data/curated/tree-spine.json",
-      "sha256": "sha256:7bf238858f8fa128d88e9313b55df9b57549f7bc2d46f31ba10fa58d52c4e7b1",
-      "byte_length": 6259,
+      "sha256": "sha256:734d7808895a15313aad1cd2fa203f1e6eb679c21ee1e216420da5855a3c4149",
+      "byte_length": 6326,
       "record_count": 10,
-      "retrieved_at": "2026-08-12"
+      "retrieved_at": "2026-09-09"
     },
     {
       "id": "artifact-nist-sp-1800-35-e1b1-architecture",
@@ -927,16 +937,6 @@
       "byte_length": 47594,
       "record_count": null,
       "retrieved_at": "2026-08-12"
-    },
-    {
-      "id": "artifact-ai-mil-responsible-ai",
-      "status": "OK",
-      "http": 200,
-      "url": "https://www.ai.mil/Initiatives/About/Resources/Pathway-to-AI-Readiness/Responsible-AI/",
-      "sha256": "sha256:89ee5d7b65cf317fd101e27e0d25e3e68fb01ea13d458867f12d54a6e8eb8a5d",
-      "byte_length": 104423,
-      "record_count": null,
-      "retrieved_at": "2026-08-14"
     }
   ]
 }

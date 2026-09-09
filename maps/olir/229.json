@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "olir_id": 229,
+  "source_artifact": "https://olir.keystonedigitalholdingsgroup.com/aisvs-v1.0-to-sp800-53r5.xlsx",
+  "sha256": "sha256:72164b0ad2c71428710324fea7e71f6888727b38a73e911542ddf1aff11b51db",
+  "byte_length": 165173,
+  "parser": "olir-xlsx",
+  "relationships": [
+    {
+      "focal_id": "AC-03",
+      "reference_id": "C5.2.1",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Semantic",
+      "source_locator": "Relationships-AC#row-16"
+    },
+    {
+      "focal_id": "AC-04",
+      "reference_id": "C5.2.2",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-30"
+    },
+    {
+      "focal_id": "AC-06",
+      "reference_id": "C5.2.1",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-62"
+    },
+    {
+      "focal_id": "AC-06(01)",
+      "reference_id": "C5.2.6",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-63"
+    },
+    {
+      "focal_id": "AC-16",
+      "reference_id": "C5.2.7",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-91"
+    },
+    {
+      "focal_id": "AC-24",
+      "reference_id": "C5.2.1",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-129"
+    },
+    {
+      "focal_id": "AC-25",
+      "reference_id": "C5.2.5",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-132"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "C5.2.2",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Semantic",
+      "source_locator": "Relationships-AC#row-133"
+    },
+    {
+      "focal_id": "AC-04",
+      "reference_id": "C5.2.4",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-134"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "C5.2.5",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Semantic",
+      "source_locator": "Relationships-AC#row-135"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "C9.2.1",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-136"
+    },
+    {
+      "focal_id": "AC-06",
+      "reference_id": "C9.3.1",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-137"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "C9.5.1",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Semantic",
+      "source_locator": "Relationships-AC#row-138"
+    },
+    {
+      "focal_id": "AC-06",
+      "reference_id": "C9.5.1",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-139"
+    },
+    {
+      "focal_id": "AC-04",
+      "reference_id": "C9.5.2",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-140"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "C9.5.3",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Semantic",
+      "source_locator": "Relationships-AC#row-141"
+    },
+    {
+      "focal_id": "AC-04",
+      "reference_id": "C9.5.5",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-142"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "C9.5.6",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-143"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "C10.2.4",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-144"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "C10.2.5",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Semantic",
+      "source_locator": "Relationships-AC#row-145"
+    },
+    {
+      "focal_id": "AC-03",
+      "reference_id": "C8.1.1",
+      "relationship_type": "Set Theory: Subset",
+      "raw_relationship_type": "subset of",
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-146"
+    }
+  ]
+}
