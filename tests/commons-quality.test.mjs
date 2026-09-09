@@ -145,7 +145,9 @@ for (const resource of exactTools) {
 }
 
 const repositoryBackedTools = exactTools.filter((resource) => resource.repositoryEvidence);
-assert.equal(repositoryBackedTools.length, 36, "All 36 repository-backed tools have repository evidence");
+// A live enrichment can add evidence for previously unenriched tools. Retain
+// the reviewed coverage floor without rejecting those additional attestations.
+assert.ok(repositoryBackedTools.length >= 36, "At least the 36 reviewed repository-backed tools retain repository evidence");
 for (const resource of repositoryBackedTools) {
   const evidence = resource.repositoryEvidence;
   assert.match(evidence.commitSha, /^[a-f0-9]{40}$/i, `${resource.id} commit SHA`);
