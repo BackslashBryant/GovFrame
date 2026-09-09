@@ -310,7 +310,11 @@ function baseCompatibility(resource) {
     operatingSystems,
     environments: [],
     sourceUrl: resource.sourceEvidence,
-    note: operatingSystems.length ? "Publisher-supported platforms recorded by the reviewed resource inventory." : "",
+    // An unknown is recorded with a stated reason, never as an empty string:
+    // "we looked and the publisher does not say" is information, and blank is not.
+    note: operatingSystems.length
+      ? "Publisher-supported platforms recorded by the reviewed resource inventory."
+      : "The reviewed resource inventory records no publisher-stated platform support for this resource.",
   };
 }
 
