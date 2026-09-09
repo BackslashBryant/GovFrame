@@ -108,8 +108,23 @@ for (const resource of dataset.resources || []) {
   for (const [field, value] of Object.entries(resource)) {
     if (value === null || value === "unknown") fail(`${resource.id}.${field} serializes an unknown optional value`);
   }
-  if (resource.compatibility && resource.compatibility.status !== "documented") fail(`${resource.id} serializes unsupported compatibility disposition`);
-  if (resource.media && resource.media.status !== "available") fail(`${resource.id} serializes unsupported media disposition`);
+  // Presence of the key is not the claim. compatibility and media are recorded
+  // on every enriched resource, including the explicit negative dispositions
+  // (not_stated, not_applicable, not_available), which the schema permits and
+  // verify-resource-ingestion accepts. What must not be serialized is a
+  // disposition outside that vocabulary, or a negative one that fails to say why.
+  if (resource.compatibility && !["documented", "not_stated", "not_applicable"].includes(resource.compatibility.status)) {
+    fail(`${resource.id} serializes unsupported compatibility disposition`);
+  }
+  if (resource.compatibility && resource.compatibility.status !== "documented" && !resource.compatibility.note) {
+    fail(`${resource.id} serializes an undocumented compatibility without a reason`);
+  }
+  if (resource.media && !["available", "not_available"].includes(resource.media.status)) {
+    fail(`${resource.id} serializes unsupported media disposition`);
+  }
+  if (resource.media && resource.media.status === "not_available" && !resource.media.reason) {
+    fail(`${resource.id} serializes unavailable media without a reason`);
+  }
   for (const field of ["presentationProfile", "toolProfile"]) {
     for (const entry of displayStrings(resource[field], [field])) {
       if (absencePattern.test(entry.value)) fail(`${resource.id}.${entry.trail.join(".")} contains visible absence prose`);
