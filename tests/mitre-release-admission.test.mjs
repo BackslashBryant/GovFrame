@@ -60,7 +60,8 @@ function catalogFixture(domain = 'enterprise', legacy = false) {
   };
   if (!legacy) document.publisher_inventory = { source_url: url, source_sha256: document.checksum,
     source_byte_length: 9, publisher_version: version, raw_count: 1, eligible_count: 1, imported_count: 1,
-    excluded: [], imported_identity_sha256: hash(JSON.stringify(['T0001'])),
+    excluded: [], raw_identity_sha256: hash(JSON.stringify(['T0001'])),
+    imported_identity_sha256: hash(JSON.stringify(['T0001'])),
   };
   const bytes = Buffer.from(JSON.stringify(document));
   return { domain, document, bytes, accepted: observeCatalog(bytes), source: {

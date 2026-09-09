@@ -75,7 +75,7 @@ export function createVerificationPlan(paths, changeMap) {
       'catalog-refresh-profiles': ['refresh-candidate-gate', 'catalog-source-inventory'],
       'refresh-candidate-gate': ['refresh-candidate-gate'],
       'refresh-source-outputs': ['refresh-isolation', 'source-unit-selection'],
-      'source-baseline': ['source-baseline', 'refresh-candidate-gate'],
+      'source-baseline': ['source-baseline', 'refresh-candidate-gate', 'mitre-release-admission'],
       'source-transaction': ['source-transaction'],
       'source-url-policy': ['source-url-policy', 'strict-conditional-fetch'],
       'automerge-source-refresh': ['automerge-source-refresh'],
