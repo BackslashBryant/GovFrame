@@ -14,9 +14,9 @@ function normalize(path) {
   return path.replaceAll("\\", "/");
 }
 
-function trackedSourceData() {
-  return execFileSync("git", ["ls-files", "-z", "data", "maps"], {
-    cwd: ROOT,
+function trackedSourceData(root) {
+  return execFileSync("git", ["ls-files", "--cached", "--others", "--exclude-standard", "-z", "data", "maps"], {
+    cwd: root,
     encoding: "utf8",
   })
     .split("\0")
@@ -66,13 +66,13 @@ export function discoverGenerationEntrypoints(
   return [...entrypoints].sort();
 }
 
-function generationEntrypoints() {
-  const packageJson = JSON.parse(readFileSync(resolve(ROOT, PACKAGE_JSON), "utf8"));
+function generationEntrypoints(root) {
+  const packageJson = JSON.parse(readFileSync(resolve(root, PACKAGE_JSON), "utf8"));
   return discoverGenerationEntrypoints(packageJson.scripts || {});
 }
 
-function localDependencies(entrypoints) {
-  const pending = entrypoints.map((path) => resolve(ROOT, path));
+function localDependencies(entrypoints, root) {
+  const pending = entrypoints.map((path) => resolve(root, path));
   const visited = new Set();
   const importPattern = /(?:from\s+|import\s*\(\s*)["']([^"']+)["']/g;
 
@@ -80,7 +80,7 @@ function localDependencies(entrypoints) {
     const absolutePath = pending.pop();
     if (!absolutePath || visited.has(absolutePath)) continue;
     if (!existsSync(absolutePath)) {
-      throw new Error(`Generated-data dependency missing: ${relative(ROOT, absolutePath)}`);
+      throw new Error(`Generated-data dependency missing: ${relative(root, absolutePath)}`);
     }
     visited.add(absolutePath);
     const source = readFileSync(absolutePath, "utf8");
@@ -89,30 +89,39 @@ function localDependencies(entrypoints) {
       if (!specifier.startsWith(".")) continue;
       let dependency = resolve(dirname(absolutePath), specifier);
       if (!extname(dependency)) dependency += ".mjs";
-      const rel = normalize(relative(ROOT, dependency));
+      const rel = normalize(relative(root, dependency));
       if (rel.startsWith("data/generated/")) continue;
       pending.push(dependency);
     }
   }
 
-  return [...visited].map((path) => normalize(relative(ROOT, path)));
+  return [...visited].map((path) => normalize(relative(root, path)));
 }
 
-export function generatedDataCacheInputs() {
+export function generatedDataCacheInputs(root = ROOT) {
   return [...new Set([
     PACKAGE_JSON,
     "package-lock.json",
-    ...trackedSourceData(),
-    ...localDependencies(generationEntrypoints()),
+    ...trackedSourceData(root),
+    ...localDependencies(generationEntrypoints(root), root),
   ])].sort();
 }
 
-export function calculateGeneratedDataCacheKey() {
+export function calculateGeneratedDataCacheKey(root = ROOT) {
   const hash = createHash("sha256");
-  for (const path of generatedDataCacheInputs()) {
+  for (const path of generatedDataCacheInputs(root)) {
     hash.update(path);
     hash.update("\0");
-    hash.update(readFileSync(resolve(ROOT, path)));
+    // A refresh can add or remove source snapshots before staging them. Hash
+    // that working-tree state; completeness is checked by the data gates.
+    try {
+      const bytes = readFileSync(resolve(root, path));
+      hash.update("present\0");
+      hash.update(bytes);
+    } catch (error) {
+      if (error.code !== "ENOENT" || !/^(data|maps)\//.test(path)) throw error;
+      hash.update("absent\0");
+    }
     hash.update("\0");
   }
   return hash.digest("hex");

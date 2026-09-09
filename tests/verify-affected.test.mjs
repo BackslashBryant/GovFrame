@@ -4,6 +4,17 @@ import test from 'node:test';
 import { classifyChangedPaths } from '../tools/classify-change-scope.mjs';
 import { createVerificationPlan } from '../tools/verify-affected.mjs';
 
+test('refresh probe and cache changes use offline fixtures and unknown inputs fail closed', () => {
+  const paths = ['scripts/check-commons-health.mjs', 'tools/generated-data-cache-key.mjs'];
+  const plan = createVerificationPlan(paths, classifyChangedPaths(paths));
+  assert.equal(plan.blocked, false);
+  assert.deepEqual(plan.steps.map((step) => step.id), ['refresh-runtime-contracts']);
+  assert.equal(plan.totalExpectedTests, 12);
+  assert.equal(plan.steps[0].workers, 2);
+  const unknown = [...paths, 'scripts/unknown-refresh-operation.mjs'];
+  assert.equal(createVerificationPlan(unknown, classifyChangedPaths(unknown)).blocked, true);
+});
+
 test('automation-only changes stay on the automation contract path', () => {
   const paths = [
     '.gitignore',

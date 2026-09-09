@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import { check } from "../scripts/check-commons-health.mjs";
 
 import { searchDirectoryResources } from "../src/ui/lib/resourcesDirectory.mjs";
 
@@ -103,4 +104,29 @@ test("protected destinations remain explicit expected-access checks", () => {
   assert.equal(disaServiceNow?.outcome, "manual_expected_access");
   assert.equal(disaServiceNow?.ok, true);
   assert.match(disaServiceNow?.note ?? "", /NIPRNet or NIPRNet VPN/);
+});
+
+test("normalized restricted records retain their access boundary without a network request", async () => {
+  const resource = byId.get("portal-disa-servicenow");
+  assert.equal(resource.accessType, undefined);
+  const result = await check(resource, () => { throw new Error("Restricted destination was probed"); });
+  assert.equal(result.outcome, "manual_expected_access");
+  assert.equal(result.status, null);
+  assert.equal(result.note, resource.publicAccessNotes);
+});
+
+test("public destinations and unsupported restriction claims still report network failures", async () => {
+  for (const overrides of [
+    { verificationMethod: "automated" },
+    { publicAccessNotes: undefined },
+  ]) {
+    let calls = 0;
+    const result = await check({ ...byId.get("portal-disa-servicenow"), ...overrides }, async () => {
+      calls += 1;
+      throw new Error("Network unavailable");
+    });
+    assert.equal(calls, 1);
+    assert.equal(result.outcome, "network_error");
+    assert.equal(result.ok, false);
+  }
 });

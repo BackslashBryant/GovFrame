@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { execFileSync } from "node:child_process";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { join, resolve } from "node:path";
 
 import {
   calculateGeneratedDataCacheKey,
@@ -62,4 +65,40 @@ test("generated data producer discovery fails closed on unsupported commands", (
     }),
     /Unsupported generated-data command/,
   );
+});
+
+test("cache keys distinguish removed, new, changed, and empty source snapshots", (t) => {
+  const local = resolve(".local");
+  mkdirSync(local, { recursive: true });
+  const root = mkdtempSync(join(local, "cache-key-test-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  mkdirSync(join(root, "data"));
+  mkdirSync(join(root, "scripts"));
+  writeFileSync(join(root, "package.json"), JSON.stringify({ scripts: {
+    "build:data": "node ./scripts/build.mjs",
+    "generate:data": "npm run build:data",
+  } }));
+  writeFileSync(join(root, "package-lock.json"), "{}");
+  writeFileSync(join(root, "scripts/build.mjs"), "export const build = true;\n");
+  const source = join(root, "data/source.json");
+  writeFileSync(source, "{}");
+  execFileSync("git", ["init", "--quiet"], { cwd: root });
+  execFileSync("git", ["add", "."], { cwd: root });
+  const initial = calculateGeneratedDataCacheKey(root);
+  rmSync(source);
+  const removed = calculateGeneratedDataCacheKey(root);
+  assert.notEqual(removed, initial);
+  assert.equal(calculateGeneratedDataCacheKey(root), removed);
+  writeFileSync(source, "");
+  assert.notEqual(calculateGeneratedDataCacheKey(root), removed);
+  writeFileSync(source, "{}");
+  assert.equal(calculateGeneratedDataCacheKey(root), initial);
+  const added = join(root, "data/new.json");
+  writeFileSync(added, "{}");
+  const newSnapshot = calculateGeneratedDataCacheKey(root);
+  assert.notEqual(newSnapshot, initial);
+  writeFileSync(added, '{"changed":true}');
+  assert.notEqual(calculateGeneratedDataCacheKey(root), newSnapshot);
+  rmSync(join(root, "scripts/build.mjs"));
+  assert.throws(() => calculateGeneratedDataCacheKey(root), /dependency missing/);
 });

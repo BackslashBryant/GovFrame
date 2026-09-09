@@ -1,11 +1,10 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const datasetPath = resolve("data/commons-resource-dataset.json");
 const reportJsonPath = resolve("data/commons-health-report.json");
 const reportMdPath = resolve("artifacts/commons-health-report.md");
-mkdirSync(resolve("artifacts"), { recursive: true });
-const dataset = JSON.parse(readFileSync(datasetPath, "utf8"));
 const checkedAt = new Date().toISOString();
 const restrictedAccess = new Set(["cac_required", "dod_network_required", "invitation_required", "access_varies"]);
 
@@ -35,14 +34,15 @@ async function request(url, method) {
   }
 }
 
-async function check(resource) {
+export async function check(resource, requestResource = request) {
   const base = { id: resource.id, name: resource.name, canonicalUrl: resource.canonicalUrl, publisher: resource.publisher, tier: tier(resource), checkedAt };
-  if (restrictedAccess.has(resource.accessType)) {
+  if (restrictedAccess.has(resource.accessType) ||
+      (resource.verificationMethod === "manual_restricted" && resource.publicAccessNotes)) {
     return { ...base, outcome: "manual_expected_access", ok: true, status: null, finalUrl: resource.canonicalUrl, note: resource.publicAccessNotes };
   }
   try {
-    let response = await request(resource.canonicalUrl, "HEAD");
-    if ([403, 405, 406, 429].includes(response.status)) response = await request(resource.canonicalUrl, "GET");
+    let response = await requestResource(resource.canonicalUrl, "HEAD");
+    if ([403, 405, 406, 429].includes(response.status)) response = await requestResource(resource.canonicalUrl, "GET");
     const expectedAuth = [401, 403].includes(response.status) && resource.accountRequired;
     const ok = response.ok || expectedAuth;
     return { ...base, outcome: expectedAuth ? "expected_auth_boundary" : ok ? "reachable" : "http_error", ok, status: response.status, finalUrl: response.url || resource.canonicalUrl, note: ok ? null : `HTTP ${response.status}` };
@@ -51,16 +51,19 @@ async function check(resource) {
   }
 }
 
-const results = [];
-for (let index = 0; index < dataset.resources.length; index += 8) {
-  results.push(...await Promise.all(dataset.resources.slice(index, index + 8).map(check)));
-}
-const failures = results.filter((result) => !result.ok);
-const summary = { schemaVersion: "3.0", checkedAt, totalResources: results.length, passedCount: results.length - failures.length, failedCount: failures.length, manualExpectedAccessCount: results.filter((result) => result.outcome === "manual_expected_access").length, results };
-writeFileSync(reportJsonPath, `${JSON.stringify(summary, null, 2)}\n`, "utf8");
+async function main() {
+  mkdirSync(resolve("artifacts"), { recursive: true });
+  const dataset = JSON.parse(readFileSync(datasetPath, "utf8"));
+  const results = [];
+  for (let index = 0; index < dataset.resources.length; index += 8) {
+    results.push(...await Promise.all(dataset.resources.slice(index, index + 8).map((resource) => check(resource))));
+  }
+  const failures = results.filter((result) => !result.ok);
+  const summary = { schemaVersion: "3.0", checkedAt, totalResources: results.length, passedCount: results.length - failures.length, failedCount: failures.length, manualExpectedAccessCount: results.filter((result) => result.outcome === "manual_expected_access").length, results };
+  writeFileSync(reportJsonPath, `${JSON.stringify(summary, null, 2)}\n`, "utf8");
 
-const rows = failures.length ? failures.map((result) => `| \`${result.id}\` | ${result.status || "Network"} | ${String(result.note).replaceAll("|", "\\|")} |`).join("\n") : "| _None_ | — | All public links responded or met an expected authentication boundary. |";
-const markdown = `# Resources health report
+  const rows = failures.length ? failures.map((result) => `| \`${result.id}\` | ${result.status || "Network"} | ${String(result.note).replaceAll("|", "\\|")} |`).join("\n") : "| _None_ | — | All public links responded or met an expected authentication boundary. |";
+  const markdown = `# Resources health report
 
 Checked: ${checkedAt}
 
@@ -77,6 +80,9 @@ Restricted CAC, DoD-network, invitation, and variable-access services are record
 |---|---:|---|
 ${rows}
 `;
-writeFileSync(reportMdPath, markdown, "utf8");
-console.log(`Checked ${results.length} resources: ${summary.passedCount} passed or expected-restricted, ${failures.length} public failures.`);
-if (process.argv.includes("--strict") && failures.length) process.exitCode = 1;
+  writeFileSync(reportMdPath, markdown, "utf8");
+  console.log(`Checked ${results.length} resources: ${summary.passedCount} passed or expected-restricted, ${failures.length} public failures.`);
+  if (process.argv.includes("--strict") && failures.length) process.exitCode = 1;
+}
+
+if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) await main();

@@ -52,6 +52,25 @@ function addStep(steps, step) {
 
 export function createVerificationPlan(paths, changeMap) {
   const steps = [];
+  const refreshRuntimePaths = new Set([
+    'scripts/check-commons-health.mjs',
+    'tools/generated-data-cache-key.mjs',
+    'tests/generated-data-cache.test.mjs',
+    'tests/resource-ecosystem-contract.test.mjs',
+  ]);
+  // These input/probe contracts have deterministic fixtures and need neither
+  // publisher requests nor a regenerated site to exercise their behavior.
+  if (paths.length > 0 && paths.every((path) => refreshRuntimePaths.has(path))) {
+    return {
+      blocked: false, reasons: [], paths, changeMap,
+      steps: [{
+        id: 'refresh-runtime-contracts',
+        command: ['node', '--test', 'tests/generated-data-cache.test.mjs', 'tests/resource-ecosystem-contract.test.mjs'],
+        expectedTests: 12, workers: 2, budgetSeconds: 10,
+      }],
+      totalExpectedTests: 12, totalBudgetSeconds: 10,
+    };
+  }
   const e2ePaths = paths.filter((path) => path.startsWith('tests/e2e/') && path.endsWith('.mjs'));
   const nodeTests = paths.filter((path) =>
     path.startsWith('tests/') && path.endsWith('.test.mjs') &&
