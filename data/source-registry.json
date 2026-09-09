@@ -2029,7 +2029,7 @@
       "eligibility_status": "eligible",
       "access_status": "public",
       "version": "1.5.0",
-      "retrieved_at": "2026-09-09",
+      "retrieved_at": "2026-08-25",
       "retrieval_method": "api_import",
       "artifact_url": "https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json",
       "catalog_browse_url": "https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json",
@@ -3925,7 +3925,7 @@
       "version": "1.5.0",
       "lifecycle_status": "active",
       "retrieval_method": "direct_file_import",
-      "retrieved_at": "2026-09-09",
+      "retrieved_at": "2026-08-25",
       "artifact_url": "https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json",
       "byte_length": 38722880,
       "sha256": "sha256:3f103c5703fdfc8c2e658d8b81fb22b1cf7ef281d83ee324f4a3a176076f5d37",
@@ -7808,7 +7808,7 @@
       "provenance_class": "mitre_published",
       "mandate_basis": [],
       "version": "1.5.0",
-      "retrieved_at": "2026-09-09",
+      "retrieved_at": "2026-08-25",
       "retrieval_method": "api",
       "artifact_url": "https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json",
       "artifact_type": "api",
@@ -8389,28 +8389,28 @@
         "sync_model": "auto_synced",
         "last_checked": "2026-09-09",
         "last_imported": "2026-09-09",
-        "hash": "sha256:cbe968dceb141d30fe747fed4a8682f9e4f024a8bfe97dfcacc6c2b7cbec1b78"
+        "hash": "sha256:fbe2a38a817899d4f3cf5f6ee5f29b332448ad6ebac0d3eee519e774778f49bc"
       },
       {
         "source_id": "mitre-attack-ics",
         "sync_model": "auto_synced",
         "last_checked": "2026-09-09",
         "last_imported": "2026-09-09",
-        "hash": "sha256:a38639cf2bfdfb0ac266b88af5516f3d870e20a03393f7f9c2aa042a5b20ee4f"
+        "hash": "sha256:348a4e9a54dd9011329f92e0fd20ba72cae2fec76f0e2790b1e98f0de8f139bf"
       },
       {
         "source_id": "mitre-d3fend-ontology",
         "sync_model": "auto_synced",
         "last_checked": "2026-09-09",
         "last_imported": "2026-09-09",
-        "hash": "sha256:71edb66dda0a4a178fbeea75b77546bf44d171de56ad25107f57fd8feda2a7f2"
+        "hash": "sha256:67e363c95362897199a0e29fb383dc87cd9d575f7cc03494f9a8ae5614132380"
       },
       {
         "source_id": "mitre-d3fend-mappings",
         "sync_model": "auto_synced",
-        "last_checked": "2026-09-09",
-        "last_imported": "2026-09-09",
-        "hash": "sha256:a88a77d7396e2ab154ead52941340eaa83f615693e199470c1977225e4cb4d34"
+        "last_checked": "2026-08-25",
+        "last_imported": "2026-08-25",
+        "hash": "sha256:3f103c5703fdfc8c2e658d8b81fb22b1cf7ef281d83ee324f4a3a176076f5d37"
       },
       {
         "source_id": "mitre-cis-cci-mappings",
