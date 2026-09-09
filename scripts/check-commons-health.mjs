@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
+import { strictConditionalFetch } from "./lib/strict-conditional-fetch.mjs";
 
 const datasetPath = resolve("data/commons-resource-dataset.json");
 const reportJsonPath = resolve("data/commons-health-report.json");
@@ -20,9 +21,8 @@ async function request(url, method) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 12_000);
   try {
-    return await fetch(url, {
+    return await strictConditionalFetch(url, {
       method,
-      redirect: "follow",
       signal: controller.signal,
       headers: {
         "User-Agent": "ControlAtlasResourceHealth/3.0 (+https://github.com/rambulls/control-atlas)",

@@ -64,16 +64,21 @@ export function reconcileFreshness(registry, artifactDocuments, runDate, observe
     }
   }
   const observations = new Set(observedSourceIds);
+  const quarantinedIds = new Set((registry.quarantine || [])
+    .filter((entry) => entry.disposition === 'retained_last_good').map((entry) => entry.id));
+  const quarantinedSources = new Set((registry.artifacts || [])
+    .filter((artifact) => quarantinedIds.has(artifact.id)).map((artifact) => artifact.publication_source_id));
   for (const freshness of registry.freshness.sources) {
+    const quarantined = quarantinedIds.has(freshness.source_id) || quarantinedSources.has(freshness.source_id);
     if (freshness.sync_model === 'link_out' && observations.has(freshness.source_id)) {
-      freshness.last_checked = runDate;
+      if (!quarantined) freshness.last_checked = runDate;
       continue;
     }
     if (freshness.sync_model !== 'auto_synced') continue;
     const document = artifactDocuments.get(freshness.source_id);
     if (!document) throw new Error(`Missing refreshed artifact for ${freshness.source_id}`);
     const nextHash = artifactHash(document);
-    freshness.last_checked = runDate;
+    if (!quarantined) freshness.last_checked = runDate;
     const contentChanged = freshness.hash !== nextHash;
     if (contentChanged) freshness.last_imported = runDate;
     freshness.hash = nextHash;

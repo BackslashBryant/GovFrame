@@ -98,7 +98,10 @@ export const INGESTION_TASKS = Object.freeze([
   { id: 'verify-completeness', script: 'verify-completeness.mjs', stages: ['reconcile'], scope: ['all-catalogs'], retries: 1 },
   { id: 'verify-ingestion-contract', script: 'verify-ingestion-pipeline.mjs', stages: ['presentation', 'reconcile'], scope: ['all-sources', 'all-catalogs'], retries: 1 },
   { id: 'verify-resource-ingestion', script: 'verify-resource-ingestion.mjs', stages: ['discover', 'attest', 'presentation', 'reconcile'], scope: ['all-resources'], retries: 1 },
-]);
+].map((task) => Object.freeze({
+  ...task,
+  isolation: task.remote_fetch === true ? 'quarantinable' : 'fail_fast',
+})));
 
 export function validateIngestionPipelineDefinition(tasks = INGESTION_TASKS) {
   const errors = [];
@@ -107,6 +110,9 @@ export function validateIngestionPipelineDefinition(tasks = INGESTION_TASKS) {
   for (const task of tasks) {
     if (!task.id || ids.has(task.id)) errors.push(`duplicate or missing task id: ${task.id || '(missing)'}`);
     ids.add(task.id);
+    if (task.isolation !== (task.remote_fetch === true ? 'quarantinable' : 'fail_fast')) {
+      errors.push(`task ${task.id} has invalid isolation policy`);
+    }
     if (!task.script || !Array.isArray(task.stages) || !task.stages.length) errors.push(`invalid task: ${task.id}`);
     for (const stage of task.stages || []) {
       if (!INGESTION_STAGES.includes(stage)) errors.push(`task ${task.id} uses unknown stage: ${stage}`);

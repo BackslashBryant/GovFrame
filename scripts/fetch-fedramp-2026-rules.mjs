@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import { strictConditionalFetch } from './lib/strict-conditional-fetch.mjs';
+import { createHash } from 'node:crypto';
+import { normalizeFedramp2026 } from './build-fedramp-2026-catalog.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const RULES_URL = 'https://raw.githubusercontent.com/FedRAMP/rules/main/fedramp-consolidated-rules.json';
@@ -15,12 +17,13 @@ const RULES_PATH = join(ROOT, 'data', 'fedramp-2026-rules.json');
 const SCHEMA_PATH = join(ROOT, 'data', 'fedramp-2026-rules.schema.json');
 const INDEX_PATH = join(ROOT, 'data', 'fedramp-transition-index.json');
 
-async function fetchRequired(url, responseType = 'json') {
-  const response = await strictConditionalFetch(url, {
+async function fetchRequired(url, responseType = 'json', fetchImpl = strictConditionalFetch) {
+  const response = await fetchImpl(url, {
     headers: { 'User-Agent': 'Control-Atlas-FedRAMP-refresh' },
   });
   if (!response.ok) throw new Error(`FedRAMP fetch failed: ${response.status} ${url}`);
-  return responseType === 'text' ? response.text() : response.json();
+  const bytes = Buffer.from(await response.arrayBuffer());
+  return { payload: responseType === 'text' ? bytes.toString('utf8') : JSON.parse(bytes.toString('utf8')), bytes };
 }
 
 function walkRules(dataset) {
@@ -109,13 +112,26 @@ function validateRules(dataset, schema) {
   }
 }
 
-export async function fetchFedramp2026Rules(runDate = new Date().toISOString().slice(0, 10)) {
-  const [dataset, schema, legacyHtml] = await Promise.all([
-    fetchRequired(RULES_URL),
-    fetchRequired(SCHEMA_URL),
-    fetchRequired(LEGACY_URL, 'text'),
+export async function fetchFedramp2026Rules(runDate = new Date().toISOString().slice(0, 10), options = {}) {
+  const fetchImpl = options.fetchImpl || strictConditionalFetch;
+  const writeFile = options.writeFile || writeFileSync;
+  const [rulesResponse, schemaResponse, legacyResponse] = await Promise.all([
+    fetchRequired(RULES_URL, 'json', fetchImpl),
+    fetchRequired(SCHEMA_URL, 'json', fetchImpl),
+    fetchRequired(LEGACY_URL, 'text', fetchImpl),
   ]);
+  const dataset = rulesResponse.payload;
+  const schema = schemaResponse.payload;
+  const legacyHtml = legacyResponse.payload;
   validateRules(dataset, schema);
+  // Reconcile the same final projection before publishing any refreshed artifact.
+  const normalized = normalizeFedramp2026(dataset, {
+    source_url: RULES_URL,
+    source_sha256: `sha256:${createHash('sha256').update(rulesResponse.bytes).digest('hex')}`,
+    source_byte_length: rulesResponse.bytes.length,
+    input_sha256: `sha256:${createHash('sha256').update(rulesResponse.bytes).digest('hex')}`,
+    input_byte_length: rulesResponse.bytes.length,
+  });
   const config = JSON.parse(readFileSync(MAPPINGS_PATH, 'utf8'));
   const rules = walkRules(dataset);
   const resolvedRules = resolveMappings(config, rules);
@@ -150,12 +166,12 @@ export async function fetchFedramp2026Rules(runDate = new Date().toISOString().s
     resolved_rules: resolvedRules,
     legacy_assets: legacyAssets,
   };
-  // These files ship with the static site. Keep the authoritative JSON intact
-  // but compact so the official rules do not consume the public data budget
-  // purely through indentation whitespace.
-  writeFileSync(RULES_PATH, `${JSON.stringify(dataset)}\n`, 'utf8');
-  writeFileSync(SCHEMA_PATH, `${JSON.stringify(schema)}\n`, 'utf8');
-  writeFileSync(INDEX_PATH, `${JSON.stringify(index)}\n`, 'utf8');
+  // Preserve downloaded bytes so the standalone catalog builder can verify
+  // retained source evidence against exactly the same input.
+  writeFile(RULES_PATH, rulesResponse.bytes);
+  writeFile(SCHEMA_PATH, schemaResponse.bytes);
+  writeFile(INDEX_PATH, `${JSON.stringify(index)}\n`, 'utf8');
+  writeFile(join(ROOT, 'data', 'fedramp-2026-catalog.json'), `${JSON.stringify(normalized)}\n`, 'utf8');
   return {
     version: index.source.version,
     lastUpdated: index.source.last_updated,

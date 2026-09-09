@@ -177,6 +177,13 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci
+      - name: Independently verify automated source admission
+        if: ${{ github.event_name == 'pull_request' && github.head_ref == 'automation/source-refresh' }}
+        env:
+          CONTROL_ATLAS_SOURCE_BASELINE_REF: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --depth=1 origin "$CONTROL_ATLAS_SOURCE_BASELINE_REF"
+          node tools/verify-refresh-admission.mjs
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         if: ${{ needs.generated.result == 'success' }}
         with:
@@ -736,13 +743,15 @@ jobs:
     name: Weekly validated data refresh
     if: >-
       ${{ github.event.schedule == '17 7 * * 3' ||
-          (github.event_name == 'workflow_dispatch' && inputs.task == 'refresh') }}
+          (github.event_name == 'workflow_dispatch' && inputs.task == 'refresh' && github.ref == 'refs/heads/main') }}
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -759,6 +768,11 @@ jobs:
         run: npm run refresh:data
         env:
           GITHUB_TOKEN: ${{ github.token }}
+      - name: Alert on quarantined sources and close recovered alerts
+        if: ${{ always() && hashFiles('.local/source-refresh-results.json') != '' }}
+        run: node tools/report-refresh-alerts.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
       - run: npm run resources:health
       - run: npx playwright install --with-deps chromium
       - name: Verify refreshed repository
@@ -771,16 +785,27 @@ jobs:
           name: source-refresh-sbom-cdx-json
           path: artifacts/sbom.cdx.json
       - run: node scripts/report-refresh-diff.mjs refresh-pr-body.md
+      - name: Create repository-scoped publisher token after validation
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+        id: refresh-app
+        with:
+          client-id: ${{ vars.REFRESH_APP_CLIENT_ID }}
+          private-key: ${{ secrets.REFRESH_APP_PRIVATE_KEY }}
+          owner: RAMBULLS
+          repositories: control-atlas
+          permission-contents: write
+          permission-pull-requests: write
       - uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
+          token: ${{ steps.refresh-app.outputs.token }}
           add-paths: |
             data/**
             maps/**
           branch: automation/source-refresh
           commit-message: 'chore(data): refresh public source snapshots'
-          title: 'chore(data): review refreshed public source snapshots'
+          title: 'chore(data): refresh validated public source snapshots'
           body-path: refresh-pr-body.md
-          draft: true
+          draft: false
           delete-branch: true
           labels: data-refresh
 

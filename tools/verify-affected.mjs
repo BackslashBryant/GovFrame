@@ -53,6 +53,56 @@ function addStep(steps, step) {
 
 export function createVerificationPlan(paths, changeMap) {
   const steps = [];
+  const refreshSafetyPaths = new Set([
+    'scripts/lib/catalog-refresh-profiles.mjs', 'scripts/lib/publisher-inventory.mjs', 'scripts/lib/cci-inventory.mjs',
+    'scripts/lib/refresh-candidate-gate.mjs', 'scripts/lib/refresh-source-outputs.mjs',
+    'scripts/lib/source-baseline.mjs', 'scripts/lib/source-transaction.mjs', 'scripts/lib/source-url-policy.mjs',
+    'data/source-baselines.json', 'data/source-refresh-policy.json',
+    'data/schemas/source-baselines.schema.json', 'data/schemas/source-refresh-policy.schema.json',
+    'tools/automerge-source-refresh.mjs', 'tools/report-refresh-alerts.mjs', 'tools/verify-refresh-admission.mjs',
+    'tests/helpers/publisher-volume.mjs',
+    ...['automerge-source-refresh', 'catalog-source-inventory', 'catalog-baseline-fetch', 'cci-inventory',
+      'publisher-inventory', 'publisher-inventory-integration', 'publisher-volume', 'refresh-alerts',
+      'refresh-candidate-gate', 'refresh-isolation', 'source-baseline', 'source-freshness-ownership',
+      'source-partial-failure', 'source-transaction', 'source-unit-selection', 'source-url-policy',
+      'mitre-release-admission'].map((name) => `tests/${name}.test.mjs`),
+  ]);
+  if (paths.length && paths.every((path) => refreshSafetyPaths.has(path))) {
+    const suites = new Set();
+    const byModule = {
+      'publisher-inventory': ['publisher-inventory', 'publisher-inventory-integration'],
+      'cci-inventory': ['cci-inventory'],
+      'catalog-refresh-profiles': ['refresh-candidate-gate', 'catalog-source-inventory'],
+      'refresh-candidate-gate': ['refresh-candidate-gate'],
+      'refresh-source-outputs': ['refresh-isolation', 'source-unit-selection'],
+      'source-baseline': ['source-baseline', 'refresh-candidate-gate'],
+      'source-transaction': ['source-transaction'],
+      'source-url-policy': ['source-url-policy', 'strict-conditional-fetch'],
+      'automerge-source-refresh': ['automerge-source-refresh'],
+      'report-refresh-alerts': ['refresh-alerts'],
+      'verify-refresh-admission': ['refresh-candidate-gate', 'automerge-source-refresh'],
+      'publisher-volume': ['publisher-volume'],
+    };
+    for (const path of paths) {
+      if (path.endsWith('.test.mjs')) suites.add(path);
+      else if (path.startsWith('data/')) {
+        for (const name of ['source-baseline', 'refresh-candidate-gate', 'catalog-source-inventory']) suites.add(`tests/${name}.test.mjs`);
+      } else {
+        const name = path.split('/').at(-1).replace('.mjs', '');
+        for (const suite of byModule[name] || []) suites.add(`tests/${suite}.test.mjs`);
+      }
+    }
+    if (!suites.size) return { blocked: true, reasons: ['Missing refresh safety test mapping'], paths, changeMap, steps: [], totalExpectedTests: 0, totalBudgetSeconds: 0 };
+    const expectedTests = suites.size * 7;
+    return {
+      blocked: false, reasons: [], paths, changeMap,
+      steps: [
+        { id: 'refresh-safety-lint', command: ['npm', 'run', 'lint:refresh-safety'], expectedTests: 0, workers: 1, budgetSeconds: 10 },
+        { id: 'refresh-safety-contracts', command: ['node', '--test', ...suites], expectedTests, workers: suites.size, budgetSeconds: 30 },
+      ],
+      totalExpectedTests: expectedTests, totalBudgetSeconds: 40,
+    };
+  }
   const refreshRuntimePaths = new Set([
     'scripts/check-commons-health.mjs',
     'tools/generated-data-cache-key.mjs',

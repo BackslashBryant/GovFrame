@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
+import { createHash } from 'node:crypto';
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { writeJsonAtomically } from "./lib/write-json-atomically.mjs";
+import { assertPublisherInventory } from "./lib/publisher-inventory.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const INPUT = join(ROOT, "data", "fedramp-2026-rules.json");
@@ -23,7 +25,7 @@ function source(locator, data) {
   };
 }
 
-export function normalizeFedramp2026(data) {
+export function normalizeFedramp2026(data, sourceEvidence = {}) {
   const records = [];
   const inventory = { control_context: 0, definitions: 0, rules: 0, key_security_indicators: 0 };
 
@@ -110,6 +112,7 @@ export function normalizeFedramp2026(data) {
   }
 
   records.sort((left, right) => left.id.localeCompare(right.id));
+  const publisherInventory = assertPublisherInventory('fedramp-2026', data, records);
   return {
     schema_version: "1.0",
     source_key: SOURCE_KEY,
@@ -118,10 +121,28 @@ export function normalizeFedramp2026(data) {
     snapshot_date: data.info.last_updated,
     source_inventory: { ...inventory, total: records.length },
     record_count: records.length,
+    publisher_inventory: { ...sourceEvidence, ...publisherInventory, publisher_version: data.info.version || null },
     records,
   };
 }
 
-const normalized = normalizeFedramp2026(JSON.parse(readFileSync(INPUT, "utf8")));
-writeJsonAtomically(OUTPUT, normalized);
-console.log(`Normalized ${normalized.record_count} FedRAMP 2026 records.`);
+export function buildFedramp2026FromBytes(bytes, previousDocument = null) {
+  const inputSha = `sha256:${createHash('sha256').update(bytes).digest('hex')}`;
+  const prior = previousDocument?.publisher_inventory;
+  const sourceMatches = prior?.source_sha256 === inputSha && prior?.source_byte_length === bytes.length;
+  return normalizeFedramp2026(JSON.parse(bytes.toString('utf8')), {
+    input_sha256: inputSha,
+    input_byte_length: bytes.length,
+    source_url: prior?.source_url || null,
+    source_sha256: sourceMatches ? prior.source_sha256 : null,
+    source_byte_length: sourceMatches ? prior.source_byte_length : null,
+    ...(sourceMatches ? {} : { source_evidence_reason: 'Input bytes do not match retained downloaded-byte evidence; only the local input checksum is verified' }),
+  });
+}
+
+if (process.argv[1]?.includes('build-fedramp-2026-catalog.mjs')) {
+  const prior = existsSync(OUTPUT) ? JSON.parse(readFileSync(OUTPUT, 'utf8')) : null;
+  const normalized = buildFedramp2026FromBytes(readFileSync(INPUT), prior);
+  writeJsonAtomically(OUTPUT, normalized);
+  console.log(`Normalized ${normalized.record_count} FedRAMP 2026 records.`);
+}

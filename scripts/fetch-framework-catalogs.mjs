@@ -4,6 +4,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { writeJsonAtomically } from './lib/write-json-atomically.mjs';
 import { strictConditionalFetch } from './lib/strict-conditional-fetch.mjs';
+import { assertPublisherInventory } from './lib/publisher-inventory.mjs';
 import {
   buildCmmcPublicCatalog,
   buildCuiPolicyCatalog,
@@ -96,15 +97,15 @@ const REMOTE_CATALOGS = [
     backupUrls: [oscalBackup('CSF/v2.0/json/NIST_CSF_v2.0_catalog.json')],
     outfile: 'csf-subcategories.json',
     parse: parseCsfCatalog,
-    enrich: async (records) => {
-      const response = await strictConditionalFetch(CSF_REFERENCE_TOOL_EXPORT_URL);
+    enrich: async (records, context) => {
+      const response = await context.fetchImpl(CSF_REFERENCE_TOOL_EXPORT_URL);
       if (!response.ok) {
         throw new Error(`CSF Reference Tool export fetch failed: ${response.status} ${CSF_REFERENCE_TOOL_EXPORT_URL}`);
       }
       const bytes = Buffer.from(await response.arrayBuffer());
       const referenceTool = await parseCsfReferenceToolWorkbook(bytes);
       const enriched = enrichCsfCatalogFromReferenceTool(records, referenceTool);
-      writeJsonAtomically(join(ROOT, 'data', 'csf-reference-tool-manifest.json'), {
+      context.pendingWrites.push([join(ROOT, 'data', 'csf-reference-tool-manifest.json'), {
         source: CSF_REFERENCE_TOOL_EXPORT_URL,
         sha256: `sha256:${createHash('sha256').update(bytes).digest('hex')}`,
         byte_length: bytes.length,
@@ -112,7 +113,14 @@ const REMOTE_CATALOGS = [
         reconciliation: {
           ...enriched.reconciliation,
         },
-      });
+      }]);
+      context.publisherInventory = {
+        ...enriched.publisher_inventory,
+        source_url: CSF_REFERENCE_TOOL_EXPORT_URL,
+        source_sha256: `sha256:${createHash('sha256').update(bytes).digest('hex')}`,
+        source_byte_length: bytes.length,
+        publisher_version: '2.0',
+      };
       return enriched.records;
     },
   },
@@ -169,8 +177,8 @@ const PUBLIC_CATALOGS = [
   ['nist-mobile-threats.json', (snapshotDate) => buildNistMobileThreatCatalog(snapshotDate, join(ROOT, 'data', 'curated', 'nist-structured-catalogs'))],
 ];
 
-function writeCatalog(filename, document) {
-  writeJsonAtomically(join(ROOT, 'data', filename), document);
+function writeCatalog(filename, document, writeJson = writeJsonAtomically) {
+  writeJson(join(ROOT, 'data', filename), document);
   return { filename, records: document.records.length };
 }
 
@@ -200,35 +208,45 @@ export async function fetchCatalogWithFallback(target, fetchImpl = strictConditi
 }
 
 export async function fetchFrameworkCatalogs(options = {}) {
+  const fetchImpl = options.fetchImpl || strictConditionalFetch;
+  const writeJson = options.writeJson || writeJsonAtomically;
   const only = options.only ? new Set(options.only) : null;
   const onlyPublic = options.onlyPublic ? new Set(options.onlyPublic) : null;
+  if (only && onlyPublic) throw new Error('Choose either --only or --public catalog selection');
+  for (const [selected, known, label] of [
+    [only, new Set(REMOTE_CATALOGS.map((target) => target.id)), '--only'],
+    [onlyPublic, new Set(PUBLIC_CATALOGS.map(([filename]) => filename.replace(/\.json$/, ''))), '--public'],
+  ]) {
+    if (!selected) continue;
+    if (!selected.size) throw new Error(`${label} requires at least one catalog ID`);
+    const unknown = [...selected].filter((id) => !known.has(id));
+    if (unknown.length) throw new Error(`Unknown ${label} catalog IDs: ${unknown.join(', ')}`);
+  }
   const remoteTargets = onlyPublic ? [] : only ? REMOTE_CATALOGS.filter((target) => only.has(target.id)) : REMOTE_CATALOGS;
   const publicTargets = onlyPublic
     ? PUBLIC_CATALOGS.filter(([filename]) => onlyPublic.has(filename.replace(/\.json$/, '')))
     : only ? [] : PUBLIC_CATALOGS;
   const results = [];
   let fedrampMembership = null;
-  try {
-    fedrampMembership = await fetchFedrampBaselineMembership();
-  } catch (err) {
-    console.warn('Failed to pre-fetch FedRAMP baseline membership:', err.message);
+  if (publicTargets.some(([, build]) => build === buildFedrampPublicCatalog)) {
+    fedrampMembership = await (options.fetchFedrampMembership || fetchFedrampBaselineMembership)();
   }
 
   const fallbacks = [];
   for (const target of remoteTargets) {
-    const { response, url: servedUrl, usedBackup, failures } = await fetchCatalogWithFallback(target);
+    const { response, url: servedUrl, usedBackup, failures } = await fetchCatalogWithFallback(target, fetchImpl);
     if (usedBackup) {
       fallbacks.push({ id: target.id, primary: target.url, served: servedUrl, failures });
       console.warn(
         `${target.id}: primary source unavailable, served from backup ${servedUrl} (${failures.join('; ')})`,
       );
     }
-    const payload = target.responseType === 'text'
-      ? await response.text()
-      : await response.json();
+    const bytes = Buffer.from(await response.arrayBuffer());
+    const payload = target.responseType === 'text' ? bytes.toString('utf8') : JSON.parse(bytes.toString('utf8'));
     let document = target.parse(payload, target.sourceKey || target.id);
+    const context = { fetchImpl, pendingWrites: [] };
     if (target.enrich) {
-      document = { ...document, records: await target.enrich(document.records) };
+      document = { ...document, records: await target.enrich(document.records, context) };
     }
     if (target.id === 'nist-csf-2') {
       document = {
@@ -236,7 +254,32 @@ export async function fetchFrameworkCatalogs(options = {}) {
         reconciliation: { subcategories: document.records.length },
       };
     }
-    results.push(writeCatalog(target.outfile, document));
+    const inventoryFormat = {
+      'nist-800-53-rev5': 'oscal-800-53',
+      'nist-800-171-rev3': 'oscal-800-171',
+      'nist-800-172-rev3': 'oscal-800-172',
+      'nist-ssdf-oscal': 'oscal-ssdf',
+      'nist-ai-rmf-playbook': 'ai-rmf',
+      'nist-800-171-rev2': 'csv-800-171-rev2',
+    }[target.id];
+    const publisherInventory = inventoryFormat
+      ? assertPublisherInventory(inventoryFormat, payload, document.records)
+      : context.publisherInventory;
+    if (publisherInventory) document = {
+      ...document,
+      publisher_inventory: {
+        ...publisherInventory,
+        ...(inventoryFormat ? {
+          source_url: servedUrl,
+          source_sha256: `sha256:${createHash('sha256').update(bytes).digest('hex')}`,
+          source_byte_length: bytes.length,
+          publisher_version: payload?.catalog?.metadata?.version || null,
+          ...(!payload?.catalog?.metadata?.version ? { publisher_version_reason: 'Publisher payload does not declare a version field' } : {}),
+        } : {}),
+      },
+    };
+    for (const [path, manifest] of context.pendingWrites) writeJson(path, manifest);
+    results.push(writeCatalog(target.outfile, document, writeJson));
   }
   for (const [filename, build] of publicTargets) {
     const doc = build === buildFedrampPublicCatalog
@@ -244,7 +287,7 @@ export async function fetchFrameworkCatalogs(options = {}) {
       : build === buildCuiPolicyCatalog
         ? build(SNAPSHOT, join(ROOT, 'data', 'nara-cui-registry-manifest.json'))
         : build(SNAPSHOT);
-    results.push(writeCatalog(filename, doc));
+    results.push(writeCatalog(filename, doc, writeJson));
   }
   if (fallbacks.length) {
     console.warn(
@@ -255,10 +298,17 @@ export async function fetchFrameworkCatalogs(options = {}) {
   return results;
 }
 
+export function frameworkCatalogOptions(args) {
+  if (!args.length) return {};
+  if (!['--only', '--public'].includes(args[0]) || args.slice(1).some((arg) => arg.startsWith('--'))) {
+    throw new Error('Use --only <catalog IDs> or --public <catalog IDs>');
+  }
+  if (args.length < 2) throw new Error(`${args[0]} requires at least one catalog ID`);
+  return args[0] === '--only' ? { only: args.slice(1) } : { onlyPublic: args.slice(1) };
+}
+
 if (process.argv[1]?.includes('fetch-framework-catalogs.mjs')) {
-  const publicIndex = process.argv.indexOf('--public');
-  const onlyPublic = publicIndex >= 0 ? process.argv.slice(publicIndex + 1) : null;
-  fetchFrameworkCatalogs({ onlyPublic })
+  Promise.resolve().then(() => fetchFrameworkCatalogs(frameworkCatalogOptions(process.argv.slice(2))))
     .then((results) => results.forEach((result) => console.log(`Wrote ${result.filename}: ${result.records} records`)))
     .catch((error) => {
       console.error(error.message);

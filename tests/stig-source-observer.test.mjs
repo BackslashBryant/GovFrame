@@ -140,6 +140,23 @@ test('GitHub repo parser captures STIG Manager import and revision-management si
   );
 });
 
+test('scheduled observation requests only the four approved targets and ignores offsite discovery links', async () => {
+  const requested = [];
+  const document = await fetchStigSourceObservations({
+    fetchImpl: async (url) => {
+      requested.push(url);
+      return { ok: true, status: 200, text: async () => `${cyberMilHtml}<a href="https://attacker.test/catalog">Catalog</a>` };
+    },
+  });
+  assert.deepEqual(requested, [
+    'https://www.cyber.mil/stigs/compilations/',
+    'https://www.cyber.mil/stigs/downloads',
+    'https://www.cyber.mil/stigs/gpo/',
+    'https://github.com/nuwcdivnpt/stig-manager',
+  ]);
+  assert.equal(document.observations.length, 4);
+});
+
 test('supplemental source outages are recorded without failing required DISA observations', async () => {
   let request = 0;
   const document = await fetchStigSourceObservations({
@@ -151,16 +168,16 @@ test('supplemental source outages are recorded without failing required DISA obs
     },
   });
 
-  assert.equal(document.observations.length, 7);
+  assert.equal(document.observations.length, 4);
   assert.equal(document.observations.slice(0, 3).every((entry) => entry.available), true);
   assert.deepEqual(document.observations[3], {
-    source_id: 'stigviewer-catalog',
+    source_id: 'nuwcdivnpt-stig-manager',
     observed_at: '2026-08-27T12:00:00.000Z',
     required: false,
     available: false,
-    url: 'https://www.stigviewer.com/stigs',
+    url: 'https://github.com/nuwcdivnpt/stig-manager',
     kind: 'supplemental_unavailable',
-    error: 'fetch failed 403 for https://www.stigviewer.com/stigs',
+    error: 'fetch failed 403 for https://github.com/nuwcdivnpt/stig-manager',
   });
 });
 

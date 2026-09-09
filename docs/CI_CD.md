@@ -2,16 +2,21 @@
 
 - **Owner:** Nexus and Pixel
 - **Status:** Canonical
-- **Last reviewed:** 2026-08-27
+- **Last reviewed:** 2026-09-09
 - **Supersession:** Update this contract and the corresponding workflows or package scripts in the same approved change.
 
-Control Atlas uses three GitHub Actions workflows with one immutable site artifact.
+Control Atlas separates validation, source-refresh merging and deployment while
+sharing one immutable site artifact.
 
 ## Workflow responsibilities
 
 - `ci.yml` classifies changes once, runs independent quality gates, builds the site once, and publishes `site-build` for the exact commit SHA.
 - `security.yml` runs dependency review, CodeQL, secret scanning, and repository hygiene without rebuilding the site.
 - `deploy.yml` accepts only a successful `main` push CI run, verifies `release.json`, deploys that exact artifact, then runs production smoke and Lighthouse checks.
+- `automerge-refresh.yml` runs after successful refresh PR CI or security
+  completion. It loads merge tooling from `main`, requires both workflows to
+  succeed for the current PR SHA, and merges only the admitted App-authored
+  `automation/source-refresh` PR after path and branch-protection checks.
 
 ## Pull request graph
 
@@ -47,9 +52,24 @@ changed JSON while rebuilding application assets.
 
 Scheduled refreshes persist an ignored HTTP cache between runs and issue strict
 conditional requests. A 304 reuses previously cached bytes; network failure may
-not return stale cached bytes during a required-fresh run. Required publisher
-failures stop the refresh, while explicitly supplemental observations record an
-unavailable state and continue.
+not return stale cached bytes during a required-fresh run. Every request and
+redirect must satisfy the static publisher URL policy. GitHub access is limited
+to admitted owner/repository pairs and endpoint paths.
+
+The Wednesday 07:17 UTC refresh isolates each source candidate and restores its
+last accepted outputs on retrieval or validation failure. Other sources continue;
+independent publisher inventories, baseline limits and final candidate checks
+govern admission. Supplemental observations can record an explicit unavailable
+state. A source cannot grant itself new authority or revise its acceptance policy.
+
+An always-run alert step reads the source results when a report exists. It
+deduplicates quarantine issues by source, reopens recurring failures and closes
+only explicit accepted recoveries. After validation, a repository-scoped App
+opens a ready data PR so independent CI and security workflows run. Automatic
+merge requires the expected App identity, the exact tested SHA, allowed JSON
+changes and a clean protected-branch merge state. It does not admit schema,
+refresh-policy, refresh-contract, application or workflow changes. A failed gate
+prevents publication; routine successful refreshes require no human approval.
 
 ## Browser policy
 

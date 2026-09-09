@@ -12,6 +12,7 @@ import {
   catalogStructureProfile,
 } from '../src/shared/catalog-structure.mjs';
 import { createGeneratedFixtureReader } from './helpers/generated-fixture-cache.mjs';
+import { assertPublisherVolume } from './helpers/publisher-volume.mjs';
 import {
   RELATIONSHIP_CLASSES,
   isValidatedStructuralEdge,
@@ -565,7 +566,7 @@ test('CSF records retain the Reference Tool examples, informative references, an
   const nodes = generated('nodes').nodes.filter((node) =>
     node.metadata?.catalog_id === 'csf-2' && node.node_type === 'requirement',
   );
-  assert.equal(nodes.length, 106);
+  assertPublisherVolume('csf-2', 'data/csf-subcategories.json', nodes.length);
   for (const node of nodes) {
     assert.ok(node.metadata?.implementation_examples?.length, `${node.id} is missing Reference Tool implementation examples`);
     assert.ok(node.metadata?.informative_references?.length, `${node.id} is missing Reference Tool informative references`);
@@ -775,7 +776,7 @@ test('CCI mappings remain correlation edges and never become structural parents'
     (node) =>
       node.metadata?.catalog_id === 'disa-cci' && node.node_type !== 'catalog',
   );
-  assert.equal(ccis.length, 5137, 'CCI count');
+  assertPublisherVolume('disa-cci', 'data/ccis.json', ccis.length);
 
   assert.ok(ccis.every((node) => node.parent_id === undefined));
   const cciEdges = edges.filter(

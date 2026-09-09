@@ -40,7 +40,7 @@ export async function fetchFedrampBaselineMembership() {
   return parseFedrampBaselineWorkbookSheets(sheets);
 }
 
-export async function fetch80053BBaselines() {
+export async function fetch80053BBaselines(fetchImpl = strictConditionalFetch) {
   const urls = [
     'https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_LOW-baseline_profile.json',
     'https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json',
@@ -49,24 +49,26 @@ export async function fetch80053BBaselines() {
   ];
   const membership = {};
   for (const url of urls) {
-    try {
-      const response = await strictConditionalFetch(url);
-      if (!response.ok) {
-        console.warn(`NIST 800-53B baseline fetch returned status ${response.status} for ${url}, skipping.`);
-        continue;
-      }
-      const profile = await response.json();
-      const label = profile.profile?.metadata?.title || url.split('/').pop();
-      const controls = new Set();
-      for (const importEntry of profile.profile?.imports || []) {
-        for (const include of importEntry['include-controls'] || []) {
-          for (const withId of include['with-ids'] || []) controls.add(normalize80053Id(withId));
+    const response = await fetchImpl(url);
+    if (!response.ok) throw new Error(`NIST 800-53B baseline fetch returned status ${response.status} for ${url}`);
+    const profile = await response.json();
+    const label = profile.profile?.metadata?.title || url.split('/').pop();
+    if (Object.hasOwn(membership, label)) throw new Error(`Duplicate NIST 800-53B baseline label: ${label}`);
+    const imports = profile.profile?.imports;
+    if (!Array.isArray(imports) || !imports.length) throw new Error(`NIST 800-53B profile has no imports: ${url}`);
+    const controls = new Set();
+    for (const importEntry of imports) {
+      const includes = importEntry?.['include-controls'];
+      if (!Array.isArray(includes) || !includes.length) throw new Error(`NIST 800-53B profile requires explicit include-controls: ${url}`);
+      for (const include of includes) {
+        const ids = include?.['with-ids'];
+        if (!Array.isArray(ids) || !ids.length || ids.some((id) => typeof id !== 'string' || !id.trim())) {
+          throw new Error(`NIST 800-53B profile requires explicit control identities: ${url}`);
         }
+        for (const id of ids) controls.add(normalize80053Id(id));
       }
-      membership[label] = [...controls].sort();
-    } catch (err) {
-      console.warn(`NIST 800-53B baseline fetch failed for ${url}: ${err.message}, skipping.`);
     }
+    membership[label] = [...controls].sort();
   }
   return membership;
 }

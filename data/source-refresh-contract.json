@@ -35,7 +35,7 @@
     {
       "task_id": "observe-disa-sources",
       "script": "fetch-stig-source-observations.mjs",
-      "source_ids": ["cyber-mil-stig-compilations", "cyber-mil-stig-downloads", "cyber-mil-stig-gpo", "stigviewer-catalog", "stigviewer-clkb-api", "nuwcdivnpt-github-org", "nuwcdivnpt-stig-manager"],
+      "source_ids": ["cyber-mil-stig-compilations", "cyber-mil-stig-downloads", "cyber-mil-stig-gpo", "nuwcdivnpt-stig-manager"],
       "catalog_ids": ["disa-stig", "disa-srg"],
       "cadence": "weekly",
       "conditional_policy": "strict"

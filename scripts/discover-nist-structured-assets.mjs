@@ -121,11 +121,19 @@ async function main() {
     pages: pageEvidence,
     assets,
   };
+  validateStructuredAssetCandidate(output);
   writeJsonAtomically(OUT, output);
   console.log(`Discovered ${assets.length} structured assets across ${pageEvidence.length} NIST Pages pages.`);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+export function validateStructuredAssetCandidate(output) {
+  const failures = output.pages.filter((page) => page.status !== 'fetched');
+  if (failures.length) throw new Error(`NIST structured discovery incomplete: ${failures.length} page retrieval/parse failure(s); first: ${failures[0].url}`);
+}
+
+if (process.argv[1]?.includes('discover-nist-structured-assets.mjs')) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}

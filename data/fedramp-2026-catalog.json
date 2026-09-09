@@ -12,6 +12,30 @@
     "total": 444
   },
   "record_count": 444,
+  "publisher_inventory": {
+    "input_sha256": "sha256:3269d6ea6febcde7a404950186327dd07b756a32b20d727c2efad7c2b9255833",
+    "input_byte_length": 366409,
+    "source_url": null,
+    "source_sha256": null,
+    "source_byte_length": null,
+    "source_evidence_reason": "Input bytes do not match retained downloaded-byte evidence; only the local input checksum is verified",
+    "raw_count": 446,
+    "eligible_count": 444,
+    "imported_count": 444,
+    "excluded": [
+      {
+        "id": "CTL.IA.IA-05",
+        "reason": "no publisher guidance or parameters"
+      },
+      {
+        "id": "CTL.SA.SA-09-05",
+        "reason": "no publisher guidance or parameters"
+      }
+    ],
+    "raw_identity_sha256": "sha256:a95e430863580b0fb7d323a15fcfd397ee88cb3f9b5df180bac18bfaaada85ae",
+    "imported_identity_sha256": "sha256:c44ef996d03ef8312c306f67453f364fa5a15129f8e10d4478bcfb15435df198",
+    "publisher_version": "2026.07.14.01"
+  },
   "records": [
     {
       "id": "AFC-CSO-ACK",

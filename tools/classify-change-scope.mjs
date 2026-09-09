@@ -24,6 +24,9 @@ const DEPENDENCY_FILES = new Set([
   'package-lock.json',
 ]);
 const AUTOMATION_FILES = new Set([
+  'tools/automerge-source-refresh.mjs',
+  'tools/report-refresh-alerts.mjs',
+  'tools/verify-refresh-admission.mjs',
   'tools/recover-refresh-pr.mjs',
   'tests/recover-refresh-pr.test.mjs',
   '.gitattributes',

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { writeJsonAtomically } from "./lib/write-json-atomically.mjs";
 import {
@@ -265,6 +265,10 @@ function migrateSourceRegistry() {
   const registry = JSON.parse(readFileSync(sourcePath, "utf8"));
   const fedramp2026 = JSON.parse(readFileSync(fedramp2026Path, "utf8"));
   const mitreCatalogs = new Map([...mitreCatalogPaths].map(([id, path]) => [id, JSON.parse(readFileSync(path, "utf8"))]));
+  writeJsonAtomically(sourcePath, migrateSourceRegistryDocument(registry, fedramp2026, mitreCatalogs));
+}
+
+export function migrateSourceRegistryDocument(registry, fedramp2026, mitreCatalogs) {
   const syncMitreIdentity = (entry, catalog, kind) => {
     entry.version = catalog.source_version;
     entry.retrieved_at = catalog.snapshot_date;
@@ -446,14 +450,9 @@ function migrateSourceRegistry() {
   if (fedrampBundleIndex >= 0) registry.catalog_source_bundles[fedrampBundleIndex] = fedrampBundle;
   else registry.catalog_source_bundles.push(fedrampBundle);
   registry.catalog_source_bundles.sort((left, right) => left.catalog_id.localeCompare(right.catalog_id));
-  for (const freshness of registry.freshness?.sources || []) {
-    const mitreCatalog = mitreCatalogs.get(freshness.source_id);
-    if (!mitreCatalog) continue;
-    freshness.hash = mitreCatalog.checksum;
-    freshness.last_imported = mitreCatalog.snapshot_date;
-    freshness.last_checked = mitreCatalog.snapshot_date;
-  }
-  writeJsonAtomically(sourcePath, registry);
+  // Reconciliation owns freshness hashes and check/import dates. Publisher
+  // checksums and snapshot dates above describe identity, not refresh execution.
+  return registry;
 }
 
 function removeCopiedDescriptions() {
@@ -687,10 +686,12 @@ function upgradeAdapterRegistry() {
   writeJsonAtomically(adapterPath, registry);
 }
 
-migrateResources();
-migrateSourceRegistry();
-removeCopiedDescriptions();
-upgradeProfileRegistry();
-buildOrganizations();
-upgradeAdapterRegistry();
-console.log("Migrated resource and source inventories to explicit entity profiles.");
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
+  migrateResources();
+  migrateSourceRegistry();
+  removeCopiedDescriptions();
+  upgradeProfileRegistry();
+  buildOrganizations();
+  upgradeAdapterRegistry();
+  console.log("Migrated resource and source inventories to explicit entity profiles.");
+}

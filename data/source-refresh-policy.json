@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "description": "Immutable admission thresholds. Relative drift checks use both the previous accepted observation and a fixed anchor. Revision exceptions require independently reconciled publisher-byte evidence. Floors never permit empty sources.",
+  "catalogs": {
+    "cmmc-2": {
+      "absolute_floor": 2,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "csf-2": {
+      "absolute_floor": 53,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "cui-policy": {
+      "absolute_floor": 64,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "disa-cci": {
+      "absolute_floor": 2569,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "disa-srg": {
+      "absolute_floor": 1258,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "disa-stig": {
+      "absolute_floor": 8511,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "dod-rai": {
+      "absolute_floor": 6,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "dod-zt": {
+      "absolute_floor": 160,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "fedramp-rev5": {
+      "absolute_floor": 2,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "fedramp-2026": {
+      "absolute_floor": 222,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "fips-199": {
+      "absolute_floor": 2,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "fips-200": {
+      "absolute_floor": 9,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "microsoft-zt-maturity": {
+      "absolute_floor": 31,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "mitre-attack": {
+      "absolute_floor": 429,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "mitre-attack-ics": {
+      "absolute_floor": 53,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "mitre-d3fend": {
+      "absolute_floor": 136,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "nist-800-171": {
+      "absolute_floor": 65,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "nist-800-171-rev2": {
+      "absolute_floor": 55,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "nist-800-172": {
+      "absolute_floor": 58,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "nist-800-37": {
+      "absolute_floor": 4,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "nist-800-53": {
+      "absolute_floor": 598,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "nist-800-53b": {
+      "absolute_floor": 2,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "nist-ai-rmf": {
+      "absolute_floor": 36,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "nist-iot-cybersecurity": {
+      "absolute_floor": 245,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "nist-mobile-threats": {
+      "absolute_floor": 134,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    },
+    "nist-ssdf": {
+      "absolute_floor": 21,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": true
+    },
+    "nist-zt": {
+      "absolute_floor": 172,
+      "max_delta_pct": 20,
+      "max_anchor_delta_pct": 20,
+      "require_independent_inventory": false
+    }
+  }
+}

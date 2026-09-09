@@ -25,9 +25,9 @@ test('nightly browser shards keep parallelism visible and disable retry masking'
   );
 });
 
-test('source refresh opens one human-reviewed draft PR after the full gate', () => {
-  assert.match(workflow, /contents: write/);
-  assert.match(workflow, /pull-requests: write/);
+test('source refresh opens one App PR after the full gate and requires independent admission', () => {
+  assert.match(workflow, /permission-contents: write/);
+  assert.match(workflow, /permission-pull-requests: write/);
   assert.match(workflow, /npm run refresh:data/);
   assert.match(workflow, /name: Restore strict conditional source cache/);
   assert.match(workflow, /path: \.local\/http-cache-v1/);
@@ -40,7 +40,11 @@ test('source refresh opens one human-reviewed draft PR after the full gate', () 
   assert.match(workflow, /npm run sbom:generate/);
   assert.match(workflow, /peter-evans\/create-pull-request@[0-9a-f]{40}/);
   assert.match(workflow, /branch: automation\/source-refresh/);
-  assert.match(workflow, /draft: true/);
+  assert.match(workflow, /draft: false/);
+  assert.match(workflow, /token: \$\{\{ steps.refresh-app.outputs.token \}\}/);
+  assert.match(workflow, /node tools\/verify-refresh-admission.mjs/);
+  assert.match(workflow, /node tools\/report-refresh-alerts.mjs/);
+  assert.ok(workflow.indexOf('name: Create repository-scoped publisher token') > workflow.indexOf('name: Verify refreshed repository'));
   assert.match(workflow, /data\/\*\*/);
   assert.match(workflow, /maps\/\*\*/);
   assert.doesNotMatch(workflow, /git push|\[skip ci\]|auto-merge/i);
