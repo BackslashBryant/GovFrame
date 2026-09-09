@@ -65,6 +65,22 @@ export const INGESTION_TASKS = Object.freeze([
   { id: 'audit-coverage', script: 'audit-coverage.mjs', stages: ['reconcile'], scope: ['all-catalogs'], retries: 1 },
   { id: 'verify-discovery', script: 'verify-discovery.mjs', stages: ['discover'], scope: ['all-sources'], retries: 1 },
   { id: 'verify-manifests', script: 'verify-manifests.mjs', stages: ['attest', 'reconcile'], scope: ['all-sources', 'all-catalogs'], retries: 1 },
+  // These four write into data/generated, which is gitignored, so they are the
+  // difference between what `generate:data` produces and what a refresh produced.
+  // The refresh then runs build:site with --reuse-generated, which reuses that
+  // directory rather than rebuilding it, so anything missing here is simply
+  // absent at build time -- vite.config.ts reads publication-identity-index.json
+  // while loading its own config, and the site build died there.
+  //
+  // Placed after verify-manifests to mirror build:data's order, and necessarily
+  // after build-framework-data: that task wipes data/generated and exempts only
+  // commons-search-index, source-semantic-audit, taxonomy-registry and
+  // discovery-index, so the two publication artifacts would be erased if they
+  // were produced any earlier.
+  { id: 'build-publication-identity-index', script: 'build-publication-identity-index.mjs', stages: ['structure', 'publish'], scope: ['all-sources'], retries: 1 },
+  { id: 'build-publication-audit-report', script: 'build-publication-audit-report.mjs', stages: ['reconcile', 'publish'], scope: ['all-sources'], retries: 1 },
+  { id: 'build-source-semantic-audit', script: 'build-source-semantic-audit.mjs', stages: ['reconcile', 'publish'], scope: ['all-catalogs'], retries: 1 },
+  { id: 'build-discovery-index', script: 'build-discovery-index.mjs', stages: ['discover', 'publish'], scope: ['all-sources'], retries: 1 },
   { id: 'verify-completeness', script: 'verify-completeness.mjs', stages: ['reconcile'], scope: ['all-catalogs'], retries: 1 },
   { id: 'verify-ingestion-contract', script: 'verify-ingestion-pipeline.mjs', stages: ['presentation', 'reconcile'], scope: ['all-sources', 'all-catalogs'], retries: 1 },
   { id: 'verify-resource-ingestion', script: 'verify-resource-ingestion.mjs', stages: ['discover', 'attest', 'presentation', 'reconcile'], scope: ['all-resources'], retries: 1 },

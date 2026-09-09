@@ -100,3 +100,32 @@ test('every Resource uses the same lifecycle and has an explicit presentation ou
     assert.notEqual(entry.stages.presentation.status, 'not_applicable');
   }
 });
+
+test('every generator that writes into data/generated is part of the refresh pipeline', () => {
+  // data/generated is gitignored, and the refresh runs build:site with
+  // --reuse-generated, so it reuses that directory rather than rebuilding it.
+  // Any generator that generate:data runs but the refresh does not is therefore
+  // simply absent at build time on a clean runner. That is how the 2026-09-09
+  // refresh died in vite.config.ts, which reads publication-identity-index.json
+  // while loading its own config -- and how it died earlier on
+  // taxonomy-registry.json. This asserts the two pipelines cannot drift again.
+  const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+  const chain = `${pkg.scripts['build:data']} ${pkg.scripts['generate:data']}`;
+  const referenced = [...new Set([...chain.matchAll(/scripts\/([a-z0-9-]+\.mjs)/g)].map((m) => m[1]))];
+  assert.ok(referenced.length > 8, 'expected to find the generate:data script chain');
+
+  const taskScripts = new Set(INGESTION_TASKS.map((task) => task.script));
+  const missing = referenced.filter((script) => {
+    const source = readFileSync(new URL(`../scripts/${script}`, import.meta.url), 'utf8');
+    const writesGenerated = /data\/generated|join\(\s*GENERATED/.test(source)
+      && /writeJsonAtomically\(|writeFileSync\(/.test(source);
+    return writesGenerated && !taskScripts.has(script);
+  });
+
+  assert.deepEqual(
+    missing,
+    [],
+    `these generators write into data/generated but the refresh never runs them, so the `
+      + `artifact is missing on a clean runner: ${missing.join(', ')}`,
+  );
+});
