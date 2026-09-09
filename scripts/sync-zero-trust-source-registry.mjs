@@ -18,14 +18,31 @@ const dodOverlayMap = JSON.parse(readFileSync(join(ROOT, 'maps', '800-53-to-dod-
 
 function upsert(list, record, key = 'id') {
   const index = list.findIndex((entry) => entry[key] === record[key]);
-  if (index >= 0) list[index] = { ...list[index], ...record };
-  else list.push(record);
+  if (index >= 0) {
+    const existing = list[index];
+    // `metadata` is a nested object, so a plain spread replaces it wholesale and
+    // silently drops every key this sync does not itself set -- including
+    // metadata.identity_kind, which the registry validator requires on every
+    // publication, and metadata.canonical_publication_id, which supplemental and
+    // mapping identities require. Merge one level deeper so this sync only
+    // overwrites the fields it actually manages.
+    const metadata = existing.metadata || record.metadata
+      ? { metadata: { ...(existing.metadata || {}), ...(record.metadata || {}) } }
+      : {};
+    list[index] = { ...existing, ...record, ...metadata };
+  } else list.push(record);
 }
 
-function publication({ id, name, displayName, group, owner, provenance = 'federal_published', authority = 'publisher', version, versionUnknownReason = null, retrievedAt, method, url, frameworks, parser, license = 'NIST Public Access and Copyright Notice', lifecycle = 'active', metadata = {} }) {
+function publication({ id, name, displayName, group, owner, provenance = 'federal_published', authority = 'publisher', version, versionUnknownReason = null, retrievedAt, method, url, frameworks, parser, license = 'NIST Public Access and Copyright Notice', lifecycle = 'active', mandateBasis = null, metadata = {} }) {
   return {
     id, name, display_name: displayName, display_group: group, owner,
-    authority_class: authority, provenance_class: provenance, mandate_basis: [],
+    authority_class: authority, provenance_class: provenance,
+    // Only assert a mandate basis when this sync actually knows one. Emitting a
+    // hardcoded [] made every run erase curated values it does not manage --
+    // the DoD Zero Trust Strategy citation on dod-zt-strategy was being wiped
+    // on each refresh. Omitting the key lets the upsert merge leave it alone,
+    // while a genuinely new publication still gets an explicit empty list.
+    ...(mandateBasis ? { mandate_basis: mandateBasis } : {}),
     license_or_use: license, lifecycle_status: lifecycle, eligibility_status: 'eligible', access_status: 'public',
     version, retrieved_at: retrievedAt, retrieval_method: method, artifact_url: url, catalog_browse_url: url,
     federal_referenced_by: [], graph_eligible: true,
