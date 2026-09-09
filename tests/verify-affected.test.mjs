@@ -4,6 +4,18 @@ import test from 'node:test';
 import { classifyChangedPaths } from '../tools/classify-change-scope.mjs';
 import { createVerificationPlan } from '../tools/verify-affected.mjs';
 
+test('refresh safety maps affected contracts without a build and rejects unknown modules', () => {
+  const paths = ['scripts/lib/source-baseline.mjs'];
+  const plan = createVerificationPlan(paths, classifyChangedPaths(paths));
+  assert.equal(plan.blocked, false);
+  assert.deepEqual(plan.steps.map((step) => step.id), ['refresh-safety-lint', 'refresh-safety-contracts']);
+  assert.deepEqual(plan.steps[1].command, ['node', '--test', 'tests/source-baseline.test.mjs', 'tests/refresh-candidate-gate.test.mjs', 'tests/mitre-release-admission.test.mjs']);
+  assert.equal(plan.steps[1].workers, 3);
+  assert.ok(plan.totalBudgetSeconds <= 40);
+  const unknown = [...paths, 'scripts/lib/new-unmapped-refresh.mjs'];
+  assert.equal(createVerificationPlan(unknown, classifyChangedPaths(unknown)).blocked, true);
+});
+
 test('refresh probe and cache changes use offline fixtures and unknown inputs fail closed', () => {
   const paths = ['scripts/check-commons-health.mjs', 'tools/generated-data-cache-key.mjs'];
   const plan = createVerificationPlan(paths, classifyChangedPaths(paths));

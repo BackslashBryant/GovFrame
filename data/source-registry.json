@@ -5599,8 +5599,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Tracked reviewed snapshot count. This is a regression expectation, not independently established publisher completeness.",
+        "evidence_class": "reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.cmmc-2.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.cmmc-2.normalized_records",
         "exclusions": []
@@ -5627,9 +5627,10 @@
         "artifact-nist-csf-2"
       ],
       "expected_inventory": {
-        "basis": "The current NIST CSF 2.0 Reference Tool all-in-one export independently enumerates the active CSF Core subcategories; OSCAL supplies the structural reconciliation.",
-        "evidence_locator": "data/csf-reference-tool-manifest.json#reconciliation.subcategories",
-        "imported_evidence_locator": "data/csf-subcategories.json#reconciliation.subcategories",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
+        "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.csf-2.discovered_records",
+        "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.csf-2.normalized_records",
         "exclusions": []
       },
       "entity_kind": "assertion",
@@ -5650,8 +5651,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Tracked reviewed snapshot count. This is a regression expectation, not independently established publisher completeness.",
+        "evidence_class": "reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.cui-policy.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.cui-policy.normalized_records",
         "exclusions": []
@@ -5676,8 +5677,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.disa-cci.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.disa-cci.normalized_records",
         "exclusions": []
@@ -5701,9 +5702,10 @@
       "reconciliation_source_ids": [],
       "expected_inventory": {
         "evidence_locator": "data/disa-artifact-manifest.json#reconciliation.srg_records_parsed",
-        "imported_evidence_locator": "data/disa-artifact-manifest.json#reconciliation.srg_records_parsed",
+        "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.disa-srg.normalized_records",
         "basis": "Full parse of the official DISA July 2026 SRG/STIG compilation (U_SRG-STIG_Library_July_2026.zip). Expected = SRG XCCDF requirement records across all ingested benchmarks.",
-        "exclusions": []
+        "exclusions": [],
+        "evidence_class": "native_manifest"
       },
       "entity_kind": "assertion",
       "profile_id": "assertion.source_bundle",
@@ -5731,9 +5733,10 @@
       ],
       "expected_inventory": {
         "evidence_locator": "data/disa-artifact-manifest.json#reconciliation.stig_records_parsed",
-        "imported_evidence_locator": "data/disa-artifact-manifest.json#reconciliation.stig_records_parsed",
+        "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.disa-stig.normalized_records",
         "basis": "Full parse of the official DISA July 2026 SRG/STIG compilation (U_SRG-STIG_Library_July_2026.zip). Expected = STIG XCCDF rule records across all ingested benchmarks.",
-        "exclusions": []
+        "exclusions": [],
+        "evidence_class": "native_manifest"
       },
       "entity_kind": "assertion",
       "profile_id": "assertion.source_bundle",
@@ -5753,8 +5756,8 @@
         "artifact-ai-mil-responsible-ai"
       ],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Tracked reviewed snapshot count. This is a regression expectation, not independently established publisher completeness.",
+        "evidence_class": "reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.dod-rai.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.dod-rai.normalized_records",
         "exclusions": []
@@ -5786,8 +5789,9 @@
       "expected_inventory": {
         "basis": "Six official DoD Zero Trust publications produce Atlas records; the newsletter and placemats are supporting Resources. All eight PDFs and 636 pages are extraction-accounted.",
         "evidence_locator": "data/curated/dod-zt/source-manifest.json#reconciliation.atlas_records_expected",
-        "imported_evidence_locator": "data/dod-zt.json#record_count",
-        "exclusions": []
+        "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.dod-zt.normalized_records",
+        "exclusions": [],
+        "evidence_class": "native_manifest"
       },
       "entity_kind": "assertion",
       "profile_id": "assertion.source_bundle",
@@ -5805,10 +5809,10 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Every native control-context, definition, rule, and key security indicator with publisher text in the official Consolidated Rules JSON.",
-        "evidence_class": "native_json_inventory",
-        "evidence_locator": "data/fedramp-2026-catalog.json#source_inventory.total",
-        "imported_evidence_locator": "data/fedramp-2026-catalog.json#record_count",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
+        "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.fedramp-2026.discovered_records",
+        "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.fedramp-2026.normalized_records",
         "exclusions": []
       },
       "entity_kind": "assertion",
@@ -5827,8 +5831,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Tracked reviewed snapshot count. This is a regression expectation, not independently established publisher completeness.",
+        "evidence_class": "reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.fedramp-rev5.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.fedramp-rev5.normalized_records",
         "exclusions": []
@@ -5849,8 +5853,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Tracked reviewed snapshot count. This is a regression expectation, not independently established publisher completeness.",
+        "evidence_class": "reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.fips-199.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.fips-199.normalized_records",
         "exclusions": []
@@ -5871,8 +5875,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Tracked reviewed snapshot count. This is a regression expectation, not independently established publisher completeness.",
+        "evidence_class": "reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.fips-200.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.fips-200.normalized_records",
         "exclusions": []
@@ -5895,8 +5899,9 @@
       "expected_inventory": {
         "basis": "Questions parsed from the six numbered worksheets in the publisher workbook.",
         "evidence_locator": "data/curated/nist-zt/structured-source-manifest.json#reconciliation.questionnaire_records",
-        "imported_evidence_locator": "data/curated/nist-zt/structured-source-manifest.json#reconciliation.questionnaire_records",
-        "exclusions": []
+        "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.microsoft-zt-maturity.normalized_records",
+        "exclusions": [],
+        "evidence_class": "native_manifest"
       },
       "entity_kind": "assertion",
       "profile_id": "assertion.source_bundle",
@@ -5916,8 +5921,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.mitre-attack.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.mitre-attack.normalized_records",
         "exclusions": []
@@ -5938,8 +5943,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.mitre-attack-ics.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.mitre-attack-ics.normalized_records",
         "exclusions": []
@@ -5962,8 +5967,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.mitre-d3fend.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.mitre-d3fend.normalized_records",
         "exclusions": []
@@ -5987,8 +5992,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-171.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-171.normalized_records",
         "exclusions": []
@@ -6009,8 +6014,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-171-rev2.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-171-rev2.normalized_records",
         "exclusions": []
@@ -6031,8 +6036,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-172.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-172.normalized_records",
         "exclusions": []
@@ -6053,8 +6058,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Tracked reviewed snapshot count. This is a regression expectation, not independently established publisher completeness.",
+        "evidence_class": "reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-37.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-37.normalized_records",
         "exclusions": []
@@ -6084,8 +6089,8 @@
         "artifact-disa-cci-list"
       ],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-53.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-53.normalized_records",
         "exclusions": []
@@ -6106,8 +6111,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Tracked reviewed snapshot count. This is a regression expectation, not independently established publisher completeness.",
+        "evidence_class": "reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-53a.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-53a.normalized_records",
         "exclusions": []
@@ -6128,8 +6133,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Tracked reviewed snapshot count. This is a regression expectation, not independently established publisher completeness.",
+        "evidence_class": "reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-53b.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-800-53b.normalized_records",
         "exclusions": []
@@ -6150,8 +6155,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-ai-rmf.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-ai-rmf.normalized_records",
         "exclusions": []
@@ -6177,7 +6182,7 @@
         "evidence_class": "publisher_mapping_inventory",
         "primary_extraction_status": "not_performed",
         "evidence_locator": "data/curated/nist-structured-catalogs/source-manifest.json#reconciliation.iot.records",
-        "imported_evidence_locator": "data/curated/nist-structured-catalogs/source-manifest.json#reconciliation.iot.records",
+        "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-iot-cybersecurity.normalized_records",
         "exclusions": []
       },
       "entity_kind": "assertion",
@@ -6200,13 +6205,14 @@
       "expected_inventory": {
         "basis": "All nonblank threat records plus explicit threat categories from the official JSON; CVE identifiers reconcile exactly to the official CSV.",
         "evidence_locator": "data/curated/nist-structured-catalogs/source-manifest.json#reconciliation.mobile_threats.expected_records",
-        "imported_evidence_locator": "data/curated/nist-structured-catalogs/source-manifest.json#reconciliation.mobile_threats.total_records",
+        "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-mobile-threats.normalized_records",
         "exclusions": [
           {
             "count": 7,
-            "reason": "Seven publisher JSON entries contain no threat ID, category, title, or content."
+            "reason": "Publisher JSON entries contain no threat ID, category, title, or content."
           }
-        ]
+        ],
+        "evidence_class": "native_manifest"
       },
       "entity_kind": "assertion",
       "profile_id": "assertion.source_bundle",
@@ -6224,8 +6230,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+        "evidence_class": "publisher_inventory_or_reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-ssdf.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-ssdf.normalized_records",
         "exclusions": []
@@ -6292,8 +6298,8 @@
       "automation_source_ids": [],
       "reconciliation_source_ids": [],
       "expected_inventory": {
-        "basis": "Exact unique record identities emitted by the catalog source adapter from provenance-attested publisher material, counted before structural groups, relationships, or graph publication.",
-        "evidence_class": "pre_graph_adapter_inventory",
+        "basis": "Tracked reviewed snapshot count. This is a regression expectation, not independently established publisher completeness.",
+        "evidence_class": "reviewed_snapshot",
         "evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-zt.discovered_records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-zt.normalized_records",
         "exclusions": []

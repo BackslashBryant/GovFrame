@@ -41,7 +41,7 @@ test('catalog scopes resolve to governed production catalogs', () => {
   );
 });
 
-test('raw network calls remain limited to the declared live-probe exception', () => {
+test('scheduled source and health fetches use the governed transport', () => {
   const files = [];
   const collect = (directory) => {
     for (const entry of readdirSync(directory, { withFileTypes: true })) {
@@ -57,5 +57,7 @@ test('raw network calls remain limited to the declared live-probe exception', ()
     .filter((path) => /\bfetch\s*\(/.test(readFileSync(path, 'utf8')))
     .map((path) => path.replaceAll('\\', '/'))
     .sort();
-  assert.deepEqual(directFetchFiles, ['scripts/check-commons-health.mjs']);
+  assert.deepEqual(directFetchFiles, []);
+  const disa = readFileSync('scripts/fetch-disa-stigs.mjs', 'utf8');
+  assert.match(disa, /options\.fetchImpl \|\| strictConditionalFetch/);
 });

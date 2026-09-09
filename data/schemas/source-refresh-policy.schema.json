@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "description", "catalogs"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "description": { "type": "string", "minLength": 1 },
+    "catalogs": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {
+        "type": "object", "additionalProperties": false,
+        "required": ["absolute_floor", "max_delta_pct", "max_anchor_delta_pct", "require_independent_inventory"],
+        "properties": {
+          "absolute_floor": { "type": "integer", "minimum": 1 },
+          "max_delta_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+          "max_anchor_delta_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+          "require_independent_inventory": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

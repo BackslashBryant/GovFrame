@@ -3,7 +3,7 @@
 // NIST detail, then download and parse every deterministically reachable
 // structured submission. Entries without an obtainable structured artifact
 // remain quarantined with their exact retrieval evidence.
-import { mkdirSync, rmSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseOlirStructuredArtifact, retrieveStructuredOlirArtifact } from '../tools/relationship-builders/olir-retrieval.mjs';
@@ -78,6 +78,7 @@ async function retrieveDetail(id) {
     const response = await strictConditionalFetch(url, { signal: AbortSignal.timeout(15_000) });
     const body = response.ok ? await response.json() : null;
     const detail = body?.response?.[0] || null;
+    if (!detail) throw new Error(`OLIR detail ${id} missing (${response.status})`);
     return {
       kind: 'NIST catalog detail endpoint',
       url,
@@ -101,15 +102,18 @@ async function retrieveEntry(entry) {
   const candidates = [detail.json_file_url, detail.submission_url, detail.reference_url, entry.referenceUrl];
   const retrieved = await retrieveStructuredOlirArtifact(candidates);
   const attempts = [detail, ...retrieved.attempted];
-  if (!retrieved.artifact) return { attempts, mapping: null, unavailable_reason: 'no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL' };
+  if (!retrieved.artifact) return {
+    attempts, mapping: null,
+    unsupported: !detail.json_file_url && attempts.every((attempt) => !attempt.error && attempt.status >= 200 && attempt.status < 300),
+    unavailable_reason: 'no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL',
+  };
   try {
     const parsed = await parseOlirStructuredArtifact(retrieved.artifact);
     if (!parsed.relationships.length) {
-      return { attempts, mapping: null, unavailable_reason: `downloaded structured artifact contains no parseable OLIR relationships (${parsed.parser})` };
+      return { attempts, mapping: null, parse_failed: true, unavailable_reason: `downloaded structured artifact contains no parseable OLIR relationships (${parsed.parser})` };
     }
     const mapFile = `maps/olir/${id}.json`;
-    mkdirSync(join(ROOT, 'maps', 'olir'), { recursive: true });
-    writeJsonAtomically(join(ROOT, mapFile), {
+    const document = {
       schema_version: '1.0',
       olir_id: id,
       source_artifact: retrieved.artifact.url,
@@ -117,9 +121,10 @@ async function retrieveEntry(entry) {
       byte_length: retrieved.artifact.bytes.length,
       parser: parsed.parser,
       relationships: parsed.relationships,
-    });
+    };
     return {
       attempts,
+      document,
       mapping: {
         map_file: mapFile,
         artifact_url: retrieved.artifact.url,
@@ -132,7 +137,20 @@ async function retrieveEntry(entry) {
       unavailable_reason: null,
     };
   } catch (error) {
-    return { attempts, mapping: null, unavailable_reason: `downloaded artifact could not be parsed as an OLIR relationship mapping: ${error instanceof Error ? error.message : String(error)}` };
+    return { attempts, mapping: null, parse_failed: true, unavailable_reason: `downloaded artifact could not be parsed as an OLIR relationship mapping: ${error instanceof Error ? error.message : String(error)}` };
+  }
+}
+
+export function validateOlirCandidate(retrievalById, previousItems = []) {
+  const previouslyIngested = new Set(previousItems.filter((item) => item.ingested).map((item) => item.id));
+  for (const [id, retrieval] of retrievalById) {
+    const detail = retrieval.attempts?.[0];
+    const successful = (attempt) => !attempt.error && Number.isInteger(attempt.status) && attempt.status >= 200 && attempt.status < 300;
+    const supportedExclusion = retrieval.unsupported && retrieval.attempts?.every(successful);
+    if (!detail || !successful(detail)
+      || retrieval.parse_failed || (!retrieval.mapping && (!supportedExclusion || previouslyIngested.has(id)))) {
+      throw new Error(`OLIR refresh incomplete for ${id}: ${retrieval.unavailable_reason || detail?.error || 'missing expected detail or artifact'}`);
+    }
   }
 }
 
@@ -150,16 +168,16 @@ export async function fetchOlirCatalog() {
       entry.statusDescription === 'Final' &&
       FOCAL_CATALOG_MAP.has(entry.focusDocName),
   );
-  // The per-entry maps are a fresh snapshot of the live OLIR inventory. A
-  // previously retrieved map must not survive if its publisher artifact is no
-  // longer reachable in this required-fresh run.
-  rmSync(join(ROOT, 'maps', 'olir'), { recursive: true, force: true });
+  const manifestPath = join(ROOT, 'data', 'olir-catalog-manifest.json');
+  const previousItems = existsSync(manifestPath)
+    ? JSON.parse(readFileSync(manifestPath, 'utf8')).processed_items || [] : [];
   const retrievalById = new Map(
     (await mapWithConcurrency(applicableFinalEntries, 6, async (entry) => [
       entry.informativeReferenceFrameworkVersionId,
       await retrieveEntry(entry),
     ])).map(([id, retrieval]) => [id, retrieval]),
   );
+  validateOlirCandidate(retrievalById, previousItems);
 
   const processed_items = entries.map((entry) => {
     const id = entry.informativeReferenceFrameworkVersionId;
@@ -220,7 +238,14 @@ export async function fetchOlirCatalog() {
     processed_items,
   };
 
-  writeJsonAtomically(join(ROOT, 'data', 'olir-catalog-manifest.json'), manifest);
+  // The complete candidate is validated before replacing any last-good map.
+  // The outer source transaction owns rollback if a filesystem write fails.
+  rmSync(join(ROOT, 'maps', 'olir'), { recursive: true, force: true });
+  mkdirSync(join(ROOT, 'maps', 'olir'), { recursive: true });
+  for (const retrieval of retrievalById.values()) {
+    if (retrieval.mapping) writeJsonAtomically(join(ROOT, retrieval.mapping.map_file), retrieval.document);
+  }
+  writeJsonAtomically(manifestPath, manifest);
 
   return manifest;
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { markdownToPlainText } from "./lib/markdown-to-text.mjs";
 import { strictConditionalFetch } from "./lib/strict-conditional-fetch.mjs";
@@ -9,9 +9,6 @@ import { writeJsonAtomically } from "./lib/write-json-atomically.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATASET_PATH = join(ROOT, "data", "commons-resource-dataset.json");
-const REFRESH = process.argv.includes("--refresh");
-const VALIDATE_MEDIA = process.argv.includes("--validate-media");
-const REFRESH_ID = process.argv.find((argument) => argument.startsWith("--id="))?.slice("--id=".length) || "";
 const CAPTURED_AT = new Date().toISOString().slice(0, 10);
 const INSTALLABLE_TYPES = new Set(["tool", "ecosystem", "service_portal", "restricted_service"]);
 const GITHUB_API_VERSION = "2026-03-10";
@@ -41,7 +38,7 @@ function sha256(value) {
   return `sha256:${createHash("sha256").update(value).digest("hex")}`;
 }
 
-function repositoryIdentity(resource) {
+export function repositoryIdentity(resource) {
   try {
     const url = new URL(resource.repositoryUrl || resource.canonicalUrl || "");
     if (url.hostname !== "github.com") return null;
@@ -363,17 +360,28 @@ function toolProfile(resource, evidence) {
   };
 }
 
-const dataset = JSON.parse(readFileSync(DATASET_PATH, "utf8"));
+export function repositoryResourceIds(dataset) {
+  return dataset.resources.filter((resource) => repositoryIdentity(resource)).map((resource) => resource.id);
+}
+
+export async function enrichCommonsDataset(dataset, {
+  refresh: REFRESH = false, id: REFRESH_ID = '', validateMedia: VALIDATE_MEDIA = false,
+  fetchEvidence = fetchRepositoryEvidence,
+} = {}) {
+if (REFRESH_ID && !dataset.resources.some((resource) => resource.id === REFRESH_ID && repositoryIdentity(resource))) {
+  throw new Error(`Unknown repository resource ID: ${REFRESH_ID}`);
+}
 let repositoryCount = 0;
 let mediaCount = 0;
 let failureCount = 0;
 for (const resource of dataset.resources) {
+  if (REFRESH_ID && resource.id !== REFRESH_ID) continue;
   const identity = repositoryIdentity(resource);
   if (identity?.scope === "repository" && !resource.repositoryUrl) resource.repositoryUrl = resource.canonicalUrl;
   let repositoryEvidence = resource.repositoryEvidence || null;
   if (REFRESH && identity && (!REFRESH_ID || REFRESH_ID === resource.id)) {
     try {
-      repositoryEvidence = await fetchRepositoryEvidence(identity);
+      repositoryEvidence = await fetchEvidence(identity);
       repositoryCount += 1;
     } catch (error) {
       failureCount += 1;
@@ -438,11 +446,19 @@ for (const resource of dataset.resources) {
 }
 
 if (failureCount) {
-  console.error(`Resource enrichment failed closed with ${failureCount} repository error(s); the dataset was not rewritten.`);
-  process.exit(1);
+  throw new Error(`Resource enrichment failed closed with ${failureCount} repository error(s); the dataset was not rewritten.`);
 }
 if (REFRESH) dataset.lastUpdated = CAPTURED_AT;
-writeJsonAtomically(DATASET_PATH, dataset);
-console.log(
-  `Resource enrichment: ${dataset.resources.length} resources, ${repositoryCount} repositories refreshed, ${mediaCount} attributable media item(s), 0 refresh failures.`,
-);
+return { dataset, repositoryCount, mediaCount };
+}
+
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
+  const id = process.argv.find((argument) => argument.startsWith('--id='))?.slice('--id='.length) || '';
+  if (process.argv.includes('--id=')) throw new Error('--id requires a repository resource ID');
+  enrichCommonsDataset(JSON.parse(readFileSync(DATASET_PATH, 'utf8')), {
+    refresh: process.argv.includes('--refresh'), id, validateMedia: process.argv.includes('--validate-media'),
+  }).then(({ dataset, repositoryCount, mediaCount }) => {
+    writeJsonAtomically(DATASET_PATH, dataset);
+    console.log(`Resource enrichment: ${repositoryCount} repositories refreshed, ${mediaCount} attributable media item(s).`);
+  }).catch((error) => { console.error(error.message); process.exitCode = 1; });
+}

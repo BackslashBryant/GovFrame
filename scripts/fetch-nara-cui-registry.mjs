@@ -133,6 +133,13 @@ function parseCategoryDetail(html, slug) {
   };
 }
 
+export function validateNaraCandidate(manifest) {
+  const failures = Array.from(manifest.results).filter((entry) => entry?.status !== 'OK');
+  if (failures.length || manifest.results.length !== manifest.total_entries || !manifest.change_log || manifest.change_log.status === 'FAILED') {
+    throw new Error(`NARA CUI refresh incomplete: ${failures.length} detail failure(s); change log ${manifest.change_log?.status === 'FAILED' ? 'failed' : 'retrieved'}`);
+  }
+}
+
 export async function fetchNaraCuiRegistry({ concurrency = 8 } = {}) {
   const { text: listHtml, buffer: listBuffer } = await fetchText(LIST_URL);
   const categories = parseCategoryList(listHtml);
@@ -196,7 +203,7 @@ export async function fetchNaraCuiRegistry({ concurrency = 8 } = {}) {
     results,
   };
 
-  writeJsonAtomically(join(ROOT, 'data', 'nara-cui-registry-manifest.json'), manifest);
+  validateNaraCandidate(manifest);
   const registryPath = join(ROOT, 'data', 'source-registry.json');
   const registry = JSON.parse(readFileSync(registryPath, 'utf8'));
   const artifact = registry.artifacts?.find(
@@ -207,6 +214,7 @@ export async function fetchNaraCuiRegistry({ concurrency = 8 } = {}) {
   artifact.sha256 = `sha256:${manifest.list_page.sha256}`;
   artifact.version = new Date().toISOString().slice(0, 10);
   artifact.retrieved_at = artifact.version;
+  writeJsonAtomically(join(ROOT, 'data', 'nara-cui-registry-manifest.json'), manifest);
   writeJsonAtomically(registryPath, registry);
 
   return manifest;

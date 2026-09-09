@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { loadSourceRegistry, validateSourceRegistry } from '../tools/validators/source-registry.mjs';
+import { assertPublisherVolume } from './helpers/publisher-volume.mjs';
 
 const registry = JSON.parse(readFileSync('data/source-registry.json', 'utf8'));
 
@@ -154,10 +155,8 @@ test('SP 800-171 and SP 800-172 publication identities stay distinct from source
       format: 'csv',
       artifactUrl: 'https://csrc.nist.gov/files/pubs/sp/800/171/r2/upd1/final/docs/sp800-171r2-security-reqs.csv',
       parser: 'csv',
-      sha256: 'sha256:0f4d59413bbcc9998da80495ce46ebfe0475e392803c4d2ed38d9941d83f138d',
-      byteLength: 113309,
-      recordCount: 117,
-      relationshipCount: 125,
+      catalogId: 'nist-800-171-rev2',
+      catalogPath: 'data/requirements-800-171-rev2.json',
     },
     'artifact-nist-800-172-rev3': {
       name: 'NIST SP 800-172 Rev. 3 OSCAL Catalog Artifact',
@@ -166,10 +165,8 @@ test('SP 800-171 and SP 800-172 publication identities stay distinct from source
       format: 'oscal_json',
       artifactUrl: 'https://raw.githubusercontent.com/usnistgov/oscal-content/v1.5.0/nist.gov/SP800-172/rev3/json/NIST_SP800-172_rev3_catalog.json',
       parser: 'oscal-json',
-      sha256: 'sha256:21c6df17c7ff1c8330f16334fdddd488ffc10f71051078dd73c18595a33da5ab',
-      byteLength: 980722,
-      recordCount: 115,
-      relationshipCount: 133,
+      catalogId: 'nist-800-172',
+      catalogPath: 'data/requirements-800-172.json',
     },
     'artifact-nist-800-171-oscal-mappings': {
       name: 'NIST SP 800-171 Rev. 3 OSCAL Control References Artifact',
@@ -178,13 +175,12 @@ test('SP 800-171 and SP 800-172 publication identities stay distinct from source
       format: 'oscal_json',
       artifactUrl: 'https://raw.githubusercontent.com/usnistgov/oscal-content/v1.5.0/nist.gov/SP800-171/rev3/json/NIST_SP800-171_rev3_catalog.json',
       parser: 'oscal-json',
-      sha256: 'sha256:21b6f3b118b6e5b305aaed3a0e4b70fa5d1d9aa388a0b92e7d6ddfed69e93ac3',
-      byteLength: 905711,
-      recordCount: 130,
-      relationshipCount: 305,
+      catalogId: 'nist-800-171',
+      catalogPath: 'data/requirements-800-171.json',
     },
   };
 
+  const hydration = new Map(JSON.parse(readFileSync('data/artifact-hydration-manifest.json', 'utf8')).results.map((entry) => [entry.id, entry]));
   for (const [id, expected] of Object.entries(expectedArtifacts)) {
     const artifact = artifactById.get(id);
     assert.ok(artifact, `${id} must remain registered`);
@@ -192,12 +188,30 @@ test('SP 800-171 and SP 800-172 publication identities stay distinct from source
     assert.equal(artifact.publication_source_id, expected.publicationSourceId, id);
     assert.equal(artifact.source_role, expected.sourceRole, id);
     assert.equal(artifact.format, expected.format, id);
-    assert.equal(artifact.artifact_url, expected.artifactUrl, id);
+    const actualUrl = new URL(artifact.artifact_url);
+    const expectedUrl = new URL(expected.artifactUrl);
+    assert.equal(actualUrl.origin, expectedUrl.origin, `${id}: publisher authority`);
+    if (expectedUrl.hostname === 'raw.githubusercontent.com') {
+      // Publisher release refs can advance; owner, repository and artifact path cannot drift.
+      const actualPath = actualUrl.pathname.split('/');
+      const expectedPath = expectedUrl.pathname.split('/');
+      assert.ok(actualPath[3], `${id}: publisher repository ref is required`);
+      actualPath[3] = expectedPath[3];
+      assert.deepEqual(actualPath, expectedPath, `${id}: publisher artifact identity`);
+    } else {
+      assert.equal(actualUrl.href, expectedUrl.href, id);
+    }
     assert.equal(artifact.parser, expected.parser, id);
-    assert.equal(artifact.sha256, expected.sha256, id);
-    assert.equal(artifact.byte_length, expected.byteLength, id);
-    assert.equal(artifact.record_count, expected.recordCount, id);
-    assert.equal(artifact.relationship_count, expected.relationshipCount, id);
+    const observed = assertPublisherVolume(expected.catalogId, expected.catalogPath);
+    const evidence = hydration.get(id);
+    assert.equal(evidence?.status, 'OK', `${id}: retained hydration evidence is required`);
+    assert.match(artifact.sha256, /^sha256:[a-f0-9]{64}$/, id);
+    assert.ok(Number.isSafeInteger(artifact.byte_length) && artifact.byte_length > 0, id);
+    assert.ok(Number.isSafeInteger(artifact.record_count) && artifact.record_count >= observed.record_count, id);
+    assert.ok(Number.isSafeInteger(artifact.relationship_count) && artifact.relationship_count > 0, id);
+    assert.equal(artifact.sha256, evidence.sha256, `${id}: registry and retrieval evidence agree`);
+    assert.equal(artifact.byte_length, evidence.byte_length, id);
+    assert.equal(artifact.record_count, evidence.record_count, id);
   }
 });
 

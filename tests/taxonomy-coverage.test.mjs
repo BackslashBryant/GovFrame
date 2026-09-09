@@ -4,13 +4,20 @@ import test from "node:test";
 
 import { TAXONOMY_CONTRACT } from "../src/shared/taxonomy-contract.mjs";
 import { readGeneratedCollection } from "../scripts/lib/generated-graph-artifacts.mjs";
+import { referencedNistFamilies } from '../src/shared/nist-families.mjs';
+import { assertPublisherVolume } from './helpers/publisher-volume.mjs';
 
 const nodes = readGeneratedCollection(".", "nodes").nodes;
+// Match buildTaxonomyCoverage's record boundary: catalog and benchmark
+// containers can carry item IDs and titles but do not receive record tags.
+const taxonomyNodes = nodes.filter((node) =>
+  node.metadata?.catalog_id && node.node_type !== 'catalog' && node.node_type !== 'benchmark',
+);
+const coverage = JSON.parse(readFileSync('data/generated/taxonomy-coverage.json', 'utf8')).taxonomy_coverage;
+const parsedCcis = JSON.parse(readFileSync('data/ccis.json', 'utf8')).records;
+const parsedStigs = JSON.parse(readFileSync('data/stig-rules.json', 'utf8')).records;
 
 test("generated taxonomy coverage reconciles governed dimensions to the published corpus", () => {
-  const report = JSON.parse(readFileSync("data/generated/taxonomy-coverage.json", "utf8"));
-  const coverage = report.taxonomy_coverage;
-
   assert.equal(coverage.contract_version, TAXONOMY_CONTRACT.version);
   assert.ok(coverage.record_count > 0);
   assert.ok(coverage.catalogs.length >= 27);
@@ -72,34 +79,51 @@ test("generated taxonomy coverage reconciles governed dimensions to the publishe
 
   const cci = coverage.catalogs.find((catalog) => catalog.catalog_id === "disa-cci");
   assert.ok(cci, "DISA CCI coverage row is required");
-  assert.equal(cci.record_count, 5137);
-  assert.equal(cci.tagged_record_count, 5137);
-  assert.equal(cci.dimensions.domain.applicable_record_count, 4913);
-  assert.equal(cci.dimensions.domain.unreviewed_record_count, 224);
+  assertPublisherVolume('disa-cci', 'data/ccis.json', cci.record_count);
+  assert.equal(cci.tagged_record_count, parsedCcis.length);
+  const familiesById = new Map(parsedCcis.map((record) => [record.id, referencedNistFamilies(record.references)]));
+  const categorizedCount = [...familiesById.values()].filter((families) => families.length).length;
+  assert.equal(cci.dimensions.domain.applicable_record_count, categorizedCount);
+  assert.equal(cci.dimensions.domain.unreviewed_record_count, parsedCcis.length - categorizedCount);
+  for (const node of taxonomyNodes.filter((entry) => entry.metadata?.catalog_id === 'disa-cci' && entry.metadata?.item_id)) {
+    const expectedFamilies = familiesById.get(node.metadata.item_id);
+    assert.ok(expectedFamilies, `${node.id}: publisher CCI identity is required`);
+    assert.deepEqual((node.metadata.related_categories || []).map(({ code, label }) => ({ code, label })), expectedFamilies);
+    assert.equal((node.metadata.taxonomy_tags || []).some((tag) => tag.id.startsWith('domain.')), expectedFamilies.length > 0, `${node.id}: domain tags require publisher category evidence`);
+  }
   assert.ok(coverage.source_basis.some((basis) =>
     basis.taxonomy_layer === "publisher" &&
     basis.source_field === "metadata.related_categories[]" &&
     basis.rule === "exact-publisher-related-category" &&
-    basis.record_count === 4913
+    basis.record_count === categorizedCount
   ));
 });
 
 test("generated assignments retain Apple iOS, exclude Cisco IOS, and cite the field that matched", () => {
-  const assignments = nodes.flatMap((node) =>
+  const assignments = taxonomyNodes.flatMap((node) =>
     (node.metadata?.taxonomy_tags || []).map((tag) => ({ node, tag })),
   );
-  assert.equal(assignments.length, 92_233);
-  assert.equal(assignments.filter(({ tag }) => tag.basis?.rule === "explicit-mobile-term").length, 839);
-  assert.equal(assignments.filter(({ tag }) => tag.id === "technology.ios").length, 176);
+  assert.equal(assignments.length, coverage.dimensions.reduce((sum, dimension) => sum + dimension.tag_assignments, 0));
+  const sourceFields = (node) => [node.metadata?.benchmark_title, node.metadata?.identity_category, node.metadata?.family];
+  const mobilePattern = /\b(?:mobile|uem|mdm|android)\b|\bapple\s+(?:ios|ipados)\b|\bios\s*\/\s*ipados\b|\bipados\b/i;
+  const iosPattern = /\bapple\s+(?:ios|ipados)\b|\bios\s*\/\s*ipados\b|\bipados\b/i;
+  for (const [pattern, select] of [
+    [mobilePattern, (tag) => tag.basis?.rule === 'explicit-mobile-term'],
+    [iosPattern, (tag) => tag.id === 'technology.ios'],
+  ]) {
+    const expected = taxonomyNodes.filter((node) => node.metadata?.item_id && sourceFields(node).some((value) => pattern.test(String(value || '')))).map((node) => node.id).sort();
+    assert.deepEqual(assignments.filter(({ tag }) => select(tag)).map(({ node }) => node.id).sort(), expected);
+  }
 
-  const cisco = nodes.filter((node) =>
+  const cisco = taxonomyNodes.filter((node) =>
     /^Cisco\s+IOS\b/i.test(node.metadata?.benchmark_title || ""),
   );
-  const apple = nodes.filter((node) =>
+  const apple = taxonomyNodes.filter((node) =>
     /^Apple\s+iOS\/iPadOS\b/i.test(node.metadata?.benchmark_title || ""),
   );
-  assert.equal(cisco.length, 651);
-  assert.equal(apple.length, 176);
+  assert.equal(cisco.length, parsedStigs.filter((record) => /^Cisco\s+IOS\b/i.test(record.metadata?.benchmark_title || '')).length);
+  assert.equal(apple.length, parsedStigs.filter((record) => /^Apple\s+iOS\/iPadOS\b/i.test(record.metadata?.benchmark_title || '')).length);
+  assert.ok(cisco.length > 0 && apple.length > 0, 'both reviewed platform families remain represented');
   assert.ok(cisco.every((node) =>
     !(node.metadata?.taxonomy_tags || []).some((tag) =>
       tag.id === "technology.ios" || tag.id === "asset.mobile"),

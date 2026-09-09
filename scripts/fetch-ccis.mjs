@@ -7,6 +7,7 @@ import { parseCciXml } from '../tools/importers/cci-adapter.mjs';
 import { writeCciDiffReport } from '../tools/importers/cci-diff-report.mjs';
 import { strictConditionalFetch } from './lib/strict-conditional-fetch.mjs';
 import { writeJsonAtomically } from './lib/write-json-atomically.mjs';
+import { assertCciInventory } from './lib/cci-inventory.mjs';
 
 const CCI_URL = 'https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_CCI_List.zip';
 
@@ -21,11 +22,11 @@ async function fetchOfficialXml() {
   const archive = unzipSync(buffer);
   if (!archive['U_CCI_List.xml']) throw new Error('CCI archive did not contain U_CCI_List.xml');
   const xml = strFromU8(archive['U_CCI_List.xml']);
-  return { xml, archiveChecksum: checksum(buffer) };
+  return { xml, archiveChecksum: checksum(buffer), archiveByteLength: buffer.length };
 }
 
 export async function fetchCcis(options = {}) {
-  const { xml, archiveChecksum } = options.xml
+  const { xml, archiveChecksum, archiveByteLength } = options.xml
     ? { xml: options.xml, archiveChecksum: checksum(options.xml) }
     : await fetchOfficialXml();
   const parsed = parseCciXml(xml);
@@ -42,6 +43,12 @@ export async function fetchCcis(options = {}) {
     source_version: parsed.version,
     snapshot_date: parsed.publish_date,
     checksum: sourceChecksum,
+    publisher_inventory: {
+      ...assertCciInventory(xml, records), publisher_version: parsed.version,
+      source_sha256: archiveByteLength ? archiveChecksum : null,
+      source_byte_length: archiveByteLength || null,
+      ...(!archiveByteLength ? { source_evidence_reason: 'Injected XML has no downloaded archive attestation' } : {}),
+    },
     records,
   };
 

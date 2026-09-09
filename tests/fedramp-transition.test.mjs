@@ -6,6 +6,8 @@ import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 
 import { parseFedrampBaselineWorkbookSheets } from '../tools/importers/catalog-adapters-ext.mjs';
+import { assertPublisherInventory } from '../scripts/lib/publisher-inventory.mjs';
+import { assertPublisherVolume } from './helpers/publisher-volume.mjs';
 
 const rules = JSON.parse(readFileSync('data/fedramp-2026-rules.json', 'utf8'));
 const schema = JSON.parse(readFileSync('data/fedramp-2026-rules.schema.json', 'utf8'));
@@ -20,18 +22,17 @@ test('official FedRAMP 2026 rules validate against the official schema', () => {
   addFormats(ajv);
   const validate = ajv.compile(schema);
   assert.equal(validate(rules), true, JSON.stringify(validate.errors));
-  assert.equal(rules.info.version, '2026.07.14.01');
-  assert.equal(rules.info.last_updated, '2026-07-14');
+  assert.ok(typeof rules.info.version === 'string' && rules.info.version.trim());
+  assert.match(rules.info.last_updated, /^\d{4}-\d{2}-\d{2}$/);
+  assert.ok(Number.isFinite(Date.parse(rules.info.last_updated)));
+  assert.equal(transitions.source.version, rules.info.version);
+  assert.equal(transitions.source.last_updated, rules.info.last_updated);
 });
 
-test('the placeholder label is limited to AGU, not the whole ruleset', () => {
-  assert.equal(transitions.process_statuses.length, 17);
-  const placeholders = transitions.process_statuses.filter((process) => process.status === 'placeholder');
-  assert.deepEqual(
-    placeholders.map((process) => process.process_id),
-    ['AGU'],
-  );
-  assert.equal(transitions.process_statuses.filter((process) => process.status === 'stable').length, 16);
+test('process status labels match the publisher and do not label the whole ruleset placeholder', () => {
+  const expected = Object.entries(rules.FRR).map(([process_id, process]) => ({ process_id, status: process.info?.status || 'unknown' })).sort((a, b) => a.process_id.localeCompare(b.process_id));
+  assert.deepEqual(transitions.process_statuses.map(({ process_id, status }) => ({ process_id, status })), expected);
+  assert.ok(expected.some((process) => process.status !== 'placeholder'));
 });
 
 test('every curated legacy transition resolves to current rules and an action', () => {
@@ -66,8 +67,8 @@ test('legacy package semantics are tied to the current FedRAMP model', () => {
 });
 
 test('all official legacy files and current schema rule connections are available', () => {
-  assert.equal(transitions.legacy_assets.length, 27);
-  assert.equal(new Set(transitions.legacy_assets.map((asset) => asset.url)).size, 27);
+  assert.ok(transitions.legacy_assets.length >= 27, 'retain the reviewed minimum official legacy inventory');
+  assert.equal(new Set(transitions.legacy_assets.map((asset) => asset.url)).size, transitions.legacy_assets.length);
   for (const asset of transitions.legacy_assets) {
     assert.match(asset.url, /^https:\/\/www\.fedramp\.gov\/legacy\/assets\//);
     assert.match(asset.url, /\.(?:docx|xlsx|pdf|zip)$/i);
@@ -103,13 +104,22 @@ test('FedRAMP baseline workbook parser preserves program-specific membership', (
 
 test('current FedRAMP rules and historical Rev. 5 remain distinct source families', () => {
   assert.equal(catalog.source_version, rules.info.version);
-  assert.equal(catalog.record_count, 444);
+  assertPublisherVolume('fedramp-2026', 'data/fedramp-2026-catalog.json', catalog.record_count);
+  const inventory = assertPublisherInventory('fedramp-2026', rules, catalog.records);
+  const excluded = new Set(inventory.excluded.map((entry) => entry.id));
+  const rawCounts = { control_context: 0, definitions: Object.keys(rules.FRD.data.all).length, rules: 0, key_security_indicators: 0 };
+  for (const [family, controls] of Object.entries(rules.CTL)) for (const id of Object.keys(controls)) {
+    if (!excluded.has(`CTL.${family}.${id}`)) rawCounts.control_context += 1;
+  }
+  for (const [process, value] of Object.entries(rules.FRR)) for (const [applicability, subsets] of Object.entries(value.data)) for (const [subset, entries] of Object.entries(subsets)) for (const id of Object.keys(entries)) {
+    if (!excluded.has(`FRR.${process}.data.${applicability}.${subset}.${id}`)) rawCounts.rules += 1;
+  }
+  for (const [group, value] of Object.entries(rules.KSI)) for (const id of Object.keys(value.indicators)) {
+    if (!excluded.has(`KSI.${group}.indicators.${id}`)) rawCounts.key_security_indicators += 1;
+  }
   assert.deepEqual(catalog.source_inventory, {
-    control_context: 77,
-    definitions: 75,
-    rules: 246,
-    key_security_indicators: 46,
-    total: 444,
+    ...rawCounts,
+    total: inventory.eligible_count,
   });
   assert.deepEqual(
     [...new Set(catalog.records.map((record) => record.type))].sort(),

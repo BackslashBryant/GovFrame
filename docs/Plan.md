@@ -1368,7 +1368,7 @@ and should be refused.
 | --- | --- | --- | --- |
 | D3 | Pulse in the primary nav or the overflow menu | The header is at 6 primary plus 3 overflow, and two tests hardcode that set (§9.2) | Overflow at launch |
 | D4 | Weekly freshness, or a faster Pulse-only cron | A daily cron means more CI minutes and more refresh PRs to review; the cron string is cross-checked against `ci.yml` (§8.1) | Weekly at MVP; revisit with real usage |
-| D5 | Human review of every Pulse refresh, or auto-merge for Pulse-only changes | Current model is a draft PR; weekly review is real ongoing work | Keep human review at MVP |
+| D5 | Refresh publication approval | Creator decision: unattended weekly official-source refresh | Automatically merge admitted App-authored data PRs after independent CI, security and exact-commit checks |
 | D6 | Tier 6 semantic matching on record pages | The main noise risk | Off at MVP (§6.3) |
 | D7 | Who authors the alias and exclusion file, and how it is reviewed | It is the one judgement layer in Pulse | Same review bar as `framework-lenses.json` |
 | R1 | **Matcher precision** — a wrong event on a control page damages trust more than a missing one | — | Bias to precision; require 0.40; golden tests |
@@ -1377,6 +1377,15 @@ and should be refused.
 | R4 | Reproducibility regressions from any stray `Date.now()` | — | Lint rule banning it in Pulse scripts |
 | R5 | Scope creep toward advice | — | §13 as an explicit test |
 | R6 | **[v1.1]** Unverified Lane 2 endpoints | Six URLs in §7 are shapes, not facts | Verification is step 1 of work order 1.5, before any parsing code |
+
+**D5 supersession (2026-09-09):** The creator chose unattended weekly refreshes
+with source quarantine, preserved accepted data and GitHub issue alerts. Earlier
+references in this plan to routine draft PRs or mandatory human review describe
+the prior operating model and are superseded by this decision. The implementation
+contract is in `docs/OPERATIONS.md` and `docs/CI_CD.md`: ready PRs from the scoped
+publisher App merge only after independent checks pass for their exact commit.
+This decision does not authorize Pulse implementation, new source authority or
+changes to the other Pulse phase boundaries.
 
 ---
 

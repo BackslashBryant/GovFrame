@@ -6,10 +6,7 @@ import { strictConditionalFetch } from './lib/strict-conditional-fetch.mjs';
 
 import {
   parseCyberMilLanding,
-  parseGithubOrganizationSignals,
   parseGithubRepoSignals,
-  parseStigViewerCatalog,
-  parseStigViewerPressRelease,
 } from '../tools/importers/stig-source-observer.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -33,24 +30,6 @@ const TARGETS = [
     required: true,
     url: 'https://www.cyber.mil/stigs/gpo/',
     parser: parseCyberMilLanding,
-  },
-  {
-    id: 'stigviewer-catalog',
-    required: false,
-    url: 'https://www.stigviewer.com/stigs',
-    parser: parseStigViewerCatalog,
-  },
-  {
-    id: 'stigviewer-clkb-api',
-    required: false,
-    url: 'https://www.stigviewer.com/press-releases/2026-03-16',
-    parser: parseStigViewerPressRelease,
-  },
-  {
-    id: 'nuwcdivnpt-github-org',
-    required: false,
-    url: 'https://github.com/NUWCDIVNPT',
-    parser: parseGithubOrganizationSignals,
   },
   {
     id: 'nuwcdivnpt-stig-manager',

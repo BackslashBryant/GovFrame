@@ -1,4 +1,5 @@
 import readXlsxFile from 'read-excel-file/node';
+import { createHash } from 'node:crypto';
 
 const SUBCATEGORY_ID = /^([A-Z]{2}\.[A-Z]{2}-\d{2}):\s*(.+)$/;
 
@@ -43,6 +44,9 @@ export async function parseCsfReferenceToolWorkbook(buffer) {
 export function enrichCsfCatalogFromReferenceTool(records, referenceTool) {
   const sourceIds = new Set(records.map((record) => record.id));
   const missingFromExport = [...sourceIds].filter((id) => !referenceTool.records.has(id));
+  const missingFromCatalog = [...referenceTool.records.keys()].filter((id) => !sourceIds.has(id));
+  if (sourceIds.size !== records.length) throw new Error('CSF catalog repeats subcategory identifiers');
+  if (missingFromCatalog.length) throw new Error(`CSF catalog is missing publisher subcategories: ${missingFromCatalog.join(', ')}.`);
   if (missingFromExport.length) {
     throw new Error(
       `CSF Reference Tool export is missing active OSCAL identifiers: ${missingFromExport.join(', ')}.`,
@@ -80,10 +84,18 @@ export function enrichCsfCatalogFromReferenceTool(records, referenceTool) {
   }
   return {
     records: enrichedRecords,
+    publisher_inventory: {
+      raw_count: referenceTool.records.size,
+      eligible_count: referenceTool.records.size,
+      imported_count: enrichedRecords.length,
+      excluded: [],
+      raw_identity_sha256: `sha256:${createHash('sha256').update(JSON.stringify([...referenceTool.records.keys()].sort())).digest('hex')}`,
+      imported_identity_sha256: `sha256:${createHash('sha256').update(JSON.stringify([...sourceIds].sort())).digest('hex')}`,
+    },
     reconciliation: {
       functions: activeFunctions.size,
       categories: activeCategories.size,
-      subcategories: enrichedRecords.length,
+      subcategories: referenceTool.records.size,
       implementation_examples: implementationExamples,
       informative_references: informativeReferences,
     },

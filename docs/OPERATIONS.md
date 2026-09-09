@@ -2,8 +2,40 @@
 
 - **Owner:** Nexus and Pixel
 - **Status:** Canonical
-- **Last reviewed:** 2026-08-27
+- **Last reviewed:** 2026-09-09
 - **Supersession:** Update this contract and the corresponding package scripts or workflows in the same approved change.
+
+## Unattended weekly source refresh
+
+The Wednesday refresh runs at 07:17 UTC, or through the `refresh` dispatch on
+`main`. It fetches only admitted publisher destinations. Exact host and GitHub
+repository rules apply before requests and redirects; refreshed datasets cannot
+expand that authority. Source discovery and version changes must retain publisher
+evidence and pass independent inventory reconciliation and baseline checks.
+
+Each source owns a bounded set of outputs. A failed candidate restores that
+source's previously accepted files and records quarantine; unrelated sources
+continue. Final validation checks the combined candidate before publication.
+The run report at `.local/source-refresh-results.json` records accepted and
+quarantined sources. `tools/report-refresh-alerts.mjs` creates, updates or reopens
+one generated GitHub issue per quarantined source, and closes it after an explicit
+accepted recovery. Missing or untouched source results never imply recovery.
+Alert delivery errors fail the job.
+
+After repository verification and SBOM generation, a repository-scoped GitHub
+App creates a ready PR on `automation/source-refresh`. Independent PR CI and
+security runs must pass for its current commit. The merge workflow verifies the
+App author, branch, allowed JSON paths and clean merge state, then requests a
+squash merge of that exact SHA. Routine validated refreshes need no human review;
+failed checks, blocked branch protection and quarantined sources remain visible
+for intervention. Production deployment follows the normal validated `main`
+artifact path.
+
+Configure `REFRESH_APP_CLIENT_ID` and `REFRESH_APP_PRIVATE_KEY` for the
+`control-atlas-source-refresh` App, installed only on this repository with contents
+and pull-request write permissions. The refresh job uses its separate Actions
+token for source requests and issue alerts; it obtains the App token only after
+validation. Required branch protections remain binding.
 
 ## Local gates
 
@@ -15,6 +47,8 @@ CI** on `main` with task `recover-refresh-pr`, the original `refresh_run_id`, an
 the full `refresh_head_sha` recorded in the failed PR action. Recovery verifies
 the run, snapshot parent, recorded SHA and data-only changes before creating a
 draft using the Actions token. It never refetches data or merges the draft.
+This recovery route is an operator fallback; its draft is not eligible for the
+App-authored automatic merge path above.
 
 Use `npm run refresh:recover-pr -- --verify-only` with `GITHUB_REPOSITORY`,
 `REFRESH_RUN_ID` and `REFRESH_HEAD_SHA` to inspect the proof without creating a PR.

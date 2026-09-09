@@ -11,6 +11,8 @@ import { promisify } from 'node:util';
 
 import { parseDisaCompilationStream } from '../tools/importers/disa-stig-adapter.mjs';
 import { writeJsonAtomically } from './lib/write-json-atomically.mjs';
+import { strictConditionalFetch } from './lib/strict-conditional-fetch.mjs';
+import { assertOfficialSourceUrl } from './lib/source-url-policy.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DISCOVERY_URL = 'https://public.cyber.mil/stigs/downloads/';
@@ -148,13 +150,6 @@ function wait(milliseconds) {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
 
-async function writeResponseBody(response, output) {
-  if (!response.body) throw new Error('DISA compilation response had no readable body');
-  for await (const chunk of Readable.fromWeb(response.body)) {
-    if (!output.write(chunk)) await once(output, 'drain');
-  }
-}
-
 async function fetchRange(url, start, end, fetchImpl) {
   let lastError;
   for (let attempt = 1; attempt <= RANGE_RETRIES; attempt += 1) {
@@ -181,24 +176,35 @@ async function fetchRange(url, start, end, fetchImpl) {
   throw lastError;
 }
 
-async function fetchRangeWithCurl(url, start, end, destination) {
+export async function fetchRangeWithCurl(url, start, end, destination, options = {}) {
+  const approvedUrl = assertOfficialSourceUrl(url).href;
+  const runCurl = options.execFileImpl || execFileAsync;
   const rangePath = `${destination}.${start}.part`;
   let lastError;
   try {
     for (let attempt = 1; attempt <= RANGE_RETRIES; attempt += 1) {
       try {
-        await execFileAsync('curl.exe', [
-          '--fail', '--silent', '--show-error', '--location',
+        const { stdout } = await runCurl('curl.exe', [
+          '--disable', '--fail', '--silent', '--show-error',
+          '--proto', '=https', '--proto-redir', '=https', '--max-redirs', '0',
           '--range', `${start}-${end}`,
           '--output', rangePath,
-          url,
+          '--write-out', '%{http_code}\n%{url_effective}',
+          approvedUrl,
         ], { timeout: 60_000 });
+        const [status, effectiveUrl] = String(stdout).trim().split(/\r?\n/);
+        if (status !== '206' || effectiveUrl !== approvedUrl) {
+          const error = new Error('DISA curl rejected redirect, non-range response, or changed effective URL');
+          error.code = 'DISA_EGRESS_REJECTED';
+          throw error;
+        }
         const bytes = readFileSync(rangePath);
         if (bytes.length !== end - start + 1) {
           throw new Error(`DISA curl range body length ${bytes.length} did not match ${end - start + 1} requested bytes`);
         }
         return bytes;
       } catch (error) {
+        if (error.code === 'DISA_EGRESS_REJECTED') throw error;
         lastError = error;
         if (attempt < RANGE_RETRIES) await wait(attempt * 2_000);
       }
@@ -233,7 +239,7 @@ async function downloadCompilation(url, destination, fetchImpl) {
       }
     } else {
       if (!probe.ok) throw new Error(`DISA compilation fetch failed: ${probe.status} ${url}`);
-      await pipeline(Readable.fromWeb(probe.body), output);
+      await pipeline(Readable.from(probe.body), output);
       return;
     }
     output.end();
@@ -273,7 +279,7 @@ function writeDisaArtifactManifest(result) {
 }
 
 export async function fetchDisaStigs(options = {}) {
-  const fetchImpl = options.fetchImpl || fetch;
+  const fetchImpl = options.fetchImpl || strictConditionalFetch;
   const explicitUrl = options.compilationUrl || process.env.DISA_STIG_COMPILATION_URL || '';
 
   if (explicitUrl) {

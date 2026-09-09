@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["schema_version", "seed_commit", "catalogs"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "seed_commit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "catalogs": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {
+        "type": "object", "additionalProperties": false,
+        "required": ["anchor", "accepted", "accepted_at", "history"],
+        "properties": {
+          "anchor": { "$ref": "#/definitions/observation" },
+          "accepted": { "$ref": "#/definitions/observation" },
+          "accepted_at": { "type": "string", "minLength": 10 },
+          "history": { "type": "array", "maxItems": 8, "items": { "$ref": "#/definitions/observation" } }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "observation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["record_count", "normalized_byte_length", "normalized_sha256", "identity_sha256", "publisher_version", "publisher_sha256", "publisher_byte_length", "publisher_evidence_reason", "independent_inventory"],
+      "properties": {
+        "record_count": { "type": "integer", "minimum": 1 },
+        "normalized_byte_length": { "type": "integer", "minimum": 1 },
+        "normalized_sha256": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+        "identity_sha256": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+        "publisher_version": { "type": ["string", "null"] },
+        "publisher_sha256": { "anyOf": [{ "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }, { "type": "null" }] },
+        "publisher_byte_length": { "type": ["integer", "null"], "minimum": 1 },
+        "publisher_evidence_reason": { "type": ["string", "null"] },
+        "independent_inventory": { "type": "boolean" },
+        "accepted_at": { "type": "string", "minLength": 10 }
+      }
+    }
+  }
+}
