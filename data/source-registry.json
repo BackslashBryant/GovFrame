@@ -1935,7 +1935,7 @@
       "eligibility_status": "eligible",
       "access_status": "public",
       "version": "19.2",
-      "retrieved_at": "2026-09-07",
+      "retrieved_at": "2026-09-09",
       "retrieval_method": "direct_file_import",
       "artifact_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/6cda5ad8462c79e14fbb872f4e09059b18e0cfc4/enterprise-attack/enterprise-attack-19.2.json",
       "catalog_browse_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json",
@@ -1966,7 +1966,7 @@
       "eligibility_status": "eligible",
       "access_status": "public",
       "version": "19.2",
-      "retrieved_at": "2026-09-07",
+      "retrieved_at": "2026-09-09",
       "retrieval_method": "direct_file_import",
       "artifact_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/6cda5ad8462c79e14fbb872f4e09059b18e0cfc4/ics-attack/ics-attack-19.2.json",
       "catalog_browse_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/ics-attack/ics-attack.json",
@@ -2029,7 +2029,7 @@
       "eligibility_status": "eligible",
       "access_status": "public",
       "version": "1.5.0",
-      "retrieved_at": "2026-08-25",
+      "retrieved_at": "2026-09-09",
       "retrieval_method": "api_import",
       "artifact_url": "https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json",
       "catalog_browse_url": "https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json",
@@ -2062,8 +2062,8 @@
       "lifecycle_status": "active",
       "eligibility_status": "eligible",
       "access_status": "public",
-      "version": "1.5.0",
-      "retrieved_at": "2026-09-07",
+      "version": "1.6.0",
+      "retrieved_at": "2026-09-09",
       "retrieval_method": "api_import",
       "artifact_url": "https://d3fend.mitre.org/ontologies/d3fend.json",
       "catalog_browse_url": "https://d3fend.mitre.org/",
@@ -3871,7 +3871,7 @@
       "version": "19.2",
       "lifecycle_status": "active",
       "retrieval_method": "direct_file_import",
-      "retrieved_at": "2026-09-07",
+      "retrieved_at": "2026-09-09",
       "artifact_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/6cda5ad8462c79e14fbb872f4e09059b18e0cfc4/enterprise-attack/enterprise-attack-19.2.json",
       "byte_length": 38961746,
       "sha256": "sha256:fbe2a38a817899d4f3cf5f6ee5f29b332448ad6ebac0d3eee519e774778f49bc",
@@ -3898,7 +3898,7 @@
       "version": "19.2",
       "lifecycle_status": "active",
       "retrieval_method": "direct_file_import",
-      "retrieved_at": "2026-09-07",
+      "retrieved_at": "2026-09-09",
       "artifact_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/6cda5ad8462c79e14fbb872f4e09059b18e0cfc4/ics-attack/ics-attack-19.2.json",
       "byte_length": 2854063,
       "sha256": "sha256:348a4e9a54dd9011329f92e0fd20ba72cae2fec76f0e2790b1e98f0de8f139bf",
@@ -3925,7 +3925,7 @@
       "version": "1.5.0",
       "lifecycle_status": "active",
       "retrieval_method": "direct_file_import",
-      "retrieved_at": "2026-08-25",
+      "retrieved_at": "2026-09-09",
       "artifact_url": "https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json",
       "byte_length": 38722880,
       "sha256": "sha256:3f103c5703fdfc8c2e658d8b81fb22b1cf7ef281d83ee324f4a3a176076f5d37",
@@ -3949,10 +3949,10 @@
       "source_role": "primary_data",
       "authority_class": "publisher",
       "format": "json_ld",
-      "version": "1.5.0",
+      "version": "1.6.0",
       "lifecycle_status": "active",
       "retrieval_method": "direct_file_import",
-      "retrieved_at": "2026-09-07",
+      "retrieved_at": "2026-09-09",
       "artifact_url": "https://d3fend.mitre.org/ontologies/d3fend.json",
       "byte_length": 3869363,
       "sha256": "sha256:67e363c95362897199a0e29fb383dc87cd9d575f7cc03494f9a8ae5614132380",
@@ -7718,7 +7718,7 @@
       "provenance_class": "mitre_published",
       "mandate_basis": [],
       "version": "19.2",
-      "retrieved_at": "2026-09-07",
+      "retrieved_at": "2026-09-09",
       "retrieval_method": "download",
       "artifact_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/6cda5ad8462c79e14fbb872f4e09059b18e0cfc4/enterprise-attack/enterprise-attack-19.2.json",
       "artifact_type": "stix",
@@ -7748,7 +7748,7 @@
       "provenance_class": "mitre_published",
       "mandate_basis": [],
       "version": "19.2",
-      "retrieved_at": "2026-09-07",
+      "retrieved_at": "2026-09-09",
       "retrieval_method": "download",
       "artifact_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/6cda5ad8462c79e14fbb872f4e09059b18e0cfc4/ics-attack/ics-attack-19.2.json",
       "artifact_type": "stix",
@@ -7777,8 +7777,8 @@
       "owner": "MITRE",
       "provenance_class": "mitre_published",
       "mandate_basis": [],
-      "version": "1.5.0",
-      "retrieved_at": "2026-09-07",
+      "version": "1.6.0",
+      "retrieved_at": "2026-09-09",
       "retrieval_method": "api",
       "artifact_url": "https://d3fend.mitre.org/ontologies/d3fend.json",
       "artifact_type": "api",
@@ -7808,7 +7808,7 @@
       "provenance_class": "mitre_published",
       "mandate_basis": [],
       "version": "1.5.0",
-      "retrieved_at": "2026-08-25",
+      "retrieved_at": "2026-09-09",
       "retrieval_method": "api",
       "artifact_url": "https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json",
       "artifact_type": "api",
@@ -8135,9 +8135,9 @@
       {
         "source_id": "nist-oscal",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
-        "last_imported": "2026-08-08",
-        "hash": "sha256:59cd4f90a51561452b620d5b47f7702b549b502844d91363efd346495e9986bf"
+        "last_checked": "2026-09-09",
+        "last_imported": "2026-09-09",
+        "hash": "sha256:562ea722e228de352ebef29802f54bf6e39d6d717365164c64d70b6e97bb76ce"
       },
       {
         "source_id": "nist-800-53",
@@ -8170,16 +8170,16 @@
       {
         "source_id": "nist-800-171-rev2",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-08",
         "hash": "sha256:da79c181fd0f4c2298c0474608b4ea559469a09955b4fb9c5e7a70b498109540"
       },
       {
         "source_id": "nist-800-172-rev3",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
-        "last_imported": "2026-08-08",
-        "hash": "sha256:8402917cf67e528d53193c2ad056e7e02e35e7d330d0095f6cc5863e0b406e6b"
+        "last_checked": "2026-09-09",
+        "last_imported": "2026-09-09",
+        "hash": "sha256:86b477966ffd4dd9155fa6278ea3e4d376e1feafef32c3771a0e0ae24e137e4e"
       },
       {
         "source_id": "isoo-cui-regulation",
@@ -8198,91 +8198,91 @@
       {
         "source_id": "disa-cci-list",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-08",
         "hash": "sha256:b37b11384fa8e13b8a4df0d024c697ba6809ecd100ef56bd76136b0c23d340d4"
       },
       {
         "source_id": "disa-stig-library",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-13",
         "hash": "sha256:3578716d26ece8c6861cc074adb32f54c99e53a0b143fbee557216b07d3ff2d1"
       },
       {
         "source_id": "disa-srg-library",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-13",
         "hash": "sha256:3676993277a443cec1c40abfa681afdca1a53a868c88716e8b6a6f17c81c0e66"
       },
       {
         "source_id": "disa-stig-srg-cci-references",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-08",
         "hash": "sha256:b166976a9baba6846fedb2b65e76c435f60b2bcc174b84f9a4de34d08b1fe89a"
       },
       {
         "source_id": "cyber-mil-stig-compilations",
         "sync_model": "link_out",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": null,
         "hash": null
       },
       {
         "source_id": "cyber-mil-stig-downloads",
         "sync_model": "link_out",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": null,
         "hash": null
       },
       {
         "source_id": "cyber-mil-stig-gpo",
         "sync_model": "link_out",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": null,
         "hash": null
       },
       {
         "source_id": "stigviewer-catalog",
         "sync_model": "link_out",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": null,
         "hash": null
       },
       {
         "source_id": "stigviewer-clkb-api",
         "sync_model": "link_out",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": null,
         "hash": null
       },
       {
         "source_id": "nuwcdivnpt-github-org",
         "sync_model": "link_out",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": null,
         "hash": null
       },
       {
         "source_id": "nuwcdivnpt-stig-manager",
         "sync_model": "link_out",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": null,
         "hash": null
       },
       {
         "source_id": "nist-ai-rmf-playbook",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-08",
         "hash": "sha256:7f5b942ef16b1efacc76d6eb1f58d393dd1d43c51fd9e9e7cd655f0b6ec50616"
       },
       {
         "source_id": "nist-ssdf-oscal",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-08",
         "hash": "sha256:d711a85a4f88f7053544eead9e29d4d22846b60c85d01f01140af292a2d8e6f6"
       },
@@ -8296,14 +8296,14 @@
       {
         "source_id": "fedramp-rev5",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-08",
         "hash": "sha256:a2bb86150a66f34a3c70e68c6361cd3d85fd46b92c3c474be6bc007dc355d860"
       },
       {
         "source_id": "fedramp-2026-rules",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-09",
         "hash": "sha256:b28eedc3dcb274f9276f045faa1508f4f53bf7f703eb28180585ecaa46d41776"
       },
@@ -8317,7 +8317,7 @@
       {
         "source_id": "nist-800-53b-baselines",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-08",
         "hash": "sha256:0438254e54f22022d7b1f3b5ccb7d80ee81d20335db306784eb4001ce6e13398"
       },
@@ -8345,7 +8345,7 @@
       {
         "source_id": "nist-800-53a-assessment-procedures",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-08",
         "hash": "sha256:46f808428e0d517f1e0c13a36296e746060b61a4dc36e391252c9fbc7887e13d"
       },
@@ -8366,14 +8366,14 @@
       {
         "source_id": "nist-800-171-oscal-mappings",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-08",
         "hash": "sha256:6edfe9c55fb66ff884220cc5863c6ee1431af993a8004c5a9b9149ae1d0d2c55"
       },
       {
         "source_id": "disa-cci-nist-references",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-08",
         "hash": "sha256:cbe530bfa300eb783cdae2083e791f719439ef7c15ace8740328f79f10ef985e"
       },
@@ -8387,30 +8387,30 @@
       {
         "source_id": "mitre-attack-enterprise",
         "sync_model": "auto_synced",
-        "last_checked": "2026-09-07",
-        "last_imported": "2026-09-07",
-        "hash": "sha256:fbe2a38a817899d4f3cf5f6ee5f29b332448ad6ebac0d3eee519e774778f49bc"
+        "last_checked": "2026-09-09",
+        "last_imported": "2026-09-09",
+        "hash": "sha256:cbe968dceb141d30fe747fed4a8682f9e4f024a8bfe97dfcacc6c2b7cbec1b78"
       },
       {
         "source_id": "mitre-attack-ics",
         "sync_model": "auto_synced",
-        "last_checked": "2026-09-07",
-        "last_imported": "2026-09-07",
-        "hash": "sha256:348a4e9a54dd9011329f92e0fd20ba72cae2fec76f0e2790b1e98f0de8f139bf"
+        "last_checked": "2026-09-09",
+        "last_imported": "2026-09-09",
+        "hash": "sha256:a38639cf2bfdfb0ac266b88af5516f3d870e20a03393f7f9c2aa042a5b20ee4f"
       },
       {
         "source_id": "mitre-d3fend-ontology",
         "sync_model": "auto_synced",
-        "last_checked": "2026-09-07",
-        "last_imported": "2026-09-07",
-        "hash": "sha256:67e363c95362897199a0e29fb383dc87cd9d575f7cc03494f9a8ae5614132380"
+        "last_checked": "2026-09-09",
+        "last_imported": "2026-09-09",
+        "hash": "sha256:71edb66dda0a4a178fbeea75b77546bf44d171de56ad25107f57fd8feda2a7f2"
       },
       {
         "source_id": "mitre-d3fend-mappings",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-25",
-        "last_imported": "2026-08-25",
-        "hash": "sha256:3f103c5703fdfc8c2e658d8b81fb22b1cf7ef281d83ee324f4a3a176076f5d37"
+        "last_checked": "2026-09-09",
+        "last_imported": "2026-09-09",
+        "hash": "sha256:a88a77d7396e2ab154ead52941340eaa83f615693e199470c1977225e4cb4d34"
       },
       {
         "source_id": "mitre-cis-cci-mappings",
@@ -8429,7 +8429,7 @@
       {
         "source_id": "nist-olir-csf2-to-sp800-53",
         "sync_model": "auto_synced",
-        "last_checked": "2026-08-13",
+        "last_checked": "2026-09-09",
         "last_imported": "2026-08-08",
         "hash": "sha256:31eeb5114751a86f0e216e88a73e10f858165f7aa08fee3cfc8b7730263ca0a1"
       },

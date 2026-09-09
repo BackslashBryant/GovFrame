@@ -1,6 +1,6 @@
 {
   "schema_version": "4.0",
-  "generated_at": "2026-09-07T04:20:16.363Z",
+  "generated_at": "2026-09-09T19:44:53.855Z",
   "completeness": {
     "total_publications": 101,
     "total_artifacts": 92,
@@ -294,7 +294,7 @@
       "methods": [
         "direct_file_import"
       ],
-      "last_refresh": "2026-09-07",
+      "last_refresh": "2026-09-09",
       "has_shard": true
     },
     {
@@ -314,7 +314,7 @@
       "methods": [
         "direct_file_import"
       ],
-      "last_refresh": "2026-09-07",
+      "last_refresh": "2026-09-09",
       "has_shard": true
     },
     {
@@ -334,7 +334,7 @@
       "methods": [
         "direct_file_import"
       ],
-      "last_refresh": "2026-09-07",
+      "last_refresh": "2026-09-09",
       "has_shard": true
     },
     {
