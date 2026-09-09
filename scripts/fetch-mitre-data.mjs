@@ -34,6 +34,13 @@ const HYDRATION_MANIFEST = join(ROOT, 'data', 'artifact-hydration-manifest.json'
 
 const ATTACK_RELEASE = '19.2';
 const ATTACK_RELEASE_COMMIT = '6cda5ad8462c79e14fbb872f4e09059b18e0cfc4';
+// The reviewed D3FEND release, used as the label only when the publisher's
+// version endpoint is unreachable. verify-source-truth.mjs pins the same value
+// against the registry, so when a refresh records a genuinely newer upstream
+// version the pin fails loudly and a person reviews the bump. Upstream was
+// already 1.6.0 on 2026-09-09; that bump is deliberately not taken here,
+// because the registry checksum and record count for 1.6.0 must come from a
+// real fetch rather than be typed in by hand.
 const D3FEND_RELEASE = '1.5.0';
 
 const REMOTE = {
@@ -43,6 +50,7 @@ const REMOTE = {
     `https://raw.githubusercontent.com/mitre-attack/attack-stix-data/${ATTACK_RELEASE_COMMIT}/ics-attack/ics-attack-${ATTACK_RELEASE}.json`,
   d3fendOntology: 'https://d3fend.mitre.org/ontologies/d3fend.json',
   d3fendMappings: 'https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json',
+  d3fendVersion: 'https://d3fend.mitre.org/api/version.json',
 };
 
 function checksum(value) {
@@ -177,7 +185,22 @@ export async function fetchMitreData(options = {}) {
     const snapshotDate = new Date().toISOString().slice(0, 10);
     const enterpriseVersion = ATTACK_RELEASE;
     const icsVersion = ATTACK_RELEASE;
-    const d3fendVersion = D3FEND_RELEASE;
+    // Label the ontology with the version the publisher reports, not a constant.
+    // d3fend.json is served unversioned, so a hardcoded release silently
+    // relabels new upstream bytes as the old reviewed version: on 2026-09-09 the
+    // live ontology had already moved to 1.6.0 while every artifact still said
+    // 1.5.0. The reviewed-version pin in verify-source-truth.mjs is what gates
+    // an unreviewed bump; this only makes the recorded label truthful.
+    // The version endpoint must never be a new hard dependency: if it is
+    // unreachable we fall back to the reviewed constant rather than failing a
+    // fetch that otherwise succeeded.
+    let d3fendVersion = D3FEND_RELEASE;
+    try {
+      const reported = (await fetchJson(REMOTE.d3fendVersion, fetchImpl))?.ontology_version;
+      if (reported) d3fendVersion = String(reported);
+    } catch {
+      d3fendVersion = D3FEND_RELEASE;
+    }
 
     const enterpriseChecksum = checksum(JSON.stringify(enterpriseStix));
     const icsChecksum = checksum(JSON.stringify(icsStix));
@@ -305,7 +328,13 @@ export async function fetchMitreData(options = {}) {
 
 async function main() {
   const result = await fetchMitreData();
-  if (result.fallbackMode && process.env.CONTROL_ATLAS_REQUIRE_FRESH_FETCH === '1') {
+  // A *partial* fallback is the anticipated case documented above: MITRE's
+  // inference API is 404 and only the ATT&CK-to-D3FEND map falls back to its
+  // committed snapshot, while the other four artifacts were fetched fresh.
+  // Failing the refresh for that freezes every remaining ingestion task over
+  // one retired upstream endpoint. A whole-fetch fallback stays fatal, because
+  // it means nothing fresh was retrieved at all.
+  if (result.fallbackMode && !result.partialFallback && process.env.CONTROL_ATLAS_REQUIRE_FRESH_FETCH === '1') {
     throw new Error(`MITRE refresh required a live upstream fetch but used ${result.fallbackMode}`);
   }
   writeJsonAtomically(COMMITTED.enterprise, result.enterprise);
