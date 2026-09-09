@@ -7,6 +7,7 @@ import { pathToFileURL } from 'node:url';
 import { classifyNameStatus } from './classify-change-scope.mjs';
 
 const AUTOMATION_TESTS = new Set([
+  'tests/recover-refresh-pr.test.mjs',
   'tests/build-layout-contract.test.mjs',
   'tests/change-scope.test.mjs',
   'tests/experience-guardian.test.mjs',
@@ -144,6 +145,9 @@ export function createVerificationPlan(paths, changeMap) {
   }
 
   if (changeMap.automationChanged) {
+    if (paths.includes('tools/recover-refresh-pr.mjs') || paths.includes('tests/recover-refresh-pr.test.mjs')) {
+      addStep(steps, { id: 'refresh-recovery-contracts', command: ['node', '--test', 'tests/recover-refresh-pr.test.mjs'], expectedTests: 2, workers: 1, budgetSeconds: 5 });
+    }
     addStep(steps, {
       id: 'automation-lint', command: ['npm', 'run', 'lint:automation'],
       expectedTests: 0, workers: 1, budgetSeconds: 5,

@@ -24,6 +24,8 @@ const DEPENDENCY_FILES = new Set([
   'package-lock.json',
 ]);
 const AUTOMATION_FILES = new Set([
+  'tools/recover-refresh-pr.mjs',
+  'tests/recover-refresh-pr.test.mjs',
   '.gitattributes',
   '.gitignore',
   'config/experience-guardian/copy-ownership.json',

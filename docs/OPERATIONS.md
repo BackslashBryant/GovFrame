@@ -7,6 +7,20 @@
 
 ## Local gates
 
+### Recover a validated refresh PR
+
+If a refresh passes ingestion, repository verification and SBOM generation but
+cannot create its PR, retain `automation/source-refresh`. Dispatch **Control Atlas
+CI** on `main` with task `recover-refresh-pr`, the original `refresh_run_id`, and
+the full `refresh_head_sha` recorded in the failed PR action. Recovery verifies
+the run, snapshot parent, recorded SHA and data-only changes before creating a
+draft using the Actions token. It never refetches data or merges the draft.
+
+Use `npm run refresh:recover-pr -- --verify-only` with `GITHUB_REPOSITORY`,
+`REFRESH_RUN_ID` and `REFRESH_HEAD_SHA` to inspect the proof without creating a PR.
+
+### Build and verification commands
+
 - `npm run build:data` rebuilds and reconciles generated source truth.
 - `npm run build:site` produces `dist/site`.
 - `npm run verify:quality` runs discovery, manifest, hygiene, OSCAL, lint, type, unit, browser-contract, DOM, and public-artifact gates.

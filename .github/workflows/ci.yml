@@ -17,7 +17,13 @@ on:
         required: true
         default: standard
         type: choice
-        options: [standard, nightly, refresh, oscal, lighthouse-ab]
+        options: [standard, nightly, refresh, recover-refresh-pr, oscal, lighthouse-ab]
+      refresh_run_id:
+        description: Completed refresh run whose data and repository gates passed
+        required: false
+      refresh_head_sha:
+        description: Full SHA of the preserved automation/source-refresh snapshot
+        required: false
       before_ref:
         description: Lighthouse A/B baseline ref
         required: false
@@ -704,6 +710,27 @@ jobs:
           path: playwright-report
           if-no-files-found: error
           retention-days: 14
+
+  recover-refresh-pr:
+    name: Recover validated refresh PR
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.task == 'recover-refresh-pr' && github.ref == 'refs/heads/main' }}
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm run refresh:recover-pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REFRESH_RUN_ID: ${{ inputs.refresh_run_id }}
+          REFRESH_HEAD_SHA: ${{ inputs.refresh_head_sha }}
 
   refresh:
     name: Weekly validated data refresh
