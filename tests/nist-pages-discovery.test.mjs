@@ -36,3 +36,18 @@ test('structured asset discovery finds data files and bounded relevant child pag
     'https://pages.nist.gov/project/Mappings.html',
   ]);
 });
+
+test('deeply nested publisher HTML defeats the parser, so callers must isolate the parse', () => {
+  // Regression guard for the 2026-09-09 refresh outage: a NIST Pages project
+  // page nested deeply enough overflows node-html-parser's stack, and the
+  // refresh aborted every remaining ingestion task. discover-nist-structured-assets
+  // now records such a page as `parse_failed` and continues, which is only
+  // correct while this call can still throw. If this assertion starts failing,
+  // the parser gained its own guard and that isolation can be revisited.
+  const deep = `${'<div>'.repeat(20000)}<a href="/x.csv">c</a>${'</div>'.repeat(20000)}`;
+  assert.throws(() => extractStructuredAssets(deep, 'https://pages.nist.gov/p/'), RangeError);
+
+  // The same content shallow enough to parse is still extracted normally.
+  const shallow = `${'<div>'.repeat(50)}<a href="/x.csv">c</a>${'</div>'.repeat(50)}`;
+  assert.equal(extractStructuredAssets(shallow, 'https://pages.nist.gov/p/').length, 1);
+});

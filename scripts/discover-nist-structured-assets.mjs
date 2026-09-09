@@ -79,7 +79,17 @@ async function main() {
   for (const result of pageResults) {
     for (const page of result.pages) {
       if (page.status === 'fetched') {
-        const assets = extractStructuredAssets(page.html, page.url);
+        // A publisher page can be large or malformed enough to defeat the HTML
+        // parser. Record that page as unparsed and keep going: one bad page is
+        // not evidence that discovery itself is broken, and the fetch path above
+        // already isolates failures the same way.
+        let assets;
+        try {
+          assets = extractStructuredAssets(page.html, page.url);
+        } catch (error) {
+          pageEvidence.push({ requested_url: page.requested_url, url: page.url, project: result.project.repo_name, depth: page.depth, status: 'parse_failed', reason: error.message, structured_assets: 0 });
+          continue;
+        }
         for (const asset of assets) mergeAsset(assetIndex, asset, result.project.repo_name);
         pageEvidence.push({ requested_url: page.requested_url, url: page.url, project: result.project.repo_name, depth: page.depth, status: page.status, structured_assets: assets.length });
       } else {
