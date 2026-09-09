@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readGeneratedCollection } from './lib/generated-graph-artifacts.mjs';
@@ -177,6 +177,7 @@ const ledger = preserveGeneratedAt(OUT, {
   catalogs: catalogEntries,
   findings: errors,
 });
+mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(OUT, `${JSON.stringify(ledger, null, 2)}\n`, 'utf8');
 
 if (errors.length) {

@@ -5,7 +5,7 @@
 // it cannot prove that a terse publisher record contains all the context a
 // practitioner wants. Keeping the latter explicit prevents green ingestion
 // gates from being misread as a completed source-content audit.
-import { readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -149,6 +149,7 @@ const report = {
   catalogs: auditRows,
 };
 
+mkdirSync(join(ROOT, "data/generated"), { recursive: true });
 writeFileSync(
   join(ROOT, "data/generated/source-semantic-audit.json"),
   `${JSON.stringify(report, null, 2)}\n`,

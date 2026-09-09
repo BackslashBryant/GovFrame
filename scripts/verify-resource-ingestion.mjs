@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { INGESTION_STAGES } from './lib/ingestion-pipeline.mjs';
@@ -110,6 +110,7 @@ const ledger = preserveGeneratedAt(outputPath, {
   resources,
   findings: errors,
 });
+mkdirSync(dirname(outputPath), { recursive: true });
 writeFileSync(outputPath, `${JSON.stringify(ledger, null, 2)}\n`, 'utf8');
 
 if (errors.length) {

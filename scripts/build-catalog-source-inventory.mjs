@@ -2,7 +2,7 @@
 // Build the source-side catalog inventory before graph construction. This is
 // deliberately separate from generated graph counts: a graph cannot certify
 // that its own importer was complete.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { generatedAt } from './lib/stable-generated-at.mjs';
@@ -79,5 +79,6 @@ const inventory = {
   catalogs,
 };
 
+mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(OUT, `${JSON.stringify(inventory, null, 2)}\n`, 'utf8');
 console.log(`catalog-source-inventory: ${Object.keys(catalogs).length} catalogs reconciled before graph construction.`);

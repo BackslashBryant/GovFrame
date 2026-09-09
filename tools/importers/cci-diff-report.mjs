@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -29,6 +29,7 @@ export function writeCciDiffReport(nextCatalog) {
   if (!existsSync(path)) return null;
   const previous = JSON.parse(readFileSync(path, 'utf8'));
   const report = buildCciDiffReport(previous, nextCatalog);
+  mkdirSync(dirname(output), { recursive: true });
   writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
   return report;
 }
