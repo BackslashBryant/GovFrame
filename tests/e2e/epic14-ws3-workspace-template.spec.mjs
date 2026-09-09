@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import commonsDataset from "../../data/commons-resource-dataset.json" with { type: "json" };
 
 import { attachPageDiagnostics, gotoApp, waitForAppReady } from "./support.mjs";
 
@@ -147,6 +148,11 @@ test("WS3 Resources shares Template C with real list, map, and comparison modes"
 });
 
 test("WS3 Resource detail uses a knowledge-base reading sequence", async ({ page }) => {
+  const resource = commonsDataset.resources.find((item) => item.id === "tool-grype-vulnerability-scanner");
+  expect(resource).toBeDefined();
+  // Publisher media is optional. Assert against the input dataset, never the
+  // rendered section, so both a missing image and an invented section fail.
+  const media = resource.media?.status === "available" ? resource.media.items : [];
   await page.setViewportSize({ width: 1440, height: 1000 });
   await gotoApp(page, "/#/resources/tool-grype-vulnerability-scanner");
   await waitForAppReady(page, { allowPartial: true });
@@ -158,7 +164,7 @@ test("WS3 Resource detail uses a knowledge-base reading sequence", async ({ page
   await expect(article.getByRole("heading", { level: 2 })).toHaveText([
     "What it is",
     "How to use or access",
-    "Screenshots",
+    ...(media.length ? ["Screenshots"] : []),
     "Filed under",
   ]);
   await expect(page.getByRole("heading", { name: "Governed discovery tags" })).toHaveCount(0);
@@ -166,7 +172,13 @@ test("WS3 Resource detail uses a knowledge-base reading sequence", async ({ page
   await expect(details).not.toHaveAttribute("open", "");
   await details.locator("summary").click();
   await expect(details.getByText("Verification method", { exact: true })).toBeVisible();
-  await expect(page.locator(".resource-detail-media figcaption")).not.toContainText(/commit\s+[0-9a-f]/i);
+  const images = page.locator(".resource-detail-media img");
+  await expect(images).toHaveCount(media.length);
+  for (const [index, item] of media.entries()) {
+    await expect(images.nth(index)).toHaveAttribute("src", item.url);
+    await expect(images.nth(index)).toHaveAttribute("alt", item.alt);
+    await expect(page.locator(".resource-detail-media figcaption").nth(index)).not.toContainText(/commit\s+[0-9a-f]/i);
+  }
 });
 
 test("WS3 facets move to a modal sheet below the desktop breakpoint", async ({ page }) => {

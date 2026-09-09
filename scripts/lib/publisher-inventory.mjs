@@ -169,8 +169,13 @@ export function assertPublisherInventory(format, payload, records, options = {})
       const id = identity(entry.id, `objects[${index}].id`);
       if (entry.type !== 'attack-pattern') { add(id, null, 'non-technique STIX object'); return; }
       const refs = array(entry.external_references, `${id}.external_references`);
-      const ref = refs.find((item) => object(item, `${id}.reference`).source_name === 'mitre-attack' && item.external_id);
-      add(id, identity(ref?.external_id, `${id}.mitre-attack external_id`));
+      // Publisher ICS bundles use both namespaces, including the older
+      // mitre-ics-attack identity on T0850 in the official v19.2 bundle.
+      const namespaces = format === 'attack-ics' ? ['mitre-attack', 'mitre-ics-attack'] : ['mitre-attack'];
+      const ids = new Set(refs.filter((item) => namespaces.includes(object(item, `${id}.reference`).source_name))
+        .map((item) => identity(item.external_id, `${id}.${item.source_name} external_id`)));
+      if (ids.size > 1) throw new Error(`Ambiguous publisher ATT&CK identity: ${id}`);
+      add(id, identity([...ids][0], `${id}.MITRE external_id`));
     });
   } else if (format === 'fedramp-2026') {
     object(payload, 'rules');

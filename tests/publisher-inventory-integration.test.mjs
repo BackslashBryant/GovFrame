@@ -87,6 +87,49 @@ test('CSF workbook reconciliation compares both directions of independent publis
   assert.throws(() => enrichCsfCatalogFromReferenceTool([...records, additional], publisher), /missing active OSCAL identifiers/);
 });
 
+// Synthetic active inventory with exact withdrawal syntax observed in the
+// official CSF 2.0 all-in-one worksheet on 2026-09-09.
+const csfActive = Array.from({ length: 106 }, (_, index) => ({
+  id: `GV.A${String.fromCharCode(65 + Math.floor(index / 99))}-${String(index % 99 + 1).padStart(2, '0')}`,
+  description: `Active outcome ${index}`, function_id: `F${index % 6}`, category_id: `C${index % 22}`,
+}));
+const csfWithdrawn = [
+  ['', '', 'ID.BE-01: [Withdrawn: Incorporated into GV.OC-05]'],
+  ['', '', 'PR.IP-01: [Withdrawn: Incorporated into PR.PS-01]'],
+];
+const csfRows = (records = csfActive) => [
+  ['', 'The NIST Cybersecurity Framework 2.0'],
+  ['Function', 'Category', 'Subcategory', 'Implementation Examples', 'Informative References'],
+  ...records.map((record) => ['', '', `${record.id}: ${record.description}`, 'Example', 'Reference']),
+  ...csfWithdrawn,
+];
+
+test('CSF publisher withdrawal markers independently exclude legacy IDs from the active inventory', () => {
+  const source = parseCsfReferenceToolRows(csfRows());
+  assert.equal(source.raw_ids.length, 108);
+  assert.equal(source.records.size, 106);
+  assert.deepEqual(source.excluded.map((entry) => entry.id), ['ID.BE-01', 'PR.IP-01']);
+  assert.ok(source.excluded.every((entry) => entry.reason.startsWith('[Withdrawn:')));
+  const enriched = enrichCsfCatalogFromReferenceTool(csfActive, source);
+  assert.equal(enriched.publisher_inventory.raw_count, 108);
+  assert.equal(enriched.publisher_inventory.eligible_count, 106);
+  assert.equal(enriched.publisher_inventory.excluded.length, 2);
+  assert.equal(enriched.reconciliation.subcategories, 106);
+});
+
+test('CSF withdrawn rows cannot hide a missing active publisher or imported ID', () => {
+  assert.throws(() => parseCsfReferenceToolRows(csfRows(csfActive.slice(1))), /only 105 subcategories/);
+  const source = parseCsfReferenceToolRows(csfRows());
+  assert.throws(() => enrichCsfCatalogFromReferenceTool(csfActive.slice(1), source), /missing publisher subcategories/);
+  assert.throws(() => enrichCsfCatalogFromReferenceTool([...csfActive, { id: 'ID.BE-01' }], source), /missing active OSCAL identifiers/);
+});
+
+test('CSF duplicates and unmarked extra publisher IDs remain failures', () => {
+  assert.throws(() => parseCsfReferenceToolRows([...csfRows(), csfWithdrawn[0]]), /repeats subcategory/);
+  const source = parseCsfReferenceToolRows([...csfRows(), ['', '', 'GV.ZZ-99: New active publisher outcome']]);
+  assert.throws(() => enrichCsfCatalogFromReferenceTool(csfActive, source), /missing publisher subcategories: GV.ZZ-99/);
+});
+
 const rules = () => ({ info: { version: 'test', last_updated: '2026-01-01' }, CTL: {}, FRD: { data: { all: { D1: { definition: 'Publisher definition' } } } }, FRR: {}, KSI: {} });
 test('FedRAMP builder independently gates final projection including manufactured empty variants', () => {
   assert.equal(normalizeFedramp2026(rules()).publisher_inventory.eligible_count, 1);
