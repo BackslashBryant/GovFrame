@@ -57,7 +57,7 @@ export const NATIVE_INVENTORIES = Object.freeze({
   'disa-stig': { file: 'data/disa-artifact-manifest.json', field: 'reconciliation.stig_records_parsed' },
   'dod-zt': { file: 'data/curated/dod-zt/source-manifest.json', field: 'reconciliation.atlas_records_expected', reviewedCount: 320 },
   'microsoft-zt-maturity': { file: 'data/curated/nist-zt/structured-source-manifest.json', field: 'reconciliation.questionnaire_records' },
-  'nist-iot-cybersecurity': { file: 'data/curated/nist-structured-catalogs/source-manifest.json', field: 'reconciliation.iot.records' },
+  'nist-iot-cybersecurity': { file: 'data/curated/nist-structured-catalogs/source-manifest.json', field: 'reconciliation.iot.records', evidenceClass: 'publisher_mapping_inventory' },
   'nist-mobile-threats': {
     file: 'data/curated/nist-structured-catalogs/source-manifest.json',
     field: 'reconciliation.mobile_threats.expected_records',

@@ -80,3 +80,15 @@ test('curated DoD Zero Trust retains its reviewed 320-record expectation', () =>
   assert.equal(resolveNativeInventory('dod-zt', { reconciliation: { atlas_records_expected: 320 } }).expected_count, 320);
   assert.throws(() => resolveNativeInventory('dod-zt', { reconciliation: { atlas_records_expected: 321 } }), /reviewed 320/);
 });
+
+test('IoT count synchronization preserves disclosed mapping evidence attribution', () => {
+  const registry = { artifacts: [], catalog_source_bundles: [{
+    catalog_id: 'nist-iot-cybersecurity', mapping_source_ids: ['official-workbook'],
+    expected_inventory: { evidence_class: 'publisher_mapping_inventory', primary_extraction_status: 'not_performed' },
+  }] };
+  const result = synchronizeCatalogInventoryContracts(registry).catalog_source_bundles[0];
+  assert.equal(result.expected_inventory.evidence_class, 'publisher_mapping_inventory');
+  assert.equal(result.expected_inventory.primary_extraction_status, 'not_performed');
+  assert.deepEqual(result.mapping_source_ids, ['official-workbook']);
+  assert.match(result.expected_inventory.imported_evidence_locator, /normalized_records$/);
+});

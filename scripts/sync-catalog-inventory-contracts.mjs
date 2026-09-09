@@ -24,7 +24,7 @@ export function synchronizeCatalogInventoryContracts(input, nativeInventories = 
         basis: bundle.expected_inventory?.basis?.includes('Tracked reviewed snapshot')
           ? 'Native publisher or curated extraction manifest count, reconciled against actual normalized catalog records with explicit exclusions.'
           : bundle.expected_inventory?.basis || 'Native publisher or curated extraction manifest count, reconciled against actual normalized catalog records with explicit exclusions.',
-        evidence_class: 'native_manifest',
+        evidence_class: native.evidenceClass || 'native_manifest',
         evidence_locator: `${native.file}#${native.field}`,
         imported_evidence_locator: `${root}.normalized_records`,
         exclusions: native.excludedField

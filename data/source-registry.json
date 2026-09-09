@@ -6179,7 +6179,7 @@
       "reconciliation_source_ids": [],
       "expected_inventory": {
         "basis": "Unique NIST IoT catalog records normalized from the two publisher mapping workbooks and reconciled by exact record path. The catalog page supplies publication identity; the draft workbooks supply mapping data.",
-        "evidence_class": "native_manifest",
+        "evidence_class": "publisher_mapping_inventory",
         "primary_extraction_status": "not_performed",
         "evidence_locator": "data/curated/nist-structured-catalogs/source-manifest.json#reconciliation.iot.records",
         "imported_evidence_locator": "data/generated/catalog-source-inventory.json#catalogs.nist-iot-cybersecurity.normalized_records",
