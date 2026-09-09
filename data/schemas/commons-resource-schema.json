@@ -225,7 +225,7 @@
             "type": "object",
             "required": ["status", "operatingSystems", "environments", "sourceUrl", "note"],
             "properties": {
-              "status": { "const": "documented" },
+              "status": { "enum": ["documented", "not_stated", "not_applicable"] },
               "operatingSystems": { "type": "array", "items": { "type": "string" } },
               "environments": { "type": "array", "items": { "type": "string" } },
               "sourceUrl": { "type": "string" },
@@ -235,8 +235,14 @@
           "media": {
             "type": "object",
             "required": ["status", "items", "sourceUrl"],
+            "allOf": [
+              {
+                "if": { "properties": { "status": { "const": "not_available" } }, "required": ["status"] },
+                "then": { "required": ["reason"], "properties": { "reason": { "type": "string", "minLength": 1 } } }
+              }
+            ],
             "properties": {
-              "status": { "const": "available" },
+              "status": { "enum": ["available", "not_available"] },
               "sourceUrl": { "type": "string" },
               "reason": { "type": "string" },
               "items": {
