@@ -91,10 +91,17 @@ const RESOLUTIONS = [
   { id: 'artifact-nist-800-171-rev2', url: 'https://csrc.nist.gov/files/pubs/sp/800/171/r2/upd1/final/docs/sp800-171r2-security-reqs.csv', format: 'csv', parser: 'csv', parser_version: '1.0.0', count: 'csv' },
   { id: 'artifact-nist-ai-rmf-playbook', url: 'https://airc.nist.gov/docs/playbook.json', format: 'json', parser: 'ai-rmf-playbook-json', parser_version: '1.0.0', count: 'jsonld' },
   { id: 'artifact-fedramp-2026-rules', url: 'https://raw.githubusercontent.com/FedRAMP/rules/main/fedramp-consolidated-rules.json', format: 'json', parser: 'fedramp-consolidated-rules-json', parser_version: '1.0.0', count: 'jsonld' },
-  { id: 'artifact-mitre-attack-enterprise', url: 'https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json', format: 'stix', parser: 'stix-json', parser_version: '1.0.0', count: 'stix' },
-  { id: 'artifact-mitre-attack-ics', url: 'https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/ics-attack/ics-attack.json', format: 'stix', parser: 'stix-json', parser_version: '1.0.0', count: 'stix' },
-  { id: 'artifact-mitre-d3fend-ontology', url: 'https://d3fend.mitre.org/api/technique/all.json', format: 'json_ld', parser: 'd3fend-json-ld', parser_version: '1.0.0', count: 'jsonld' },
-  { id: 'artifact-mitre-d3fend-mappings', url: 'https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json', format: 'json_ld', parser: 'd3fend-json-ld', parser_version: '1.0.0', count: 'jsonld' },
+  // The four MITRE artifacts are deliberately absent. fetch-mitre-data.mjs owns
+  // them: it fetches ATT&CK at a pinned release commit rather than master, takes
+  // D3FEND from the ontology URL the registry actually declares, and
+  // migrate-source-truth-profiles.mjs syncs the registry's sha256, artifact_url,
+  // byte_length and record_count from the catalogs it writes.
+  //
+  // Hydrating them here as well meant two tasks claiming the same artifact ids
+  // from different URLs -- master versus a pinned commit, and
+  // /api/technique/all.json versus /ontologies/d3fend.json -- so the registry
+  // and the execution manifest recorded checksums of genuinely different bytes
+  // and verify-manifests rejected all three. One artifact, one hydrator.
   { id: 'artifact-disa-cci-list', url: 'https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_CCI_List.zip', format: 'oscal_xml', parser: 'cci-xml', parser_version: '1.0.0', count: 'cci' },
   // NIST OSCAL catalog family (pinned v1.5.0). These target the graph-cited
   // artifact ids (artifact-<catalogId>) so node/edge provenance resolves to
