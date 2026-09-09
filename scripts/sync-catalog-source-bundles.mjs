@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { writeJsonAtomically } from './lib/write-json-atomically.mjs';
@@ -24,7 +24,18 @@ const RETRIEVAL_METHOD_BY_PARSER = Object.freeze({
 });
 
 function catalogIds() {
-  return readdirSync(join(ROOT, 'data', 'generated', 'catalog-records'), { withFileTypes: true })
+  // This directory is produced by build-framework-data.mjs, which is ingestion
+  // task 23; this sync is task 18. On a clean runner data/generated is empty
+  // (it is gitignored), so there are no generated catalog records to reconcile
+  // yet and the correct answer is "none", not a crash. Existing bundles are
+  // unaffected either way: `known` below is seeded from the committed registry,
+  // so an empty list adds nothing and prunes nothing.
+  const directory = join(ROOT, 'data', 'generated', 'catalog-records');
+  if (!existsSync(directory)) {
+    console.log('No generated catalog records yet; leaving existing bundles untouched.');
+    return [];
+  }
+  return readdirSync(directory, { withFileTypes: true })
     .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
     .map((entry) => entry.name.slice(0, -5))
     .filter((id) => !NON_CATALOG_TECHNICAL_SHARDS.includes(id))
