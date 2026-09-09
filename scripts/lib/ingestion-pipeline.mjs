@@ -55,6 +55,20 @@ export const INGESTION_TASKS = Object.freeze([
     stages: ['acquire', 'attest', 'parse', 'presentation'],
     scope: ['all-resources'], args: ['--refresh'], remote_fetch: true, retries: 2,
   },
+  // The normalization pass the presentation verifiers assume has already run.
+  // enrich-commons-resources deliberately writes fields that are only correct
+  // before normalization: whatItDoes and overview default to resource.summary,
+  // and repositoryEvidence is null for anything that is not a repository. This
+  // script removes exactly those -- a duplicate cardPurpose (:196), a duplicate
+  // overview (:197), a duplicate whatItDoes (:200) and any null or "unknown"
+  // optional (:193) -- which is why verify-source-truth rejects all of them.
+  //
+  // It runs immediately after the enrichment that produces those fields, and
+  // before build-commons-index, so the search index is built from the
+  // normalized dataset rather than the raw one. In build:data it sits earlier
+  // because there it normalizes the committed dataset; here it has to follow
+  // the task that rewrites it.
+  { id: 'migrate-source-truth-profiles', script: 'migrate-source-truth-profiles.mjs', stages: ['normalize', 'presentation'], scope: ['all-resources', 'all-sources'], retries: 1 },
   {
     id: 'build-commons-index', script: 'build-commons-index.mjs',
     stages: ['normalize', 'structure', 'relationships', 'publish'],

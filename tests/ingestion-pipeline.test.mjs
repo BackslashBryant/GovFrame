@@ -110,22 +110,60 @@ test('every generator that writes into data/generated is part of the refresh pip
   // while loading its own config -- and how it died earlier on
   // taxonomy-registry.json. This asserts the two pipelines cannot drift again.
   const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
-  const chain = `${pkg.scripts['build:data']} ${pkg.scripts['generate:data']}`;
+
+  // Steps reach the chain two ways: a direct `node ./scripts/x.mjs`, or an
+  // `npm run alias` that resolves to one. Only expanding the direct form misses
+  // exactly the case this test exists to catch -- migrate:source-truth hid
+  // behind its alias while the refresh skipped the normalization it performs.
+  const expand = (command, depth = 0) => {
+    if (!command || depth > 4) return '';
+    return command.replace(/npm run ([a-z0-9:-]+)/g, (match, alias) => (
+      pkg.scripts[alias] ? ` ${expand(pkg.scripts[alias], depth + 1)} ` : match
+    ));
+  };
+  const chain = `${expand(pkg.scripts['build:data'])} ${expand(pkg.scripts['generate:data'])}`;
   const referenced = [...new Set([...chain.matchAll(/scripts\/([a-z0-9-]+\.mjs)/g)].map((m) => m[1]))];
   assert.ok(referenced.length > 8, 'expected to find the generate:data script chain');
+  assert.ok(
+    referenced.includes('migrate-source-truth-profiles.mjs'),
+    'npm run aliases must be expanded, or steps hidden behind one are never checked',
+  );
 
   const taskScripts = new Set(INGESTION_TASKS.map((task) => task.script));
-  const missing = referenced.filter((script) => {
-    const source = readFileSync(new URL(`../scripts/${script}`, import.meta.url), 'utf8');
-    const writesGenerated = /data\/generated|join\(\s*GENERATED/.test(source)
-      && /writeJsonAtomically\(|writeFileSync\(/.test(source);
-    return writesGenerated && !taskScripts.has(script);
-  });
+
+  // Deliberate exceptions: these write tracked paths under data/ that are
+  // present in any checkout, so a refresh that skips them still builds. Every
+  // other step in the chain must run during a refresh -- including ones that
+  // only rewrite tracked files, because the presentation verifiers assume the
+  // source-truth normalization has already happened. Narrow this list, never
+  // widen it to make a failure go away.
+  const allowedOutsideRefresh = new Set([
+    'build-fedramp-2026-catalog.mjs',
+    'build-source-truth-migration-manifest.mjs',
+  ]);
+
+  const missing = referenced.filter(
+    (script) => !taskScripts.has(script) && !allowedOutsideRefresh.has(script),
+  );
 
   assert.deepEqual(
     missing,
     [],
-    `these generators write into data/generated but the refresh never runs them, so the `
-      + `artifact is missing on a clean runner: ${missing.join(', ')}`,
+    'these steps run in generate:data but never during a refresh, so a clean runner either '
+      + `lacks their output or keeps un-normalized data: ${missing.join(', ')}`,
+  );
+
+  // The exception list must stay honest: anything on it that writes into the
+  // gitignored data/generated tree cannot legitimately be skipped, because that
+  // output simply will not exist on a clean runner.
+  const wronglyExcused = [...allowedOutsideRefresh].filter((script) => {
+    const source = readFileSync(new URL(`../scripts/${script}`, import.meta.url), 'utf8');
+    return /data\/generated|join\(\s*GENERATED/.test(source)
+      && /writeJsonAtomically\(|writeFileSync\(/.test(source);
+  });
+  assert.deepEqual(
+    wronglyExcused,
+    [],
+    `these are excused from the refresh but write into gitignored data/generated: ${wronglyExcused.join(', ')}`,
   );
 });
