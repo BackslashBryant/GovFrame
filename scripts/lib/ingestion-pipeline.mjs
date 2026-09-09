@@ -37,6 +37,14 @@ export const INGESTION_TASKS = Object.freeze([
   { id: 'sync-inventory-contracts', script: 'sync-catalog-inventory-contracts.mjs', stages: ['attest', 'reconcile'], scope: ['all-catalogs'], retries: 1 },
   { id: 'hydrate-artifacts', script: 'hydrate-artifacts.mjs', stages: ['acquire', 'attest'], scope: ['all-artifacts'], remote_fetch: true, retries: 2 },
   { id: 'reconcile-freshness', script: 'reconcile-source-freshness.mjs', stages: ['attest', 'reconcile'], scope: ['all-sources'], retries: 1 },
+  // Must precede build-framework-data, which reaches src/shared/taxonomy-contract.mjs
+  // and that module statically imports data/generated/taxonomy-registry.json. A
+  // static JSON import cannot be guarded at runtime, so the file has to exist
+  // before the task runs. build:data already orders these two this way; the
+  // refresh pipeline was simply missing the prerequisite, so build-framework-data
+  // could never run on a clean runner. Inputs are all curated and tracked, so
+  // this task has no upstream dependency of its own.
+  { id: 'build-taxonomy-registry', script: 'build-taxonomy-registry.mjs', stages: ['normalize', 'structure'], scope: ['all-catalogs'], retries: 1 },
   {
     id: 'build-framework-data', script: 'build-framework-data.mjs',
     stages: ['normalize', 'structure', 'relationships', 'presentation', 'publish'],

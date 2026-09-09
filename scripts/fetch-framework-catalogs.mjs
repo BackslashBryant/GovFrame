@@ -42,11 +42,28 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SNAPSHOT = new Date().toISOString();
 const CSF_REFERENCE_TOOL_EXPORT_URL = 'https://csrc.nist.gov/extensions/nudp/services/json/csf/download?olirids=all';
 
+// NIST publishes its OSCAL catalogs from usnistgov/oscal-content. The primary
+// URLs below track `main`, which is a moving target: a retag, a path rename or
+// a transient outage there stops the refresh dead. Every OSCAL catalog therefore
+// carries the same path at the newest published release tag as a backup. It is
+// the same first-party NIST repository, so no new publisher is trusted, and the
+// tag is immutable so the backup cannot itself move underneath us.
+//
+// A backup is only reached when the primary is unavailable, and every fallback
+// is logged and reported. Note the tagged bytes can lag `main`; the run report
+// names which URL actually served so a fallback is never silent.
+const OSCAL_BACKUP_TAG = 'v1.5.0';
+
+function oscalBackup(path) {
+  return `https://raw.githubusercontent.com/usnistgov/oscal-content/${OSCAL_BACKUP_TAG}/nist.gov/${path}`;
+}
+
 const REMOTE_CATALOGS = [
   {
     id: 'nist-800-53-rev5',
     sourceKey: 'nist-oscal',
     url: 'https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json',
+    backupUrls: [oscalBackup('SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json')],
     outfile: 'controls-800-53.json',
     parse: parse80053Catalog,
     enrich: async (records) => {
@@ -76,6 +93,7 @@ const REMOTE_CATALOGS = [
     id: 'nist-csf-2',
     sourceKey: 'nist-oscal',
     url: 'https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/CSF/v2.0/json/NIST_CSF_v2.0_catalog.json',
+    backupUrls: [oscalBackup('CSF/v2.0/json/NIST_CSF_v2.0_catalog.json')],
     outfile: 'csf-subcategories.json',
     parse: parseCsfCatalog,
     enrich: async (records) => {
@@ -102,6 +120,7 @@ const REMOTE_CATALOGS = [
     id: 'nist-800-171-rev3',
     sourceKey: 'nist-oscal',
     url: 'https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-171/rev3/json/NIST_SP800-171_rev3_catalog.json',
+    backupUrls: [oscalBackup('SP800-171/rev3/json/NIST_SP800-171_rev3_catalog.json')],
     outfile: 'requirements-800-171.json',
     parse: parse800171Catalog,
   },
@@ -115,6 +134,7 @@ const REMOTE_CATALOGS = [
   {
     id: 'nist-800-172-rev3',
     url: 'https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-172/rev3/json/NIST_SP800-172_rev3_catalog.json',
+    backupUrls: [oscalBackup('SP800-172/rev3/json/NIST_SP800-172_rev3_catalog.json')],
     outfile: 'requirements-800-172.json',
     parse: parse800172Catalog,
   },
@@ -127,6 +147,7 @@ const REMOTE_CATALOGS = [
   {
     id: 'nist-ssdf-oscal',
     url: 'https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-218/ver1/json/NIST_SP800-218_ver1_catalog.json',
+    backupUrls: [oscalBackup('SP800-218/ver1/json/NIST_SP800-218_ver1_catalog.json')],
     outfile: 'ssdf.json',
     parse: (json) => parseSsdfCatalog(json, SNAPSHOT),
   },
@@ -153,6 +174,31 @@ function writeCatalog(filename, document) {
   return { filename, records: document.records.length };
 }
 
+// Try the primary source, then each declared backup in order. A backup is only
+// reached when the one before it is unreachable or returns a non-OK status, so
+// a healthy primary always wins and the backup path costs nothing. Returns the
+// URL that actually served so the caller can report it: a fallback that nobody
+// can see is indistinguishable from a source that quietly changed underneath us.
+export async function fetchCatalogWithFallback(target, fetchImpl = strictConditionalFetch) {
+  const candidates = [target.url, ...(target.backupUrls || [])];
+  const failures = [];
+  for (const url of candidates) {
+    try {
+      const response = await fetchImpl(url);
+      if (!response.ok) {
+        failures.push(`${url} -> HTTP ${response.status}`);
+        continue;
+      }
+      return { response, url, usedBackup: url !== target.url, failures };
+    } catch (error) {
+      failures.push(`${url} -> ${error.message}`);
+    }
+  }
+  throw new Error(
+    `${target.id} fetch failed on all ${candidates.length} candidate source(s): ${failures.join('; ')}`,
+  );
+}
+
 export async function fetchFrameworkCatalogs(options = {}) {
   const only = options.only ? new Set(options.only) : null;
   const onlyPublic = options.onlyPublic ? new Set(options.onlyPublic) : null;
@@ -168,9 +214,15 @@ export async function fetchFrameworkCatalogs(options = {}) {
     console.warn('Failed to pre-fetch FedRAMP baseline membership:', err.message);
   }
 
+  const fallbacks = [];
   for (const target of remoteTargets) {
-    const response = await strictConditionalFetch(target.url);
-    if (!response.ok) throw new Error(`${target.id} fetch failed: ${response.status} ${target.url}`);
+    const { response, url: servedUrl, usedBackup, failures } = await fetchCatalogWithFallback(target);
+    if (usedBackup) {
+      fallbacks.push({ id: target.id, primary: target.url, served: servedUrl, failures });
+      console.warn(
+        `${target.id}: primary source unavailable, served from backup ${servedUrl} (${failures.join('; ')})`,
+      );
+    }
     const payload = target.responseType === 'text'
       ? await response.text()
       : await response.json();
@@ -193,6 +245,12 @@ export async function fetchFrameworkCatalogs(options = {}) {
         ? build(SNAPSHOT, join(ROOT, 'data', 'nara-cui-registry-manifest.json'))
         : build(SNAPSHOT);
     results.push(writeCatalog(filename, doc));
+  }
+  if (fallbacks.length) {
+    console.warn(
+      `${fallbacks.length} catalog source(s) served from a backup: ${fallbacks.map((entry) => entry.id).join(', ')}. `
+        + 'The primary URLs above need review -- a backup is a bridge, not a destination.',
+    );
   }
   return results;
 }
