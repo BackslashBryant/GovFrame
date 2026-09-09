@@ -27,11 +27,23 @@ function presentationStage(resource) {
   if (overview && (!overview.text || !overview.sourceUrl || !overview.sourceType)) {
     return failed('serialized overview evidence is incomplete');
   }
-  if (compatibility && (compatibility.status !== 'documented' || !compatibility.sourceUrl || !compatibility.note)) {
+  // compatibility and media are recorded on every enriched resource, including
+  // the explicit negative states (not_stated, not_applicable, not_available).
+  // The invariant is not "this key may only exist when the answer is positive"
+  // -- it is "a positive claim carries its evidence, and a negative one says
+  // why". Treating the key's presence as the claim rejected every honestly
+  // recorded unknown.
+  if (compatibility?.status === 'documented' && (!compatibility.sourceUrl || !compatibility.note)) {
     return failed('documented compatibility evidence is incomplete');
   }
-  if (media && (media.status !== 'available' || !(media.items || []).length)) {
+  if (compatibility && compatibility.status !== 'documented' && !compatibility.note) {
+    return failed('undocumented compatibility does not state why');
+  }
+  if (media?.status === 'available' && !(media.items || []).length) {
     return failed('media is marked available without an attributable item');
+  }
+  if (media?.status === 'not_available' && !media.reason) {
+    return failed('unavailable media does not state why');
   }
   if (resource.presentationProfile?.profileType !== resource.resourceType
     || !resource.presentationProfile?.template) {
