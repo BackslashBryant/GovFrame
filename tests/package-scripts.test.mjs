@@ -9,16 +9,20 @@ const packageJson = JSON.parse(readFileSync('package.json', 'utf8'));
 const ci = readFileSync('.github/workflows/ci.yml', 'utf8');
 const security = readFileSync('.github/workflows/security.yml', 'utf8');
 const deploy = readFileSync('.github/workflows/deploy.yml', 'utf8');
-const workflows = { ci, security, deploy };
+const refreshMerge = readFileSync('.github/workflows/automerge-refresh.yml', 'utf8');
+const workflows = { ci, security, deploy, refreshMerge };
 
-test('the automation surface is three purpose-built workflows', () => {
+test('the automation surface contains the four admitted workflows', () => {
   assert.deepEqual(
     readdirSync('.github/workflows').filter((name) => /\.ya?ml$/.test(name)).sort(),
-    ['ci.yml', 'deploy.yml', 'security.yml'],
+    ['automerge-refresh.yml', 'ci.yml', 'deploy.yml', 'security.yml'],
   );
   assert.match(ci, /name: Control Atlas CI/);
   assert.match(security, /name: Control Atlas Security/);
   assert.match(deploy, /name: Control Atlas Deploy/);
+  assert.match(refreshMerge, /name: Merge validated source refresh/);
+  assert.match(refreshMerge, /ref: main/);
+  assert.doesNotMatch(refreshMerge, /pull_request_target:/);
 });
 
 test('PR CI creates one change map from a shallow checkout and targeted base fetch', () => {
