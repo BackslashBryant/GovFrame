@@ -1,0 +1,171 @@
+{
+  "schema_version": "1.0",
+  "olir_id": 189,
+  "source_artifact": "https://zenodo.org/records/18498447/files/NIST_OLIR_IRP_SetTheory_Mapping_20260205.xlsx?download=1",
+  "sha256": "sha256:ffb454b70c231a24234fd51b7648c53b477aa5a7004e6115fa2d8d176fe919a0",
+  "byte_length": 24838,
+  "parser": "olir-xlsx",
+  "extraction_scope": "structured_artifact",
+  "relationships": [
+    {
+      "focal_id": "GV.OC-01",
+      "reference_id": "IRP-Sec-1",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-4"
+    },
+    {
+      "focal_id": "GV.RM-01",
+      "reference_id": "IRP-Sec-2",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-12"
+    },
+    {
+      "focal_id": "GV.RM-02",
+      "reference_id": "IRP-Sec-5",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-15"
+    },
+    {
+      "focal_id": "GV.RM-06",
+      "reference_id": "IRP-Sec-2",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-21"
+    },
+    {
+      "focal_id": "GV.RR-03",
+      "reference_id": "IRP-Sec-4",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-28"
+    },
+    {
+      "focal_id": "GV.PO-01",
+      "reference_id": "IRP-Sec-5",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-33"
+    },
+    {
+      "focal_id": "GV.SC-01",
+      "reference_id": "IRP-Sec-1",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-42"
+    },
+    {
+      "focal_id": "ID.RA-01",
+      "reference_id": "IRP-Sec-2",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-64"
+    },
+    {
+      "focal_id": "PR.AA-01",
+      "reference_id": "IRP-Sec-4",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-83"
+    },
+    {
+      "focal_id": "PR.DS-02",
+      "reference_id": "IRP-Sec-3",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-96"
+    },
+    {
+      "focal_id": "PR.DS-11",
+      "reference_id": "IRP-Sec-6",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-100"
+    },
+    {
+      "focal_id": "PR.PS-06",
+      "reference_id": "IRP-Sec-4",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-109"
+    },
+    {
+      "focal_id": "DE.AE",
+      "reference_id": "IRP-Sec-2",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-118"
+    },
+    {
+      "focal_id": "DE.CM-01",
+      "reference_id": "IRP-Sec-4",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-128"
+    },
+    {
+      "focal_id": "RS.MA-01",
+      "reference_id": "IRP-Sec-6",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-137"
+    },
+    {
+      "focal_id": "RS.MI-01",
+      "reference_id": "IRP-Sec-5",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Syntactic",
+      "source_locator": "Relationships#row-153"
+    }
+  ]
+}

@@ -4931,7 +4931,7 @@
       ],
       "overview": {
         "text": "The CISA Vulnrichment project is the public repository of CISA's enrichment of public CVE records through CISA's ADP (Authorized Data Publisher) container. In this phase of the project, CISA is assessing new and recent CVEs and adding key SSVC decision points. Once scored, some higher-risk CVEs will also receive enrichment of CWE and/or CVSS data points, where possible.",
-        "sourceUrl": "https://github.com/cisagov/vulnrichment/blob/8817e157c07b6ee57458bbf5807dc23f97282607/README.md",
+        "sourceUrl": "https://github.com/cisagov/vulnrichment/blob/fe8da592021908efe89918820b70ccac7fe8c775/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -4939,10 +4939,10 @@
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/cisagov/vulnrichment",
-        "commitSha": "8817e157c07b6ee57458bbf5807dc23f97282607",
-        "commitUrl": "https://github.com/cisagov/vulnrichment/commit/8817e157c07b6ee57458bbf5807dc23f97282607",
+        "commitSha": "fe8da592021908efe89918820b70ccac7fe8c775",
+        "commitUrl": "https://github.com/cisagov/vulnrichment/commit/fe8da592021908efe89918820b70ccac7fe8c775",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/cisagov/vulnrichment/blob/8817e157c07b6ee57458bbf5807dc23f97282607/README.md",
+        "readmeUrl": "https://github.com/cisagov/vulnrichment/blob/fe8da592021908efe89918820b70ccac7fe8c775/README.md",
         "readmeSha256": "sha256:ffec1da10bdea8a98458362f7136d31b4143ef21875b6aa4b5d7bd9041164ba9",
         "readmeByteLength": 8501,
         "overviewExcerpt": "The CISA Vulnrichment project is the public repository of CISA's enrichment of public CVE records through CISA's ADP (Authorized Data Publisher) container. In this phase of the project, CISA is assessing new and recent CVEs and adding key SSVC decision points. Once scored, some higher-risk CVEs will also receive enrichment of CWE and/or CVSS data points, where possible.",
@@ -4970,14 +4970,14 @@
           "primaryLanguage": null,
           "topics": [],
           "archived": false,
-          "lastPushedAt": "2026-09-10T18:16:39Z",
-          "latestRepositoryUpdateAt": "2026-09-10T18:16:46Z",
+          "lastPushedAt": "2026-09-10T19:16:25Z",
+          "latestRepositoryUpdateAt": "2026-09-10T19:16:32Z",
           "license": "CC0-1.0",
           "description": "A repo to conduct vulnerability enrichment."
         }
       },
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T18:16:39Z",
+      "lastCommitAt": "2026-09-10T19:16:25Z",
       "license": "CC0-1.0"
     },
     {
@@ -11047,7 +11047,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T18:55:28Z.",
+          "text": "Latest repository push: 2026-09-10T19:38:27Z.",
           "sourceUrl": "https://api.github.com/repos/elastic/detection-rules"
         },
         "release": {
@@ -11112,7 +11112,7 @@
             "threat-hunting"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T18:55:28Z",
+          "lastPushedAt": "2026-09-10T19:38:27Z",
           "latestRepositoryUpdateAt": "2026-09-10T18:44:53Z",
           "license": "NOASSERTION",
           "description": null
@@ -11121,7 +11121,7 @@
       "currentVersion": "dev-v2.2.0",
       "lastReleaseAt": "2026-09-08T12:52:29Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T18:55:28Z"
+      "lastCommitAt": "2026-09-10T19:38:27Z"
     },
     {
       "id": "community-elastic-security",
@@ -13236,7 +13236,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-09T04:18:49Z",
-          "latestRepositoryUpdateAt": "2026-09-10T19:06:24Z",
+          "latestRepositoryUpdateAt": "2026-09-10T19:21:28Z",
           "license": "MIT",
           "description": "Find secrets with Gitleaks 🔑"
         }
@@ -20565,7 +20565,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T18:56:07Z.",
+          "text": "Latest repository push: 2026-09-10T19:40:24Z.",
           "sourceUrl": "https://api.github.com/repos/usnistgov/macos_security"
         },
         "release": {
@@ -20630,7 +20630,7 @@
             "zsh"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T18:56:07Z",
+          "lastPushedAt": "2026-09-10T19:40:24Z",
           "latestRepositoryUpdateAt": "2026-09-10T18:46:21Z",
           "license": "NOASSERTION",
           "description": "macOS Security Compliance Project"
@@ -20639,7 +20639,7 @@
       "currentVersion": "tahoe_rev3",
       "lastReleaseAt": "2026-06-22T14:39:04Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T18:56:07Z"
+      "lastCommitAt": "2026-09-10T19:40:24Z"
     },
     {
       "id": "repository-nist-ncp",
@@ -22246,7 +22246,7 @@
             "policy"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T17:34:11Z",
+          "lastPushedAt": "2026-09-10T19:37:07Z",
           "latestRepositoryUpdateAt": "2026-09-10T17:34:21Z",
           "license": "Apache-2.0",
           "description": "Open Policy Agent (OPA) is an open source, general-purpose policy engine."
@@ -22274,7 +22274,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T17:34:11Z.",
+          "text": "Latest repository push: 2026-09-10T19:37:07Z.",
           "sourceUrl": "https://api.github.com/repos/open-policy-agent/opa"
         },
         "release": {
@@ -22287,7 +22287,7 @@
         }
       },
       "lastReleaseAt": "2026-09-03T21:00:27Z",
-      "lastCommitAt": "2026-09-10T17:34:11Z",
+      "lastCommitAt": "2026-09-10T19:37:07Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -22774,7 +22774,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-10T16:27:33Z",
-          "latestRepositoryUpdateAt": "2026-09-10T17:49:51Z",
+          "latestRepositoryUpdateAt": "2026-09-10T19:26:27Z",
           "license": "NOASSERTION",
           "description": "Open Cyber Threat Intelligence Platform"
         }
@@ -27897,15 +27897,15 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T19:03:46Z.",
+          "text": "Latest repository push: 2026-09-10T19:37:34Z.",
           "sourceUrl": "https://api.github.com/repos/semgrep/semgrep"
         },
         "release": {
           "status": "published",
-          "version": "v1.176.0",
-          "name": "Release v1.176.0",
-          "url": "https://github.com/semgrep/semgrep/releases/tag/v1.176.0",
-          "publishedAt": "2026-09-01T19:52:12Z",
+          "version": "v1.177.0",
+          "name": "Release v1.177.0",
+          "url": "https://github.com/semgrep/semgrep/releases/tag/v1.177.0",
+          "publishedAt": "2026-09-10T19:37:56Z",
           "prerelease": false
         }
       },
@@ -27979,10 +27979,10 @@
         ],
         "release": {
           "status": "published",
-          "version": "v1.176.0",
-          "name": "Release v1.176.0",
-          "url": "https://github.com/semgrep/semgrep/releases/tag/v1.176.0",
-          "publishedAt": "2026-09-01T19:52:12Z",
+          "version": "v1.177.0",
+          "name": "Release v1.177.0",
+          "url": "https://github.com/semgrep/semgrep/releases/tag/v1.177.0",
+          "publishedAt": "2026-09-10T19:37:56Z",
           "prerelease": false
         },
         "facts": {
@@ -28003,16 +28003,16 @@
             "typescript"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T19:03:46Z",
+          "lastPushedAt": "2026-09-10T19:37:34Z",
           "latestRepositoryUpdateAt": "2026-09-10T18:25:00Z",
           "license": "LGPL-2.1",
           "description": "Lightweight static analysis for many languages. Find bug variants with patterns that look like source code."
         }
       },
-      "currentVersion": "v1.176.0",
-      "lastReleaseAt": "2026-09-01T19:52:12Z",
+      "currentVersion": "v1.177.0",
+      "lastReleaseAt": "2026-09-10T19:37:56Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T19:03:46Z",
+      "lastCommitAt": "2026-09-10T19:37:34Z",
       "license": "LGPL-2.1"
     },
     {
@@ -32378,7 +32378,7 @@
             "xdr"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T18:38:33Z",
+          "lastPushedAt": "2026-09-10T19:17:26Z",
           "latestRepositoryUpdateAt": "2026-09-10T15:22:14Z",
           "license": "NOASSERTION",
           "description": "Wazuh - The Open Source Security Platform. Unified XDR and SIEM protection for endpoints and cloud workloads."
@@ -32406,7 +32406,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T18:38:33Z.",
+          "text": "Latest repository push: 2026-09-10T19:17:26Z.",
           "sourceUrl": "https://api.github.com/repos/wazuh/wazuh"
         },
         "release": {
@@ -32419,7 +32419,7 @@
         }
       },
       "lastReleaseAt": "2026-07-30T16:32:45Z",
-      "lastCommitAt": "2026-09-10T18:38:33Z",
+      "lastCommitAt": "2026-09-10T19:17:26Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -33265,9 +33265,9 @@
     },
     {
       "id": "resource:dataset-cisa-vulnrichment:publisher-destination",
-      "sourceUrl": "https://github.com/cisagov/vulnrichment/commit/8817e157c07b6ee57458bbf5807dc23f97282607",
+      "sourceUrl": "https://github.com/cisagov/vulnrichment/commit/fe8da592021908efe89918820b70ccac7fe8c775",
       "locatorType": "repository_commit",
-      "locator": "8817e157c07b6ee57458bbf5807dc23f97282607",
+      "locator": "fe8da592021908efe89918820b70ccac7fe8c775",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },

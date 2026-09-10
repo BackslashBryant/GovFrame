@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-10T19:08:48.214Z",
+  "generated_at": "2026-09-10T19:39:55.091Z",
   "source": "https://csrc.nist.gov/projects/olir/informative-reference-catalog",
   "api_endpoint": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog",
   "total_entries": 102,
   "final_count": 92,
   "applicable_final_count": 51,
-  "ingested_count": 40,
-  "quarantined_count": 62,
-  "unresolved_count": 11,
+  "ingested_count": 41,
+  "quarantined_count": 61,
+  "unresolved_count": 10,
   "retained_count": 0,
   "processed_items": [
     {
@@ -365,7 +365,7 @@
           "status": 200,
           "final_url": "https://drive.google.com/drive/folders/1uqUpwlj7NeP-TDSPR2sHaVXHOQlabCCG?usp=sharing",
           "content_type": "text/html; charset=utf-8",
-          "byte_length": 316138
+          "byte_length": 316060
         },
         {
           "kind": "artifact download",
@@ -683,15 +683,7 @@
           "status": 200,
           "final_url": "https://cyberoon.com/research/ai-soc-v10-to-nist-csf-20-informative-reference-mapping",
           "content_type": "text/html; charset=utf-8",
-          "byte_length": 2093642
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://github.com/cyberoon/ai-soc-nist-csf-mapping/blob/main/docs/AI_SOC_Controls_Catalog_v1_0.pdf",
-          "status": 200,
-          "final_url": "https://github.com/cyberoon/ai-soc-nist-csf-mapping/blob/main/docs/AI_SOC_Controls_Catalog_v1_0.pdf",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 247393
+          "byte_length": 2093635
         },
         {
           "kind": "artifact download",
@@ -707,7 +699,15 @@
           "status": 200,
           "final_url": "https://github.com/cyberoon/ai-soc-nist-csf-mapping/releases/tag/v1.0.0",
           "content_type": "text/html; charset=utf-8",
-          "byte_length": 205637
+          "byte_length": 205604
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/cyberoon/ai-soc-nist-csf-mapping/blob/main/docs/AI_SOC_Controls_Catalog_v1_0.pdf",
+          "status": 200,
+          "final_url": "https://github.com/cyberoon/ai-soc-nist-csf-mapping/blob/main/docs/AI_SOC_Controls_Catalog_v1_0.pdf",
+          "content_type": "text/html; charset=utf-8",
+          "byte_length": 247383
         },
         {
           "kind": "GitHub Contents API",
@@ -913,7 +913,7 @@
           "kind": "artifact download",
           "url": "https://docs.google.com/spreadsheets/d/1HnbzkMSaUVcqj4hqaDFxTTfcyc5RyOeP/export?format=xlsx",
           "status": 200,
-          "final_url": "https://doc-0c-98-sheets.googleusercontent.com/export/54bogvaave6cua4cdnls17ksc4/jjc9lfdldkjsiuhcectv7b3uec/1789067320000/100790643046296837536/*/1HnbzkMSaUVcqj4hqaDFxTTfcyc5RyOeP?format=xlsx",
+          "final_url": "https://doc-0c-98-sheets.googleusercontent.com/export/54bogvaave6cua4cdnls17ksc4/jq2qm0h1nbcf0ov8nh3reote78/1789069190000/100790643046296837536/*/1HnbzkMSaUVcqj4hqaDFxTTfcyc5RyOeP?format=xlsx",
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "byte_length": 21218
         }
@@ -1060,7 +1060,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no public relationship mapping could be downloaded from the registered NIST submission locations; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1081,14 +1081,6 @@
           "final_url": "https://www.infoblox.com/solutions/compliance/",
           "content_type": "text/html; charset=UTF-8",
           "byte_length": 423862
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-81r3.pdf",
-          "status": 200,
-          "final_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-81r3.pdf",
-          "content_type": "application/pdf",
-          "byte_length": 1057246
         }
       ]
     },
@@ -1234,13 +1226,24 @@
       "submission_artifact_url": "https://zenodo.org/records/18363217",
       "authority_tier": 4,
       "authority_tier_label": "Validated third-party Final",
-      "mapping_model": null,
-      "ingested": false,
-      "availability": "retrieval_failed",
-      "map_file": null,
+      "mapping_model": "Set Theory: Superset",
+      "ingested": true,
+      "availability": "structured_artifact",
+      "map_file": "maps/olir/189.json",
       "artifact_id": null,
-      "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download OLIR source URL policy rejected destination outside registered submission; artifact download OLIR source URL policy rejected destination outside registered submission",
+      "artifact": {
+        "map_file": "maps/olir/189.json",
+        "artifact_url": "https://zenodo.org/records/18498447/files/NIST_OLIR_IRP_SetTheory_Mapping_20260205.xlsx?download=1",
+        "checksum": "sha256:ffb454b70c231a24234fd51b7648c53b477aa5a7004e6115fa2d8d176fe919a0",
+        "byte_length": 24838,
+        "parser": "olir-xlsx",
+        "extraction_scope": "structured_artifact",
+        "relationship_count": 16,
+        "relationship_semantics": [
+          "Set Theory: Superset"
+        ]
+      },
+      "quarantine_reason": null,
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1257,12 +1260,18 @@
         {
           "kind": "artifact download",
           "url": "https://doi.org/10.5281/zenodo.18498447",
-          "error": "OLIR source URL policy rejected destination outside registered submission"
+          "status": 200,
+          "final_url": "https://zenodo.org/records/18498447",
+          "content_type": "text/html; charset=utf-8",
+          "byte_length": 95045
         },
         {
           "kind": "artifact download",
-          "url": "https://zenodo.org/records/18363217",
-          "error": "OLIR source URL policy rejected destination outside registered submission"
+          "url": "https://zenodo.org/records/18498447/files/NIST_OLIR_IRP_SetTheory_Mapping_20260205.xlsx?download=1",
+          "status": 200,
+          "final_url": "https://zenodo.org/records/18498447/files/NIST_OLIR_IRP_SetTheory_Mapping_20260205.xlsx?download=1",
+          "content_type": "application/octet-stream",
+          "byte_length": 24838
         }
       ]
     },
@@ -1285,11 +1294,11 @@
       "authority_tier_label": "Community candidate Final",
       "mapping_model": null,
       "ingested": false,
-      "availability": "parse_failed",
+      "availability": "no_public_mapping_discovered",
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "downloaded artifact could not be parsed as an OLIR relationship mapping: focal/reference relationship columns are absent; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no public relationship mapping could be downloaded from the registered NIST submission locations; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1310,22 +1319,6 @@
           "final_url": "https://43828014.hs-sites.com/171r2-to-53r5-mapping-download",
           "content_type": "text/html; charset=UTF-8",
           "byte_length": 37697
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final",
-          "status": 200,
-          "final_url": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 56888
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://csrc.nist.gov/files/pubs/sp/800/53/r5/upd1/final/docs/sp800-53r5-potential-updates.xlsx",
-          "status": 200,
-          "final_url": "https://csrc.nist.gov/files/pubs/sp/800/53/r5/upd1/final/docs/sp800-53r5-potential-updates.xlsx",
-          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-          "byte_length": 22185
         }
       ]
     },
@@ -1414,11 +1407,11 @@
       "authority_tier_label": "Validated third-party Final",
       "mapping_model": null,
       "ingested": false,
-      "availability": "retrieval_failed",
+      "availability": "no_public_mapping_discovered",
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download OLIR source URL policy rejected destination outside registered submission",
+      "quarantine_reason": "no public relationship mapping could be downloaded from the registered NIST submission locations; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1439,11 +1432,6 @@
           "final_url": "https://www.cisecurity.org/insights/white-papers/cis-controls-v8-1-mapping-to-nist-csf-2-0",
           "content_type": "text/html; charset=utf-8",
           "byte_length": 115804
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://www.cisecurity.org/controls/v8-1",
-          "error": "OLIR source URL policy rejected destination outside registered submission"
         }
       ]
     },
@@ -1672,7 +1660,7 @@
       "artifact": {
         "map_file": "maps/olir/176.json",
         "artifact_url": "https://www.gov.uk/government/publications/cyber-governance-mapping/mapping-cyber-governance-code-to-nist-cyber-security-framework",
-        "checksum": "sha256:f072f9263ac68930a9232106841037e06e494b2912b90d8cce414ac1dde58114",
+        "checksum": "sha256:1d46936ed146b43ab4080eaee9a675c52cc5a7eb9c3e1487be650844cc61289c",
         "byte_length": 88237,
         "parser": "olir-html",
         "extraction_scope": "published_html_relationships",
@@ -1724,11 +1712,11 @@
       "authority_tier_label": "Community candidate Final",
       "mapping_model": null,
       "ingested": false,
-      "availability": "access_restricted",
+      "availability": "no_public_mapping_discovered",
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 403",
+      "quarantine_reason": "no public relationship mapping could be downloaded from the registered NIST submission locations; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1749,14 +1737,6 @@
           "final_url": "https://43828014.hs-sites.com/171r2-cmmc-mapping",
           "content_type": "text/html; charset=UTF-8",
           "byte_length": 37801
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverviewv2.pdf",
-          "status": 403,
-          "final_url": "https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverviewv2.pdf",
-          "content_type": "text/html",
-          "byte_length": 436
         }
       ]
     },
@@ -1779,11 +1759,11 @@
       "authority_tier_label": "Community candidate Final",
       "mapping_model": null,
       "ingested": false,
-      "availability": "access_restricted",
+      "availability": "no_public_mapping_discovered",
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 403",
+      "quarantine_reason": "no public relationship mapping could be downloaded from the registered NIST submission locations; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1804,14 +1784,6 @@
           "final_url": "https://43828014.hs-sites.com/171r2-cmmc-mapping",
           "content_type": "text/html; charset=UTF-8",
           "byte_length": 37801
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverviewv2.pdf",
-          "status": 403,
-          "final_url": "https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverviewv2.pdf",
-          "content_type": "text/html",
-          "byte_length": 436
         }
       ]
     },
@@ -1892,11 +1864,11 @@
       "authority_tier_label": "Validated third-party Final",
       "mapping_model": null,
       "ingested": false,
-      "availability": "retrieval_failed",
+      "availability": "no_public_mapping_discovered",
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download OLIR source URL policy rejected destination outside registered submission",
+      "quarantine_reason": "no public relationship mapping could be downloaded from the registered NIST submission locations; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1917,11 +1889,6 @@
           "final_url": "https://cyberriskinstitute.org/the-profile/",
           "content_type": "text/html; charset=UTF-8",
           "byte_length": 83131
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://CyberRiskInstitute.org/The-Profile/",
-          "error": "OLIR source URL policy rejected destination outside registered submission"
         }
       ]
     },
@@ -1980,11 +1947,6 @@
           "final_url": "https://www.razil.io/post/nist-csf-2-0-to-iso-27001-2022-annexure-a-mapping",
           "content_type": "text/html;charset=utf-8",
           "byte_length": 88907
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-3:v1:en",
-          "error": "OLIR source URL policy rejected destination outside registered submission"
         },
         {
           "kind": "artifact download",
@@ -2394,11 +2356,11 @@
       "authority_tier_label": "Validated third-party Final",
       "mapping_model": null,
       "ingested": false,
-      "availability": "retrieval_failed",
+      "availability": "access_restricted",
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; Google Drive export 200; artifact download 401; artifact download OLIR source URL policy rejected destination outside registered submission",
+      "quarantine_reason": "no public relationship mapping could be downloaded from the registered NIST submission locations; retrieval evidence: NIST catalog detail endpoint 200; Google Drive export 200; artifact download 401",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -2427,11 +2389,6 @@
           "final_url": "https://docs.google.com/spreadsheets/d/1UrlVUnmAvaaoddMntklZzHZhemLqn7l8/export?format=xlsx",
           "content_type": "text/html; charset=utf-8",
           "byte_length": 9122
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://cloudsecurityalliance.org/research/cloud-controls-matrix",
-          "error": "OLIR source URL policy rejected destination outside registered submission"
         }
       ]
     },
@@ -2629,14 +2586,6 @@
         },
         {
           "kind": "artifact download",
-          "url": "https://csrc.nist.gov/publications/detail/sp/800-181/final",
-          "status": 200,
-          "final_url": "https://csrc.nist.gov/pubs/sp/800/181/final",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 46272
-        },
-        {
-          "kind": "artifact download",
           "url": "https://workforce-builder.herokuapp.com/get-olir?olir_name=sp800181_to_ssdf_1_0_0",
           "status": 200,
           "final_url": "https://workforce-builder.herokuapp.com/get-olir?olir_name=sp800181_to_ssdf_1_0_0",
@@ -2703,14 +2652,6 @@
         },
         {
           "kind": "artifact download",
-          "url": "https://csrc.nist.gov/publications/detail/white-paper/2018/04/16/cybersecurity-framework-v11/final",
-          "status": 200,
-          "final_url": "https://csrc.nist.gov/pubs/cswp/6/cybersecurity-framework-v11/final",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 49252
-        },
-        {
-          "kind": "artifact download",
           "url": "https://workforce-builder.herokuapp.com/get-olir?olir_name=csf_1_1_0_to_ssdf_1_0_0",
           "status": 200,
           "final_url": "https://workforce-builder.herokuapp.com/get-olir?olir_name=csf_1_1_0_to_ssdf_1_0_0",
@@ -2742,7 +2683,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
+      "quarantine_reason": "no public relationship mapping could be downloaded from the registered NIST submission locations; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -2785,11 +2726,11 @@
       "authority_tier_label": "Validated third-party Final",
       "mapping_model": null,
       "ingested": false,
-      "availability": "retrieval_failed",
+      "availability": "no_public_mapping_discovered",
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download OLIR source URL policy rejected destination outside registered submission",
+      "quarantine_reason": "no public relationship mapping could be downloaded from the registered NIST submission locations; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -2809,12 +2750,7 @@
           "status": 200,
           "final_url": "https://www.cisecurity.org/controls",
           "content_type": "text/html; charset=utf-8",
-          "byte_length": 276434
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://learn.cisecurity.org/cis-controls-download",
-          "error": "OLIR source URL policy rejected destination outside registered submission"
+          "byte_length": 276458
         }
       ]
     },
@@ -3315,11 +3251,11 @@
       "authority_tier_label": "Validated third-party Final",
       "mapping_model": null,
       "ingested": false,
-      "availability": "retrieval_failed",
+      "availability": "artifact_replaced_by_html",
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download OLIR source URL policy rejected destination outside registered submission",
+      "quarantine_reason": "no public relationship mapping could be downloaded from the registered NIST submission locations; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -3341,11 +3277,6 @@
           "content_type": "text/html; charset=utf-8",
           "byte_length": 50240,
           "availability": "artifact_replaced_by_html"
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://securecontrolsframework.com/scf-download/",
-          "error": "OLIR source URL policy rejected destination outside registered submission"
         }
       ]
     },
