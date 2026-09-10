@@ -3,7 +3,7 @@
 // NIST detail, then download and parse every deterministically reachable
 // structured submission. Entries without an obtainable structured artifact
 // remain quarantined with their exact retrieval evidence.
-import { existsSync, mkdirSync, readFileSync, rmSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseOlirStructuredArtifact, retrieveStructuredOlirArtifact } from '../tools/relationship-builders/olir-retrieval.mjs';
@@ -157,6 +157,31 @@ export function validateOlirCandidate(retrievalById, previousItems = []) {
   }
 }
 
+export function retainOlirSubmissions(retrievalById, previousItems, readMap) {
+  const result = new Map(retrievalById);
+  for (const previous of previousItems.filter((item) => item.ingested)) {
+    const retrieval = result.get(previous.id);
+    if (!retrieval || (retrieval.mapping && !retrieval.parse_failed)) continue;
+    const expectedPath = `maps/olir/${previous.id}.json`;
+    if (!Number.isSafeInteger(previous.id) || previous.map_file !== expectedPath || previous.artifact?.map_file !== expectedPath) {
+      throw new Error(`OLIR ${previous.id}: invalid retained mapping path`);
+    }
+    const bytes = readMap(expectedPath);
+    const document = JSON.parse(bytes.toString('utf8'));
+    if (document.olir_id !== previous.id || document.sha256 !== previous.artifact.checksum ||
+      document.byte_length !== previous.artifact.byte_length ||
+      !Array.isArray(document.relationships) || !document.relationships.length ||
+      document.relationships.length !== previous.artifact.relationship_count) {
+      throw new Error(`OLIR ${previous.id}: retained mapping evidence mismatch`);
+    }
+    result.set(previous.id, {
+      ...retrieval, mapping: structuredClone(previous.artifact), parse_failed: false,
+      retainedBytes: bytes, retainedItem: structuredClone(previous),
+    });
+  }
+  return result;
+}
+
 export async function fetchOlirCatalog() {
   const response = await strictConditionalFetch(CATALOG_URL);
   if (!response.ok) throw new Error(`OLIR catalog fetch failed (${response.status})`);
@@ -174,12 +199,14 @@ export async function fetchOlirCatalog() {
   const manifestPath = join(ROOT, 'data', 'olir-catalog-manifest.json');
   const previousItems = existsSync(manifestPath)
     ? JSON.parse(readFileSync(manifestPath, 'utf8')).processed_items || [] : [];
-  const retrievalById = new Map(
+  const retrievedById = new Map(
     (await mapWithConcurrency(applicableFinalEntries, 6, async (entry) => [
       entry.informativeReferenceFrameworkVersionId,
       await retrieveEntry(entry),
     ])).map(([id, retrieval]) => [id, retrieval]),
   );
+  const retrievalById = retainOlirSubmissions(retrievedById, previousItems,
+    (path) => readFileSync(join(ROOT, path)));
   validateOlirCandidate(retrievalById, previousItems);
 
   const processed_items = entries.map((entry) => {
@@ -192,6 +219,13 @@ export async function fetchOlirCatalog() {
     const attemptSummary = retrieval_attempts
       .map((attempt) => `${attempt.kind} ${attempt.status ?? attempt.error ?? 'not reached'}`)
       .join('; ');
+
+    if (retrieval?.retainedItem) return {
+      ...retrieval.retainedItem,
+      refresh_status: 'retained_last_good',
+      refresh_error: retrieval.unavailable_reason || 'Mapping could not be refreshed',
+      latest_retrieval_attempts: retrieval_attempts,
+    };
 
     return {
       id,
@@ -238,6 +272,7 @@ export async function fetchOlirCatalog() {
     unresolved_count: processed_items.filter(
       (item) => item.status === 'Final' && item.resolved_catalog_id && !item.ingested,
     ).length,
+    retained_count: processed_items.filter((item) => item.refresh_status === 'retained_last_good').length,
     processed_items,
   };
 
@@ -246,7 +281,8 @@ export async function fetchOlirCatalog() {
   rmSync(join(ROOT, 'maps', 'olir'), { recursive: true, force: true });
   mkdirSync(join(ROOT, 'maps', 'olir'), { recursive: true });
   for (const retrieval of retrievalById.values()) {
-    if (retrieval.mapping) writeJsonAtomically(join(ROOT, retrieval.mapping.map_file), retrieval.document);
+    if (retrieval.retainedBytes) writeFileSync(join(ROOT, retrieval.mapping.map_file), retrieval.retainedBytes);
+    else if (retrieval.mapping) writeJsonAtomically(join(ROOT, retrieval.mapping.map_file), retrieval.document);
   }
   writeJsonAtomically(manifestPath, manifest);
 
