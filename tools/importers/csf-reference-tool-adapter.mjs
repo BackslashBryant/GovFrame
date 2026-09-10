@@ -2,6 +2,7 @@ import readXlsxFile from 'read-excel-file/node';
 import { createHash } from 'node:crypto';
 
 const SUBCATEGORY_ID = /^([A-Z]{2}\.[A-Z]{2}-\d{2}):\s*(.+)$/;
+const WITHDRAWN_SUBCATEGORY = /^\[Withdrawn:\s+[^\]]+\]$/;
 
 function lines(value) {
   return String(value || '')
@@ -18,11 +19,20 @@ export function parseCsfReferenceToolRows(rows) {
   if (header === -1) throw new Error('CSF Reference Tool export is missing the Core column headers');
 
   const records = new Map();
+  const rawIds = new Set();
+  const excluded = [];
   for (const row of rows.slice(header + 1)) {
     const subcategoryMatch = String(row?.[2] || '').match(SUBCATEGORY_ID);
     if (!subcategoryMatch) continue;
     const [, id, title] = subcategoryMatch;
-    if (records.has(id)) throw new Error(`CSF Reference Tool export repeats subcategory ${id}`);
+    if (rawIds.has(id)) throw new Error(`CSF Reference Tool export repeats subcategory ${id}`);
+    rawIds.add(id);
+    // The publisher's CSF 2.0 worksheet also enumerates withdrawn legacy
+    // subcategories. Their explicit status text, not imported IDs, sets scope.
+    if (WITHDRAWN_SUBCATEGORY.test(title.trim())) {
+      excluded.push({ id, reason: title.trim() });
+      continue;
+    }
     records.set(id, {
       title: title.trim(),
       implementation_examples: lines(row?.[3]),
@@ -31,7 +41,7 @@ export function parseCsfReferenceToolRows(rows) {
   }
 
   if (records.size < 106) throw new Error(`CSF Reference Tool export contains only ${records.size} subcategories`);
-  return { records };
+  return { records, raw_ids: [...rawIds], excluded };
 }
 
 export async function parseCsfReferenceToolWorkbook(buffer) {
@@ -42,6 +52,7 @@ export async function parseCsfReferenceToolWorkbook(buffer) {
 }
 
 export function enrichCsfCatalogFromReferenceTool(records, referenceTool) {
+  const rawIds = referenceTool.raw_ids || [...referenceTool.records.keys()];
   const sourceIds = new Set(records.map((record) => record.id));
   const missingFromExport = [...sourceIds].filter((id) => !referenceTool.records.has(id));
   const missingFromCatalog = [...referenceTool.records.keys()].filter((id) => !sourceIds.has(id));
@@ -85,11 +96,11 @@ export function enrichCsfCatalogFromReferenceTool(records, referenceTool) {
   return {
     records: enrichedRecords,
     publisher_inventory: {
-      raw_count: referenceTool.records.size,
+      raw_count: rawIds.length,
       eligible_count: referenceTool.records.size,
       imported_count: enrichedRecords.length,
-      excluded: [],
-      raw_identity_sha256: `sha256:${createHash('sha256').update(JSON.stringify([...referenceTool.records.keys()].sort())).digest('hex')}`,
+      excluded: referenceTool.excluded || [],
+      raw_identity_sha256: `sha256:${createHash('sha256').update(JSON.stringify([...rawIds].sort())).digest('hex')}`,
       imported_identity_sha256: `sha256:${createHash('sha256').update(JSON.stringify([...sourceIds].sort())).digest('hex')}`,
     },
     reconciliation: {

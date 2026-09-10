@@ -15,10 +15,15 @@ function textValue(value) {
 }
 
 function externalId(object, sourceName) {
-  const reference = (object.external_references || []).find(
-    (entry) => entry.source_name === sourceName && entry.external_id,
-  );
-  return reference?.external_id || null;
+  const namespaces = Array.isArray(sourceName) ? sourceName : [sourceName];
+  const references = object.external_references || [];
+  if (!Array.isArray(references)) throw new Error(`Invalid publisher references: ${object.id}`);
+  const ids = new Set(references.filter((entry) => namespaces.includes(entry?.source_name)).map((entry) => {
+    if (typeof entry.external_id !== 'string' || !entry.external_id.trim()) throw new Error(`Missing publisher identity: ${object.id}`);
+    return entry.external_id;
+  }));
+  if (ids.size > 1) throw new Error(`Ambiguous publisher ATT&CK identity: ${object.id}`);
+  return [...ids][0] || null;
 }
 
 function tacticNames(object) {
@@ -43,11 +48,8 @@ export function tacticLookupFromStixBundle(stixDocument, externalSourceName) {
     if (object.type !== 'x-mitre-tactic') continue;
     const shortname = object.x_mitre_shortname;
     if (!shortname) continue;
-    const reference = (object.external_references || []).find(
-      (entry) => entry.source_name === externalSourceName && entry.external_id,
-    );
     lookup.set(shortname, {
-      id: reference?.external_id || shortname,
+      id: externalId(object, externalSourceName) || shortname,
       title: textValue(object.name) || shortname,
     });
   }
@@ -66,11 +68,12 @@ export function tacticLookupFromStixBundle(stixDocument, externalSourceName) {
  * than printed as a raw key.
  */
 function citationsFor(object, externalSourceName) {
+  const namespaces = Array.isArray(externalSourceName) ? externalSourceName : [externalSourceName];
   const description = textValue(object.description);
   if (!description) return {};
   const references = new Map(
     (object.external_references || [])
-      .filter((entry) => entry.source_name && entry.source_name !== externalSourceName)
+      .filter((entry) => entry.source_name && !namespaces.includes(entry.source_name))
       .map((entry) => [entry.source_name, entry]),
   );
   const citations = {};
@@ -87,7 +90,7 @@ function citationsFor(object, externalSourceName) {
 
 function normalizeAttackRecord(object, options) {
   const techniqueId = externalId(object, options.externalSourceName);
-  if (!techniqueId) return null;
+  if (!techniqueId) throw new Error(`Missing publisher identity: ${object.id}`);
 
   const name = textValue(object.name) || techniqueId;
   const description = textValue(object.description);
@@ -184,7 +187,7 @@ export function parseIcsAttackStix(stixDocument, metadata) {
     parseAttackStixBundle(stixDocument, {
       domain: 'ics',
       sourceKey: ICS_SOURCE,
-      externalSourceName: 'mitre-attack',
+      externalSourceName: ['mitre-attack', 'mitre-ics-attack'],
       snapshotDate: metadata.snapshotDate,
       version: metadata.version,
       locatorPrefix: metadata.locatorPrefix || 'ics-attack.json',

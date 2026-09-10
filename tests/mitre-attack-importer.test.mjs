@@ -56,6 +56,28 @@ test('parseIcsAttackStix uses enterprise external reference ids for ICS bundle',
   assert.equal(document.source_key, 'mitre-attack-ics');
 });
 
+test('ICS imports verified legacy publisher IDs and tactics while rejecting malformed or ambiguous identities', () => {
+  const technique = { type: 'attack-pattern', id: 'attack-pattern--23270e54-1d68-4c3b-b763-b25607bcef80',
+    name: 'Role Identification', external_references: [{ source_name: 'mitre-ics-attack', external_id: 'T0850',
+      url: 'https://attack.mitre.org/techniques/T0850' }], kill_chain_phases: [{ phase_name: 'discovery' }],
+  };
+  const bundle = { objects: [technique, { type: 'x-mitre-tactic', name: 'Discovery', x_mitre_shortname: 'discovery',
+    external_references: [{ source_name: 'mitre-ics-attack', external_id: 'TA0102' }],
+  }] };
+  const metadata = { artifactUrl: 'https://example.test/ics.json', version: '19.2', snapshotDate: '2026-09-09' };
+  const document = parseIcsAttackStix(bundle, metadata);
+  assert.equal(document.records[0].id, 'T0850');
+  assert.equal(document.records[0].metadata.tactic_id, 'TA0102');
+  technique.external_references.push({ source_name: 'mitre-attack', external_id: 'T0850' });
+  assert.equal(parseIcsAttackStix(bundle, metadata).records.length, 1);
+  technique.external_references[1].external_id = 'T0999';
+  assert.throws(() => parseIcsAttackStix(bundle, metadata), /Ambiguous publisher/);
+  for (const refs of [[], [{ source_name: 'mitre-ics-attack' }], [{ source_name: 'mitre-ics-attack', external_id: 850 }]]) {
+    technique.external_references = refs;
+    assert.throws(() => parseIcsAttackStix(bundle, metadata), /Missing publisher identity/);
+  }
+});
+
 const sampleStixWithTacticsAndSubtechnique = {
   objects: [
     {

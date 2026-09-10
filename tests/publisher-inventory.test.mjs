@@ -35,6 +35,24 @@ test('ATT&CK retains revoked techniques and requires publisher external IDs in b
   payload.objects[0].external_references = [];
   assert.throws(() => check('attack-ics', payload, []), /Missing publisher identity/);
 });
+
+test('ICS reconciles both publisher namespaces without accepting missing or ambiguous identities', () => {
+  // Identity extracted from the official immutable v19.2 ICS STIX bundle.
+  const entry = { id: 'attack-pattern--23270e54-1d68-4c3b-b763-b25607bcef80', type: 'attack-pattern',
+    name: 'Role Identification', external_references: [
+      { source_name: 'mitre-ics-attack', url: 'https://attack.mitre.org/techniques/T0850', external_id: 'T0850' },
+    ],
+  };
+  const payload = { objects: [entry] };
+  assert.equal(check('attack-ics', payload, [{ id: 'T0850' }]).eligible_count, 1);
+  assert.throws(() => check('attack-enterprise', payload, []), /Missing publisher identity/);
+  entry.external_references.push({ source_name: 'mitre-attack', external_id: 'T0850' });
+  assert.equal(check('attack-ics', payload, [{ id: 'T0850' }]).eligible_count, 1);
+  entry.external_references[1].external_id = 'T0999';
+  assert.throws(() => check('attack-ics', payload, [{ id: 'T0850' }]), /Ambiguous publisher/);
+  entry.external_references = [{ source_name: 'mitre-ics-attack' }];
+  assert.throws(() => check('attack-ics', payload, []), /Missing publisher identity/);
+});
 test('AI RMF records explicit exclusions and rejects cleaned-empty IDs', () => {
   const result = check('ai-rmf', [{ title: ' A ', description: 'text' }, { title: 'B' }], [{ id: 'A' }]);
   assert.equal(result.excluded.length, 1);
