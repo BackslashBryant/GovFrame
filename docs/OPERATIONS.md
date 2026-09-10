@@ -42,8 +42,11 @@ not make its assertions NIST-authored or NIST-endorsed. The
 [catalog](https://csrc.nist.gov/projects/olir/informative-reference-catalog) validates
 submission requirements, and the [FAQ](https://csrc.nist.gov/projects/olir/faqs)
 explicitly describes developer hosting. Registered artifact paths for submissions
-183, 225 and 232 are admitted individually, including their GitHub Contents API
-and raw-download forms. Other files and developer hosts remain outside that grant.
+are granted per submission from the current NIST detail response, within audited
+public hosting services. GitHub discovery stays within the registered directory
+and branch; other directories remain outside the grant. SCF content-host redirects
+preserve the registered path, and Google export redirects preserve the registered
+document ID. New filenames within a registered GitHub directory need no code edit.
 Workbook ingestion reads every sheet with relationship headers, preserves sheet
 and row locators, and stores strength and explanation separately from relationship
 type. Spreadsheet presentation objects are excluded from cell-data parsing.
