@@ -1,10 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-09T01:19:54.174Z",
+  "generated_at": "2026-09-10T01:10:45.824Z",
   "observations": [
     {
       "source_id": "cyber-mil-stig-compilations",
-      "observed_at": "2026-08-09T01:19:54.174Z",
+      "observed_at": "2026-09-10T01:10:45.824Z",
+      "required": true,
+      "available": true,
+      "retrieval_status": "skip",
       "url": "https://www.cyber.mil/stigs/compilations/",
       "title": "SRG and STIG Library Compilations",
       "kind": "official_entrypoint",
@@ -18,7 +21,10 @@
     },
     {
       "source_id": "cyber-mil-stig-downloads",
-      "observed_at": "2026-08-09T01:19:54.488Z",
+      "observed_at": "2026-09-10T01:10:45.824Z",
+      "required": true,
+      "available": true,
+      "retrieval_status": "skip",
       "url": "https://www.cyber.mil/stigs/downloads",
       "title": "STIG Downloads",
       "kind": "official_entrypoint",
@@ -32,7 +38,10 @@
     },
     {
       "source_id": "cyber-mil-stig-gpo",
-      "observed_at": "2026-08-09T01:19:54.789Z",
+      "observed_at": "2026-09-10T01:10:45.824Z",
+      "required": true,
+      "available": true,
+      "retrieval_status": "skip",
       "url": "https://www.cyber.mil/stigs/gpo/",
       "title": "STIG GPO Downloads",
       "kind": "official_entrypoint",
@@ -45,48 +54,11 @@
       "summary": "Official DISA STIG entrypoint delivered through a Salesforce LWC shell; direct artifact links are not exposed in static HTML."
     },
     {
-      "source_id": "stigviewer-catalog",
-      "observed_at": "2026-08-09T01:19:55.296Z",
-      "url": "https://www.stigviewer.com/stigs",
-      "title": "STIG Viewer",
-      "kind": "supplemental_catalog",
-      "exposes_api": true,
-      "sample_slugs": [
-        "aaa_services_security_requirements_guide",
-        "active_directory_domain",
-        "active_directory_forest",
-        "adobe_acrobat_professional_dc_continuous_track",
-        "adobe_acrobat_reader_dc_continuous_track",
-        "adobe_coldfusion",
-        "akamai_ksd_service_impact_level_2_alg",
-        "akamai_ksd_service_impact_level_2_ndm",
-        "amazon_linux_2023",
-        "anduril_nixos",
-        "apache_22_server_for_unix",
-        "apache_22_server_for_windows"
-      ],
-      "sample_count": 12
-    },
-    {
-      "source_id": "stigviewer-clkb-api",
-      "observed_at": "2026-08-09T01:19:55.567Z",
-      "url": "https://www.stigviewer.com/press-releases/2026-03-16",
-      "title": "STIG Viewer",
-      "kind": "supplemental_api_announcement",
-      "exposes_structured_json": true,
-      "claims_quarterly_updates": true
-    },
-    {
-      "source_id": "nuwcdivnpt-github-org",
-      "observed_at": "2026-08-09T01:19:56.552Z",
-      "url": "https://github.com/NUWCDIVNPT",
-      "title": "NUWCDIVNPT · GitHub",
-      "kind": "supplemental_tooling_org",
-      "highlights_stig_tooling": true
-    },
-    {
       "source_id": "nuwcdivnpt-stig-manager",
-      "observed_at": "2026-08-09T01:19:57.188Z",
+      "observed_at": "2026-09-10T01:10:45.824Z",
+      "required": false,
+      "available": true,
+      "retrieval_status": "miss",
       "url": "https://github.com/nuwcdivnpt/stig-manager",
       "title": "GitHub - NUWCDIVNPT/stig-manager: An API and client for managing STIG assessments · GitHub",
       "kind": "supplemental_tooling",

@@ -1,0 +1,1515 @@
+{
+  "schema_version": "1.0",
+  "pipeline": "Control Atlas public-source ingestion",
+  "stages": [
+    "discover",
+    "acquire",
+    "attest",
+    "parse",
+    "normalize",
+    "structure",
+    "relationships",
+    "presentation",
+    "reconcile",
+    "publish"
+  ],
+  "started_at": "2026-09-10T01:09:55.690Z",
+  "completed_at": "2026-09-10T01:14:57.778Z",
+  "status": "complete_with_quarantine",
+  "failed_task": null,
+  "results": [
+    {
+      "task_id": "discover-nist-pages",
+      "script": "discover-nist-pages.mjs",
+      "args": [],
+      "stages": [
+        "discover"
+      ],
+      "scope": [
+        "nist-pages"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 388,
+      "source_results": [
+        {
+          "source_id": "discover-nist-pages",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "discover-nist-structured-assets",
+      "script": "discover-nist-structured-assets.mjs",
+      "args": [],
+      "stages": [
+        "discover"
+      ],
+      "scope": [
+        "nist-pages"
+      ],
+      "status": "quarantined",
+      "attempts": 2,
+      "duration_ms": 49586,
+      "source_results": [
+        {
+          "source_id": "discover-nist-structured-assets",
+          "status": "quarantined",
+          "attempts": 2
+        }
+      ]
+    },
+    {
+      "task_id": "triage-nist-structured-assets",
+      "script": "triage-nist-structured-assets.mjs",
+      "args": [],
+      "stages": [
+        "discover"
+      ],
+      "scope": [
+        "nist-pages"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 34
+    },
+    {
+      "task_id": "observe-disa-sources",
+      "script": "fetch-stig-source-observations.mjs",
+      "args": [],
+      "stages": [
+        "discover"
+      ],
+      "scope": [
+        "disa-stig",
+        "disa-srg"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 2191,
+      "source_results": [
+        {
+          "source_id": "observe-disa-sources",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "fetch-framework-catalogs",
+      "script": "fetch-framework-catalogs.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "framework-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 11467,
+      "source_results": [
+        {
+          "source_id": "nist-800-53-rev5",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "nist-csf-2",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "nist-800-171-rev3",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "nist-800-171-rev2",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "nist-800-172-rev3",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "nist-ai-rmf-playbook",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "nist-ssdf-oscal",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "fedramp-baselines",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "fetch-fedramp-rules",
+      "script": "fetch-fedramp-2026-rules.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "fedramp-20x"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1313,
+      "source_results": [
+        {
+          "source_id": "fetch-fedramp-rules",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "fetch-nara-cui",
+      "script": "fetch-nara-cui-registry.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "cui-policy"
+      ],
+      "status": "quarantined",
+      "attempts": 2,
+      "duration_ms": 2557,
+      "source_results": [
+        {
+          "source_id": "fetch-nara-cui",
+          "status": "quarantined",
+          "attempts": 2
+        }
+      ]
+    },
+    {
+      "task_id": "fetch-olir-catalog",
+      "script": "fetch-olir-catalog.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "olir"
+      ],
+      "status": "quarantined",
+      "attempts": 2,
+      "duration_ms": 24556,
+      "source_results": [
+        {
+          "source_id": "fetch-olir-catalog",
+          "status": "quarantined",
+          "attempts": 2
+        }
+      ]
+    },
+    {
+      "task_id": "fetch-olir-mappings",
+      "script": "fetch-olir-mappings.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse",
+        "relationships"
+      ],
+      "scope": [
+        "olir"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 530,
+      "source_results": [
+        {
+          "source_id": "fetch-olir-mappings",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "fetch-ccis",
+      "script": "fetch-ccis.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse",
+        "relationships"
+      ],
+      "scope": [
+        "disa-cci"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1583,
+      "source_results": [
+        {
+          "source_id": "fetch-ccis",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "fetch-disa-library",
+      "script": "fetch-disa-stigs.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "disa-stig",
+        "disa-srg"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 16022,
+      "source_results": [
+        {
+          "source_id": "fetch-disa-library",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "fetch-mitre",
+      "script": "fetch-mitre-data.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse",
+        "relationships"
+      ],
+      "scope": [
+        "mitre-attack",
+        "mitre-d3fend"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 6430,
+      "source_results": [
+        {
+          "source_id": "fetch-mitre",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "fetch-zero-trust-workbooks",
+      "script": "fetch-zero-trust-workbooks.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse",
+        "relationships"
+      ],
+      "scope": [
+        "nist-zt",
+        "microsoft-zt-maturity"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 3499,
+      "source_results": [
+        {
+          "source_id": "fetch-zero-trust-workbooks",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "fetch-nist-zero-trust",
+      "script": "fetch-nist-zero-trust-pages.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse"
+      ],
+      "scope": [
+        "nist-zt"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 9390,
+      "source_results": [
+        {
+          "source_id": "fetch-nist-zero-trust",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "fetch-nist-structured-catalogs",
+      "script": "fetch-nist-structured-catalogs.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "parse",
+        "relationships"
+      ],
+      "scope": [
+        "nist-iot-cybersecurity",
+        "nist-mobile-threats"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 5011,
+      "source_results": [
+        {
+          "source_id": "fetch-nist-structured-catalogs",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "extract-dod-zero-trust",
+      "script": "extract-dod-zt.mjs",
+      "args": [],
+      "stages": [
+        "parse"
+      ],
+      "scope": [
+        "dod-zt"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 538
+    },
+    {
+      "task_id": "sync-zero-trust-registry",
+      "script": "sync-zero-trust-source-registry.mjs",
+      "args": [],
+      "stages": [
+        "attest"
+      ],
+      "scope": [
+        "dod-zt",
+        "nist-zt",
+        "microsoft-zt-maturity",
+        "nist-iot-cybersecurity",
+        "nist-mobile-threats"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 60
+    },
+    {
+      "task_id": "sync-source-bundles",
+      "script": "sync-catalog-source-bundles.mjs",
+      "args": [],
+      "stages": [
+        "attest"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 46
+    },
+    {
+      "task_id": "build-source-inventory",
+      "script": "build-catalog-source-inventory.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "normalize",
+        "reconcile"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1485
+    },
+    {
+      "task_id": "sync-inventory-contracts",
+      "script": "sync-catalog-inventory-contracts.mjs",
+      "args": [],
+      "stages": [
+        "attest",
+        "reconcile"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 50
+    },
+    {
+      "task_id": "hydrate-artifacts",
+      "script": "hydrate-artifacts.mjs",
+      "args": [],
+      "stages": [
+        "acquire",
+        "attest"
+      ],
+      "scope": [
+        "all-artifacts"
+      ],
+      "status": "partial",
+      "attempts": 2,
+      "duration_ms": 56013,
+      "source_results": [
+        {
+          "source_id": "artifact-nist-800-171-rev2",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-ai-rmf-playbook",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-fedramp-2026-rules",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-disa-cci-list",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-800-53",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-800-172-rev3",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-ssdf",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-800-171-oscal-mappings",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-fedramp-rev5",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-800-53-rev4-rev5-crosswalk",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-csf-53-supplemental",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-csf11-csf20-crosswalk",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-olir-csf2-to-sp800-53",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-olir-csf2-to-sp800-171",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-800-207",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-800-207a",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-csf2-mappings",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-critical-software-mappings",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-csf11-mappings",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-sp80053-mappings",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-microsoft-zero-trust-maturity-questionnaire-v1-1",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-iot-requirements-80053-mapping-draft",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-iot-requirements-csf11-mapping-draft",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-mobile-threat-catalogue",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-mobile-threat-catalogue-cve-list",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-dod-zt-reference-architecture-v2",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-dod-zt-strategy",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-dod-zt-capabilities",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-dod-zt-execution-roadmap",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-dod-zt-overlays-2024",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-dod-zt-operational-technology",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-dod-zt-newsletter-2024-11",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-dod-zt-strategy-placemats",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-dod-rai-toolkit",
+          "status": "quarantined",
+          "attempts": 2
+        },
+        {
+          "source_id": "artifact-ai-mil-responsible-ai",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-isoo-cui-regulation",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-dod-cmmc-rule",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-csf-2",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-csf-reference-tool-export",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-fips-199",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-fips-200",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-800-37-rev2",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-disa-compilation-zip",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-disa-stig-library",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-disa-srg-library",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-disa-stig-srg-cci-references",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-800-53b-baselines",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-control-atlas-structure",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b1-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b1-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e2b1-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e2b1-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e3b1-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e3b1-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b2-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b2-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e3b2-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e3b2-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b3-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b3-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e2b3-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e2b3-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e3b3-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e3b3-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e4b3-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e4b3-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b4-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b4-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e2b4-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e2b4-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e3b4-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e3b4-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e4b4-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e4b4-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b5-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b5-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e2b5-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e2b5-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e3b5-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e3b5-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e4b5-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e4b5-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b6-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e1b6-guide",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e2b6-architecture",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "artifact-nist-sp-1800-35-e2b6-guide",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "reconcile-freshness",
+      "script": "reconcile-source-freshness.mjs",
+      "args": [],
+      "stages": [
+        "attest",
+        "reconcile"
+      ],
+      "scope": [
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1139
+    },
+    {
+      "task_id": "build-taxonomy-registry",
+      "script": "build-taxonomy-registry.mjs",
+      "args": [],
+      "stages": [
+        "normalize",
+        "structure"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 59
+    },
+    {
+      "task_id": "build-framework-data",
+      "script": "build-framework-data.mjs",
+      "args": [],
+      "stages": [
+        "normalize",
+        "structure",
+        "relationships",
+        "presentation",
+        "publish"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 14751
+    },
+    {
+      "task_id": "enrich-commons-resources",
+      "script": "enrich-commons-resources.mjs",
+      "args": [
+        "--refresh"
+      ],
+      "stages": [
+        "acquire",
+        "attest",
+        "parse",
+        "presentation"
+      ],
+      "scope": [
+        "all-resources"
+      ],
+      "status": "partial",
+      "attempts": 2,
+      "duration_ms": 80858,
+      "source_results": [
+        {
+          "source_id": "tool-grype-vulnerability-scanner",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-syft-sbom-generator",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-ansible-lockdown",
+          "status": "quarantined",
+          "attempts": 2
+        },
+        {
+          "source_id": "tool-atomic-red-team",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-awesome-oscal",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-bloodhound-ce",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-checkov",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-cisa-cset",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-cisa-decider",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-cisa-malcolm",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-cisa-scubagear",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "dataset-cisa-vulnrichment",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-cloud-custodian",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-compliance-as-code",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-cpat",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "community-cyberark",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-cyberchef",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-cyclonedx-cli",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "catalog-elastic-detection-rules",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-falco-runtime-security",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-gitleaks",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-gsa-oscal-ssp-word",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-hardening-kitty",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-compliance-trestle",
+          "status": "quarantined",
+          "attempts": 2
+        },
+        {
+          "source_id": "tool-kics",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-kube-bench",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-kubescape",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-lynis",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-maester",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "reference-microsoft-stigrepo",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-microsoft365dsc",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-misp",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-mitre-attack-navigator",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-mitre-caldera",
+          "status": "quarantined",
+          "attempts": 2
+        },
+        {
+          "source_id": "tool-mitre-emass-client",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-mitre-heimdall",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-mitre-saf-cli",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-mitre-vulcan",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-nist-mscp",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "ecosystem-nuclei",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-open-policy-agent",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "legacy-opencontrol-compliance-masonry",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-opencti",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-openscap",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-openscap-workbench",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-openssf-scorecard",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-osquery",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "ecosystem-osv",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-dependency-track",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-powerstig",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-prowler-cloud-security",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-scoutsuite",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-semgrep",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "ecosystem-sigmahq",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "ecosystem-sigstore-cosign",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-steampipe",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-stig-manager",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-terrascan",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-trivy",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-velociraptor",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-volatility-3",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-wazuh-siem",
+          "status": "accepted",
+          "attempts": 1
+        },
+        {
+          "source_id": "tool-yara-x",
+          "status": "accepted",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "task_id": "migrate-source-truth-profiles",
+      "script": "migrate-source-truth-profiles.mjs",
+      "args": [],
+      "stages": [
+        "normalize",
+        "presentation"
+      ],
+      "scope": [
+        "all-resources",
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 212
+    },
+    {
+      "task_id": "build-commons-index",
+      "script": "build-commons-index.mjs",
+      "args": [],
+      "stages": [
+        "normalize",
+        "structure",
+        "relationships",
+        "publish"
+      ],
+      "scope": [
+        "all-resources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 182
+    },
+    {
+      "task_id": "build-source-count-ledger",
+      "script": "reconcile-artifact-counts.mjs",
+      "args": [],
+      "stages": [
+        "reconcile"
+      ],
+      "scope": [
+        "all-sources",
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 3424
+    },
+    {
+      "task_id": "check-data-size",
+      "script": "check-data-size.mjs",
+      "args": [],
+      "stages": [
+        "publish"
+      ],
+      "scope": [
+        "runtime-bundles"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 752
+    },
+    {
+      "task_id": "audit-coverage",
+      "script": "audit-coverage.mjs",
+      "args": [],
+      "stages": [
+        "reconcile"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1845
+    },
+    {
+      "task_id": "verify-discovery",
+      "script": "verify-discovery.mjs",
+      "args": [],
+      "stages": [
+        "discover"
+      ],
+      "scope": [
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 40
+    },
+    {
+      "task_id": "verify-manifests",
+      "script": "verify-manifests.mjs",
+      "args": [],
+      "stages": [
+        "attest",
+        "reconcile"
+      ],
+      "scope": [
+        "all-sources",
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 2080
+    },
+    {
+      "task_id": "build-publication-identity-index",
+      "script": "build-publication-identity-index.mjs",
+      "args": [],
+      "stages": [
+        "structure",
+        "publish"
+      ],
+      "scope": [
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 90
+    },
+    {
+      "task_id": "build-publication-audit-report",
+      "script": "build-publication-audit-report.mjs",
+      "args": [],
+      "stages": [
+        "reconcile",
+        "publish"
+      ],
+      "scope": [
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 65
+    },
+    {
+      "task_id": "build-source-semantic-audit",
+      "script": "build-source-semantic-audit.mjs",
+      "args": [],
+      "stages": [
+        "reconcile",
+        "publish"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 743
+    },
+    {
+      "task_id": "build-discovery-index",
+      "script": "build-discovery-index.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "publish"
+      ],
+      "scope": [
+        "all-sources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 415
+    },
+    {
+      "task_id": "verify-completeness",
+      "script": "verify-completeness.mjs",
+      "args": [],
+      "stages": [
+        "reconcile"
+      ],
+      "scope": [
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 32
+    },
+    {
+      "task_id": "verify-ingestion-contract",
+      "script": "verify-ingestion-pipeline.mjs",
+      "args": [],
+      "stages": [
+        "presentation",
+        "reconcile"
+      ],
+      "scope": [
+        "all-sources",
+        "all-catalogs"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 1939
+    },
+    {
+      "task_id": "verify-resource-ingestion",
+      "script": "verify-resource-ingestion.mjs",
+      "args": [],
+      "stages": [
+        "discover",
+        "attest",
+        "presentation",
+        "reconcile"
+      ],
+      "scope": [
+        "all-resources"
+      ],
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 81
+    }
+  ]
+}
