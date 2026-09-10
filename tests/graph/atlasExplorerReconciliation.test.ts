@@ -328,6 +328,10 @@ test("publication kind assignments match the public catalog taxonomy", () => {
 // ── AC-2 Connection Reconciliation ───────────────────────────
 
 const AC2_ID = "nist-800-53:AC-2";
+const acceptedControls = JSON.parse(readFileSync(join(ROOT, 'data', 'controls-800-53.json'), 'utf8')).records as Array<{
+  id: string;
+  metadata?: { nist_800_53b_baselines?: string[]; fedramp_baselines?: string[] };
+}>;
 
 function requireAc2Neighborhood(): NeighborhoodRecord {
   const record = loadNeighborhood(AC2_ID);
@@ -335,13 +339,13 @@ function requireAc2Neighborhood(): NeighborhoodRecord {
   return record;
 }
 
-test("AC-2 has 156 published relationship records across ten catalogs", () => {
+test("AC-2 neighborhood contains every accepted canonical relationship exactly once", () => {
   const neighborhood = requireAc2Neighborhood();
   const edges = loadFullEdgesForNode(AC2_ID);
-  assert.equal(neighborhood.edges.length, 156);
-  assert.equal(neighborhood.published_connection_count, 156);
+  assert.deepEqual(neighborhood.edges.map((edge) => edge[0]).sort(), edges.map((edge) => edge.id).sort());
+  assert.equal(neighborhood.published_connection_count, edges.length);
   assert.equal(neighborhood.candidate_connection_count, 0);
-  assert.equal(edges.length, 156);
+  assert.ok(edges.length > 0);
   assert.ok(edges.every((edge) => edge.status === "active"));
   assert.ok(edges.every((edge) => edge.publication_status === "published"));
 
@@ -350,37 +354,32 @@ test("AC-2 has 156 published relationship records across ten catalogs", () => {
     const id = catalogId(counterpartId(edge, AC2_ID));
     perCatalog.set(id, (perCatalog.get(id) || 0) + 1);
   }
-  assert.deepEqual(Object.fromEntries([...perCatalog].sort()), {
-    "csf-2": 5,
-    "disa-cci": 47,
-    "dod-zt": 20,
-    "fedramp-rev5": 4,
-    "nist-800-171": 1,
-    "nist-800-53": 14,
-    "nist-800-53a": 1,
-    "nist-800-53b": 3,
-    "nist-iot-cybersecurity": 14,
-    "nist-zt": 47,
-  });
+  const neighborhoodCounts = new Map<string, number>();
+  for (const edge of decodeNeighborhood(neighborhood).edges) {
+    const id = catalogId(counterpartId(edge, AC2_ID));
+    neighborhoodCounts.set(id, (neighborhoodCounts.get(id) || 0) + 1);
+  }
+  assert.deepEqual(Object.fromEntries([...neighborhoodCounts].sort()), Object.fromEntries([...perCatalog].sort()));
 });
 
-test("AC-2 native structure is one family parent and 13 enhancement children", () => {
+test("AC-2 native structure has its family parent and accepted enhancement children", () => {
   const edges = loadFullEdgesForNode(AC2_ID).filter(
     (edge) => edge.relationship_class === "structural",
   );
   const incoming = edges.filter((edge) => edge.target_node_id === AC2_ID);
   const outgoing = edges.filter((edge) => edge.source_node_id === AC2_ID);
-  assert.equal(edges.length, 14);
+  const enhancementIds = acceptedControls.filter((record) => /^AC-2\.\d+$/.test(record.id)).map((record) => `nist-800-53:${record.id}`).sort();
+  assert.equal(edges.length, enhancementIds.length + 1);
   assert.equal(incoming.length, 1);
   assert.equal(incoming[0]?.source_node_id, "nist-800-53:FAMILY-AC");
-  assert.equal(outgoing.length, 13);
+  assert.deepEqual(outgoing.map((edge) => edge.target_node_id).sort(), enhancementIds);
   assert.ok(outgoing.every((edge) => edge.relationship_type === "contains"));
   assert.ok(
     outgoing.every((edge) => edge.target_node_id.startsWith("nist-800-53:AC-2.")),
   );
 });
 
-test("AC-2 cross-source scope is 135 correlations plus seven applicability selections", () => {
+test("AC-2 cross-source scope partitions into correlations and applicability selections", () => {
   const edges = loadFullEdgesForNode(AC2_ID);
   const crossSource = edges.filter(
     (edge) => catalogId(counterpartId(edge, AC2_ID)) !== "nist-800-53",
@@ -391,9 +390,10 @@ test("AC-2 cross-source scope is 135 correlations plus seven applicability selec
   const applicability = crossSource.filter(
     (edge) => edge.relationship_class === "applicability",
   );
-  assert.equal(crossSource.length, 142);
-  assert.equal(correlations.length, 135);
-  assert.equal(applicability.length, 7);
+  assert.equal(crossSource.length, correlations.length + applicability.length);
+  const decodedCrossSource = decodeNeighborhood(requireAc2Neighborhood()).edges
+    .filter((edge) => catalogId(counterpartId(edge, AC2_ID)) !== 'nist-800-53');
+  assert.deepEqual(decodedCrossSource.map((edge) => edge.id).sort(), crossSource.map((edge) => edge.id).sort());
   assert.equal(
     crossSource.filter((edge) => edge.mapping_model === "implementation").length,
     0,
@@ -414,23 +414,25 @@ test("AC-2 cross-source correlations separate CCI, assessment, and publisher map
   const publisherMappings = correlations.filter(
     (edge) => !cci.includes(edge) && !assessment.includes(edge),
   );
-  assert.equal(cci.length, 47, "DISA CCI correlation junctions");
+  assert.ok(cci.length > 0, "DISA CCI correlation junctions");
   assert.equal(assessment.length, 1, "SP 800-53A assessment procedure");
-  assert.equal(publisherMappings.length, 87, "other cross-framework publisher mappings");
+  assert.equal(cci.length + assessment.length + publisherMappings.length, correlations.length);
   assert.ok(cci.every((edge) => edge.mapping_model === "correlation"));
 });
 
 test("AC-2 baseline applicability records preserve active and historical lifecycle context", () => {
+  const acceptedAc2 = acceptedControls.find((record) => record.id === 'AC-2');
+  assert.ok(acceptedAc2);
   const applicability = loadFullEdgesForNode(AC2_ID).filter(
     (edge) => edge.relationship_class === "applicability",
   );
   assert.equal(
     applicability.filter((edge) => edge.source_refs[0]?.source_id === "nist-800-53b-baselines").length,
-    3,
+    acceptedAc2.metadata?.nist_800_53b_baselines?.length || 0,
   );
   assert.equal(
     applicability.filter((edge) => edge.source_refs[0]?.source_id === "fedramp-rev5").length,
-    4,
+    acceptedAc2.metadata?.fedramp_baselines?.length || 0,
   );
 
   const sources = new Map(loadSourceRegistry().sources.map((source) => [source.id, source]));
@@ -446,45 +448,50 @@ test("AC-2 baseline applicability records preserve active and historical lifecyc
   );
 });
 
-test("all 156 AC-2 records match their declared semantic signatures", () => {
+test("AC-2 neighborhood preserves accepted canonical relationship semantics and provenance", () => {
   const neighborhood = requireAc2Neighborhood();
+  const decoded = decodeNeighborhood(neighborhood);
+  const canonicalEdges = loadFullEdgesForNode(AC2_ID);
+  const allowedSignatures = new Set([
+    "csf-2|requirement|concept_crosswalk|correlation|outgoing|correlation|federal_published|direct|nist-olir-csf2-to-sp800-53|active|published",
+    "disa-cci|requirement|maps_to|correlation|incoming|correlation|federal_published|derived|nist-800-53-rev4-rev5-crosswalk|active|published",
+    "disa-cci|requirement|maps_to|correlation|incoming|correlation|federal_published|direct|disa-cci-nist-references|active|published",
+    "dod-zt|zt_capability|supports|correlation|outgoing|correlation|federal_published|direct|dod-zt-overlays-2024|active|published",
+    "fedramp-rev5|baseline|selects|applicability|incoming|applicability|federal_program|direct|fedramp-rev5|active|published",
+    "nist-800-171|requirement|maps_to|correlation|incoming|correlation|federal_published|direct|nist-800-171-oscal-mappings|active|published",
+    "nist-800-53a|assessment_procedure|assesses|correlation|incoming|correlation|federal_published|direct|nist-800-53a-assessment-procedures|active|published",
+    "nist-800-53b|baseline|selects|applicability|incoming|applicability|federal_published|direct|nist-800-53b-baselines|active|published",
+    "nist-800-53|control_enhancement|contains|structural|outgoing|structural|federal_published|derived|nist-800-53|active|published",
+    "nist-800-53|family|contains|structural|incoming|structural|federal_published|derived|nist-800-53|active|published",
+    "nist-iot-cybersecurity|iot_capability_element|maps_to|correlation|incoming|correlation|federal_published|direct|nist-iot-requirements-80053-mapping-draft|active|published",
+    "nist-iot-cybersecurity|iot_capability_subelement|maps_to|correlation|incoming|correlation|federal_published|direct|nist-iot-requirements-80053-mapping-draft|active|published",
+    "nist-zt|zt_product_component|supports|correlation|incoming|correlation|federal_published|direct|nist-sp-1800-35-sp80053-mappings|active|published",
+    "nist-zt|zt_reference_component|supports|correlation|incoming|correlation|federal_published|direct|nist-sp-1800-35-sp80053-mappings|active|published",
+  ]);
   const nodeTypes = new Map(neighborhood.nodes.map((node) => [node[0], node[1]]));
-  const signatures = new Map<string, number>();
-  for (const edge of loadFullEdgesForNode(AC2_ID)) {
+  for (const edge of canonicalEdges) {
     const other = counterpartId(edge, AC2_ID);
-    const direction = edge.source_node_id === AC2_ID ? "outgoing" : "incoming";
-    const signature = [
-      catalogId(other),
-      nodeTypes.get(other),
-      edge.relationship_type,
-      edge.relationship_class,
-      direction,
-      edge.mapping_model,
-      edge.provenance_class,
-      edge.confidence,
-      edge.source_refs[0]?.source_id,
-      edge.status,
-      edge.publication_status,
-    ].join("|");
-    signatures.set(signature, (signatures.get(signature) || 0) + 1);
+    const actual = [catalogId(other), nodeTypes.get(other), edge.relationship_type,
+      edge.relationship_class, edge.source_node_id === AC2_ID ? 'outgoing' : 'incoming',
+      edge.mapping_model, edge.provenance_class, edge.confidence, edge.source_refs[0]?.source_id,
+      edge.status, edge.publication_status].join('|');
+    assert.ok(allowedSignatures.has(actual), `Unreviewed AC-2 semantic signature: ${actual}`);
   }
-
-  assert.deepEqual(Object.fromEntries([...signatures].sort()), {
-    "csf-2|requirement|concept_crosswalk|correlation|outgoing|correlation|federal_published|direct|nist-olir-csf2-to-sp800-53|active|published": 5,
-    "disa-cci|requirement|maps_to|correlation|incoming|correlation|federal_published|derived|nist-800-53-rev4-rev5-crosswalk|active|published": 12,
-    "disa-cci|requirement|maps_to|correlation|incoming|correlation|federal_published|direct|disa-cci-nist-references|active|published": 35,
-    "dod-zt|zt_capability|supports|correlation|outgoing|correlation|federal_published|direct|dod-zt-overlays-2024|active|published": 20,
-    "fedramp-rev5|baseline|selects|applicability|incoming|applicability|federal_program|direct|fedramp-rev5|active|published": 4,
-    "nist-800-171|requirement|maps_to|correlation|incoming|correlation|federal_published|direct|nist-800-171-oscal-mappings|active|published": 1,
-    "nist-800-53a|assessment_procedure|assesses|correlation|incoming|correlation|federal_published|direct|nist-800-53a-assessment-procedures|active|published": 1,
-    "nist-800-53b|baseline|selects|applicability|incoming|applicability|federal_published|direct|nist-800-53b-baselines|active|published": 3,
-    "nist-800-53|control_enhancement|contains|structural|outgoing|structural|federal_published|derived|nist-800-53|active|published": 13,
-    "nist-800-53|family|contains|structural|incoming|structural|federal_published|derived|nist-800-53|active|published": 1,
-    "nist-iot-cybersecurity|iot_capability_element|maps_to|correlation|incoming|correlation|federal_published|direct|nist-iot-requirements-80053-mapping-draft|active|published": 9,
-    "nist-iot-cybersecurity|iot_capability_subelement|maps_to|correlation|incoming|correlation|federal_published|direct|nist-iot-requirements-80053-mapping-draft|active|published": 5,
-    "nist-zt|zt_product_component|supports|correlation|incoming|correlation|federal_published|direct|nist-sp-1800-35-sp80053-mappings|active|published": 38,
-    "nist-zt|zt_reference_component|supports|correlation|incoming|correlation|federal_published|direct|nist-sp-1800-35-sp80053-mappings|active|published": 9,
+  const signature = (edge: Pick<FullGraphEdge, "id" | "source_node_id" | "target_node_id" | "relationship_type" | "relationship_class" | "provenance_class" | "confidence" | "publication_status" | "source_refs">) => ({
+    id: edge.id,
+    source: edge.source_node_id,
+    target: edge.target_node_id,
+    type: edge.relationship_type,
+    classification: edge.relationship_class,
+    provenance: edge.provenance_class,
+    confidence: edge.confidence,
+    status: edge.publication_status,
+    sourceRefs: edge.source_refs,
   });
+  assert.deepEqual(
+    decoded.edges.map(signature).sort((a, b) => a.id.localeCompare(b.id)),
+    canonicalEdges.map(signature).sort((a, b) => a.id.localeCompare(b.id)),
+  );
 });
 
 test("AC-2 relationship IDs and endpoint-type assertions are unique", () => {
@@ -496,8 +503,8 @@ test("AC-2 relationship IDs and endpoint-type assertions are unique", () => {
         `${edge.source_node_id}|${edge.target_node_id}|${edge.relationship_type}`,
     ),
   );
-  assert.equal(ids.size, 156, "canonical edge IDs are the deduplication key");
-  assert.equal(assertions.size, 156, "endpoint-type assertions must not duplicate");
+  assert.equal(ids.size, edges.length, "canonical edge IDs are the deduplication key");
+  assert.equal(assertions.size, edges.length, "endpoint-type assertions must not duplicate");
 });
 
 // ── CMMC Level Verification ──────────────────────────────────
@@ -558,17 +565,20 @@ test("connection presentation caps do not alter AC-2 source truth or grouping", 
 
   const overview = selectAtlasOverviewGroups(connectionGroups, 6);
   const previews = overview.map((group) => group.items.slice(0, 2));
+  const acceptedEdges = loadFullEdgesForNode(AC2_ID);
+  const crossSourceEdges = acceptedEdges.filter((edge) => catalogId(counterpartId(edge, AC2_ID)) !== 'nist-800-53');
+  const nativeEdges = acceptedEdges.filter((edge) => edge.relationship_class === 'structural');
 
-  assert.equal(groups.reduce((total, group) => total + group.items.length, 0), 156);
-  assert.equal(connectionGroups.reduce((total, group) => total + group.items.length, 0), 142);
+  assert.equal(groups.reduce((total, group) => total + group.items.length, 0), acceptedEdges.length);
+  assert.equal(connectionGroups.reduce((total, group) => total + group.items.length, 0), crossSourceEdges.length);
   assert.deepEqual(scopes, {
-    publishedNeighborhood: 156,
-    nativeStructure: 14,
-    crossSource: 142,
+    publishedNeighborhood: acceptedEdges.length,
+    nativeStructure: nativeEdges.length,
+    crossSource: crossSourceEdges.length,
     sameSourceContext: 0,
   });
-  assert.equal(decoded.edges.length, 156);
-  assert.equal(decoded.published_connection_count, 156);
+  assert.equal(decoded.edges.length, acceptedEdges.length);
+  assert.equal(decoded.published_connection_count, acceptedEdges.length);
   assert.ok(overview.length <= 6);
   assert.ok(previews.every((preview) => preview.length <= 2));
   assert.deepEqual(

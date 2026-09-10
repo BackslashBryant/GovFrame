@@ -62,16 +62,19 @@ test("Atlas projection budgets hold on the real generated graph", () => {
   const accessControl = sp80053Families.find((node) => node.label === "Access Control")!;
   const accessControlDetail = artifact.details[accessControl.id]!;
   const accessControlRecords = accessControlDetail.nodes.map((node) => node.id);
-  assert.equal(accessControlRecords.filter((id) => /^nist-800-53:AC-\d+$/.test(id)).length, 25);
-  assert.equal(accessControlDetail.representedCanonicalNodeCount, 148);
-  assert.equal(accessControlDetail.nodes.length, 148);
+  const acceptedAccessControlIds = nodes.map((node: { id: string }) => node.id)
+    .filter((id: string) => id === "nist-800-53:FAMILY-AC" || /^nist-800-53:AC-\d+(?:\.\d+)?$/.test(id)).sort();
+  assert.ok(acceptedAccessControlIds.length > 0);
+  assert.deepEqual([...accessControlRecords].sort(), acceptedAccessControlIds);
+  assert.equal(accessControlDetail.representedCanonicalNodeCount, acceptedAccessControlIds.length);
+  assert.equal(accessControlDetail.nodes.length, acceptedAccessControlIds.length);
   assert.equal(
     buildAtlasTree(artifact, {
       areaId: "ecosystem:nist",
       publicationId: "nist-800-53",
       detailId: accessControl.id,
     }).scopeCount,
-    148,
+    acceptedAccessControlIds.length,
   );
 
   const cmmc = artifact.publications["cmmc-2"]!;

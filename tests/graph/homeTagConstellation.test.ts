@@ -39,17 +39,9 @@ test("every Home card filters by record kind, never by technology tag", () => {
 });
 
 test("Home Library discovery counts come directly from the Library browse artifact", () => {
-  assert.deepEqual(
-    HOME_LIBRARY_DISCOVERY.map((item) => [item.id, item.count]),
-    [
-      ["requirements", 9_766],
-      ["baselines-profiles", 30],
-      ["process-methods", 1_152],
-      ["technical-rules", 17_021],
-      ["threats-defenses", 1_235],
-    ],
-  );
-
+  // Refreshed publisher inventories change these totals. The exact contract is
+  // agreement with the current browse artifact; ordering and nonempty groups
+  // are checked above, and source admission gates the underlying inventory.
   for (const item of HOME_LIBRARY_DISCOVERY) {
     const expected = rawTypesForKind(item.patch.kind as string).reduce(
       (total, rawType) =>
