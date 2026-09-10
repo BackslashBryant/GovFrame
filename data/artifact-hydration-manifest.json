@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T16:09:54.253Z",
+  "generated_at": "2026-09-10T16:30:51.327Z",
   "hydrated": 1,
   "removed_orphans": [],
   "results": [
@@ -422,8 +422,8 @@
       "status": "OK",
       "http": 200,
       "url": "https://www.ai.mil/Initiatives/About/Resources/Pathway-to-AI-Readiness/Responsible-AI/",
-      "sha256": "sha256:70c0bb14fa4854813fb154a5c7e2425a2f10920737b88c97fa289665c32e61fd",
-      "byte_length": 105777,
+      "sha256": "sha256:3de8706e12c25dd6c0d613f37c6a11b10e1ee9ce87df62393a19c6990e35992b",
+      "byte_length": 105052,
       "record_count": null,
       "retrieved_at": "2026-09-10"
     },
@@ -462,8 +462,8 @@
       "status": "OK",
       "http": 200,
       "url": "https://csrc.nist.gov/extensions/nudp/services/json/csf/download?olirids=all",
-      "sha256": "sha256:402168873e1c42e2e50b09cb2bf912c21bb7936c3ef1840ae0c6f81e7c5e7f7f",
-      "byte_length": 144518,
+      "sha256": "sha256:3ad3896b4cf051aa2b579b75756db78f195aae7ccbc0ba2a610706db03152972",
+      "byte_length": 144517,
       "record_count": null,
       "retrieved_at": "2026-09-10"
     },
@@ -543,7 +543,7 @@
       "status": "OK",
       "http": "local",
       "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/v1.5.0/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json",
-      "sha256": "sha256:6f456dbc3ae6dec075d19f5a1ac9e94893b456395d5ae3b7d976a250286fd796",
+      "sha256": "sha256:7c11a325a830be5e01dce559a3c4ab8f6566836d8c11f0ae3e5e8ab14e603570",
       "byte_length": 1865,
       "record_count": null,
       "retrieved_at": "2026-09-10"

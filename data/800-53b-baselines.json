@@ -11,7 +11,7 @@
       "description": "NIST SP 800-53B low impact baseline for federal information systems.",
       "source": {
         "key": "nist-800-53b-baselines",
-        "snapshot_date": "2026-09-10T16:08:33.857Z",
+        "snapshot_date": "2026-09-10T16:29:35.765Z",
         "locator": "sp800-53b#low"
       }
     },
@@ -24,7 +24,7 @@
       "description": "NIST SP 800-53B moderate impact baseline for federal information systems.",
       "source": {
         "key": "nist-800-53b-baselines",
-        "snapshot_date": "2026-09-10T16:08:33.857Z",
+        "snapshot_date": "2026-09-10T16:29:35.765Z",
         "locator": "sp800-53b#moderate"
       }
     },
@@ -37,7 +37,7 @@
       "description": "NIST SP 800-53B high impact baseline for federal information systems.",
       "source": {
         "key": "nist-800-53b-baselines",
-        "snapshot_date": "2026-09-10T16:08:33.857Z",
+        "snapshot_date": "2026-09-10T16:29:35.765Z",
         "locator": "sp800-53b#high"
       }
     },
@@ -50,7 +50,7 @@
       "description": "NIST SP 800-53B privacy baseline for federal information systems.",
       "source": {
         "key": "nist-800-53b-baselines",
-        "snapshot_date": "2026-09-10T16:08:33.857Z",
+        "snapshot_date": "2026-09-10T16:29:35.765Z",
         "locator": "sp800-53b#privacy"
       }
     }

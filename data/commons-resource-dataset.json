@@ -2207,7 +2207,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T16:02:07Z.",
+          "text": "Latest repository push: 2026-09-10T16:17:58Z.",
           "sourceUrl": "https://api.github.com/repos/SpecterOps/BloodHound"
         },
         "release": {
@@ -2215,7 +2215,7 @@
           "version": "v9.7.0",
           "name": "BloodHound CE v9.7.0",
           "url": "https://github.com/SpecterOps/BloodHound/releases/tag/v9.7.0",
-          "publishedAt": "2026-09-08T16:20:40Z",
+          "publishedAt": "2026-09-10T16:12:45Z",
           "prerelease": false
         }
       },
@@ -2255,7 +2255,7 @@
           "version": "v9.7.0",
           "name": "BloodHound CE v9.7.0",
           "url": "https://github.com/SpecterOps/BloodHound/releases/tag/v9.7.0",
-          "publishedAt": "2026-09-08T16:20:40Z",
+          "publishedAt": "2026-09-10T16:12:45Z",
           "prerelease": false
         },
         "facts": {
@@ -2263,16 +2263,16 @@
           "primaryLanguage": "Go",
           "topics": [],
           "archived": false,
-          "lastPushedAt": "2026-09-10T16:02:07Z",
+          "lastPushedAt": "2026-09-10T16:17:58Z",
           "latestRepositoryUpdateAt": "2026-09-10T15:54:13Z",
           "license": "Apache-2.0",
           "description": "Six Degrees of Domain Admin"
         }
       },
       "currentVersion": "v9.7.0",
-      "lastReleaseAt": "2026-09-08T16:20:40Z",
+      "lastReleaseAt": "2026-09-10T16:12:45Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T16:02:07Z",
+      "lastCommitAt": "2026-09-10T16:17:58Z",
       "license": "Apache-2.0"
     },
     {
@@ -4931,7 +4931,7 @@
       ],
       "overview": {
         "text": "The CISA Vulnrichment project is the public repository of CISA's enrichment of public CVE records through CISA's ADP (Authorized Data Publisher) container. In this phase of the project, CISA is assessing new and recent CVEs and adding key SSVC decision points. Once scored, some higher-risk CVEs will also receive enrichment of CWE and/or CVSS data points, where possible.",
-        "sourceUrl": "https://github.com/cisagov/vulnrichment/blob/df19219deae1b4baf81a33d2ac295094a9cfd138/README.md",
+        "sourceUrl": "https://github.com/cisagov/vulnrichment/blob/98e353fe7fa51b14b8dbff484cdf51d31096dfc8/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -4939,10 +4939,10 @@
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/cisagov/vulnrichment",
-        "commitSha": "df19219deae1b4baf81a33d2ac295094a9cfd138",
-        "commitUrl": "https://github.com/cisagov/vulnrichment/commit/df19219deae1b4baf81a33d2ac295094a9cfd138",
+        "commitSha": "98e353fe7fa51b14b8dbff484cdf51d31096dfc8",
+        "commitUrl": "https://github.com/cisagov/vulnrichment/commit/98e353fe7fa51b14b8dbff484cdf51d31096dfc8",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/cisagov/vulnrichment/blob/df19219deae1b4baf81a33d2ac295094a9cfd138/README.md",
+        "readmeUrl": "https://github.com/cisagov/vulnrichment/blob/98e353fe7fa51b14b8dbff484cdf51d31096dfc8/README.md",
         "readmeSha256": "sha256:ffec1da10bdea8a98458362f7136d31b4143ef21875b6aa4b5d7bd9041164ba9",
         "readmeByteLength": 8501,
         "overviewExcerpt": "The CISA Vulnrichment project is the public repository of CISA's enrichment of public CVE records through CISA's ADP (Authorized Data Publisher) container. In this phase of the project, CISA is assessing new and recent CVEs and adding key SSVC decision points. Once scored, some higher-risk CVEs will also receive enrichment of CWE and/or CVSS data points, where possible.",
@@ -4970,14 +4970,14 @@
           "primaryLanguage": null,
           "topics": [],
           "archived": false,
-          "lastPushedAt": "2026-09-10T15:16:40Z",
-          "latestRepositoryUpdateAt": "2026-09-10T15:26:13Z",
+          "lastPushedAt": "2026-09-10T16:16:24Z",
+          "latestRepositoryUpdateAt": "2026-09-10T16:19:49Z",
           "license": "CC0-1.0",
           "description": "A repo to conduct vulnerability enrichment."
         }
       },
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T15:16:40Z",
+      "lastCommitAt": "2026-09-10T16:16:24Z",
       "license": "CC0-1.0"
     },
     {
@@ -11047,7 +11047,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T15:55:59Z.",
+          "text": "Latest repository push: 2026-09-10T16:17:26Z.",
           "sourceUrl": "https://api.github.com/repos/elastic/detection-rules"
         },
         "release": {
@@ -11112,7 +11112,7 @@
             "threat-hunting"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T15:55:59Z",
+          "lastPushedAt": "2026-09-10T16:17:26Z",
           "latestRepositoryUpdateAt": "2026-09-10T15:54:08Z",
           "license": "NOASSERTION",
           "description": null
@@ -11121,7 +11121,7 @@
       "currentVersion": "dev-v2.2.0",
       "lastReleaseAt": "2026-09-08T12:52:29Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T15:55:59Z"
+      "lastCommitAt": "2026-09-10T16:17:26Z"
     },
     {
       "id": "community-elastic-security",
@@ -11631,7 +11631,7 @@
             "security"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T15:52:11Z",
+          "lastPushedAt": "2026-09-10T16:26:57Z",
           "latestRepositoryUpdateAt": "2026-09-10T14:45:15Z",
           "license": "Apache-2.0",
           "description": "Cloud Native Runtime Security"
@@ -11663,7 +11663,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T15:52:11Z.",
+          "text": "Latest repository push: 2026-09-10T16:26:57Z.",
           "sourceUrl": "https://api.github.com/repos/falcosecurity/falco"
         },
         "release": {
@@ -11676,7 +11676,7 @@
         }
       },
       "lastReleaseAt": "2026-06-11T07:53:06Z",
-      "lastCommitAt": "2026-09-10T15:52:11Z",
+      "lastCommitAt": "2026-09-10T16:26:57Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -18095,6 +18095,11 @@
           "text": "docker ps",
           "sourceUrl": "https://github.com/apache/caldera/blob/cb8d6a8160e0f4990af323a7c071d5e8482b42c7/README.md"
         },
+        "license": {
+          "status": "documented",
+          "text": "Apache-2.0",
+          "sourceUrl": "https://api.github.com/repos/apache/caldera"
+        },
         "maintenance": {
           "status": "active",
           "text": "Latest repository push: 2026-08-27T14:01:16Z.",
@@ -20560,7 +20565,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T13:59:12Z.",
+          "text": "Latest repository push: 2026-09-10T16:26:17Z.",
           "sourceUrl": "https://api.github.com/repos/usnistgov/macos_security"
         },
         "release": {
@@ -20625,7 +20630,7 @@
             "zsh"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T13:59:12Z",
+          "lastPushedAt": "2026-09-10T16:26:17Z",
           "latestRepositoryUpdateAt": "2026-09-09T20:54:22Z",
           "license": "NOASSERTION",
           "description": "macOS Security Compliance Project"
@@ -20634,7 +20639,7 @@
       "currentVersion": "tahoe_rev3",
       "lastReleaseAt": "2026-06-22T14:39:04Z",
       "publisherUpdatedAt": "2026-09-09",
-      "lastCommitAt": "2026-09-10T13:59:12Z"
+      "lastCommitAt": "2026-09-10T16:26:17Z"
     },
     {
       "id": "repository-nist-ncp",
@@ -22689,7 +22694,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T15:55:12Z.",
+          "text": "Latest repository push: 2026-09-10T16:27:33Z.",
           "sourceUrl": "https://api.github.com/repos/OpenCTI-Platform/opencti"
         },
         "release": {
@@ -22768,7 +22773,7 @@
             "threat-intelligence"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T15:55:12Z",
+          "lastPushedAt": "2026-09-10T16:27:33Z",
           "latestRepositoryUpdateAt": "2026-09-10T15:30:32Z",
           "license": "NOASSERTION",
           "description": "Open Cyber Threat Intelligence Platform"
@@ -22777,7 +22782,7 @@
       "currentVersion": "7.260910.0",
       "lastReleaseAt": "2026-09-10T13:59:26Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T15:55:12Z"
+      "lastCommitAt": "2026-09-10T16:27:33Z"
     },
     {
       "id": "tool-openscap",
@@ -23368,7 +23373,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-10T05:05:00Z",
-          "latestRepositoryUpdateAt": "2026-09-10T09:41:54Z",
+          "latestRepositoryUpdateAt": "2026-09-10T16:15:52Z",
           "license": "Apache-2.0",
           "description": "OpenSSF Scorecard - Security health metrics for Open Source"
         }
@@ -25501,7 +25506,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-10T15:55:11Z",
-          "latestRepositoryUpdateAt": "2026-09-10T15:42:24Z",
+          "latestRepositoryUpdateAt": "2026-09-10T16:11:49Z",
           "license": "Apache-2.0",
           "description": "Prowler is the world’s most widely used open-source cloud security platform that automates security and compliance across any cloud environment."
         }
@@ -27999,7 +28004,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-10T04:05:48Z",
-          "latestRepositoryUpdateAt": "2026-09-10T13:15:00Z",
+          "latestRepositoryUpdateAt": "2026-09-10T16:30:14Z",
           "license": "LGPL-2.1",
           "description": "Lightweight static analysis for many languages. Find bug variants with patterns that look like source code."
         }
@@ -33260,9 +33265,9 @@
     },
     {
       "id": "resource:dataset-cisa-vulnrichment:publisher-destination",
-      "sourceUrl": "https://github.com/cisagov/vulnrichment/commit/df19219deae1b4baf81a33d2ac295094a9cfd138",
+      "sourceUrl": "https://github.com/cisagov/vulnrichment/commit/98e353fe7fa51b14b8dbff484cdf51d31096dfc8",
       "locatorType": "repository_commit",
-      "locator": "df19219deae1b4baf81a33d2ac295094a9cfd138",
+      "locator": "98e353fe7fa51b14b8dbff484cdf51d31096dfc8",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },
