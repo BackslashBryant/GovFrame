@@ -13,8 +13,8 @@
     "reconcile",
     "publish"
   ],
-  "started_at": "2026-09-10T16:29:21.331Z",
-  "completed_at": "2026-09-10T16:32:45.127Z",
+  "started_at": "2026-09-10T16:53:00.471Z",
+  "completed_at": "2026-09-10T16:56:38.686Z",
   "status": "complete",
   "failed_task": null,
   "results": [
@@ -30,7 +30,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 414,
+      "duration_ms": 588,
       "source_results": [
         {
           "source_id": "discover-nist-pages",
@@ -51,7 +51,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 4778,
+      "duration_ms": 7867,
       "source_results": [
         {
           "source_id": "discover-nist-structured-assets",
@@ -72,7 +72,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 30
+      "duration_ms": 31
     },
     {
       "task_id": "observe-disa-sources",
@@ -87,7 +87,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 2528,
+      "duration_ms": 1851,
       "source_results": [
         {
           "source_id": "observe-disa-sources",
@@ -109,7 +109,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 6698,
+      "duration_ms": 8340,
       "source_results": [
         {
           "source_id": "nist-800-53-rev5",
@@ -166,7 +166,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 546,
+      "duration_ms": 482,
       "source_results": [
         {
           "source_id": "fetch-fedramp-rules",
@@ -189,7 +189,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 6750,
+      "duration_ms": 2561,
       "source_results": [
         {
           "source_id": "fetch-nara-cui",
@@ -212,7 +212,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 6530,
+      "duration_ms": 10609,
       "source_results": [
         {
           "source_id": "fetch-olir-catalog",
@@ -235,7 +235,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 531,
+      "duration_ms": 389,
       "source_results": [
         {
           "source_id": "fetch-olir-mappings",
@@ -258,7 +258,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1056,
+      "duration_ms": 2579,
       "source_results": [
         {
           "source_id": "fetch-ccis",
@@ -282,7 +282,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 16884,
+      "duration_ms": 15324,
       "source_results": [
         {
           "source_id": "fetch-disa-library",
@@ -306,7 +306,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 3619,
+      "duration_ms": 4703,
       "source_results": [
         {
           "source_id": "fetch-mitre",
@@ -330,7 +330,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 2261,
+      "duration_ms": 3709,
       "source_results": [
         {
           "source_id": "fetch-zero-trust-workbooks",
@@ -352,7 +352,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 6368,
+      "duration_ms": 7808,
       "source_results": [
         {
           "source_id": "fetch-nist-zero-trust",
@@ -376,7 +376,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1151,
+      "duration_ms": 1937,
       "source_results": [
         {
           "source_id": "fetch-nist-structured-catalogs",
@@ -397,7 +397,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 359
+      "duration_ms": 457
     },
     {
       "task_id": "sync-zero-trust-registry",
@@ -415,7 +415,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 43
+      "duration_ms": 50
     },
     {
       "task_id": "sync-source-bundles",
@@ -429,7 +429,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 32
+      "duration_ms": 38
     },
     {
       "task_id": "migrate-source-truth-before-build",
@@ -445,7 +445,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 136
+      "duration_ms": 183
     },
     {
       "task_id": "sync-inventory-contracts",
@@ -460,7 +460,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 35
+      "duration_ms": 44
     },
     {
       "task_id": "hydrate-artifacts",
@@ -475,7 +475,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 29254,
+      "duration_ms": 37420,
       "source_results": [
         {
           "source_id": "artifact-nist-800-171-rev2",
@@ -927,7 +927,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 900
+      "duration_ms": 971
     },
     {
       "task_id": "build-taxonomy-registry",
@@ -942,7 +942,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 49
+      "duration_ms": 52
     },
     {
       "task_id": "build-framework-data",
@@ -960,7 +960,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 12850
+      "duration_ms": 12369
     },
     {
       "task_id": "enrich-commons-resources",
@@ -978,8 +978,8 @@
         "all-resources"
       ],
       "status": "complete",
-      "attempts": 2,
-      "duration_ms": 89989,
+      "attempts": 1,
+      "duration_ms": 86015,
       "source_results": [
         {
           "source_id": "tool-grype-vulnerability-scanner",
@@ -1054,7 +1054,7 @@
         {
           "source_id": "tool-cpat",
           "status": "accepted",
-          "attempts": 2
+          "attempts": 1
         },
         {
           "source_id": "community-cyberark",
@@ -1312,7 +1312,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 264
+      "duration_ms": 179
     },
     {
       "task_id": "build-source-inventory",
@@ -1328,7 +1328,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1101
+      "duration_ms": 1262
     },
     {
       "task_id": "build-commons-index",
@@ -1345,7 +1345,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 144
+      "duration_ms": 155
     },
     {
       "task_id": "build-source-count-ledger",
@@ -1360,7 +1360,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 2426
+      "duration_ms": 2826
     },
     {
       "task_id": "check-data-size",
@@ -1374,7 +1374,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 576
+      "duration_ms": 631
     },
     {
       "task_id": "audit-coverage",
@@ -1388,7 +1388,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1332
+      "duration_ms": 1582
     },
     {
       "task_id": "verify-discovery",
@@ -1402,7 +1402,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 32
+      "duration_ms": 35
     },
     {
       "task_id": "verify-manifests",
@@ -1418,7 +1418,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1461
+      "duration_ms": 1762
     },
     {
       "task_id": "build-publication-identity-index",
@@ -1433,7 +1433,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 66
+      "duration_ms": 78
     },
     {
       "task_id": "build-publication-audit-report",
@@ -1448,7 +1448,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 45
+      "duration_ms": 53
     },
     {
       "task_id": "build-source-semantic-audit",
@@ -1463,7 +1463,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 481
+      "duration_ms": 643
     },
     {
       "task_id": "build-discovery-index",
@@ -1478,7 +1478,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 270
+      "duration_ms": 348
     },
     {
       "task_id": "verify-completeness",
@@ -1492,7 +1492,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 23
+      "duration_ms": 25
     },
     {
       "task_id": "verify-ingestion-contract",
@@ -1508,7 +1508,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1306
+      "duration_ms": 1624
     },
     {
       "task_id": "verify-resource-ingestion",
@@ -1525,7 +1525,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 57
+      "duration_ms": 69
     }
   ]
 }

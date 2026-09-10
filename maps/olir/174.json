@@ -11,6 +11,8 @@
       "reference_id": "OT-AC-01",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-2"
     },
@@ -19,6 +21,8 @@
       "reference_id": "OT-AC-02",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-3"
     },
@@ -27,6 +31,8 @@
       "reference_id": "OT-AC-02(01)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-4"
     },
@@ -35,6 +41,8 @@
       "reference_id": "OT-AC-02(02)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-5"
     },
@@ -43,6 +51,8 @@
       "reference_id": "OT-AC-02(03)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-6"
     },
@@ -51,6 +61,8 @@
       "reference_id": "OT-AC-02(04)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-7"
     },
@@ -59,6 +71,8 @@
       "reference_id": "OT-AC-02(05)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-8"
     },
@@ -67,6 +81,8 @@
       "reference_id": "OT-AC-02(11)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-13"
     },
@@ -75,6 +91,8 @@
       "reference_id": "OT-AC-02(12)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-14"
     },
@@ -83,6 +101,8 @@
       "reference_id": "OT-AC-02(13)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-15"
     },
@@ -91,6 +111,8 @@
       "reference_id": "OT-AC-03",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-16"
     },
@@ -99,6 +121,8 @@
       "reference_id": "OT-AC-03(11)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": "Rationale for adding AC-03(11) to HIGH baseline: The loss of availability, integrity, and confidentiality of certain types of information that reside on a high-impact OT system may result in severe or catastrophic adverse effects on operations, assets, or individuals, including severe degradation or loss of mission capability, major damage to organizational assets, or harm to individuals involving the loss of life or life-threatening injuries.",
       "source_locator": "Relationships_AC#row-25"
     },
@@ -107,6 +131,8 @@
       "reference_id": "OT-AC-04",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-30"
     },
@@ -115,6 +141,8 @@
       "reference_id": "OT-AC-04(04)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-34"
     },
@@ -123,6 +151,8 @@
       "reference_id": "OT-AC-05",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-61"
     },
@@ -131,6 +161,8 @@
       "reference_id": "OT-AC-06",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-62"
     },
@@ -139,6 +171,8 @@
       "reference_id": "OT-AC-06(01)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-63"
     },
@@ -147,6 +181,8 @@
       "reference_id": "OT-AC-06(02)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-64"
     },
@@ -155,6 +191,8 @@
       "reference_id": "OT-AC-06(03)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-65"
     },
@@ -163,6 +201,8 @@
       "reference_id": "OT-AC-06(05)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-67"
     },
@@ -171,6 +211,8 @@
       "reference_id": "OT-AC-06(07)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-69"
     },
@@ -179,6 +221,8 @@
       "reference_id": "OT-AC-06(09)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-71"
     },
@@ -187,6 +231,8 @@
       "reference_id": "OT-AC-06(10)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-72"
     },
@@ -195,6 +241,8 @@
       "reference_id": "OT-AC-07",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-73"
     },
@@ -203,6 +251,8 @@
       "reference_id": "OT-AC-08",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-77"
     },
@@ -211,6 +261,8 @@
       "reference_id": "OT-AC-10",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-83"
     },
@@ -219,6 +271,8 @@
       "reference_id": "OT-AC-11",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-84"
     },
@@ -227,6 +281,8 @@
       "reference_id": "OT-AC-11(01)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-85"
     },
@@ -235,6 +291,8 @@
       "reference_id": "OT-AC-12",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-86"
     },
@@ -243,6 +301,8 @@
       "reference_id": "OT-AC-14",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-90"
     },
@@ -251,6 +311,8 @@
       "reference_id": "OT-AC-17",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-102"
     },
@@ -259,6 +321,8 @@
       "reference_id": "OT-AC-17(01)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-103"
     },
@@ -267,6 +331,8 @@
       "reference_id": "OT-AC-17(02)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-104"
     },
@@ -275,6 +341,8 @@
       "reference_id": "OT-AC-17(03)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-105"
     },
@@ -283,6 +351,8 @@
       "reference_id": "OT-AC-17(04)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-106"
     },
@@ -291,6 +361,8 @@
       "reference_id": "OT-AC-17(09)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": "Rationale for adding AC-17(09) to LOW, MOD, and HIGH baselines: As more OT systems become accessible remotely, the capability to disconnect or disable remote access is critical to managing risk and may be required to provide stable and safe operations.",
       "source_locator": "Relationships_AC#row-108"
     },
@@ -299,6 +371,8 @@
       "reference_id": "OT-AC-17(10)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": "Rationale for adding AC-17(10) to MOD and HIGH baselines: The ability to authenticate remote commands is important to prevent unauthorized commands that may have immediate or serious consequences, such as injury, death, property damage, the loss of high- value assets, the failure of mission or business functions, or compromise of sensitive information.",
       "source_locator": "Relationships_AC#row-109"
     },
@@ -307,6 +381,8 @@
       "reference_id": "OT-AC-18",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-110"
     },
@@ -315,6 +391,8 @@
       "reference_id": "OT-AC-18(01)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-111"
     },
@@ -323,6 +401,8 @@
       "reference_id": "OT-AC-18(03)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-112"
     },
@@ -331,6 +411,8 @@
       "reference_id": "OT-AC-18(04)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-113"
     },
@@ -339,6 +421,8 @@
       "reference_id": "OT-AC-18(05)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-114"
     },
@@ -347,6 +431,8 @@
       "reference_id": "OT-AC-19",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-115"
     },
@@ -355,6 +441,8 @@
       "reference_id": "OT-AC-19(05)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-117"
     },
@@ -363,6 +451,8 @@
       "reference_id": "OT-AC-20",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-118"
     },
@@ -371,6 +461,8 @@
       "reference_id": "OT-AC-20(01)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-119"
     },
@@ -379,6 +471,8 @@
       "reference_id": "OT-AC-20(02)",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-120"
     },
@@ -387,6 +481,8 @@
       "reference_id": "OT-AC-21",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-124"
     },
@@ -395,8 +491,3420 @@
       "reference_id": "OT-AC-22",
       "relationship_type": "Concept Crosswalk",
       "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
       "rationale": null,
       "source_locator": "Relationships_AC#row-127"
+    },
+    {
+      "focal_id": "AT-01",
+      "reference_id": "OT-AT-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AT#row-2"
+    },
+    {
+      "focal_id": "AT-02",
+      "reference_id": "OT-AT-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AT#row-3"
+    },
+    {
+      "focal_id": "AT-02(02)",
+      "reference_id": "OT-AT-02(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AT#row-5"
+    },
+    {
+      "focal_id": "AT-02(03)",
+      "reference_id": "OT-AT-02(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AT#row-6"
+    },
+    {
+      "focal_id": "AT-02(04)",
+      "reference_id": "OT-AT-02(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding AT-02(04) to MOD and HIGH baselines: Training OT personnel on potentially suspicious communications and anomalous behaviors as well as the actions to take if anomalous system behavior occurs can supplement system detection and protection mechanisms for improved response.",
+      "source_locator": "AT#row-7"
+    },
+    {
+      "focal_id": "AT-03",
+      "reference_id": "OT-AT-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AT#row-10"
+    },
+    {
+      "focal_id": "AT-04",
+      "reference_id": "OT-AT-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AT#row-15"
+    },
+    {
+      "focal_id": "AU-01",
+      "reference_id": "OT-AU-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-2"
+    },
+    {
+      "focal_id": "AU-02",
+      "reference_id": "OT-AU-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-3"
+    },
+    {
+      "focal_id": "AU-03",
+      "reference_id": "OT-AU-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-4"
+    },
+    {
+      "focal_id": "AU-03(01)",
+      "reference_id": "OT-AU-03(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-5"
+    },
+    {
+      "focal_id": "AU-04",
+      "reference_id": "OT-AU-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-7"
+    },
+    {
+      "focal_id": "AU-04(01)",
+      "reference_id": "OT-AU-04(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding AU-04(01) to LOW, MOD, and HIGH baselines: Organizational requirements may require the storage of very large amounts of data, which OT components may not be able to support directly.",
+      "source_locator": "AU#row-8"
+    },
+    {
+      "focal_id": "AU-05",
+      "reference_id": "OT-AU-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-9"
+    },
+    {
+      "focal_id": "AU-05(01)",
+      "reference_id": "OT-AU-05(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-10"
+    },
+    {
+      "focal_id": "AU-05(02)",
+      "reference_id": "OT-AU-05(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-11"
+    },
+    {
+      "focal_id": "AU-06",
+      "reference_id": "OT-AU-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-15"
+    },
+    {
+      "focal_id": "AU-06(01)",
+      "reference_id": "OT-AU-06(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-16"
+    },
+    {
+      "focal_id": "AU-06(03)",
+      "reference_id": "OT-AU-06(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-17"
+    },
+    {
+      "focal_id": "AU-06(05)",
+      "reference_id": "OT-AU-06(05)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-19"
+    },
+    {
+      "focal_id": "AU-06(06)",
+      "reference_id": "OT-AU-06(06)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-20"
+    },
+    {
+      "focal_id": "AU-07",
+      "reference_id": "OT-AU-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-24"
+    },
+    {
+      "focal_id": "AU-07(01)",
+      "reference_id": "OT-AU-07(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-25"
+    },
+    {
+      "focal_id": "AU-08",
+      "reference_id": "OT-AU-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-26"
+    },
+    {
+      "focal_id": "AU-09",
+      "reference_id": "OT-AU-09",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-27"
+    },
+    {
+      "focal_id": "AU-09(02)",
+      "reference_id": "OT-AU-09(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-29"
+    },
+    {
+      "focal_id": "AU-09(03)",
+      "reference_id": "OT-AU-09(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-30"
+    },
+    {
+      "focal_id": "AU-09(04)",
+      "reference_id": "OT-AU-09(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-31"
+    },
+    {
+      "focal_id": "AU-10",
+      "reference_id": "OT-AU-10",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-35"
+    },
+    {
+      "focal_id": "AU-11",
+      "reference_id": "OT-AU-11",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-40"
+    },
+    {
+      "focal_id": "AU-12",
+      "reference_id": "OT-AU-12",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-42"
+    },
+    {
+      "focal_id": "AU-12(01)",
+      "reference_id": "OT-AU-12(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-43"
+    },
+    {
+      "focal_id": "AU-12(03)",
+      "reference_id": "OT-AU-12(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "AU#row-45"
+    },
+    {
+      "focal_id": "CA-01",
+      "reference_id": "OT-CA-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-2"
+    },
+    {
+      "focal_id": "CA-02",
+      "reference_id": "OT-CA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-3"
+    },
+    {
+      "focal_id": "CA-02(01)",
+      "reference_id": "OT-CA-02(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-4"
+    },
+    {
+      "focal_id": "CA-02(02)",
+      "reference_id": "OT-CA-02(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-5"
+    },
+    {
+      "focal_id": "CA-03",
+      "reference_id": "OT-CA-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-7"
+    },
+    {
+      "focal_id": "CA-03(06)",
+      "reference_id": "OT-CA-03(06)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-8"
+    },
+    {
+      "focal_id": "CA-05",
+      "reference_id": "OT-CA-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-10"
+    },
+    {
+      "focal_id": "CA-06",
+      "reference_id": "OT-CA-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-12"
+    },
+    {
+      "focal_id": "CA-07",
+      "reference_id": "OT-CA-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-15"
+    },
+    {
+      "focal_id": "CA-07(01)",
+      "reference_id": "OT-CA-07(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-16"
+    },
+    {
+      "focal_id": "CA-07(04)",
+      "reference_id": "OT-CA-07(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-18"
+    },
+    {
+      "focal_id": "CA-08",
+      "reference_id": "OT-CA-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-21"
+    },
+    {
+      "focal_id": "CA-08(01)",
+      "reference_id": "OT-CA-08(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for removing CA-08(01) from HIGH baseline: Specific expertise is necessary to conduct effective penetration testing on OT systems, and it may not be feasible to identify independent personnel with the appropriate skillset or knowledge to perform penetration testing on an OT environment. While an independent penetration test agent or team is recommended, it may not be feasible for all high-impact OT systems.",
+      "source_locator": "CA#row-22"
+    },
+    {
+      "focal_id": "CA-09",
+      "reference_id": "OT-CA-09",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CA#row-25"
+    },
+    {
+      "focal_id": "CM-01",
+      "reference_id": "OT-CM-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-2"
+    },
+    {
+      "focal_id": "CM-02",
+      "reference_id": "OT-CM-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-3"
+    },
+    {
+      "focal_id": "CM-02(02)",
+      "reference_id": "OT-CM-02(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-4"
+    },
+    {
+      "focal_id": "CM-02(03)",
+      "reference_id": "OT-CM-02(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-5"
+    },
+    {
+      "focal_id": "CM-02(07)",
+      "reference_id": "OT-CM-02(07)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-7"
+    },
+    {
+      "focal_id": "CM-03",
+      "reference_id": "OT-CM-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-8"
+    },
+    {
+      "focal_id": "CM-03(01)",
+      "reference_id": "OT-CM-03(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-9"
+    },
+    {
+      "focal_id": "CM-03(02)",
+      "reference_id": "OT-CM-03(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-10"
+    },
+    {
+      "focal_id": "CM-03(04)",
+      "reference_id": "OT-CM-03(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-12"
+    },
+    {
+      "focal_id": "CM-03(06)",
+      "reference_id": "OT-CM-03(06)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-14"
+    },
+    {
+      "focal_id": "CM-04",
+      "reference_id": "OT-CM-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-17"
+    },
+    {
+      "focal_id": "CM-04(01)",
+      "reference_id": "OT-CM-04(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-18"
+    },
+    {
+      "focal_id": "CM-04(02)",
+      "reference_id": "OT-CM-04(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-19"
+    },
+    {
+      "focal_id": "CM-05",
+      "reference_id": "OT-CM-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-20"
+    },
+    {
+      "focal_id": "CM-05(01)",
+      "reference_id": "OT-CM-05(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-21"
+    },
+    {
+      "focal_id": "CM-06",
+      "reference_id": "OT-CM-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-25"
+    },
+    {
+      "focal_id": "CM-06(01)",
+      "reference_id": "OT-CM-06(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-26"
+    },
+    {
+      "focal_id": "CM-06(02)",
+      "reference_id": "OT-CM-06(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-27"
+    },
+    {
+      "focal_id": "CM-07",
+      "reference_id": "OT-CM-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-28"
+    },
+    {
+      "focal_id": "CM-07(01)",
+      "reference_id": "OT-CM-07(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-29"
+    },
+    {
+      "focal_id": "CM-07(02)",
+      "reference_id": "OT-CM-07(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-30"
+    },
+    {
+      "focal_id": "CM-07(05)",
+      "reference_id": "OT-CM-07(05)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-33"
+    },
+    {
+      "focal_id": "CM-08",
+      "reference_id": "OT-CM-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-38"
+    },
+    {
+      "focal_id": "CM-08(01)",
+      "reference_id": "OT-CM-08(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-39"
+    },
+    {
+      "focal_id": "CM-08(02)",
+      "reference_id": "OT-CM-08(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-40"
+    },
+    {
+      "focal_id": "CM-08(03)",
+      "reference_id": "OT-CM-08(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-41"
+    },
+    {
+      "focal_id": "CM-08(04)",
+      "reference_id": "OT-CM-08(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-42"
+    },
+    {
+      "focal_id": "CM-09",
+      "reference_id": "OT-CM-09",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-47"
+    },
+    {
+      "focal_id": "CM-10",
+      "reference_id": "OT-CM-10",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-49"
+    },
+    {
+      "focal_id": "CM-11",
+      "reference_id": "OT-CM-11",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-51"
+    },
+    {
+      "focal_id": "CM-12",
+      "reference_id": "OT-CM-12",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-54"
+    },
+    {
+      "focal_id": "CM-12(01)",
+      "reference_id": "OT-CM-12(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CM#row-55"
+    },
+    {
+      "focal_id": "CP-01",
+      "reference_id": "OT-CP-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-2"
+    },
+    {
+      "focal_id": "CP-02",
+      "reference_id": "OT-CP-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-3"
+    },
+    {
+      "focal_id": "CP-02(01)",
+      "reference_id": "OT-CP-02(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-4"
+    },
+    {
+      "focal_id": "CP-02(02)",
+      "reference_id": "OT-CP-02(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-5"
+    },
+    {
+      "focal_id": "CP-02(03)",
+      "reference_id": "OT-CP-02(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-6"
+    },
+    {
+      "focal_id": "CP-02(05)",
+      "reference_id": "OT-CP-02(05)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-7"
+    },
+    {
+      "focal_id": "CP-02(08)",
+      "reference_id": "OT-CP-02(08)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-10"
+    },
+    {
+      "focal_id": "CP-03",
+      "reference_id": "OT-CP-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-11"
+    },
+    {
+      "focal_id": "CP-03(01)",
+      "reference_id": "OT-CP-03(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-12"
+    },
+    {
+      "focal_id": "CP-04",
+      "reference_id": "OT-CP-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-14"
+    },
+    {
+      "focal_id": "CP-04(01)",
+      "reference_id": "OT-CP-04(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-15"
+    },
+    {
+      "focal_id": "CP-04(02)",
+      "reference_id": "OT-CP-04(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-16"
+    },
+    {
+      "focal_id": "CP-06",
+      "reference_id": "OT-CP-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-20"
+    },
+    {
+      "focal_id": "CP-06(01)",
+      "reference_id": "OT-CP-06(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-21"
+    },
+    {
+      "focal_id": "CP-06(02)",
+      "reference_id": "OT-CP-06(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-22"
+    },
+    {
+      "focal_id": "CP-06(03)",
+      "reference_id": "OT-CP-06(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-23"
+    },
+    {
+      "focal_id": "CP-07",
+      "reference_id": "OT-CP-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-24"
+    },
+    {
+      "focal_id": "CP-07(01)",
+      "reference_id": "OT-CP-07(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-25"
+    },
+    {
+      "focal_id": "CP-07(02)",
+      "reference_id": "OT-CP-07(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-26"
+    },
+    {
+      "focal_id": "CP-07(03)",
+      "reference_id": "OT-CP-07(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-27"
+    },
+    {
+      "focal_id": "CP-07(04)",
+      "reference_id": "OT-CP-07(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-28"
+    },
+    {
+      "focal_id": "CP-08",
+      "reference_id": "OT-CP-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-30"
+    },
+    {
+      "focal_id": "CP-08(01)",
+      "reference_id": "OT-CP-08(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-31"
+    },
+    {
+      "focal_id": "CP-08(02)",
+      "reference_id": "OT-CP-08(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-32"
+    },
+    {
+      "focal_id": "CP-08(03)",
+      "reference_id": "OT-CP-08(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-33"
+    },
+    {
+      "focal_id": "CP-08(04)",
+      "reference_id": "OT-CP-08(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-34"
+    },
+    {
+      "focal_id": "CP-09",
+      "reference_id": "OT-CP-09",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-36"
+    },
+    {
+      "focal_id": "CP-09(01)",
+      "reference_id": "OT-CP-09(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-37"
+    },
+    {
+      "focal_id": "CP-09(02)",
+      "reference_id": "OT-CP-09(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-38"
+    },
+    {
+      "focal_id": "CP-09(03)",
+      "reference_id": "OT-CP-09(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-39"
+    },
+    {
+      "focal_id": "CP-09(05)",
+      "reference_id": "OT-CP-09(05)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-40"
+    },
+    {
+      "focal_id": "CP-09(08)",
+      "reference_id": "OT-CP-09(08)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-43"
+    },
+    {
+      "focal_id": "CP-10",
+      "reference_id": "OT-CP-10",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-44"
+    },
+    {
+      "focal_id": "CP-10(02)",
+      "reference_id": "OT-CP-10(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-45"
+    },
+    {
+      "focal_id": "CP-10(04)",
+      "reference_id": "OT-CP-10(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "CP#row-46"
+    },
+    {
+      "focal_id": "CP-10(06)",
+      "reference_id": "OT-CP-10(06)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding CP-10(06) to MOD and HIGH baselines: OT system components stored without protection against environmental threats and unauthorized physical or logical access can be susceptible to compromise or damage. Certain system components may include embedded electronics that must be protected from environmental hazards.",
+      "source_locator": "CP#row-47"
+    },
+    {
+      "focal_id": "CP-12",
+      "reference_id": "OT-CP-12",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding CP-12 to LOW, MOD, and HIGH baselines: This control provides a framework for the organization to plan its policy and procedures for dealing with IT and OT conditions beyond its control in the environment of operations to minimize potential safety and environmental impacts.",
+      "source_locator": "CP#row-49"
+    },
+    {
+      "focal_id": "IA-01",
+      "reference_id": "OT-IA-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-2"
+    },
+    {
+      "focal_id": "IA-02",
+      "reference_id": "OT-IA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-3"
+    },
+    {
+      "focal_id": "IA-02(01)",
+      "reference_id": "OT-IA-02(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-4"
+    },
+    {
+      "focal_id": "IA-02(02)",
+      "reference_id": "OT-IA-02(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-5"
+    },
+    {
+      "focal_id": "IA-02(05)",
+      "reference_id": "OT-IA-02(05)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-6"
+    },
+    {
+      "focal_id": "IA-02(08)",
+      "reference_id": "OT-IA-02(08)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-8"
+    },
+    {
+      "focal_id": "IA-02(12)",
+      "reference_id": "OT-IA-02(12)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-10"
+    },
+    {
+      "focal_id": "IA-03",
+      "reference_id": "OT-IA-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-12"
+    },
+    {
+      "focal_id": "IA-04",
+      "reference_id": "OT-IA-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-16"
+    },
+    {
+      "focal_id": "IA-04(04)",
+      "reference_id": "OT-IA-04(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-18"
+    },
+    {
+      "focal_id": "IA-05",
+      "reference_id": "OT-IA-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-23"
+    },
+    {
+      "focal_id": "IA-05(01)",
+      "reference_id": "OT-IA-05(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-24"
+    },
+    {
+      "focal_id": "IA-05(02)",
+      "reference_id": "OT-IA-05(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-25"
+    },
+    {
+      "focal_id": "IA-05(06)",
+      "reference_id": "OT-IA-05(06)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-27"
+    },
+    {
+      "focal_id": "IA-06",
+      "reference_id": "OT-IA-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-39"
+    },
+    {
+      "focal_id": "IA-07",
+      "reference_id": "OT-IA-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-40"
+    },
+    {
+      "focal_id": "IA-08",
+      "reference_id": "OT-IA-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-41"
+    },
+    {
+      "focal_id": "IA-08(01)",
+      "reference_id": "OT-IA-08(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-42"
+    },
+    {
+      "focal_id": "IA-08(02)",
+      "reference_id": "OT-IA-08(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-43"
+    },
+    {
+      "focal_id": "IA-08(04)",
+      "reference_id": "OT-IA-08(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-44"
+    },
+    {
+      "focal_id": "IA-11",
+      "reference_id": "OT-IA-11",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-49"
+    },
+    {
+      "focal_id": "IA-12",
+      "reference_id": "OT-IA-12",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-50"
+    },
+    {
+      "focal_id": "IA-12(01)",
+      "reference_id": "OT-IA-12(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding IA-12(01) to HIGH baseline: A supervisor or sponsor should be made aware of any access that an employee has to the OT environment since unauthorized or accidental access could affect the physical process.A supervisor or sponsor should be made aware of any access that an employee has to the OT environment since unauthorized or accidental access could affect the physical process.",
+      "source_locator": "IA#row-51"
+    },
+    {
+      "focal_id": "IA-12(02)",
+      "reference_id": "OT-IA-12(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-52"
+    },
+    {
+      "focal_id": "IA-12(03)",
+      "reference_id": "OT-IA-12(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-53"
+    },
+    {
+      "focal_id": "IA-12(04)",
+      "reference_id": "OT-IA-12(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-54"
+    },
+    {
+      "focal_id": "IA-12(05)",
+      "reference_id": "OT-IA-12(05)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IA#row-55"
+    },
+    {
+      "focal_id": "IR-01",
+      "reference_id": "OT-IR-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-2"
+    },
+    {
+      "focal_id": "IR-02",
+      "reference_id": "OT-IR-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-3"
+    },
+    {
+      "focal_id": "IR-02(01)",
+      "reference_id": "OT-IR-02(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-4"
+    },
+    {
+      "focal_id": "IR-02(02)",
+      "reference_id": "OT-IR-02(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-5"
+    },
+    {
+      "focal_id": "IR-03",
+      "reference_id": "OT-IR-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-7"
+    },
+    {
+      "focal_id": "IR-03(02)",
+      "reference_id": "OT-IR-03(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-9"
+    },
+    {
+      "focal_id": "IR-04",
+      "reference_id": "OT-IR-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-11"
+    },
+    {
+      "focal_id": "IR-04(01)",
+      "reference_id": "OT-IR-04(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-12"
+    },
+    {
+      "focal_id": "IR-04(04)",
+      "reference_id": "OT-IR-04(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-15"
+    },
+    {
+      "focal_id": "IR-04(11)",
+      "reference_id": "OT-IR-04(11)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-22"
+    },
+    {
+      "focal_id": "IR-05",
+      "reference_id": "OT-IR-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-27"
+    },
+    {
+      "focal_id": "IR-05(01)",
+      "reference_id": "OT-IR-05(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-28"
+    },
+    {
+      "focal_id": "IR-06",
+      "reference_id": "OT-IR-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-29"
+    },
+    {
+      "focal_id": "IR-06(01)",
+      "reference_id": "OT-IR-06(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-30"
+    },
+    {
+      "focal_id": "IR-06(03)",
+      "reference_id": "OT-IR-06(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-32"
+    },
+    {
+      "focal_id": "IR-07",
+      "reference_id": "OT-IR-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-33"
+    },
+    {
+      "focal_id": "IR-07(01)",
+      "reference_id": "OT-IR-07(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-34"
+    },
+    {
+      "focal_id": "IR-08",
+      "reference_id": "OT-IR-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "IR#row-36"
+    },
+    {
+      "focal_id": "MA-01",
+      "reference_id": "OT-MA-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-2"
+    },
+    {
+      "focal_id": "MA-02",
+      "reference_id": "OT-MA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-3"
+    },
+    {
+      "focal_id": "MA-02(02)",
+      "reference_id": "OT-MA-02(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-4"
+    },
+    {
+      "focal_id": "MA-03",
+      "reference_id": "OT-MA-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-5"
+    },
+    {
+      "focal_id": "MA-03(01)",
+      "reference_id": "OT-MA-03(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-6"
+    },
+    {
+      "focal_id": "MA-03(02)",
+      "reference_id": "OT-MA-03(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-7"
+    },
+    {
+      "focal_id": "MA-03(03)",
+      "reference_id": "OT-MA-03(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-8"
+    },
+    {
+      "focal_id": "MA-04",
+      "reference_id": "OT-MA-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-12"
+    },
+    {
+      "focal_id": "MA-04(01)",
+      "reference_id": "OT-MA-04(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding MA-04(01) to MOD and HIGH baselines: OT environments are often heavily dependent on nonlocal maintenance providers, so organizations should have the ability to review logs about relevant maintenance activities.",
+      "source_locator": "MA#row-13"
+    },
+    {
+      "focal_id": "MA-04(03)",
+      "reference_id": "OT-MA-04(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-14"
+    },
+    {
+      "focal_id": "MA-05",
+      "reference_id": "OT-MA-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-19"
+    },
+    {
+      "focal_id": "MA-05(01)",
+      "reference_id": "OT-MA-05(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-20"
+    },
+    {
+      "focal_id": "MA-06",
+      "reference_id": "OT-MA-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MA#row-25"
+    },
+    {
+      "focal_id": "MA-07",
+      "reference_id": "OT-MA-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding MA-07 to LOW, MOD, and HIGH baselines: Some OT equipment have specific requirements for calibration, maintenance, and modification to meet regulatory or safety standards. Different deployed locations may impact the quality and precision of field maintenance.",
+      "source_locator": "MA#row-29"
+    },
+    {
+      "focal_id": "MP-01",
+      "reference_id": "OT-MP-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MP#row-2"
+    },
+    {
+      "focal_id": "MP-02",
+      "reference_id": "OT-MP-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MP#row-3"
+    },
+    {
+      "focal_id": "MP-03",
+      "reference_id": "OT-MP-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MP#row-4"
+    },
+    {
+      "focal_id": "MP-04",
+      "reference_id": "OT-MP-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MP#row-5"
+    },
+    {
+      "focal_id": "MP-05",
+      "reference_id": "OT-MP-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MP#row-7"
+    },
+    {
+      "focal_id": "MP-06",
+      "reference_id": "OT-MP-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MP#row-9"
+    },
+    {
+      "focal_id": "MP-06(01)",
+      "reference_id": "OT-MP-06(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MP#row-10"
+    },
+    {
+      "focal_id": "MP-06(02)",
+      "reference_id": "OT-MP-06(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MP#row-11"
+    },
+    {
+      "focal_id": "MP-06(03)",
+      "reference_id": "OT-MP-06(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MP#row-12"
+    },
+    {
+      "focal_id": "MP-07",
+      "reference_id": "OT-MP-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "MP#row-15"
+    },
+    {
+      "focal_id": "PE-01",
+      "reference_id": "OT-PE-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-2"
+    },
+    {
+      "focal_id": "PE-02",
+      "reference_id": "OT-PE-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-3"
+    },
+    {
+      "focal_id": "PE-03",
+      "reference_id": "OT-PE-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-7"
+    },
+    {
+      "focal_id": "PE-03(01)",
+      "reference_id": "OT-PE-03(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-8"
+    },
+    {
+      "focal_id": "PE-04",
+      "reference_id": "OT-PE-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-15"
+    },
+    {
+      "focal_id": "PE-05",
+      "reference_id": "OT-PE-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-16"
+    },
+    {
+      "focal_id": "PE-06",
+      "reference_id": "OT-PE-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-18"
+    },
+    {
+      "focal_id": "PE-06(01)",
+      "reference_id": "OT-PE-06(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-19"
+    },
+    {
+      "focal_id": "PE-06(04)",
+      "reference_id": "OT-PE-06(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding PE-06(04) to MOD baseline: Many of the OT components are in remote geographical and dispersed locations. Other components may be in ceilings, floors, or distribution closets. Furthermore, physical access controls are frequently used as compensating controls when devices lack the ability to enforce logical access restrictions.",
+      "source_locator": "PE#row-22"
+    },
+    {
+      "focal_id": "PE-08",
+      "reference_id": "OT-PE-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-23"
+    },
+    {
+      "focal_id": "PE-08(01)",
+      "reference_id": "OT-PE-08(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-24"
+    },
+    {
+      "focal_id": "PE-09",
+      "reference_id": "OT-PE-09",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-26"
+    },
+    {
+      "focal_id": "PE-10",
+      "reference_id": "OT-PE-10",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-29"
+    },
+    {
+      "focal_id": "PE-11",
+      "reference_id": "OT-PE-11",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-30"
+    },
+    {
+      "focal_id": "PE-11(01)",
+      "reference_id": "OT-PE-11(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-31"
+    },
+    {
+      "focal_id": "PE-12",
+      "reference_id": "OT-PE-12",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-33"
+    },
+    {
+      "focal_id": "PE-13",
+      "reference_id": "OT-PE-13",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-35"
+    },
+    {
+      "focal_id": "PE-13(01)",
+      "reference_id": "OT-PE-13(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-36"
+    },
+    {
+      "focal_id": "PE-13(02)",
+      "reference_id": "OT-PE-13(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-37"
+    },
+    {
+      "focal_id": "PE-14",
+      "reference_id": "OT-PE-14",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-39"
+    },
+    {
+      "focal_id": "PE-15",
+      "reference_id": "OT-PE-15",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-42"
+    },
+    {
+      "focal_id": "PE-15(01)",
+      "reference_id": "OT-PE-15(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-43"
+    },
+    {
+      "focal_id": "PE-16",
+      "reference_id": "OT-PE-16",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-44"
+    },
+    {
+      "focal_id": "PE-17",
+      "reference_id": "OT-PE-17",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-45"
+    },
+    {
+      "focal_id": "PE-18",
+      "reference_id": "OT-PE-18",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PE#row-46"
+    },
+    {
+      "focal_id": "PE-22",
+      "reference_id": "OT-PE-22",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding PE-22 to MOD and HIGH baselines: OT is unique in that it may look like an IT component but perform a very different function. Visible differentiation between components that perform different functions can help reduce reliability incidents due to maintenance errors.",
+      "source_locator": "PE#row-51"
+    },
+    {
+      "focal_id": "PL-01",
+      "reference_id": "OT-PL-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PL#row-2"
+    },
+    {
+      "focal_id": "PL-02",
+      "reference_id": "OT-PL-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PL#row-3"
+    },
+    {
+      "focal_id": "PL-04",
+      "reference_id": "OT-PL-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PL#row-4"
+    },
+    {
+      "focal_id": "PL-04(01)",
+      "reference_id": "OT-PL-04(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PL#row-5"
+    },
+    {
+      "focal_id": "PL-08",
+      "reference_id": "OT-PL-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PL#row-7"
+    },
+    {
+      "focal_id": "PL-10",
+      "reference_id": "OT-PL-10",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PL#row-11"
+    },
+    {
+      "focal_id": "PL-11",
+      "reference_id": "OT-PL-11",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PL#row-12"
+    },
+    {
+      "focal_id": "PS-01",
+      "reference_id": "OT-PS-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PS#row-2"
+    },
+    {
+      "focal_id": "PS-02",
+      "reference_id": "OT-PS-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PS#row-3"
+    },
+    {
+      "focal_id": "PS-03",
+      "reference_id": "OT-PS-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PS#row-4"
+    },
+    {
+      "focal_id": "PS-04",
+      "reference_id": "OT-PS-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PS#row-9"
+    },
+    {
+      "focal_id": "PS-04(02)",
+      "reference_id": "OT-PS-04(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PS#row-11"
+    },
+    {
+      "focal_id": "PS-05",
+      "reference_id": "OT-PS-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PS#row-12"
+    },
+    {
+      "focal_id": "PS-06",
+      "reference_id": "OT-PS-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PS#row-13"
+    },
+    {
+      "focal_id": "PS-07",
+      "reference_id": "OT-PS-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PS#row-16"
+    },
+    {
+      "focal_id": "PS-08",
+      "reference_id": "OT-PS-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PS#row-17"
+    },
+    {
+      "focal_id": "PS-09",
+      "reference_id": "OT-PS-09",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "PS#row-18"
+    },
+    {
+      "focal_id": "RA-01",
+      "reference_id": "OT-RA-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "RA#row-2"
+    },
+    {
+      "focal_id": "RA-02",
+      "reference_id": "OT-RA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "RA#row-3"
+    },
+    {
+      "focal_id": "RA-03",
+      "reference_id": "OT-RA-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "RA#row-5"
+    },
+    {
+      "focal_id": "RA-03(01)",
+      "reference_id": "OT-RA-03(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "RA#row-6"
+    },
+    {
+      "focal_id": "RA-05",
+      "reference_id": "OT-RA-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "RA#row-10"
+    },
+    {
+      "focal_id": "RA-05(02)",
+      "reference_id": "OT-RA-05(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "RA#row-11"
+    },
+    {
+      "focal_id": "RA-05(04)",
+      "reference_id": "OT-RA-05(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "RA#row-13"
+    },
+    {
+      "focal_id": "RA-05(05)",
+      "reference_id": "OT-RA-05(05)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "RA#row-14"
+    },
+    {
+      "focal_id": "RA-05(11)",
+      "reference_id": "OT-RA-05(11)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "RA#row-18"
+    },
+    {
+      "focal_id": "RA-07",
+      "reference_id": "OT-RA-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "RA#row-20"
+    },
+    {
+      "focal_id": "RA-09",
+      "reference_id": "OT-RA-09",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "RA#row-22"
+    },
+    {
+      "focal_id": "SA-01",
+      "reference_id": "OT-SA-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-2"
+    },
+    {
+      "focal_id": "SA-02",
+      "reference_id": "OT-SA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-3"
+    },
+    {
+      "focal_id": "SA-03",
+      "reference_id": "OT-SA-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-4"
+    },
+    {
+      "focal_id": "SA-04",
+      "reference_id": "OT-SA-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-8"
+    },
+    {
+      "focal_id": "SA-04(01)",
+      "reference_id": "OT-SA-04(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-9"
+    },
+    {
+      "focal_id": "SA-04(02)",
+      "reference_id": "OT-SA-04(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-10"
+    },
+    {
+      "focal_id": "SA-04(05)",
+      "reference_id": "OT-SA-04(05)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-12"
+    },
+    {
+      "focal_id": "SA-04(09)",
+      "reference_id": "OT-SA-04(09)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-16"
+    },
+    {
+      "focal_id": "SA-04(10)",
+      "reference_id": "OT-SA-04(10)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-17"
+    },
+    {
+      "focal_id": "SA-04(12)",
+      "reference_id": "OT-SA-04(12)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding SA-04(12) to LOW, MOD, and HIGH baselines: Organizationally sensitive or proprietary OT data is often provided to contractors for project development or support, so data ownership should be defined prior to exchanging data with a vendor or integrator. The potential sharing of data with other parties and the potential deletion of the data after project completion should be determined. OT systems that are operated by contractors on behalf of the organization may be subject to the same requirements (e.g., legal, regulatory, etc.) for data ownership and retention.",
+      "source_locator": "SA#row-19"
+    },
+    {
+      "focal_id": "SA-05",
+      "reference_id": "OT-SA-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-20"
+    },
+    {
+      "focal_id": "SA-08",
+      "reference_id": "OT-SA-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-21"
+    },
+    {
+      "focal_id": "SA-09",
+      "reference_id": "OT-SA-09",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-55"
+    },
+    {
+      "focal_id": "SA-09(02)",
+      "reference_id": "OT-SA-09(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-57"
+    },
+    {
+      "focal_id": "SA-10",
+      "reference_id": "OT-SA-10",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-64"
+    },
+    {
+      "focal_id": "SA-11",
+      "reference_id": "OT-SA-11",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-72"
+    },
+    {
+      "focal_id": "SA-15",
+      "reference_id": "OT-SA-15",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-82"
+    },
+    {
+      "focal_id": "SA-15(03)",
+      "reference_id": "OT-SA-15(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-85"
+    },
+    {
+      "focal_id": "SA-16",
+      "reference_id": "OT-SA-16",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-94"
+    },
+    {
+      "focal_id": "SA-17",
+      "reference_id": "OT-SA-17",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-95"
+    },
+    {
+      "focal_id": "SA-21",
+      "reference_id": "OT-SA-21",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-106"
+    },
+    {
+      "focal_id": "SA-22",
+      "reference_id": "OT-SA-22",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SA#row-107"
+    },
+    {
+      "focal_id": "SC-01",
+      "reference_id": "OT-SC-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-2"
+    },
+    {
+      "focal_id": "SC-02",
+      "reference_id": "OT-SC-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-3"
+    },
+    {
+      "focal_id": "SC-03",
+      "reference_id": "OT-SC-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-6"
+    },
+    {
+      "focal_id": "SC-04",
+      "reference_id": "OT-SC-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-12"
+    },
+    {
+      "focal_id": "SC-05",
+      "reference_id": "OT-SC-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-14"
+    },
+    {
+      "focal_id": "SC-07",
+      "reference_id": "OT-SC-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-19"
+    },
+    {
+      "focal_id": "SC-07(03)",
+      "reference_id": "OT-SC-07(03)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-20"
+    },
+    {
+      "focal_id": "SC-07(04)",
+      "reference_id": "OT-SC-07(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-21"
+    },
+    {
+      "focal_id": "SC-07(05)",
+      "reference_id": "OT-SC-07(05)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-22"
+    },
+    {
+      "focal_id": "SC-07(07)",
+      "reference_id": "OT-SC-07(07)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-23"
+    },
+    {
+      "focal_id": "SC-07(08)",
+      "reference_id": "OT-SC-07(08)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-24"
+    },
+    {
+      "focal_id": "SC-07(18)",
+      "reference_id": "OT-SC-07(18)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding SC-07(18) to MOD baseline: The ability to choose the failure mode for the physical part of the OT differentiates the OT from other IT systems. This choice may be a significant influence in mitigating the impact of a failure.",
+      "source_locator": "SC#row-34"
+    },
+    {
+      "focal_id": "SC-07(21)",
+      "reference_id": "OT-SC-07(21)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-37"
+    },
+    {
+      "focal_id": "SC-07(28)",
+      "reference_id": "OT-SC-07(28)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding SC-07(28) to LOW, MOD, and HIGH baselines: Access to OT should be restricted to the individuals required for operation. A connection made from the OT directly to a public network has limited applicability in OT environments but significant potential risk.",
+      "source_locator": "SC#row-44"
+    },
+    {
+      "focal_id": "SC-07(29)",
+      "reference_id": "OT-SC-07(29)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding SC-07(29) to LOW, MOD, and HIGH baselines: In OT environments, subnets and zoning are common practices for isolating functions.",
+      "source_locator": "SC#row-45"
+    },
+    {
+      "focal_id": "SC-08",
+      "reference_id": "OT-SC-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-46"
+    },
+    {
+      "focal_id": "SC-08(01)",
+      "reference_id": "OT-SC-08(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-47"
+    },
+    {
+      "focal_id": "SC-10",
+      "reference_id": "OT-SC-10",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for removing SC-10 from MOD and HIGH baselines: The intent of this control is effectively covered by AC-17(09) for OT systems.",
+      "source_locator": "SC#row-52"
+    },
+    {
+      "focal_id": "SC-12",
+      "reference_id": "OT-SC-12",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-55"
+    },
+    {
+      "focal_id": "SC-12(01)",
+      "reference_id": "OT-SC-12(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-56"
+    },
+    {
+      "focal_id": "SC-13",
+      "reference_id": "OT-SC-13",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-60"
+    },
+    {
+      "focal_id": "SC-15",
+      "reference_id": "OT-SC-15",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-61"
+    },
+    {
+      "focal_id": "SC-17",
+      "reference_id": "OT-SC-17",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-69"
+    },
+    {
+      "focal_id": "SC-18",
+      "reference_id": "OT-SC-18",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-70"
+    },
+    {
+      "focal_id": "SC-20",
+      "reference_id": "OT-SC-20",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-76"
+    },
+    {
+      "focal_id": "SC-21",
+      "reference_id": "OT-SC-21",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-78"
+    },
+    {
+      "focal_id": "SC-22",
+      "reference_id": "OT-SC-22",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-79"
+    },
+    {
+      "focal_id": "SC-23",
+      "reference_id": "OT-SC-23",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-80"
+    },
+    {
+      "focal_id": "SC-24",
+      "reference_id": "OT-SC-24",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding SC-24 to MOD baseline: As part of the architecture and design of the OT, the organization selects an appropriate failure state in accordance with the function performed by the OT and the operational environment. The ability to choose the failure mode for the physical part of OT differentiates OT systems from other IT systems. This choice may be a significant influence in mitigating the impact of a failure since it may be disruptive to ongoing physical processes (e.g., valves failing in closed position may adversely affect system cooling).",
+      "source_locator": "SC#row-84"
+    },
+    {
+      "focal_id": "SC-28",
+      "reference_id": "OT-SC-28",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-88"
+    },
+    {
+      "focal_id": "SC-28(01)",
+      "reference_id": "OT-SC-28(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-89"
+    },
+    {
+      "focal_id": "SC-39",
+      "reference_id": "OT-SC-39",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SC#row-115"
+    },
+    {
+      "focal_id": "SC-41",
+      "reference_id": "OT-SC-41",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding SC-41 to LOW, MOD, and HIGH baselines: OT functionality is generally defined in advance and does not change often.",
+      "source_locator": "SC#row-123"
+    },
+    {
+      "focal_id": "SC-45",
+      "reference_id": "OT-SC-45",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding SC-45 to LOW, MOD, and HIGH baselines: Organizations may find relative system time beneficial for many OT systems to ensure the safe and reliable delivery of essential functions. Time synchronization can also make root cause analysis more efficient by ensuring that audit logs from different systems are aligned so that organizations have an accurate view of events across multiple systems when the logs are aggregated.",
+      "source_locator": "SC#row-131"
+    },
+    {
+      "focal_id": "SC-47",
+      "reference_id": "OT-SC-47",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding SC-47 to HIGH baseline: For continuity of operations during an incident, organizations should consider establishing alternate communications paths for command-and- control purposes to continue to operate and take appropriate actions for high-impact systems when the loss of availability or integrity may result in severe or catastrophic adverse impacts, including impacts to safety and critical service delivery.",
+      "source_locator": "SC#row-135"
+    },
+    {
+      "focal_id": "SI-01",
+      "reference_id": "OT-SI-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-2"
+    },
+    {
+      "focal_id": "SI-02",
+      "reference_id": "OT-SI-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-3"
+    },
+    {
+      "focal_id": "SI-02(02)",
+      "reference_id": "OT-SI-02(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-4"
+    },
+    {
+      "focal_id": "SI-03",
+      "reference_id": "OT-SI-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-10"
+    },
+    {
+      "focal_id": "SI-04",
+      "reference_id": "OT-SI-04",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-15"
+    },
+    {
+      "focal_id": "SI-04(02)",
+      "reference_id": "OT-SI-04(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-17"
+    },
+    {
+      "focal_id": "SI-04(04)",
+      "reference_id": "OT-SI-04(04)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-19"
+    },
+    {
+      "focal_id": "SI-04(05)",
+      "reference_id": "OT-SI-04(05)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-20"
+    },
+    {
+      "focal_id": "SI-04(10)",
+      "reference_id": "OT-SI-04(10)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-23"
+    },
+    {
+      "focal_id": "SI-04(12)",
+      "reference_id": "OT-SI-04(12)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-25"
+    },
+    {
+      "focal_id": "SI-04(14)",
+      "reference_id": "OT-SI-04(14)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-27"
+    },
+    {
+      "focal_id": "SI-04(20)",
+      "reference_id": "OT-SI-04(20)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-33"
+    },
+    {
+      "focal_id": "SI-04(22)",
+      "reference_id": "OT-SI-04(22)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-35"
+    },
+    {
+      "focal_id": "SI-05",
+      "reference_id": "OT-SI-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-39"
+    },
+    {
+      "focal_id": "SI-05(01)",
+      "reference_id": "OT-SI-05(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-40"
+    },
+    {
+      "focal_id": "SI-06",
+      "reference_id": "OT-SI-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-41"
+    },
+    {
+      "focal_id": "SI-07",
+      "reference_id": "OT-SI-07",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-44"
+    },
+    {
+      "focal_id": "SI-07(01)",
+      "reference_id": "OT-SI-07(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-45"
+    },
+    {
+      "focal_id": "SI-07(02)",
+      "reference_id": "OT-SI-07(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-46"
+    },
+    {
+      "focal_id": "SI-07(05)",
+      "reference_id": "OT-SI-07(05)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-48"
+    },
+    {
+      "focal_id": "SI-07(07)",
+      "reference_id": "OT-SI-07(07)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-50"
+    },
+    {
+      "focal_id": "SI-07(15)",
+      "reference_id": "OT-SI-07(15)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-55"
+    },
+    {
+      "focal_id": "SI-08",
+      "reference_id": "OT-SI-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-58"
+    },
+    {
+      "focal_id": "SI-08(02)",
+      "reference_id": "OT-SI-08(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for removing SI-08(02) from MOD and HIGH baselines: Spam transport mechanisms are disabled or removed from the OT, so automatic updates are not necessary.",
+      "source_locator": "SI#row-59"
+    },
+    {
+      "focal_id": "SI-10",
+      "reference_id": "OT-SI-10",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-61"
+    },
+    {
+      "focal_id": "SI-11",
+      "reference_id": "OT-SI-11",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-68"
+    },
+    {
+      "focal_id": "SI-12",
+      "reference_id": "OT-SI-12",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-69"
+    },
+    {
+      "focal_id": "SI-13",
+      "reference_id": "OT-SI-13",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding SI-13 control to HIGH baseline: OT are designed and built with certain boundary conditions, design parameters, and assumptions about their environment and mode of operation. OT may run much longer than conventional systems, allowing latent flaws that are not manifest in other environments to become effective. For example, integer overflow might never occur in systems that are re-initialized more frequently than the occurrence of the overflow.\r\nExperience and forensic studies of anomalies and incidents in OT can lead to the identification of emergent properties that were previously unknown, unexpected, or unanticipated. Preventative and restorative actions (e.g., restarting the system or application) are prudent but may not be acceptable in OT for operational reasons.",
+      "source_locator": "SI#row-73"
+    },
+    {
+      "focal_id": "SI-16",
+      "reference_id": "OT-SI-16",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SI#row-83"
+    },
+    {
+      "focal_id": "SI-17",
+      "reference_id": "OT-SI-17",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding SI-17 to LOW, MOD, and HIGH baselines: This control provides a structure for the organization to identify its policy and procedures for dealing with failures and other incidents. Creating a written record of the decision process for selecting incidents and appropriate responses in light of a changing environment of operations is part of risk management.",
+      "source_locator": "SI#row-84"
+    },
+    {
+      "focal_id": "SR-01",
+      "reference_id": "OT-SR-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-2"
+    },
+    {
+      "focal_id": "SR-02",
+      "reference_id": "OT-SR-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-3"
+    },
+    {
+      "focal_id": "SR-02(01)",
+      "reference_id": "OT-SR-02(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-4"
+    },
+    {
+      "focal_id": "SR-03",
+      "reference_id": "OT-SR-03",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-5"
+    },
+    {
+      "focal_id": "SR-05",
+      "reference_id": "OT-SR-05",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-14"
+    },
+    {
+      "focal_id": "SR-05(01)",
+      "reference_id": "OT-SR-05(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Rationale for adding SR-05(01) to MOD and HIGH baselines: OT systems and system components are often built for purpose and have a limited number of vendors or suppliers for a specific component. Organizations identify critical OT system components and controls to ensure an adequate supply in the event of supply chain disruptions.",
+      "source_locator": "SR#row-15"
+    },
+    {
+      "focal_id": "SR-06",
+      "reference_id": "OT-SR-06",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-17"
+    },
+    {
+      "focal_id": "SR-08",
+      "reference_id": "OT-SR-08",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-20"
+    },
+    {
+      "focal_id": "SR-09",
+      "reference_id": "OT-SR-09",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-21"
+    },
+    {
+      "focal_id": "SR-09(01)",
+      "reference_id": "OT-SR-09(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-22"
+    },
+    {
+      "focal_id": "SR-10",
+      "reference_id": "OT-SR-10",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-23"
+    },
+    {
+      "focal_id": "SR-11",
+      "reference_id": "OT-SR-11",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-24"
+    },
+    {
+      "focal_id": "SR-11(01)",
+      "reference_id": "OT-SR-11(01)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-25"
+    },
+    {
+      "focal_id": "SR-11(02)",
+      "reference_id": "OT-SR-11(02)",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-26"
+    },
+    {
+      "focal_id": "SR-12",
+      "reference_id": "OT-SR-12",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": null,
+      "source_locator": "SR#row-28"
     }
   ]
 }

@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-09-10T16:29:49.586Z",
+  "generated_at": "2026-09-10T16:53:32.775Z",
   "source": "https://csrc.nist.gov/projects/olir/informative-reference-catalog",
   "api_endpoint": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog",
   "total_entries": 102,
   "final_count": 92,
   "applicable_final_count": 51,
-  "ingested_count": 26,
-  "quarantined_count": 76,
-  "unresolved_count": 25,
-  "retained_count": 12,
+  "ingested_count": 27,
+  "quarantined_count": 75,
+  "unresolved_count": 24,
+  "retained_count": 10,
   "processed_items": [
     {
       "id": 232,
@@ -27,12 +27,22 @@
       "submission_artifact_url": "https://www.nerc.com/standards/reliability-standards/cip",
       "authority_tier": 1,
       "authority_tier_label": "NIST owner-authority Final",
-      "mapping_model": null,
-      "ingested": false,
-      "map_file": null,
+      "mapping_model": "Concept Crosswalk",
+      "ingested": true,
+      "map_file": "maps/olir/232.json",
       "artifact_id": null,
-      "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
+      "artifact": {
+        "map_file": "maps/olir/232.json",
+        "artifact_url": "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/swg/nist-sp800-53r5.2-to-nerc-cip-olir-mapping.xlsx",
+        "checksum": "sha256:c73b9736a139b5f833a1930a01987ee23d0068b7d4dffc20ebba22a65fe82323",
+        "byte_length": 3012257,
+        "parser": "olir-xlsx",
+        "relationship_count": 1185,
+        "relationship_semantics": [
+          "Concept Crosswalk"
+        ]
+      },
+      "quarantine_reason": null,
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -49,12 +59,10 @@
         {
           "kind": "artifact download",
           "url": "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/swg/nist-sp800-53r5.2-to-nerc-cip-olir-mapping.xlsx",
-          "error": "source URL policy rejected unapproved destination"
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://www.nerc.com/standards/reliability-standards/cip",
-          "error": "source URL policy rejected unapproved destination"
+          "status": 200,
+          "final_url": "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/swg/nist-sp800-53r5.2-to-nerc-cip-olir-mapping.xlsx",
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "byte_length": 3012257
         }
       ]
     },
@@ -221,7 +229,7 @@
       "submission_artifact_url": "https://github.com/greerfam2020-rgb/IPAC-AI-Framework-Review/blob/main/IPACS_AI_NIST_Submission_Final-1.pdf",
       "authority_tier": 4,
       "authority_tier_label": "Validated third-party Final",
-      "mapping_model": "10, 2, 5, 8",
+      "mapping_model": "Concept Crosswalk",
       "ingested": true,
       "map_file": "maps/olir/225.json",
       "artifact_id": null,
@@ -233,10 +241,7 @@
         "parser": "olir-xlsx",
         "relationship_count": 153,
         "relationship_semantics": [
-          "10",
-          "2",
-          "5",
-          "8"
+          "Concept Crosswalk"
         ]
       },
       "quarantine_reason": null,
@@ -268,32 +273,6 @@
           "final_url": "https://raw.githubusercontent.com/greerfam2020-rgb/IPAC-AI-Framework-Review/main/IPACS_AI_RMF_Crosswalk_v3-5.xlsx",
           "content_type": "application/octet-stream",
           "byte_length": 33225
-        }
-      ],
-      "refresh_status": "retained_last_good",
-      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
-      "latest_retrieval_attempts": [
-        {
-          "kind": "NIST catalog detail endpoint",
-          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/225",
-          "status": 200,
-          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/225",
-          "json_file_url": null,
-          "publisher_sha256": null,
-          "submission_url": "https://github.com/greerfam2020-rgb/IPAC-AI-Framework-Review/blob/main/IPACS_AI_RMF_Crosswalk_v3-5.xlsx",
-          "reference_url": "https://github.com/greerfam2020-rgb/IPAC-AI-Framework-Review/blob/main/IPACS_AI_NIST_Submission_Final-1.pdf",
-          "mapping_summary": "<p>AI stays open. Anonymity for malicious use ends.</p>\n<p>Every component of this framework - FIDO2 hardware attestation, the middleware layer, direct memory injection, and the WORM immutable audit trail - exists to enforce one guarantee: legitimate developers lose nothing, malicious actors lose anonymity.</p>\n<p>This Informative Reference maps the Identity-Proofed Access Control System for AI (IPACS-AI) - a zero-trust middleware framework for AI coding tools-to the NIST AI RMF 1.0. IPACS-AI closes the accountability gap created by anonymous AI access through identity-proofed, hardware-attested, time-bounded session controls. It eliminates clipboard code smuggling via direct memory injection, classifies AI-generated code risk via AST parsing, and maintains an immutable WORM hash-chained audit trail at zero per-transaction cost using local FIDO2/TPM 2.0 attestation and OIDC/SAML 2.0 federated identity. The crosswalk shows strong or exact alignment across all four AI RMF functions.</p>",
-          "mapping_comment": "<p>IPACS-AI is an independent, open-source framework submission. All 72 AI RMF 1.0 subcategories are addressed in the crosswalk. Documented gaps (DEI team documentation, formal TEVV testing) are transparently disclosed with planned remediation through a mandatory independent security audit prior to production deployment. The framework is licensed MIT/Apache 2.0 with no commercial restrictions. Local FIDO2/TPM attestation enables zero per-transaction cost and full offline resilience. Scope is explicitly bounded to API-connected AI services; fully air-gapped local inference is acknowledged as out of scope.</p>"
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://github.com/greerfam2020-rgb/IPAC-AI-Framework-Review/blob/main/IPACS_AI_RMF_Crosswalk_v3-5.xlsx",
-          "error": "source URL policy rejected unapproved destination"
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://github.com/greerfam2020-rgb/IPAC-AI-Framework-Review/blob/main/IPACS_AI_NIST_Submission_Final-1.pdf",
-          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -1389,32 +1368,6 @@
           "content_type": "application/octet-stream",
           "byte_length": 67547
         }
-      ],
-      "refresh_status": "retained_last_good",
-      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
-      "latest_retrieval_attempts": [
-        {
-          "kind": "NIST catalog detail endpoint",
-          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/183",
-          "status": 200,
-          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/183",
-          "json_file_url": null,
-          "publisher_sha256": null,
-          "submission_url": "https://github.com/Glimpz1/grc-mappings/tree/main/olir/csf-2.0_pci-4.0.1_supportive",
-          "reference_url": "https://www.pcisecuritystandards.org/document_library/",
-          "mapping_summary": "<p>This OLIR provides a Set Theory mapping from NIST CSF 2.0 Subcategories (focal) to PCI DSS v4.0.1 Defined Approach Requirements (reference). Each relationship is expressed as supports / is supported by, with Relationship Property classified as example of, integral to, or precedes. PCI requirements are referenced by their official identifiers. Intended use: scoping, gap analysis, and traceability with CSF as the pivot.</p>",
-          "mapping_comment": "<p>Mappings are performed at the level of CSF Subcategory and PCI DSS Defined Approach Requirement.</p>"
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://github.com/Glimpz1/grc-mappings/tree/main/olir/csf-2.0_pci-4.0.1_supportive",
-          "error": "source URL policy rejected unapproved destination"
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://www.pcisecuritystandards.org/document_library/",
-          "error": "source URL policy rejected unapproved destination"
-        }
       ]
     },
     {
@@ -1629,7 +1582,7 @@
         "checksum": "sha256:49119c1f3c859199dd78912ad65f188f79ef1b066e27a95355afb9b3519f83ee",
         "byte_length": 144345,
         "parser": "olir-xlsx",
-        "relationship_count": 49,
+        "relationship_count": 390,
         "relationship_semantics": [
           "Concept Crosswalk"
         ]
@@ -3030,7 +2983,7 @@
         "checksum": "sha256:80ee1b51d5b48f394e35311a9a93006d2f9e530e35266c6f1f00eb212b776b95",
         "byte_length": 179055,
         "parser": "olir-xlsx",
-        "relationship_count": 40,
+        "relationship_count": 279,
         "relationship_semantics": [
           "Concept Crosswalk"
         ]
@@ -3111,7 +3064,7 @@
         "checksum": "sha256:80ee1b51d5b48f394e35311a9a93006d2f9e530e35266c6f1f00eb212b776b95",
         "byte_length": 179055,
         "parser": "olir-xlsx",
-        "relationship_count": 40,
+        "relationship_count": 279,
         "relationship_semantics": [
           "Concept Crosswalk"
         ]
@@ -3217,7 +3170,7 @@
         "checksum": "sha256:e631de234a1fac057991773f015c221226940540f5602e1b70a3768eaff5cbd9",
         "byte_length": 155745,
         "parser": "olir-xlsx",
-        "relationship_count": 51,
+        "relationship_count": 643,
         "relationship_semantics": [
           "Concept Crosswalk"
         ]
