@@ -112701,5 +112701,98 @@
         ]
       }
     }
-  ]
+  ],
+  "publisher_inventory": {
+    "raw_count": 1216,
+    "eligible_count": 1196,
+    "imported_count": 1196,
+    "excluded": [
+      {
+        "id": "ac",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "at",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "au",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "ca",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "cm",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "cp",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "ia",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "ir",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "ma",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "mp",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "pe",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "pl",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "pm",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "ps",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "pt",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "ra",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "sa",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "sc",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "si",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "sr",
+        "reason": "structural or non-target OSCAL unit"
+      }
+    ],
+    "raw_identity_sha256": "sha256:a973d699659cb32d5c0a1fedb064bbf090c51cc1f7246504b6ceced722d48cda",
+    "imported_identity_sha256": "sha256:5e9d025c17130380a1d39bcd20340e536b6eb4e98da71331575ad62e2cd84e5e",
+    "source_url": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+    "source_sha256": "sha256:01f37cf90ea99d92242c936cbfbdebcc338eef1f71454e2acac36cc56e9bc062",
+    "source_byte_length": 10442037,
+    "publisher_version": "5.2.0"
+  }
 }

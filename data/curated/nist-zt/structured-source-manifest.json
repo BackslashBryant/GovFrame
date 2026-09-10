@@ -10,29 +10,9 @@
       "retrieved_at": "2026-08-12T12:15:06.607Z",
       "worksheets": [
         {
-          "name": "Google",
-          "rows": 19,
-          "mappings": 18
-        },
-        {
-          "name": "Microsoft",
-          "rows": 159,
-          "mappings": 158
-        },
-        {
-          "name": "AWS",
-          "rows": 19,
-          "mappings": 18
-        },
-        {
-          "name": "F5",
-          "rows": 16,
-          "mappings": 15
-        },
-        {
-          "name": "Mandiant",
-          "rows": 3,
-          "mappings": 2
+          "name": "CSF 2.0-to-Reference Arch",
+          "rows": 132,
+          "mappings": 130
         },
         {
           "name": "Appgate",
@@ -40,39 +20,9 @@
           "mappings": 20
         },
         {
-          "name": "Zscaler",
-          "rows": 29,
-          "mappings": 28
-        },
-        {
-          "name": "CSF 2.0-to-Reference Arch",
-          "rows": 132,
-          "mappings": 130
-        },
-        {
-          "name": "Digicert",
-          "rows": 3,
-          "mappings": 2
-        },
-        {
-          "name": "Lookout",
-          "rows": 39,
-          "mappings": 38
-        },
-        {
-          "name": "Broadcom (w VMware) & Omnissa",
-          "rows": 84,
-          "mappings": 80
-        },
-        {
-          "name": "Tenable",
-          "rows": 5,
-          "mappings": 4
-        },
-        {
-          "name": "Ivanti",
-          "rows": 21,
-          "mappings": 20
+          "name": "AWS",
+          "rows": 19,
+          "mappings": 18
         },
         {
           "name": "Broadcom (w Symantec product)",
@@ -80,14 +30,64 @@
           "mappings": 50
         },
         {
+          "name": "Broadcom (w VMware) & Omnissa",
+          "rows": 84,
+          "mappings": 80
+        },
+        {
+          "name": "Digicert",
+          "rows": 3,
+          "mappings": 2
+        },
+        {
+          "name": "F5",
+          "rows": 16,
+          "mappings": 15
+        },
+        {
+          "name": "Google",
+          "rows": 19,
+          "mappings": 18
+        },
+        {
           "name": "IBM",
           "rows": 90,
           "mappings": 88
         },
         {
+          "name": "Ivanti",
+          "rows": 21,
+          "mappings": 20
+        },
+        {
+          "name": "Lookout",
+          "rows": 39,
+          "mappings": 38
+        },
+        {
+          "name": "Mandiant",
+          "rows": 3,
+          "mappings": 2
+        },
+        {
+          "name": "Microsoft",
+          "rows": 159,
+          "mappings": 158
+        },
+        {
           "name": "Radiant Logic",
           "rows": 3,
           "mappings": 2
+        },
+        {
+          "name": "Tenable",
+          "rows": 5,
+          "mappings": 4
+        },
+        {
+          "name": "Zscaler",
+          "rows": 29,
+          "mappings": 28
         }
       ],
       "parsed_records": 673
@@ -101,29 +101,9 @@
       "retrieved_at": "2026-08-12T12:15:07.438Z",
       "worksheets": [
         {
-          "name": "Google",
-          "rows": 14,
-          "mappings": 13
-        },
-        {
-          "name": "Microsoft",
-          "rows": 97,
-          "mappings": 96
-        },
-        {
-          "name": "AWS",
-          "rows": 12,
-          "mappings": 11
-        },
-        {
-          "name": "F5",
-          "rows": 10,
-          "mappings": 9
-        },
-        {
-          "name": "Mandiant",
-          "rows": 2,
-          "mappings": 1
+          "name": "NISTCSSM-to-Reference Arch",
+          "rows": 83,
+          "mappings": 82
         },
         {
           "name": "Appgate",
@@ -131,39 +111,9 @@
           "mappings": 9
         },
         {
-          "name": "Zscaler",
-          "rows": 18,
-          "mappings": 17
-        },
-        {
-          "name": "NISTCSSM-to-Reference Arch",
-          "rows": 83,
-          "mappings": 82
-        },
-        {
-          "name": "DigiCert",
-          "rows": 5,
-          "mappings": 4
-        },
-        {
-          "name": "Lookout",
-          "rows": 23,
-          "mappings": 21
-        },
-        {
-          "name": "Broadcom (w VMware) & Omnissa",
-          "rows": 33,
-          "mappings": 30
-        },
-        {
-          "name": "Tenable",
-          "rows": 7,
-          "mappings": 4
-        },
-        {
-          "name": "Ivanti",
-          "rows": 22,
-          "mappings": 20
+          "name": "AWS",
+          "rows": 12,
+          "mappings": 11
         },
         {
           "name": "Broadcom (w Symantec product)",
@@ -171,14 +121,64 @@
           "mappings": 27
         },
         {
+          "name": "Broadcom (w VMware) & Omnissa",
+          "rows": 33,
+          "mappings": 30
+        },
+        {
+          "name": "DigiCert",
+          "rows": 5,
+          "mappings": 4
+        },
+        {
+          "name": "F5",
+          "rows": 10,
+          "mappings": 9
+        },
+        {
+          "name": "Google",
+          "rows": 14,
+          "mappings": 13
+        },
+        {
           "name": "IBM",
           "rows": 41,
           "mappings": 40
         },
         {
+          "name": "Ivanti",
+          "rows": 22,
+          "mappings": 20
+        },
+        {
+          "name": "Lookout",
+          "rows": 23,
+          "mappings": 21
+        },
+        {
+          "name": "Mandiant",
+          "rows": 2,
+          "mappings": 1
+        },
+        {
+          "name": "Microsoft",
+          "rows": 97,
+          "mappings": 96
+        },
+        {
           "name": "Radiant Logic",
           "rows": 3,
           "mappings": 2
+        },
+        {
+          "name": "Tenable",
+          "rows": 7,
+          "mappings": 4
+        },
+        {
+          "name": "Zscaler",
+          "rows": 18,
+          "mappings": 17
         }
       ],
       "parsed_records": 386
@@ -192,19 +192,9 @@
       "retrieved_at": "2026-08-12T12:15:07.872Z",
       "worksheets": [
         {
-          "name": "Mandiant",
-          "rows": 3,
-          "mappings": 2
-        },
-        {
-          "name": "Broadcom (w Symantec product)",
-          "rows": 43,
-          "mappings": 42
-        },
-        {
-          "name": "IBM",
-          "rows": 82,
-          "mappings": 80
+          "name": "CSF 1.1-to-Reference Arch",
+          "rows": 134,
+          "mappings": 131
         },
         {
           "name": "Appgate",
@@ -212,29 +202,9 @@
           "mappings": 20
         },
         {
-          "name": "CSF 1.1-to-Reference Arch",
-          "rows": 134,
-          "mappings": 131
-        },
-        {
-          "name": "F5",
-          "rows": 12,
-          "mappings": 11
-        },
-        {
-          "name": "Zscaler",
-          "rows": 25,
-          "mappings": 24
-        },
-        {
-          "name": "Digicert",
-          "rows": 3,
-          "mappings": 2
-        },
-        {
-          "name": "Tenable",
-          "rows": 5,
-          "mappings": 4
+          "name": "Broadcom (w Symantec product)",
+          "rows": 43,
+          "mappings": 42
         },
         {
           "name": "Broadcom (w VMware) & Omnissa",
@@ -242,9 +212,39 @@
           "mappings": 70
         },
         {
+          "name": "Digicert",
+          "rows": 3,
+          "mappings": 2
+        },
+        {
+          "name": "F5",
+          "rows": 12,
+          "mappings": 11
+        },
+        {
+          "name": "IBM",
+          "rows": 82,
+          "mappings": 80
+        },
+        {
+          "name": "Mandiant",
+          "rows": 3,
+          "mappings": 2
+        },
+        {
           "name": "Radiant Logic",
           "rows": 2,
           "mappings": 1
+        },
+        {
+          "name": "Tenable",
+          "rows": 5,
+          "mappings": 4
+        },
+        {
+          "name": "Zscaler",
+          "rows": 25,
+          "mappings": 24
         }
       ],
       "parsed_records": 387
@@ -258,29 +258,9 @@
       "retrieved_at": "2026-08-12T12:15:08.428Z",
       "worksheets": [
         {
-          "name": "Google",
-          "rows": 33,
-          "mappings": 32
-        },
-        {
-          "name": "Microsoft",
-          "rows": 305,
-          "mappings": 304
-        },
-        {
-          "name": "AWS",
-          "rows": 43,
-          "mappings": 42
-        },
-        {
-          "name": "F5",
-          "rows": 13,
-          "mappings": 12
-        },
-        {
-          "name": "Mandiant",
-          "rows": 4,
-          "mappings": 3
+          "name": "SP 800-53-to-Reference Arch",
+          "rows": 208,
+          "mappings": 200
         },
         {
           "name": "Appgate",
@@ -288,39 +268,9 @@
           "mappings": 33
         },
         {
-          "name": "Zscaler",
-          "rows": 44,
-          "mappings": 41
-        },
-        {
-          "name": "SP 800-53-to-Reference Arch",
-          "rows": 208,
-          "mappings": 200
-        },
-        {
-          "name": "Digicert",
-          "rows": 3,
-          "mappings": 2
-        },
-        {
-          "name": "Lookout",
-          "rows": 66,
-          "mappings": 64
-        },
-        {
-          "name": "Broadcom (w VMware) & Omnissa",
-          "rows": 126,
-          "mappings": 122
-        },
-        {
-          "name": "Tenable",
-          "rows": 5,
-          "mappings": 4
-        },
-        {
-          "name": "Ivanti",
-          "rows": 29,
-          "mappings": 28
+          "name": "AWS",
+          "rows": 43,
+          "mappings": 42
         },
         {
           "name": "Broadcom (w Symantec product)",
@@ -328,14 +278,64 @@
           "mappings": 90
         },
         {
+          "name": "Broadcom (w VMware) & Omnissa",
+          "rows": 126,
+          "mappings": 122
+        },
+        {
+          "name": "Digicert",
+          "rows": 3,
+          "mappings": 2
+        },
+        {
+          "name": "F5",
+          "rows": 13,
+          "mappings": 12
+        },
+        {
+          "name": "Google",
+          "rows": 33,
+          "mappings": 32
+        },
+        {
           "name": "IBM",
           "rows": 137,
           "mappings": 134
         },
         {
+          "name": "Ivanti",
+          "rows": 29,
+          "mappings": 28
+        },
+        {
+          "name": "Lookout",
+          "rows": 66,
+          "mappings": 64
+        },
+        {
+          "name": "Mandiant",
+          "rows": 4,
+          "mappings": 3
+        },
+        {
+          "name": "Microsoft",
+          "rows": 305,
+          "mappings": 304
+        },
+        {
           "name": "Radiant Logic",
           "rows": 4,
           "mappings": 3
+        },
+        {
+          "name": "Tenable",
+          "rows": 5,
+          "mappings": 4
+        },
+        {
+          "name": "Zscaler",
+          "rows": 44,
+          "mappings": 41
         }
       ],
       "parsed_records": 1114
@@ -348,24 +348,19 @@
       "retrieved_at": "2026-08-12T12:15:09.089Z",
       "worksheets": [
         {
-          "name": "2-Devices",
-          "rows": 18,
-          "questions": 12
-        },
-        {
-          "name": "6-Network",
-          "rows": 15,
-          "questions": 9
-        },
-        {
           "name": "1-Identity",
           "rows": 17,
           "questions": 11
         },
         {
-          "name": "5-Data",
-          "rows": 16,
-          "questions": 10
+          "name": "2-Devices",
+          "rows": 18,
+          "questions": 12
+        },
+        {
+          "name": "3-Applications",
+          "rows": 18,
+          "questions": 12
         },
         {
           "name": "4-Infrastructure",
@@ -373,9 +368,14 @@
           "questions": 8
         },
         {
-          "name": "3-Applications",
-          "rows": 18,
-          "questions": 12
+          "name": "5-Data",
+          "rows": 16,
+          "questions": 10
+        },
+        {
+          "name": "6-Network",
+          "rows": 15,
+          "questions": 9
         }
       ],
       "parsed_records": 62

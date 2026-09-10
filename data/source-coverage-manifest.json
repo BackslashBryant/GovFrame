@@ -1,6 +1,6 @@
 {
   "schema_version": "4.0",
-  "generated_at": "2026-09-09T22:17:42.328Z",
+  "generated_at": "2026-09-10T02:12:54.122Z",
   "completeness": {
     "total_publications": 101,
     "total_artifacts": 92,
@@ -54,7 +54,7 @@
         "direct_file_import",
         "extracted_from_official_publication"
       ],
-      "last_refresh": "2026-08-13",
+      "last_refresh": "2026-09-10",
       "has_shard": true
     },
     {
@@ -94,7 +94,7 @@
       "methods": [
         "direct_file_import"
       ],
-      "last_refresh": "2026-08-08",
+      "last_refresh": "2026-09-10",
       "has_shard": true
     },
     {
@@ -134,7 +134,7 @@
       "methods": [
         "direct_file_import"
       ],
-      "last_refresh": "2026-08-13",
+      "last_refresh": "2026-09-10",
       "has_shard": true
     },
     {
@@ -154,7 +154,7 @@
       "methods": [
         "extracted_from_official_publication"
       ],
-      "last_refresh": "2026-08-14",
+      "last_refresh": "2026-09-10",
       "has_shard": true
     },
     {
@@ -194,7 +194,7 @@
       "methods": [
         "direct_file_import"
       ],
-      "last_refresh": "2026-08-07",
+      "last_refresh": "2026-09-10",
       "has_shard": true
     },
     {
@@ -294,14 +294,14 @@
       "methods": [
         "direct_file_import"
       ],
-      "last_refresh": "2026-09-09",
+      "last_refresh": "2026-09-10",
       "has_shard": true
     },
     {
       "catalog_id": "mitre-attack-ics",
       "completeness_status": "reconciled",
-      "expected_records": 106,
-      "imported_records": 106,
+      "expected_records": 118,
+      "imported_records": 118,
       "excluded_records": 0,
       "missing_records": 0,
       "expected_basis": "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
@@ -314,7 +314,7 @@
       "methods": [
         "direct_file_import"
       ],
-      "last_refresh": "2026-09-09",
+      "last_refresh": "2026-09-10",
       "has_shard": true
     },
     {
@@ -334,7 +334,7 @@
       "methods": [
         "direct_file_import"
       ],
-      "last_refresh": "2026-09-09",
+      "last_refresh": "2026-09-10",
       "has_shard": true
     },
     {
@@ -435,7 +435,7 @@
         "extracted_from_official_publication",
         "direct_file_import"
       ],
-      "last_refresh": "2026-08-13",
+      "last_refresh": "2026-09-10",
       "has_shard": true
     },
     {
@@ -475,7 +475,7 @@
       "methods": [
         "direct_file_import"
       ],
-      "last_refresh": "2026-08-13",
+      "last_refresh": "2026-09-10",
       "has_shard": true
     },
     {

@@ -3,7 +3,7 @@
   "source_key": "nist-800-171-oscal-mappings",
   "source_artifact": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-171/rev3/json/NIST_SP800-171_rev3_catalog.json",
   "source_version": "1.1.0",
-  "snapshot_date": "2026-08-09",
+  "snapshot_date": "2026-09-10",
   "checksum": "sha256:33d441c92e924e96256d1c7eef2a6a76e0cf33d4a3265cf876503c4796ebd4ad",
   "provenance": "Official NIST SP 800-171 Rev. 3 OSCAL references to SP 800-53 controls",
   "olir_status": "final",
