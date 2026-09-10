@@ -167,3 +167,14 @@ test('every generator that writes into data/generated is part of the refresh pip
     `these are excused from the refresh but write into gitignored data/generated: ${wronglyExcused.join(', ')}`,
   );
 });
+
+test('refresh reaches the build:data registry and inventory order in one pass', () => {
+  const ids = INGESTION_TASKS.map((task) => task.id);
+  const beforeBuild = ids.indexOf('migrate-source-truth-before-build');
+  const synchronize = ids.indexOf('sync-inventory-contracts');
+  const framework = ids.indexOf('build-framework-data');
+  const afterEnrichment = ids.indexOf('migrate-source-truth-profiles');
+  const inventory = ids.indexOf('build-source-inventory');
+  assert.ok(beforeBuild < synchronize && synchronize < framework);
+  assert.ok(framework < afterEnrichment && afterEnrichment < inventory);
+});

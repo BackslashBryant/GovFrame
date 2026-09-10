@@ -171,7 +171,7 @@ export async function fetchFedramp2026Rules(runDate = new Date().toISOString().s
   writeFile(RULES_PATH, rulesResponse.bytes);
   writeFile(SCHEMA_PATH, schemaResponse.bytes);
   writeFile(INDEX_PATH, `${JSON.stringify(index)}\n`, 'utf8');
-  writeFile(join(ROOT, 'data', 'fedramp-2026-catalog.json'), `${JSON.stringify(normalized)}\n`, 'utf8');
+  writeFile(join(ROOT, 'data', 'fedramp-2026-catalog.json'), `${JSON.stringify(normalized, null, 2)}\n`, 'utf8');
   return {
     version: index.source.version,
     lastUpdated: index.source.last_updated,

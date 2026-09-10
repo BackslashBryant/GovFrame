@@ -416,16 +416,18 @@ export function migrateSourceRegistryDocument(registry, fedramp2026, mitreCatalo
         "artifact-nist-iot-requirements-80053-mapping-draft",
         "artifact-nist-iot-requirements-csf11-mapping-draft",
       ];
-      bundle.expected_inventory = {
+      bundle.expected_inventory ||= {
         basis: "Unique NIST IoT catalog records normalized from the two publisher mapping workbooks and reconciled by exact record path. The catalog page supplies publication identity; the draft workbooks supply mapping data.",
         evidence_class: "publisher_mapping_inventory",
         primary_extraction_status: "not_performed",
         evidence_locator: "data/curated/nist-structured-catalogs/source-manifest.json#reconciliation.iot.records",
-        imported_evidence_locator: "data/curated/nist-structured-catalogs/source-manifest.json#reconciliation.iot.records",
+        imported_evidence_locator: "data/generated/catalog-source-inventory.json#catalogs.nist-iot-cybersecurity.normalized_records",
         exclusions: [],
       };
     }
   }
+  const existingFedrampBundle = (registry.catalog_source_bundles || [])
+    .find((bundle) => bundle.catalog_id === "fedramp-2026");
   const fedrampBundle = {
     catalog_id: "fedramp-2026",
     publication_source_id: "fedramp-2026-rules",
@@ -435,11 +437,11 @@ export function migrateSourceRegistryDocument(registry, fedramp2026, mitreCatalo
     assessment_source_ids: [],
     automation_source_ids: [],
     reconciliation_source_ids: [],
-    expected_inventory: {
-      basis: "Every native control-context, definition, rule, and key security indicator with publisher text in the official Consolidated Rules JSON.",
-      evidence_class: "native_json_inventory",
-      evidence_locator: "data/fedramp-2026-catalog.json#source_inventory.total",
-      imported_evidence_locator: "data/fedramp-2026-catalog.json#record_count",
+    expected_inventory: existingFedrampBundle?.expected_inventory || {
+      basis: "Eligible publisher identities from an independently reconciled raw inventory when present. Accepted older snapshots explicitly use tracked reviewed counts; the inventory entry declares which evidence applies.",
+      evidence_class: "publisher_inventory_or_reviewed_snapshot",
+      evidence_locator: "data/generated/catalog-source-inventory.json#catalogs.fedramp-2026.discovered_records",
+      imported_evidence_locator: "data/generated/catalog-source-inventory.json#catalogs.fedramp-2026.normalized_records",
       exclusions: [],
     },
     entity_kind: "assertion",

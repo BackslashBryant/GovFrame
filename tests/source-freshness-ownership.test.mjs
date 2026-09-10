@@ -86,3 +86,32 @@ test('ownership regression assertion rejects the former publisher-checksum and s
     code: 'ERR_ASSERTION',
   });
 });
+
+test('profile migration preserves synchronized catalog inventory contracts', () => {
+  const fedrampExpected = {
+    basis: 'publisher inventory', evidence_class: 'publisher_inventory_or_reviewed_snapshot',
+    evidence_locator: 'data/generated/catalog-source-inventory.json#catalogs.fedramp-2026.discovered_records',
+    imported_evidence_locator: 'data/generated/catalog-source-inventory.json#catalogs.fedramp-2026.normalized_records', exclusions: [],
+  };
+  const iotExpected = {
+    basis: 'publisher mapping inventory', evidence_class: 'publisher_mapping_inventory',
+    evidence_locator: 'data/curated/nist-structured-catalogs/source-manifest.json#reconciliation.iot.records',
+    imported_evidence_locator: 'data/generated/catalog-source-inventory.json#catalogs.nist-iot-cybersecurity.normalized_records', exclusions: [],
+  };
+  const registry = {
+    publications: [], artifacts: [], sources: [], freshness: { sources: [] },
+    catalog_source_bundles: [
+      { catalog_id: 'fedramp-2026', expected_inventory: fedrampExpected },
+      { catalog_id: 'nist-iot-cybersecurity', expected_inventory: iotExpected },
+    ],
+  };
+  const migrated = migrateSourceRegistryDocument(registry, {}, new Map());
+  assert.deepEqual(
+    migrated.catalog_source_bundles.find(({ catalog_id }) => catalog_id === 'fedramp-2026').expected_inventory,
+    fedrampExpected,
+  );
+  assert.deepEqual(
+    migrated.catalog_source_bundles.find(({ catalog_id }) => catalog_id === 'nist-iot-cybersecurity').expected_inventory,
+    iotExpected,
+  );
+});

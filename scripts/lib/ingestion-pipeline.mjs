@@ -33,7 +33,10 @@ export const INGESTION_TASKS = Object.freeze([
   { id: 'extract-dod-zero-trust', script: 'extract-dod-zt.mjs', stages: ['parse'], scope: ['dod-zt'], retries: 1 },
   { id: 'sync-zero-trust-registry', script: 'sync-zero-trust-source-registry.mjs', stages: ['attest'], scope: ['dod-zt', 'nist-zt', 'microsoft-zt-maturity', 'nist-iot-cybersecurity', 'nist-mobile-threats'], retries: 1 },
   { id: 'sync-source-bundles', script: 'sync-catalog-source-bundles.mjs', stages: ['attest'], scope: ['all-catalogs'], retries: 1 },
-  { id: 'build-source-inventory', script: 'build-catalog-source-inventory.mjs', stages: ['discover', 'normalize', 'reconcile'], scope: ['all-catalogs'], retries: 1 },
+  // build:data migrates and synchronizes the tracked registry before graph
+  // construction. Match that order so the refresh-generated source manifests
+  // are built from the same registry state as a clean follow-up build.
+  { id: 'migrate-source-truth-before-build', script: 'migrate-source-truth-profiles.mjs', stages: ['normalize', 'presentation'], scope: ['all-resources', 'all-sources'], retries: 1 },
   { id: 'sync-inventory-contracts', script: 'sync-catalog-inventory-contracts.mjs', stages: ['attest', 'reconcile'], scope: ['all-catalogs'], retries: 1 },
   { id: 'hydrate-artifacts', script: 'hydrate-artifacts.mjs', stages: ['acquire', 'attest'], scope: ['all-artifacts'], remote_fetch: true, retries: 2 },
   { id: 'reconcile-freshness', script: 'reconcile-source-freshness.mjs', stages: ['attest', 'reconcile'], scope: ['all-sources'], retries: 1 },
@@ -69,6 +72,9 @@ export const INGESTION_TASKS = Object.freeze([
   // because there it normalizes the committed dataset; here it has to follow
   // the task that rewrites it.
   { id: 'migrate-source-truth-profiles', script: 'migrate-source-truth-profiles.mjs', stages: ['normalize', 'presentation'], scope: ['all-resources', 'all-sources'], retries: 1 },
+  // build-framework-data clears generated governance artifacts. Rebuild the
+  // independent catalog inventory afterward, matching build:data.
+  { id: 'build-source-inventory', script: 'build-catalog-source-inventory.mjs', stages: ['discover', 'normalize', 'reconcile'], scope: ['all-catalogs'], retries: 1 },
   {
     id: 'build-commons-index', script: 'build-commons-index.mjs',
     stages: ['normalize', 'structure', 'relationships', 'publish'],
