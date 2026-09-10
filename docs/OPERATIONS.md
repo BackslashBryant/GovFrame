@@ -69,6 +69,12 @@ relationships, access restricted, download replaced by HTML, no public mapping
 discovered, retrieval failure, parse failure, or outside the active catalog/Final
 scope. These are observations, not guesses about unpublished material. The
 weekly run retries applicable entries, including previously unavailable ones.
+Within a run, each artifact gets at most one delayed retry for rate limiting,
+server/network failures, or HTML returned at a workbook URL. Both attempts remain
+in its retrieval evidence and count toward the existing request ceiling.
+Persistent failures retain accepted data; authentication failures and retired
+downloads do not trigger retries. `unexpected_html_response` distinguishes a
+bad workbook response from a redirect to a generic download page.
 It never fills out publisher forms, bypasses authentication, or substitutes a
 current workbook for an older registered download that redirects to a generic
 page. A previously accepted mapping remains protected by retention and admission

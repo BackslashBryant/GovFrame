@@ -53,7 +53,9 @@ test('retired downloads cannot silently substitute a current workbook and access
   let calls = 0;
   const result = await retrieveStructuredOlirArtifact(['https://content.securecontrolsframework.com/olir/old.xlsx'], { fetchImpl: async () => {
     calls += 1;
-    return new Response('<a href="https://content.securecontrolsframework.com/current.xlsx">Download</a>', { headers: { 'content-type': 'text/html' } });
+    const response = new Response('<a href="https://content.securecontrolsframework.com/current.xlsx">Download</a>', { headers: { 'content-type': 'text/html' } });
+    Object.defineProperty(response, 'url', { value: 'https://securecontrolsframework.com/free-content/scf-download' });
+    return response;
   } });
   assert.equal(result.artifact, null);
   assert.equal(calls, 1);
@@ -61,6 +63,44 @@ test('retired downloads cannot silently substitute a current workbook and access
   assert.equal(olirAvailability({ attempts: [{ status: 403 }] }), 'access_restricted');
   assert.equal(olirAvailability({ attempts: [{ status: 200 }] }), 'no_public_mapping_discovered');
   assert.equal(olirAvailability({ parse_failed: true }), 'parse_failed');
+});
+
+test('temporary HTML and server failures recover within the same bounded artifact retrieval', async () => {
+  for (const failure of ['html', 'server', 'network']) {
+    let calls = 0;
+    const delays = [];
+    const result = await retrieveStructuredOlirArtifact(['https://content.securecontrolsframework.com/olir/map.xlsx'], {
+      wait: async (ms) => delays.push(ms),
+      fetchImpl: async () => {
+        calls += 1;
+        if (calls === 1) {
+          if (failure === 'network') throw Object.assign(new Error('connection reset'), { code: 'ECONNRESET' });
+          return new Response('<html>Unavailable</html>', { status: failure === 'server' ? 503 : 200, headers: { 'content-type': 'text/html' } });
+        }
+        return new Response(Buffer.from('PKworkbook'), { headers: { 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' } });
+      },
+    });
+    assert.equal(calls, 2);
+    assert.deepEqual(delays, [1000]);
+    assert.equal(result.attempted.length, 2);
+    assert.equal(result.artifact.bytes.toString(), 'PKworkbook');
+  }
+});
+
+test('persistent bad responses are bounded and access restrictions are not retried', async () => {
+  for (const status of [200, 403, 429, 503]) {
+    let calls = 0;
+    const result = await retrieveStructuredOlirArtifact(['https://content.securecontrolsframework.com/olir/map.xlsx'], {
+      wait: async () => {}, fetchImpl: async () => { calls += 1; return new Response('<html>Unavailable</html>', { status, headers: { 'content-type': 'text/html' } }); },
+    });
+    assert.equal(result.artifact, null);
+    assert.equal(calls, status === 403 ? 1 : 2);
+  }
+  let total = 0;
+  await retrieveStructuredOlirArtifact(Array.from({ length: 25 }, (_, index) => `https://example.org/map-${index}.xlsx`), {
+    wait: async () => {}, fetchImpl: async () => { total += 1; return new Response('', { status: 503 }); },
+  });
+  assert.equal(total, 24, 'retries share the candidate request ceiling');
 });
 
 test('registered landing page grants only discovered structured artifact paths', async () => {
