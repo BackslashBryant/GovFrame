@@ -6,7 +6,7 @@
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parseOlirStructuredArtifact, retrieveStructuredOlirArtifact } from '../tools/relationship-builders/olir-retrieval.mjs';
+import { createRegisteredOlirFetch, parseOlirStructuredArtifact, retrieveStructuredOlirArtifact } from '../tools/relationship-builders/olir-retrieval.mjs';
 import { strictConditionalFetch } from './lib/strict-conditional-fetch.mjs';
 import { writeJsonAtomically } from './lib/write-json-atomically.mjs';
 
@@ -100,7 +100,9 @@ async function retrieveEntry(entry) {
   const id = entry.informativeReferenceFrameworkVersionId;
   const detail = await retrieveDetail(id);
   const candidates = [detail.json_file_url, detail.submission_url, detail.reference_url, entry.referenceUrl];
-  const retrieved = await retrieveStructuredOlirArtifact(candidates);
+  const retrieved = await retrieveStructuredOlirArtifact(candidates, {
+    fetchImpl: createRegisteredOlirFetch([detail.json_file_url, detail.submission_url]),
+  });
   const attempts = [detail, ...retrieved.attempted];
   if (!retrieved.artifact) return {
     attempts, mapping: null,

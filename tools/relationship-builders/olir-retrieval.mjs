@@ -1,9 +1,67 @@
 import { createHash } from 'node:crypto';
 import ExcelJS from 'exceljs';
-import { strictConditionalFetch } from '../../scripts/lib/strict-conditional-fetch.mjs';
+import { createStrictConditionalFetch, strictConditionalFetch } from '../../scripts/lib/strict-conditional-fetch.mjs';
+import { assertOfficialSourceUrl } from '../../scripts/lib/source-url-policy.mjs';
 
 const STRUCTURED_EXTENSIONS = /\.(xlsx|csv|json|xml)$/i;
 const TIMEOUT_MS = 20_000;
+
+// NIST delegates artifact hosting to submitters. Grant only the locations from
+// the current NIST detail response, within audited public hosting services.
+const OLIR_HOSTS = new Set(['github.com', 'raw.githubusercontent.com', 'docs.google.com',
+  'www.nerc.com', 'p-sscrm.github.io', 'securecontrolsframework.com']);
+
+export function createRegisteredOlirFetch(registeredUrls, options = {}) {
+  const exact = new Set();
+  const directories = [];
+  const sheets = new Set();
+  for (const input of registeredUrls.filter(Boolean)) {
+    let url;
+    try { url = new URL(input); } catch { continue; }
+    if (url.protocol !== 'https:' || url.username || url.password || url.port || !OLIR_HOSTS.has(url.hostname)) continue;
+    if (/[\\\s]/.test(input) || /%(?:2e|2f|5c|25)/i.test(url.pathname)) continue;
+    exact.add(url.href);
+    if (url.hostname === 'securecontrolsframework.com' && url.pathname.startsWith('/content/olir/') && !url.search) {
+      exact.add(`https://content.securecontrolsframework.com${url.pathname.slice('/content'.length)}`);
+    }
+    if (url.hostname === 'docs.google.com') {
+      const id = url.pathname.match(/^\/spreadsheets\/d\/([^/]+)\//)?.[1];
+      if (id) sheets.add(id);
+    }
+    for (const exported of googleDownloadCandidates(url.href)) exact.add(exported);
+    const target = urlForGitHubContents(url.href);
+    if (!target) continue;
+    exact.add(githubContentsEndpoint(target));
+    if (target.directory) directories.push(target);
+    else exact.add(`https://raw.githubusercontent.com/${target.owner}/${target.repo}/${target.ref}/${target.path}`);
+  }
+  return createStrictConditionalFetch({ ...options, urlPolicy(input) {
+    try { return assertOfficialSourceUrl(input); } catch { /* Check the per-submission grant. */ }
+    const raw = String(input);
+    const reject = () => { throw new Error('OLIR source URL policy rejected destination outside registered submission'); };
+    if (/[\\\s]/.test(raw) || /%(?:2e|2f|5c|25)/i.test(raw.split(/[?#]/)[0])) reject();
+    let url;
+    try { url = new URL(raw); } catch { reject(); }
+    if (url.protocol !== 'https:' || url.username || url.password || url.port) reject();
+    if (exact.has(url.href)) return url;
+    if (/^doc-[a-z0-9-]+-sheets\.googleusercontent\.com$/.test(url.hostname) &&
+        url.pathname.startsWith('/export/') && sheets.has(url.pathname.split('/').at(-1)) &&
+        url.search === '?format=xlsx' && !url.hash) return url;
+    if (url.hostname === 'raw.githubusercontent.com' && !url.search && !url.hash && STRUCTURED_EXTENSIONS.test(url.pathname)) {
+      for (const target of directories) {
+        const prefix = `/${target.owner}/${target.repo}/`;
+        if (!url.pathname.startsWith(prefix)) continue;
+        const [ref, ...parts] = url.pathname.slice(prefix.length).split('/');
+        if (target.ref !== 'HEAD' && ref !== target.ref) continue;
+        const directory = target.path ? `${target.path}/` : '';
+        const path = parts.join('/');
+        // Contents discovery is shallow; do not grant other directories.
+        if (path.startsWith(directory) && !path.slice(directory.length).includes('/')) return url;
+      }
+    }
+    reject();
+  } });
+}
 
 function sha256(bytes) {
   return `sha256:${createHash('sha256').update(bytes).digest('hex')}`;
@@ -60,7 +118,7 @@ async function requestBytes(url, fetchImpl) {
 async function githubCandidates(url, fetchImpl) {
   const target = urlForGitHubContents(url);
   if (!target) return [];
-  const endpoint = `https://api.github.com/repos/${target.owner}/${target.repo}/contents/${target.path}${target.ref && target.ref !== 'HEAD' ? `?ref=${encodeURIComponent(target.ref)}` : ''}`;
+  const endpoint = githubContentsEndpoint(target);
   const response = await fetchImpl(endpoint, {
     headers: { Accept: 'application/vnd.github+json', 'User-Agent': 'Control-Atlas-source-integrity' },
     signal: AbortSignal.timeout(TIMEOUT_MS),
@@ -73,6 +131,10 @@ async function githubCandidates(url, fetchImpl) {
     .sort((a, b) => Number(/olir|crosswalk|mapping/i.test(b.name || '')) - Number(/olir|crosswalk|mapping/i.test(a.name || '')) || String(a.name).localeCompare(String(b.name)))
     .map((entry) => entry.download_url || `https://raw.githubusercontent.com/${target.owner}/${target.repo}/${target.ref}/${entry.path}`)
     .filter(Boolean);
+}
+
+function githubContentsEndpoint(target) {
+  return `https://api.github.com/repos/${target.owner}/${target.repo}/contents/${target.path}${target.ref && target.ref !== 'HEAD' ? `?ref=${encodeURIComponent(target.ref)}` : ''}`;
 }
 
 export async function retrieveStructuredOlirArtifact(candidates, options = {}) {
@@ -97,7 +159,9 @@ export async function retrieveStructuredOlirArtifact(candidates, options = {}) {
       const result = await requestBytes(candidate, fetchImpl);
       attempted.push({ kind: 'artifact download', url: candidate, status: result.status, final_url: result.final_url, content_type: result.content_type, byte_length: result.bytes.length });
       if (result.status >= 200 && result.status < 300 && isStructured({ url: result.final_url, contentType: result.content_type, bytes: result.bytes })) {
-        return { artifact: { url: result.final_url, content_type: result.content_type, bytes: result.bytes, sha256: sha256(result.bytes) }, attempted };
+        const requested = new URL(candidate);
+        const stableUrl = requested.hostname === 'docs.google.com' && requested.pathname.endsWith('/export') ? candidate : result.final_url;
+        return { artifact: { url: stableUrl, content_type: result.content_type, bytes: result.bytes, sha256: sha256(result.bytes) }, attempted };
       }
     } catch (error) {
       attempted.push({ kind: 'artifact download', url: candidate, error: error instanceof Error ? error.message : String(error) });

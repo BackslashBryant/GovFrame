@@ -80,3 +80,40 @@ test('OLIR workbook preserves every relationship sheet and keeps strength separa
   workbook.addWorksheet('Relationships-Broken').addRow(['Unrecognized content']);
   await assert.rejects(parseOlirStructuredArtifact({ ...artifact, bytes: Buffer.from(await workbook.xlsx.writeBuffer()) }), /columns are absent/);
 });
+
+test('registered submission grants are exact, isolated, and enforced on redirects', async () => {
+  const { createRegisteredOlirFetch } = await import('../tools/relationship-builders/olir-retrieval.mjs');
+  const registered = 'https://github.com/example/maps/tree/main/olir';
+  const calls = [];
+  const transport = async (url) => { calls.push(url); return new Response('bytes'); };
+  const scoped = createRegisteredOlirFetch([registered, 'https://securecontrolsframework.com/content/olir/map.xlsx'], { fetchImpl: transport });
+  await scoped('https://api.github.com/repos/example/maps/contents/olir?ref=main');
+  await scoped('https://raw.githubusercontent.com/example/maps/main/olir/new-version.xlsx');
+  await scoped('https://securecontrolsframework.com/content/olir/map.xlsx');
+  assert.equal(calls.length, 3);
+  for (const url of [
+    'https://raw.githubusercontent.com/example/maps/main/elsewhere.xlsx',
+    'https://raw.githubusercontent.com/example/maps/other/olir/new-version.xlsx',
+    'https://raw.githubusercontent.com/example/maps/main/olir/subdir/other.xlsx',
+    'https://securecontrolsframework.com/content/olir/other.xlsx',
+    'https://127.0.0.1/mapping.xlsx',
+    'https://api.github.com/repos/example/maps/contents/olir?ref=other',
+  ]) await assert.rejects(scoped(url), /source URL policy/);
+  assert.equal(calls.length, 3, 'denied destinations must never reach transport');
+  await assert.rejects(createRegisteredOlirFetch([], { fetchImpl: transport })('https://raw.githubusercontent.com/example/maps/main/olir/new-version.xlsx'), /source URL policy/);
+  const redirected = createRegisteredOlirFetch([registered], { fetchImpl: async () => new Response(null, { status: 302, headers: { location: 'https://attacker.test/mapping.xlsx' } }) });
+  await assert.rejects(redirected('https://api.github.com/repos/example/maps/contents/olir?ref=main'), /source URL policy/);
+});
+
+test('registered publisher redirects preserve artifact identity', async () => {
+  const { createRegisteredOlirFetch } = await import('../tools/relationship-builders/olir-retrieval.mjs');
+  const scoped = createRegisteredOlirFetch([
+    'https://docs.google.com/spreadsheets/d/public-sheet/edit',
+    'https://securecontrolsframework.com/content/olir/map.xlsx',
+  ], { fetchImpl: async () => new Response('bytes') });
+  await scoped('https://doc-0c-98-sheets.googleusercontent.com/export/token/public-sheet?format=xlsx');
+  await scoped('https://content.securecontrolsframework.com/olir/map.xlsx');
+  await assert.rejects(scoped('https://doc-0c-98-sheets.googleusercontent.com/export/token/other-sheet?format=xlsx'), /source URL policy/);
+  await assert.rejects(scoped('https://content.securecontrolsframework.com/olir/other.xlsx'), /source URL policy/);
+  await assert.rejects(scoped('https://doc-0c-98-sheets.googleusercontent.com.attacker.test/export/token/public-sheet?format=xlsx'), /source URL policy/);
+});

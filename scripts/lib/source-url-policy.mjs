@@ -35,16 +35,6 @@ const PUBLISHER_REPOSITORIES = new Set([
   'usnistgov/zero-trust-architecture',
 ]);
 
-// Artifact locations registered by NIST OLIR details 183, 225 and 232.
-// Registration establishes provenance, not NIST endorsement of the assertions.
-const OLIR_REGISTERED_URLS = new Set([
-  'https://api.github.com/repos/Glimpz1/grc-mappings/contents/olir/csf-2.0_pci-4.0.1_supportive?ref=main',
-  'https://raw.githubusercontent.com/Glimpz1/grc-mappings/main/olir/csf-2.0_pci-4.0.1_supportive/csf-v2_pci-dss_v4.0.1_olir-supportive.xlsx',
-  'https://api.github.com/repos/greerfam2020-rgb/IPAC-AI-Framework-Review/contents/IPACS_AI_RMF_Crosswalk_v3-5.xlsx?ref=main',
-  'https://raw.githubusercontent.com/greerfam2020-rgb/IPAC-AI-Framework-Review/main/IPACS_AI_RMF_Crosswalk_v3-5.xlsx',
-  'https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/swg/nist-sp800-53r5.2-to-nerc-cip-olir-mapping.xlsx',
-]);
-
 export function assertOfficialSourceUrl(input) {
   const raw = String(input);
   const reject = () => { throw new Error('source URL policy rejected unapproved destination'); };
@@ -53,7 +43,6 @@ export function assertOfficialSourceUrl(input) {
   let url;
   try { url = new URL(raw); } catch { reject(); }
   if (url.protocol !== 'https:' || url.username || url.password || url.port) reject();
-  if (OLIR_REGISTERED_URLS.has(url.href)) return url;
   // DoD's toolkit is linked by official Army guidance (UTP 3-10.4).
   // Admit only its existing public summary, not the hosted assessment app.
   if (url.hostname === 'rai.acqbot.com' && url.pathname === '/executive-summary' && !url.search) return url;
