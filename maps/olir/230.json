@@ -1,0 +1,410 @@
+{
+  "schema_version": "1.0",
+  "olir_id": 230,
+  "source_artifact": "https://raw.githubusercontent.com/OraclesTech/guardian-sdk/main/docs/compliance/olir/SP%20800-53/GuardianSDK_800-53r5.2.0_OLIR_Submission.xlsx",
+  "sha256": "sha256:8cf5588ff068a6d942f7a5621ea7485bc4ed9189a81a5f2a865287f50682f899",
+  "byte_length": 154777,
+  "parser": "olir-xlsx",
+  "relationships": [
+    {
+      "focal_id": "AC-03",
+      "reference_id": "GS-AG-01",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "5",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-16"
+    },
+    {
+      "focal_id": "AC-04",
+      "reference_id": "GS-AG-01",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "8",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-30"
+    },
+    {
+      "focal_id": "AC-06(09)",
+      "reference_id": "GS-AG-01",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "5",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-71"
+    },
+    {
+      "focal_id": "AC-04",
+      "reference_id": "GS-AG-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "7",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "Relationships-AC#row-133"
+    },
+    {
+      "focal_id": "AU-02",
+      "reference_id": "GS-CF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "8",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "AU#row-3"
+    },
+    {
+      "focal_id": "AU-03",
+      "reference_id": "GS-CF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "8",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "AU#row-4"
+    },
+    {
+      "focal_id": "AU-06",
+      "reference_id": "GS-CF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "6",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "AU#row-15"
+    },
+    {
+      "focal_id": "AU-07",
+      "reference_id": "GS-CF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "6",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "AU#row-24"
+    },
+    {
+      "focal_id": "AU-09",
+      "reference_id": "GS-CF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "7",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "AU#row-27"
+    },
+    {
+      "focal_id": "AU-12",
+      "reference_id": "GS-CF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "8",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "AU#row-42"
+    },
+    {
+      "focal_id": "CA-07",
+      "reference_id": "GS-CF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "6",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "CA#row-15"
+    },
+    {
+      "focal_id": "CM-08",
+      "reference_id": "GS-CF-04",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "5",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "CM#row-38"
+    },
+    {
+      "focal_id": "IR-04",
+      "reference_id": "GS-PO-01",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "5",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "IR#row-11"
+    },
+    {
+      "focal_id": "IR-05",
+      "reference_id": "GS-CF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "5",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "IR#row-27"
+    },
+    {
+      "focal_id": "RA-03",
+      "reference_id": "GS-CF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "4",
+      "relationship_explanation": null,
+      "rationale": "Semantic",
+      "source_locator": "RA#row-5"
+    },
+    {
+      "focal_id": "RA-05",
+      "reference_id": "GS-CF-04",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "6",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "RA#row-10"
+    },
+    {
+      "focal_id": "RA-05",
+      "reference_id": "GS-TT-07",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "5",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "RA#row-24"
+    },
+    {
+      "focal_id": "SA-11",
+      "reference_id": "GS-CF-07",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "7",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SA#row-72"
+    },
+    {
+      "focal_id": "SA-15",
+      "reference_id": "GS-CF-04",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "5",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SA#row-82"
+    },
+    {
+      "focal_id": "SA-15(13)",
+      "reference_id": "GS-CF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "5",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SA#row-93"
+    },
+    {
+      "focal_id": "SA-24",
+      "reference_id": "GS-CF-03",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "4",
+      "relationship_explanation": null,
+      "rationale": "Semantic",
+      "source_locator": "SA#row-109"
+    },
+    {
+      "focal_id": "SC-05",
+      "reference_id": "GS-CF-06",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "6",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SC#row-14"
+    },
+    {
+      "focal_id": "SC-07",
+      "reference_id": "GS-CF-03",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "5",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SC#row-19"
+    },
+    {
+      "focal_id": "SI-02(07)",
+      "reference_id": "GS-PO-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "6",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-9"
+    },
+    {
+      "focal_id": "SI-03",
+      "reference_id": "GS-PF-01",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "6",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-10"
+    },
+    {
+      "focal_id": "SI-04",
+      "reference_id": "GS-PF-01",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "9",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-15"
+    },
+    {
+      "focal_id": "SI-05",
+      "reference_id": "GS-CF-04",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "5",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-39"
+    },
+    {
+      "focal_id": "SI-07",
+      "reference_id": "GS-CF-05",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "7",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-44"
+    },
+    {
+      "focal_id": "SI-07(12)",
+      "reference_id": "GS-CF-05",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "6",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-54"
+    },
+    {
+      "focal_id": "SI-10",
+      "reference_id": "GS-PF-01",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "8",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-61"
+    },
+    {
+      "focal_id": "SI-04",
+      "reference_id": "GS-PF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "9",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-104"
+    },
+    {
+      "focal_id": "SI-04",
+      "reference_id": "GS-PF-03",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "8",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-105"
+    },
+    {
+      "focal_id": "SI-04",
+      "reference_id": "GS-PF-04",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "8",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-106"
+    },
+    {
+      "focal_id": "SI-04",
+      "reference_id": "GS-PO-01",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "8",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-107"
+    },
+    {
+      "focal_id": "SI-10",
+      "reference_id": "GS-PF-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "8",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-108"
+    },
+    {
+      "focal_id": "SI-03",
+      "reference_id": "GS-TT-07",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "6",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-109"
+    },
+    {
+      "focal_id": "SI-05",
+      "reference_id": "GS-PO-02",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "5",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SI#row-110"
+    },
+    {
+      "focal_id": "SR-03",
+      "reference_id": "GS-CF-04",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "6",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SR#row-5"
+    },
+    {
+      "focal_id": "SR-04",
+      "reference_id": "GS-CF-04",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "7",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SR#row-9"
+    },
+    {
+      "focal_id": "SR-11",
+      "reference_id": "GS-CF-05",
+      "relationship_type": "intersects with",
+      "raw_relationship_type": "intersects with",
+      "relationship_strength": "6",
+      "relationship_explanation": null,
+      "rationale": "Functional",
+      "source_locator": "SR#row-24"
+    }
+  ]
+}

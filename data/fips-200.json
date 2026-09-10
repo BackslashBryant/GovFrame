@@ -20,7 +20,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#access-control"
       }
     },
@@ -42,7 +42,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#awareness-and-training"
       }
     },
@@ -64,7 +64,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#audit-and-accountability"
       }
     },
@@ -86,7 +86,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#security-assessment-and-authorization"
       }
     },
@@ -108,7 +108,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#configuration-management"
       }
     },
@@ -130,7 +130,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#contingency-planning"
       }
     },
@@ -152,7 +152,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#identification-and-authentication"
       }
     },
@@ -174,7 +174,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#incident-response"
       }
     },
@@ -196,7 +196,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#maintenance"
       }
     },
@@ -218,7 +218,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#media-protection"
       }
     },
@@ -240,7 +240,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#physical-and-environmental-protection"
       }
     },
@@ -262,7 +262,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#planning"
       }
     },
@@ -284,7 +284,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#personnel-security"
       }
     },
@@ -306,7 +306,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#risk-assessment"
       }
     },
@@ -328,7 +328,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#system-and-services-acquisition"
       }
     },
@@ -350,7 +350,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#system-and-communications-protection"
       }
     },
@@ -372,7 +372,7 @@
       },
       "source": {
         "key": "nist-fips-200",
-        "snapshot_date": "2026-09-10T16:53:19.161Z",
+        "snapshot_date": "2026-09-10T17:18:37.215Z",
         "locator": "fips-200#system-and-information-integrity"
       }
     }

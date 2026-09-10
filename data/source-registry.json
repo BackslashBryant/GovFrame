@@ -4153,7 +4153,7 @@
       "retrieved_at": "2026-09-10",
       "artifact_url": "https://raw.githubusercontent.com/usnistgov/oscal-content/v1.5.0/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json",
       "byte_length": 1865,
-      "sha256": "sha256:4b39ce7934d45fc6f50f2813e403290b3414e588d9391677f5e5dc854f24e5d2",
+      "sha256": "sha256:2f34bda4d2923ce23eef28b27870900744740a899dd50aa80c1ddf60cda9a57e",
       "parser": "oscal-profile",
       "parser_version": "1.5.0",
       "record_count": 5,
@@ -4248,8 +4248,8 @@
       "retrieval_method": "direct_file_import",
       "retrieved_at": "2026-09-10",
       "artifact_url": "https://csrc.nist.gov/extensions/nudp/services/json/csf/download?olirids=all",
-      "byte_length": 144520,
-      "sha256": "sha256:975c470c57fdc308164c01c01e2983db9bbcb7ebec46c4eaa6fdf1a450ab237a",
+      "byte_length": 144518,
+      "sha256": "sha256:5f71c30a154b5dcea254193a8687b7438162bc30cde9b2d95a26176994a06b98",
       "parser": "csf-reference-tool-xlsx",
       "parser_version": "1.0.0",
       "record_count": 106,
@@ -8143,7 +8143,7 @@
         "sync_model": "auto_synced",
         "last_checked": "2026-09-10",
         "last_imported": "2026-09-10",
-        "hash": "sha256:7dbe63476f5bf4530888dafa03617a0e42e3fe54b81e9f47f11edf01d53bcd9e"
+        "hash": "sha256:0b5a1e94f9af03e1cbfee49438e81985c8fee60a3557097db90a94b849851e6e"
       },
       {
         "source_id": "nist-800-53",
