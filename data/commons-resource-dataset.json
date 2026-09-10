@@ -2207,7 +2207,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T17:39:30Z.",
+          "text": "Latest repository push: 2026-09-10T19:08:48Z.",
           "sourceUrl": "https://api.github.com/repos/SpecterOps/BloodHound"
         },
         "release": {
@@ -2263,7 +2263,7 @@
           "primaryLanguage": "Go",
           "topics": [],
           "archived": false,
-          "lastPushedAt": "2026-09-10T17:39:30Z",
+          "lastPushedAt": "2026-09-10T19:08:48Z",
           "latestRepositoryUpdateAt": "2026-09-10T15:54:13Z",
           "license": "Apache-2.0",
           "description": "Six Degrees of Domain Admin"
@@ -2272,7 +2272,7 @@
       "currentVersion": "v9.7.0",
       "lastReleaseAt": "2026-09-10T16:12:45Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T17:39:30Z",
+      "lastCommitAt": "2026-09-10T19:08:48Z",
       "license": "Apache-2.0"
     },
     {
@@ -4591,7 +4591,7 @@
       "currentVersion": "v1.8.0",
       "publisherUpdatedAt": "2026-09-10",
       "lastReleaseAt": "2026-05-07T21:44:29Z",
-      "lastCommitAt": "2026-09-10T18:40:58Z",
+      "lastCommitAt": "2026-09-10T18:56:17Z",
       "lastCheckedAt": "2026-08-03",
       "nextCheckAt": "2026-11-03",
       "updateMethod": "manual_primary_source_review",
@@ -4704,7 +4704,7 @@
             "security-automation"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T18:40:58Z",
+          "lastPushedAt": "2026-09-10T18:56:17Z",
           "latestRepositoryUpdateAt": "2026-09-10T18:11:07Z",
           "license": "CC0-1.0",
           "description": "Automation to assess the state of your M365 tenant against CISA's baselines"
@@ -4745,7 +4745,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T18:40:58Z.",
+          "text": "Latest repository push: 2026-09-10T18:56:17Z.",
           "sourceUrl": "https://api.github.com/repos/cisagov/ScubaGear"
         },
         "release": {
@@ -6253,7 +6253,7 @@
       "nextCheckAt": "2026-11-03",
       "overview": {
         "text": "The purpose of this project is to create security policy content for various platforms &mdash; Red Hat Enterprise Linux , Fedora , Ubuntu , Debian , SUSE Linux Enterprise Server (SLES) ,... &mdash; as well as products &mdash; Firefox ,... We aim to make it as easy as possible to write new and maintain existing security content in all the commonly used formats.",
-        "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/54d62b892f3d86a778555eedbbbb4ae5a7636907/README.md",
+        "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/c1d5824880335ed0bebfd9359752af430ea70abf/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -6261,10 +6261,10 @@
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/ComplianceAsCode/content",
-        "commitSha": "54d62b892f3d86a778555eedbbbb4ae5a7636907",
-        "commitUrl": "https://github.com/ComplianceAsCode/content/commit/54d62b892f3d86a778555eedbbbb4ae5a7636907",
+        "commitSha": "c1d5824880335ed0bebfd9359752af430ea70abf",
+        "commitUrl": "https://github.com/ComplianceAsCode/content/commit/c1d5824880335ed0bebfd9359752af430ea70abf",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/ComplianceAsCode/content/blob/54d62b892f3d86a778555eedbbbb4ae5a7636907/README.md",
+        "readmeUrl": "https://github.com/ComplianceAsCode/content/blob/c1d5824880335ed0bebfd9359752af430ea70abf/README.md",
         "readmeSha256": "sha256:00a9f7cb793b1e915fb47bdea3ab77ba8d6e3d2149caad382ce0bbbed76dae4a",
         "readmeByteLength": 12442,
         "overviewExcerpt": "The purpose of this project is to create security policy content for various platforms &mdash; Red Hat Enterprise Linux , Fedora , Ubuntu , Debian , SUSE Linux Enterprise Server (SLES) ,... &mdash; as well as products &mdash; Firefox ,... We aim to make it as easy as possible to write new and maintain existing security content in all the commonly used formats.",
@@ -6322,8 +6322,8 @@
             "xccdf"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T17:02:04Z",
-          "latestRepositoryUpdateAt": "2026-09-10T17:02:16Z",
+          "lastPushedAt": "2026-09-10T18:53:43Z",
+          "latestRepositoryUpdateAt": "2026-09-10T18:53:48Z",
           "license": "NOASSERTION",
           "description": "Security automation content in SCAP, Bash, Ansible, and other formats"
         }
@@ -6346,17 +6346,17 @@
         "inputs": {
           "status": "documented",
           "text": "Our security content can be used to scan bare-metal machines, virtual machines, virtual machine images (qcow2 and others), containers (including Docker), and container images. We use platform checks to detect whether we should or should not evaluate some of the rules. For example: separate partition checks make perfect sense on bare-metal machines but go against recommended practices on containers.",
-          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/54d62b892f3d86a778555eedbbbb4ae5a7636907/README.md"
+          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/c1d5824880335ed0bebfd9359752af430ea70abf/README.md"
         },
         "formats": {
           "status": "documented",
           "text": "&nbsp; &nbsp; &nbsp; &nbsp; \"SCAP content\" refers to documents in the XCCDF , OVAL and SCAP source data stream formats. These documents can be presented in different forms and by different organizations to meet their security automation and technical implementation needs. For general use, we recommend SCAP source data streams because they contain all the data you need to evaluate and put machines into compliance. The data streams are part of our release ZIP archives. \"Ansible content\" refers to Ansible playbooks generated from security profiles. These can be used both in check-mode to evaluate compliance, as well as run-mode to put machines into compliance. We publish these on Ansible Galaxy as well as in release ZIP archives. \"Bash fix files\" refers to Bash scripts generated from security profiles. These are meant to be run on machines to put them into compliance. We recommend using other formats but understand that for some deployment scenarios bash is the only option. \"CEL content\" refers to compliance content using the Common Expression Language (CEL) for Kubernetes and OpenShift platforms. CEL content is generated as YAML files and is designed for native Kubernetes resource evaluation through the compliance-operator, without requiring shell access to nodes. This format is used for platform-level compliance checks on container orchestration systems.",
-          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/54d62b892f3d86a778555eedbbbb4ae5a7636907/README.md"
+          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/c1d5824880335ed0bebfd9359752af430ea70abf/README.md"
         },
         "usage": {
           "status": "documented",
           "text": "We assume you have installed ComplianceAsCode system-wide into a standard location from current upstream sources as instructed in the previous section. There are several ways to consume ComplianceAsCode content, we will only go through a few of them here.",
-          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/54d62b892f3d86a778555eedbbbb4ae5a7636907/README.md"
+          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/c1d5824880335ed0bebfd9359752af430ea70abf/README.md"
         },
         "license": {
           "status": "documented",
@@ -6365,7 +6365,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T17:02:04Z.",
+          "text": "Latest repository push: 2026-09-10T18:53:43Z.",
           "sourceUrl": "https://api.github.com/repos/ComplianceAsCode/content"
         },
         "release": {
@@ -6378,7 +6378,7 @@
         }
       },
       "lastReleaseAt": "2026-09-01T13:52:27Z",
-      "lastCommitAt": "2026-09-10T17:02:04Z",
+      "lastCommitAt": "2026-09-10T18:53:43Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -11043,11 +11043,11 @@
         "installation": {
           "status": "documented",
           "text": "pip3 install git+https://github.com/elastic/detection-rules.git subdirectory=lib/kibana pip3 install git+https://github.com/elastic/detection-rules.git subdirectory=lib/kql",
-          "sourceUrl": "https://github.com/elastic/detection-rules/blob/f68a077c93aed41fb38ff99d20e82a29ed60236a/README.md"
+          "sourceUrl": "https://github.com/elastic/detection-rules/blob/bb0d6b86461c5baaff8d02f9333cac5442722955/README.md"
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T18:31:47Z.",
+          "text": "Latest repository push: 2026-09-10T18:55:28Z.",
           "sourceUrl": "https://api.github.com/repos/elastic/detection-rules"
         },
         "release": {
@@ -11061,7 +11061,7 @@
       },
       "overview": {
         "text": "Detection Rules is the home for rules used by Elastic Security. This repository is used for the development, maintenance, testing, validation, and release of rules for Elastic Security’s Detection Engine.",
-        "sourceUrl": "https://github.com/elastic/detection-rules/blob/f68a077c93aed41fb38ff99d20e82a29ed60236a/README.md",
+        "sourceUrl": "https://github.com/elastic/detection-rules/blob/bb0d6b86461c5baaff8d02f9333cac5442722955/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -11069,10 +11069,10 @@
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/elastic/detection-rules",
-        "commitSha": "f68a077c93aed41fb38ff99d20e82a29ed60236a",
-        "commitUrl": "https://github.com/elastic/detection-rules/commit/f68a077c93aed41fb38ff99d20e82a29ed60236a",
+        "commitSha": "bb0d6b86461c5baaff8d02f9333cac5442722955",
+        "commitUrl": "https://github.com/elastic/detection-rules/commit/bb0d6b86461c5baaff8d02f9333cac5442722955",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/elastic/detection-rules/blob/f68a077c93aed41fb38ff99d20e82a29ed60236a/README.md",
+        "readmeUrl": "https://github.com/elastic/detection-rules/blob/bb0d6b86461c5baaff8d02f9333cac5442722955/README.md",
         "readmeSha256": "sha256:d7a3468cfa4fb40e378242bc5723455c0253898eb3c8d486c02f71a67a45e054",
         "readmeByteLength": 11709,
         "overviewExcerpt": "Detection Rules is the home for rules used by Elastic Security. This repository is used for the development, maintenance, testing, validation, and release of rules for Elastic Security’s Detection Engine.",
@@ -11112,8 +11112,8 @@
             "threat-hunting"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T18:31:47Z",
-          "latestRepositoryUpdateAt": "2026-09-10T17:21:14Z",
+          "lastPushedAt": "2026-09-10T18:55:28Z",
+          "latestRepositoryUpdateAt": "2026-09-10T18:44:53Z",
           "license": "NOASSERTION",
           "description": null
         }
@@ -11121,7 +11121,7 @@
       "currentVersion": "dev-v2.2.0",
       "lastReleaseAt": "2026-09-08T12:52:29Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T18:31:47Z"
+      "lastCommitAt": "2026-09-10T18:55:28Z"
     },
     {
       "id": "community-elastic-security",
@@ -13236,7 +13236,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-09T04:18:49Z",
-          "latestRepositoryUpdateAt": "2026-09-10T15:49:01Z",
+          "latestRepositoryUpdateAt": "2026-09-10T19:06:24Z",
           "license": "MIT",
           "description": "Find secrets with Gitleaks 🔑"
         }
@@ -14908,7 +14908,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-07T19:32:55Z",
-          "latestRepositoryUpdateAt": "2026-09-10T12:35:01Z",
+          "latestRepositoryUpdateAt": "2026-09-10T18:48:10Z",
           "license": "Apache-2.0",
           "description": "Checks whether Kubernetes is deployed according to security best practices as defined in the CIS Kubernetes Benchmark"
         }
@@ -20565,7 +20565,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T18:33:33Z.",
+          "text": "Latest repository push: 2026-09-10T18:56:07Z.",
           "sourceUrl": "https://api.github.com/repos/usnistgov/macos_security"
         },
         "release": {
@@ -20630,16 +20630,16 @@
             "zsh"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T18:33:33Z",
-          "latestRepositoryUpdateAt": "2026-09-09T20:54:22Z",
+          "lastPushedAt": "2026-09-10T18:56:07Z",
+          "latestRepositoryUpdateAt": "2026-09-10T18:46:21Z",
           "license": "NOASSERTION",
           "description": "macOS Security Compliance Project"
         }
       },
       "currentVersion": "tahoe_rev3",
       "lastReleaseAt": "2026-06-22T14:39:04Z",
-      "publisherUpdatedAt": "2026-09-09",
-      "lastCommitAt": "2026-09-10T18:33:33Z"
+      "publisherUpdatedAt": "2026-09-10",
+      "lastCommitAt": "2026-09-10T18:56:07Z"
     },
     {
       "id": "repository-nist-ncp",
@@ -23879,7 +23879,7 @@
             "vulnerability-scanner"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T06:02:54Z",
+          "lastPushedAt": "2026-09-10T18:52:06Z",
           "latestRepositoryUpdateAt": "2026-09-10T06:03:21Z",
           "license": "Apache-2.0",
           "description": "Vulnerability scanner written in Go which uses the data provided by https://osv.dev"
@@ -23888,7 +23888,7 @@
       "currentVersion": "v2.5.1",
       "lastReleaseAt": "2026-08-17T04:29:53Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T06:02:54Z",
+      "lastCommitAt": "2026-09-10T18:52:06Z",
       "license": "Apache-2.0"
     },
     {
@@ -27897,7 +27897,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T18:24:32Z.",
+          "text": "Latest repository push: 2026-09-10T19:03:46Z.",
           "sourceUrl": "https://api.github.com/repos/semgrep/semgrep"
         },
         "release": {
@@ -28003,7 +28003,7 @@
             "typescript"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T18:24:32Z",
+          "lastPushedAt": "2026-09-10T19:03:46Z",
           "latestRepositoryUpdateAt": "2026-09-10T18:25:00Z",
           "license": "LGPL-2.1",
           "description": "Lightweight static analysis for many languages. Find bug variants with patterns that look like source code."
@@ -28012,7 +28012,7 @@
       "currentVersion": "v1.176.0",
       "lastReleaseAt": "2026-09-01T19:52:12Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T18:24:32Z",
+      "lastCommitAt": "2026-09-10T19:03:46Z",
       "license": "LGPL-2.1"
     },
     {
@@ -29500,7 +29500,7 @@
             "stig-manager"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T18:40:02Z",
+          "lastPushedAt": "2026-09-10T19:00:50Z",
           "latestRepositoryUpdateAt": "2026-09-09T17:45:01Z",
           "license": "NOASSERTION",
           "description": "An API and client for managing STIG assessments"
@@ -29534,7 +29534,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T18:40:02Z.",
+          "text": "Latest repository push: 2026-09-10T19:00:50Z.",
           "sourceUrl": "https://api.github.com/repos/NUWCDIVNPT/stig-manager"
         },
         "release": {
@@ -29547,7 +29547,7 @@
         }
       },
       "lastReleaseAt": "2026-09-01T17:47:49Z",
-      "lastCommitAt": "2026-09-10T18:40:02Z",
+      "lastCommitAt": "2026-09-10T19:00:50Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -32929,9 +32929,9 @@
     },
     {
       "id": "resource:catalog-elastic-detection-rules:publisher-destination",
-      "sourceUrl": "https://github.com/elastic/detection-rules/commit/f68a077c93aed41fb38ff99d20e82a29ed60236a",
+      "sourceUrl": "https://github.com/elastic/detection-rules/commit/bb0d6b86461c5baaff8d02f9333cac5442722955",
       "locatorType": "repository_commit",
-      "locator": "f68a077c93aed41fb38ff99d20e82a29ed60236a",
+      "locator": "bb0d6b86461c5baaff8d02f9333cac5442722955",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },
@@ -34249,9 +34249,9 @@
     },
     {
       "id": "resource:tool-compliance-as-code:publisher-destination",
-      "sourceUrl": "https://github.com/ComplianceAsCode/content/commit/54d62b892f3d86a778555eedbbbb4ae5a7636907",
+      "sourceUrl": "https://github.com/ComplianceAsCode/content/commit/c1d5824880335ed0bebfd9359752af430ea70abf",
       "locatorType": "repository_commit",
-      "locator": "54d62b892f3d86a778555eedbbbb4ae5a7636907",
+      "locator": "c1d5824880335ed0bebfd9359752af430ea70abf",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },
