@@ -78,6 +78,10 @@ test('nightly validation retains full cross-browser and data automation', () => 
   assert.equal((ci.match(/--reporter=blob,github/g) ?? []).length, 2);
   assert.match(ci, /issues_enabled="\$\(gh api "repos\/\$REPO" --jq '\.has_issues'\)"/);
   assert.match(ci, /Repository Issues are disabled, so this workflow cannot open or resolve the persistent sweep alert/);
+  assert.match(ci, /ALERT_LABEL:.*inputs\.task == 'refresh'.*'sweep-red-refresh'.*'sweep-red-nightly'/);
+  assert.match(ci, /Persistent scheduled alerts require repository Issues\."\n\s+exit 1/);
+  assert.doesNotMatch(ci, /--label sweep-red\b/);
+  assert.equal((ci.match(/--label "\$ALERT_LABEL"/g) || []).length, 2);
   assert.match(ci, /npm run resources:health/);
   assert.match(ci, /peter-evans\/create-pull-request@[0-9a-f]{40}/);
   assert.match(ci, /npm run test:oscal:independent/);

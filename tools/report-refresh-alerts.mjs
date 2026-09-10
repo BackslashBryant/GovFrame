@@ -85,6 +85,11 @@ export function reportRefreshAlerts(options = {}) {
   if (!existsSync(reportPath)) return [];
   const report = JSON.parse(readFileSync(reportPath, 'utf8'));
   if (report.schema_version !== '1.0' || !Array.isArray(report.results)) throw new Error('Invalid source refresh report');
+  const olir = report.results.find((result) => result.sourceId === 'fetch-olir-catalog');
+  if (olir?.status === 'accepted') {
+    const manifest = JSON.parse(readFileSync(options.olirManifestPath || resolve('data/olir-catalog-manifest.json'), 'utf8'));
+    report.results = applyOlirRetentionHealth(report.results, manifest);
+  }
   const repository = options.repository || process.env.GITHUB_REPOSITORY || 'RAMBULLS/control-atlas';
   if (!/^[A-Za-z0-9][A-Za-z0-9_.-]*\/[A-Za-z0-9][A-Za-z0-9_.-]*$/.test(repository)) throw new Error('Invalid GitHub repository');
   const runUrl = options.runUrl || (process.env.GITHUB_RUN_ID ? `https://github.com/${repository}/actions/runs/${process.env.GITHUB_RUN_ID}` : null);
@@ -103,6 +108,14 @@ export function reportRefreshAlerts(options = {}) {
     });
   }
   return plans;
+}
+
+export function applyOlirRetentionHealth(results, manifest) {
+  if (!Array.isArray(manifest.processed_items)) throw new Error('Missing OLIR retention evidence');
+  const retained = manifest.processed_items.filter((item) => item.refresh_status === 'retained_last_good');
+  return results.map((result) => result.sourceId === 'fetch-olir-catalog' && result.status === 'accepted' && retained.length
+    ? { ...result, status: 'quarantined', error: `OLIR retained previously accepted submissions: ${retained.map((item) => `${item.id}: ${item.refresh_error}`).join('; ')}` }
+    : result);
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
