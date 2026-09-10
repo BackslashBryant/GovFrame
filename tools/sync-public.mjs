@@ -35,6 +35,7 @@ const ALLOWLIST = [
   'package.json',
   'package-lock.json',
   'README.md',
+  'LICENSE',
   'CONTRIBUTING.md',
   'CHANGELOG.md',
   'QUICKSTART.md',

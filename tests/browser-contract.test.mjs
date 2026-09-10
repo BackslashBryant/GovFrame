@@ -47,6 +47,9 @@ test('shell identifies Control Atlas and progressively boots the React workspace
   assert.match(html, /Control Atlas/);
   assert.match(html, /name="application-name" content="Control Atlas"/);
   assert.match(html, /CONTROL_ATLAS_PRODUCT_DESCRIPTION/);
+  assert.match(html, /rel="canonical" href="https:\/\/rambulls\.github\.io\/control-atlas\/"/);
+  assert.match(html, /type="application\/ld\+json"/);
+  assert.match(html, /A RAM\.BULLS project/);
   assert.equal(SITE_COPY.product.definition, 'Control Atlas is a public research tool for federal cybersecurity requirements, controls, techniques, and guidance.');
   assert.match(html, /id="root"/);
   assert.ok(existsSync('src/main.tsx'), 'src/main.tsx must exist');
@@ -266,7 +269,8 @@ test('query-string deep link compatibility moves into typed React adapters', () 
 test('path-style legacy URLs stop at the static not-found page instead of redirecting', () => {
   const redirectPage = readFileSync('src/public/404.html', 'utf8');
   assert.match(redirectPage, /<title>Page not found \| Control Atlas<\/title>/);
-  assert.match(redirectPage, /current link/);
+  assert.match(redirectPage, /This link is no longer available/);
+  assert.match(redirectPage, /name="robots" content="noindex"/);
   assert.doesNotMatch(redirectPage, /<script/);
   assert.doesNotMatch(redirectPage, /l\.replace\(/);
 });
