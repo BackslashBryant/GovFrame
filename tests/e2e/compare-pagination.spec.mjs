@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 
 import { dismissOnboarding, gotoApp, waitForAppReady } from "./support.mjs";
 
@@ -7,12 +8,14 @@ const LARGE_COMPARE =
   "/#/compare/relationships?intent=frameworks&source=nist-800-53&target=disa-cci&compareRun=true";
 
 function expectedMappings() {
-  const root = new URL("../../data/generated/", import.meta.url);
-  const manifest = JSON.parse(readFileSync(new URL("edges.json", root), "utf8"));
+  const root = existsSync(join(process.cwd(), "dist", "site", "data", "generated"))
+    ? join(process.cwd(), "dist", "site", "data", "generated")
+    : join(process.cwd(), "data", "generated");
+  const manifest = JSON.parse(readFileSync(join(root, "edges.json"), "utf8"));
   const sources = new Set();
   let mappings = 0;
   for (const shard of manifest.sharded_collection.shards) {
-    for (const edge of JSON.parse(readFileSync(new URL(shard.path, root), "utf8")).edges) {
+    for (const edge of JSON.parse(readFileSync(join(root, shard.path), "utf8")).edges) {
       if (edge.publication_status !== "published") continue;
       const endpoints = [edge.source_node_id, edge.target_node_id];
       const source = endpoints.find((id) => id.startsWith("nist-800-53:"));

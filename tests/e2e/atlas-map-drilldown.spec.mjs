@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import {
   attachPageDiagnostics,
   dismissOnboarding,
@@ -89,7 +90,10 @@ test("a drilled branch survives refresh and the trail steps back one level", asy
 });
 
 test("a section shows its own records and only its own", async ({ page }) => {
-  const catalog = JSON.parse(readFileSync(new URL("../../data/generated/catalog-records/nist-800-53.json", import.meta.url), "utf8"));
+  const root = existsSync(join(process.cwd(), "dist", "site", "data", "generated"))
+    ? join(process.cwd(), "dist", "site", "data", "generated")
+    : join(process.cwd(), "data", "generated");
+  const catalog = JSON.parse(readFileSync(join(root, "catalog-records", "nist-800-53.json"), "utf8"));
   const expectedIds = catalog.catalog_records.nodes
     .map((node) => node.metadata?.item_id)
     .filter((id) => /^AC-\d/.test(id || "") || id === "FAMILY-AC")

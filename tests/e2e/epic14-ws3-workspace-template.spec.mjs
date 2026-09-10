@@ -1,16 +1,19 @@
 import { expect, test } from "@playwright/test";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import commonsDataset from "../../data/commons-resource-dataset.json" with { type: "json" };
 
 import { attachPageDiagnostics, gotoApp, waitForAppReady } from "./support.mjs";
 
 function supplyChainMatchCount() {
-  const root = new URL("../../data/generated/", import.meta.url);
-  const manifest = JSON.parse(readFileSync(new URL("library-search-index.json", root), "utf8"));
+  const root = existsSync(join(process.cwd(), "dist", "site", "data", "generated"))
+    ? join(process.cwd(), "dist", "site", "data", "generated")
+    : join(process.cwd(), "data", "generated");
+  const manifest = JSON.parse(readFileSync(join(root, "library-search-index.json"), "utf8"));
   const fields = manifest.library_search_index.fields;
   const searchable = ["item_id", "title", "control_family", "source_name", "publisher_name", "official_text_preview"];
   return manifest.sharded_collection.shards.reduce((count, shard) => {
-    const { columns } = JSON.parse(readFileSync(new URL(shard.path, root), "utf8")).library_search_index;
+    const { columns } = JSON.parse(readFileSync(join(root, shard.path), "utf8")).library_search_index;
     return count + columns[0].filter((_, index) => {
       const text = searchable.map((field) => String(columns[fields.indexOf(field)][index] || "").toLowerCase()).join(" ");
       return text.includes("supply") && text.includes("chain");
