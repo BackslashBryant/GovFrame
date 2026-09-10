@@ -1012,7 +1012,7 @@
             "tool"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T13:21:21Z",
+          "lastPushedAt": "2026-09-10T17:08:31Z",
           "latestRepositoryUpdateAt": "2026-09-10T16:48:22Z",
           "license": "Apache-2.0",
           "description": "CLI tool and library for generating a Software Bill of Materials from container images and filesystems"
@@ -1044,7 +1044,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T13:21:21Z.",
+          "text": "Latest repository push: 2026-09-10T17:08:31Z.",
           "sourceUrl": "https://api.github.com/repos/anchore/syft"
         },
         "release": {
@@ -1057,7 +1057,7 @@
         }
       },
       "lastReleaseAt": "2026-08-27T17:01:15Z",
-      "lastCommitAt": "2026-09-10T13:21:21Z",
+      "lastCommitAt": "2026-09-10T17:08:31Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -4591,7 +4591,7 @@
       "currentVersion": "v1.8.0",
       "publisherUpdatedAt": "2026-09-09",
       "lastReleaseAt": "2026-05-07T21:44:29Z",
-      "lastCommitAt": "2026-09-10T02:46:41Z",
+      "lastCommitAt": "2026-09-10T17:17:45Z",
       "lastCheckedAt": "2026-08-03",
       "nextCheckAt": "2026-11-03",
       "updateMethod": "manual_primary_source_review",
@@ -4704,7 +4704,7 @@
             "security-automation"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T02:46:41Z",
+          "lastPushedAt": "2026-09-10T17:17:45Z",
           "latestRepositoryUpdateAt": "2026-09-09T21:08:55Z",
           "license": "CC0-1.0",
           "description": "Automation to assess the state of your M365 tenant against CISA's baselines"
@@ -4745,7 +4745,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T02:46:41Z.",
+          "text": "Latest repository push: 2026-09-10T17:17:45Z.",
           "sourceUrl": "https://api.github.com/repos/cisagov/ScubaGear"
         },
         "release": {
@@ -4931,7 +4931,7 @@
       ],
       "overview": {
         "text": "The CISA Vulnrichment project is the public repository of CISA's enrichment of public CVE records through CISA's ADP (Authorized Data Publisher) container. In this phase of the project, CISA is assessing new and recent CVEs and adding key SSVC decision points. Once scored, some higher-risk CVEs will also receive enrichment of CWE and/or CVSS data points, where possible.",
-        "sourceUrl": "https://github.com/cisagov/vulnrichment/blob/98e353fe7fa51b14b8dbff484cdf51d31096dfc8/README.md",
+        "sourceUrl": "https://github.com/cisagov/vulnrichment/blob/24015e507a1e45c909f58a1d66ecb0ca795ef5fe/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -4939,10 +4939,10 @@
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/cisagov/vulnrichment",
-        "commitSha": "98e353fe7fa51b14b8dbff484cdf51d31096dfc8",
-        "commitUrl": "https://github.com/cisagov/vulnrichment/commit/98e353fe7fa51b14b8dbff484cdf51d31096dfc8",
+        "commitSha": "24015e507a1e45c909f58a1d66ecb0ca795ef5fe",
+        "commitUrl": "https://github.com/cisagov/vulnrichment/commit/24015e507a1e45c909f58a1d66ecb0ca795ef5fe",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/cisagov/vulnrichment/blob/98e353fe7fa51b14b8dbff484cdf51d31096dfc8/README.md",
+        "readmeUrl": "https://github.com/cisagov/vulnrichment/blob/24015e507a1e45c909f58a1d66ecb0ca795ef5fe/README.md",
         "readmeSha256": "sha256:ffec1da10bdea8a98458362f7136d31b4143ef21875b6aa4b5d7bd9041164ba9",
         "readmeByteLength": 8501,
         "overviewExcerpt": "The CISA Vulnrichment project is the public repository of CISA's enrichment of public CVE records through CISA's ADP (Authorized Data Publisher) container. In this phase of the project, CISA is assessing new and recent CVEs and adding key SSVC decision points. Once scored, some higher-risk CVEs will also receive enrichment of CWE and/or CVSS data points, where possible.",
@@ -4970,14 +4970,14 @@
           "primaryLanguage": null,
           "topics": [],
           "archived": false,
-          "lastPushedAt": "2026-09-10T16:16:24Z",
-          "latestRepositoryUpdateAt": "2026-09-10T16:19:49Z",
+          "lastPushedAt": "2026-09-10T17:16:26Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:16:34Z",
           "license": "CC0-1.0",
           "description": "A repo to conduct vulnerability enrichment."
         }
       },
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T16:16:24Z",
+      "lastCommitAt": "2026-09-10T17:16:26Z",
       "license": "CC0-1.0"
     },
     {
@@ -6253,7 +6253,7 @@
       "nextCheckAt": "2026-11-03",
       "overview": {
         "text": "The purpose of this project is to create security policy content for various platforms &mdash; Red Hat Enterprise Linux , Fedora , Ubuntu , Debian , SUSE Linux Enterprise Server (SLES) ,... &mdash; as well as products &mdash; Firefox ,... We aim to make it as easy as possible to write new and maintain existing security content in all the commonly used formats.",
-        "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/ae884ba431469d59b89d1a8b64e32aab1c733131/README.md",
+        "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/54d62b892f3d86a778555eedbbbb4ae5a7636907/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -6261,10 +6261,10 @@
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/ComplianceAsCode/content",
-        "commitSha": "ae884ba431469d59b89d1a8b64e32aab1c733131",
-        "commitUrl": "https://github.com/ComplianceAsCode/content/commit/ae884ba431469d59b89d1a8b64e32aab1c733131",
+        "commitSha": "54d62b892f3d86a778555eedbbbb4ae5a7636907",
+        "commitUrl": "https://github.com/ComplianceAsCode/content/commit/54d62b892f3d86a778555eedbbbb4ae5a7636907",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/ComplianceAsCode/content/blob/ae884ba431469d59b89d1a8b64e32aab1c733131/README.md",
+        "readmeUrl": "https://github.com/ComplianceAsCode/content/blob/54d62b892f3d86a778555eedbbbb4ae5a7636907/README.md",
         "readmeSha256": "sha256:00a9f7cb793b1e915fb47bdea3ab77ba8d6e3d2149caad382ce0bbbed76dae4a",
         "readmeByteLength": 12442,
         "overviewExcerpt": "The purpose of this project is to create security policy content for various platforms &mdash; Red Hat Enterprise Linux , Fedora , Ubuntu , Debian , SUSE Linux Enterprise Server (SLES) ,... &mdash; as well as products &mdash; Firefox ,... We aim to make it as easy as possible to write new and maintain existing security content in all the commonly used formats.",
@@ -6322,8 +6322,8 @@
             "xccdf"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T16:08:08Z",
-          "latestRepositoryUpdateAt": "2026-09-10T15:53:02Z",
+          "lastPushedAt": "2026-09-10T17:02:04Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:02:16Z",
           "license": "NOASSERTION",
           "description": "Security automation content in SCAP, Bash, Ansible, and other formats"
         }
@@ -6346,17 +6346,17 @@
         "inputs": {
           "status": "documented",
           "text": "Our security content can be used to scan bare-metal machines, virtual machines, virtual machine images (qcow2 and others), containers (including Docker), and container images. We use platform checks to detect whether we should or should not evaluate some of the rules. For example: separate partition checks make perfect sense on bare-metal machines but go against recommended practices on containers.",
-          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/ae884ba431469d59b89d1a8b64e32aab1c733131/README.md"
+          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/54d62b892f3d86a778555eedbbbb4ae5a7636907/README.md"
         },
         "formats": {
           "status": "documented",
           "text": "&nbsp; &nbsp; &nbsp; &nbsp; \"SCAP content\" refers to documents in the XCCDF , OVAL and SCAP source data stream formats. These documents can be presented in different forms and by different organizations to meet their security automation and technical implementation needs. For general use, we recommend SCAP source data streams because they contain all the data you need to evaluate and put machines into compliance. The data streams are part of our release ZIP archives. \"Ansible content\" refers to Ansible playbooks generated from security profiles. These can be used both in check-mode to evaluate compliance, as well as run-mode to put machines into compliance. We publish these on Ansible Galaxy as well as in release ZIP archives. \"Bash fix files\" refers to Bash scripts generated from security profiles. These are meant to be run on machines to put them into compliance. We recommend using other formats but understand that for some deployment scenarios bash is the only option. \"CEL content\" refers to compliance content using the Common Expression Language (CEL) for Kubernetes and OpenShift platforms. CEL content is generated as YAML files and is designed for native Kubernetes resource evaluation through the compliance-operator, without requiring shell access to nodes. This format is used for platform-level compliance checks on container orchestration systems.",
-          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/ae884ba431469d59b89d1a8b64e32aab1c733131/README.md"
+          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/54d62b892f3d86a778555eedbbbb4ae5a7636907/README.md"
         },
         "usage": {
           "status": "documented",
           "text": "We assume you have installed ComplianceAsCode system-wide into a standard location from current upstream sources as instructed in the previous section. There are several ways to consume ComplianceAsCode content, we will only go through a few of them here.",
-          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/ae884ba431469d59b89d1a8b64e32aab1c733131/README.md"
+          "sourceUrl": "https://github.com/ComplianceAsCode/content/blob/54d62b892f3d86a778555eedbbbb4ae5a7636907/README.md"
         },
         "license": {
           "status": "documented",
@@ -6365,7 +6365,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T16:08:08Z.",
+          "text": "Latest repository push: 2026-09-10T17:02:04Z.",
           "sourceUrl": "https://api.github.com/repos/ComplianceAsCode/content"
         },
         "release": {
@@ -6378,7 +6378,7 @@
         }
       },
       "lastReleaseAt": "2026-09-01T13:52:27Z",
-      "lastCommitAt": "2026-09-10T16:08:08Z",
+      "lastCommitAt": "2026-09-10T17:02:04Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -21853,8 +21853,8 @@
             "vulnerability-scanner"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T16:45:21Z",
-          "latestRepositoryUpdateAt": "2026-09-10T16:51:34Z",
+          "lastPushedAt": "2026-09-10T17:00:10Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:01:15Z",
           "license": "MIT",
           "description": "Nuclei is a fast, customizable vulnerability scanner powered by the global security community and built on a simple YAML-based DSL, enabling collaboration to tackle trending vulnerabilities on the internet. It helps you find vulnerabilities in your applications, APIs, networks, DNS, and cloud configurations."
         }
@@ -21862,7 +21862,7 @@
       "currentVersion": "v3.11.1",
       "lastReleaseAt": "2026-08-08T12:21:32Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T16:45:21Z",
+      "lastCommitAt": "2026-09-10T17:00:10Z",
       "license": "MIT"
     },
     {
@@ -23373,7 +23373,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-10T05:05:00Z",
-          "latestRepositoryUpdateAt": "2026-09-10T16:15:52Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:13:45Z",
           "license": "Apache-2.0",
           "description": "OpenSSF Scorecard - Security health metrics for Open Source"
         }
@@ -24028,7 +24028,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-10T12:15:26Z",
-          "latestRepositoryUpdateAt": "2026-09-10T14:55:33Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:11:59Z",
           "license": "Apache-2.0",
           "description": "Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain."
         }
@@ -32378,7 +32378,7 @@
             "xdr"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T16:56:06Z",
+          "lastPushedAt": "2026-09-10T17:16:18Z",
           "latestRepositoryUpdateAt": "2026-09-10T15:22:14Z",
           "license": "NOASSERTION",
           "description": "Wazuh - The Open Source Security Platform. Unified XDR and SIEM protection for endpoints and cloud workloads."
@@ -32406,7 +32406,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T16:56:06Z.",
+          "text": "Latest repository push: 2026-09-10T17:16:18Z.",
           "sourceUrl": "https://api.github.com/repos/wazuh/wazuh"
         },
         "release": {
@@ -32419,7 +32419,7 @@
         }
       },
       "lastReleaseAt": "2026-07-30T16:32:45Z",
-      "lastCommitAt": "2026-09-10T16:56:06Z",
+      "lastCommitAt": "2026-09-10T17:16:18Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -33265,9 +33265,9 @@
     },
     {
       "id": "resource:dataset-cisa-vulnrichment:publisher-destination",
-      "sourceUrl": "https://github.com/cisagov/vulnrichment/commit/98e353fe7fa51b14b8dbff484cdf51d31096dfc8",
+      "sourceUrl": "https://github.com/cisagov/vulnrichment/commit/24015e507a1e45c909f58a1d66ecb0ca795ef5fe",
       "locatorType": "repository_commit",
-      "locator": "98e353fe7fa51b14b8dbff484cdf51d31096dfc8",
+      "locator": "24015e507a1e45c909f58a1d66ecb0ca795ef5fe",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },
@@ -34249,9 +34249,9 @@
     },
     {
       "id": "resource:tool-compliance-as-code:publisher-destination",
-      "sourceUrl": "https://github.com/ComplianceAsCode/content/commit/ae884ba431469d59b89d1a8b64e32aab1c733131",
+      "sourceUrl": "https://github.com/ComplianceAsCode/content/commit/54d62b892f3d86a778555eedbbbb4ae5a7636907",
       "locatorType": "repository_commit",
-      "locator": "ae884ba431469d59b89d1a8b64e32aab1c733131",
+      "locator": "54d62b892f3d86a778555eedbbbb4ae5a7636907",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },
