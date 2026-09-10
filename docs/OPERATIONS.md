@@ -36,6 +36,18 @@ bytes and original provenance are retained. Separate `refresh_status`,
 `retained_count` reports these submissions. Successful retrieval replaces the
 retained version and clears those fields automatically. Retention does not admit
 the submitter's external host into the official-source fetch allowlist.
+
+NIST OLIR registers developer-hosted mappings; an official catalog entry does
+not make its assertions NIST-authored or NIST-endorsed. The
+[catalog](https://csrc.nist.gov/projects/olir/informative-reference-catalog) validates
+submission requirements, and the [FAQ](https://csrc.nist.gov/projects/olir/faqs)
+explicitly describes developer hosting. Registered artifact paths for submissions
+183, 225 and 232 are admitted individually, including their GitHub Contents API
+and raw-download forms. Other files and developer hosts remain outside that grant.
+Workbook ingestion reads every sheet with relationship headers, preserves sheet
+and row locators, and stores strength and explanation separately from relationship
+type. Spreadsheet presentation objects are excluded from cell-data parsing.
+
 Recurring identical source alerts retain their original issue and occurrence
 link; changed diagnostics, new failures and recovery update the issue. Each
 subprocess has a 15-minute deadline and preserves failure diagnostics.
