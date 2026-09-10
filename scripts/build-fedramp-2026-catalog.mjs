@@ -131,11 +131,11 @@ export function buildFedramp2026FromBytes(bytes, previousDocument = null) {
   const prior = previousDocument?.publisher_inventory;
   const sourceMatches = prior?.source_sha256 === inputSha && prior?.source_byte_length === bytes.length;
   return normalizeFedramp2026(JSON.parse(bytes.toString('utf8')), {
-    input_sha256: inputSha,
-    input_byte_length: bytes.length,
     source_url: prior?.source_url || null,
     source_sha256: sourceMatches ? prior.source_sha256 : null,
     source_byte_length: sourceMatches ? prior.source_byte_length : null,
+    input_sha256: inputSha,
+    input_byte_length: bytes.length,
     ...(sourceMatches ? {} : { source_evidence_reason: 'Input bytes do not match retained downloaded-byte evidence; only the local input checksum is verified' }),
   });
 }

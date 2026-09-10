@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import { fetchFrameworkCatalogs, frameworkCatalogOptions } from '../scripts/fetch-framework-catalogs.mjs';
 import { fetchMitreData } from '../scripts/fetch-mitre-data.mjs';
 import { fetchFedramp2026Rules } from '../scripts/fetch-fedramp-2026-rules.mjs';
@@ -172,4 +173,26 @@ test('FedRAMP standalone preserves source evidence only for byte-identical downl
   assert.equal(changed.publisher_inventory.source_sha256, null);
   assert.match(changed.publisher_inventory.source_evidence_reason, /do not match/);
   assert.match(changed.publisher_inventory.input_sha256, /^sha256:/);
+});
+
+test('FedRAMP fetch output is byte-stable under the standalone builder', async () => {
+  const bytes = readFileSync('data/fedramp-2026-rules.json');
+  const schemaBytes = readFileSync('data/fedramp-2026-rules.schema.json');
+  const legacy = Array.from({ length: 26 }, (_, index) => (
+    `<a href="assets/LEGACY_File_${index}.pdf">File ${index}</a>`
+  )).join('');
+  const writes = [];
+  await fetchFedramp2026Rules('2026-01-01', {
+    fetchImpl: async (url) => {
+      if (url.includes('/schemas/')) return new Response(schemaBytes);
+      if (url.includes('/legacy/')) return new Response(legacy);
+      return new Response(bytes);
+    },
+    writeFile: (...args) => writes.push(args),
+  });
+  const catalogWrite = writes.find(([path]) => path.endsWith('fedramp-2026-catalog.json'));
+  assert.ok(catalogWrite, 'fetch must write the normalized catalog');
+  const fetched = catalogWrite[1];
+  const rebuilt = buildFedramp2026FromBytes(bytes, JSON.parse(fetched));
+  assert.equal(fetched, `${JSON.stringify(rebuilt, null, 2)}\n`);
 });
