@@ -49,6 +49,8 @@ This application has no backend.
 ## Live Site
 Live site target: https://rambulls.github.io/control-atlas/
 
+Built by [RAM.BULLS](https://rambulls.pages.dev/). If Control Atlas saves you time, you can [support the work](https://buymeacoffee.com/ram.bulls).
+
 ## Current Reusable Foundation
 
 - Static GitHub Pages deployment with a React + Vite translation-first shell

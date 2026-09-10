@@ -69,6 +69,7 @@ export function SiteFooter(props: {
         <p className="text-[var(--ca-text-subtle)] text-[12px]">Product release {PRODUCT_RELEASE_DATE}.</p>
         <p className="text-[var(--ca-text-subtle)] text-[12px]">Source data built {SOURCE_DATA_DATE}.</p>
         <AppLink className="footer-link text-[var(--ca-text-subtle)] hover:text-[var(--ca-secondary)] text-[12px]" onNavigate={props.onNavigate} view="sources">Source attribution</AppLink>
+        <a className="footer-link text-[var(--ca-text-subtle)] hover:text-[var(--ca-secondary)] text-[12px]" href="https://rambulls.pages.dev/" rel="noopener noreferrer">A RAM.BULLS project</a>
       </div>
     </footer>
   );
