@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { validateStructuredAssetCandidate, retainUnavailableDiscovery } from '../scripts/discover-nist-structured-assets.mjs';
 import { validateNaraCandidate } from '../scripts/fetch-nara-cui-registry.mjs';
-import { validateOlirCandidate } from '../scripts/fetch-olir-catalog.mjs';
+import { validateOlirCandidate, retainOlirSubmissions } from '../scripts/fetch-olir-catalog.mjs';
 
 test('discovery discloses unavailable pages and rejects total retrieval failure', () => {
   assert.doesNotThrow(() => validateStructuredAssetCandidate({ pages: [{ status: 'fetched' }] }));
@@ -89,4 +89,20 @@ test('OLIR valid mappings pass without mutating staged documents or prior eviden
   const before = structuredClone({ candidate, previous });
   validateOlirCandidate(candidate, previous);
   assert.deepEqual({ candidate, previous }, before);
+});
+
+test('OLIR preserves exact accepted bytes for unavailable submissions and clears retention on recovery', () => {
+  const artifact = { map_file: 'maps/olir/225.json', checksum: 'sha256:accepted', byte_length: 10, relationship_count: 1 };
+  const previous = [{ id: 225, ingested: true, map_file: artifact.map_file, artifact }];
+  const bytes = Buffer.from(JSON.stringify({ olir_id: 225, sha256: artifact.checksum, byte_length: 10, relationships: [{ focal_id: 'A', reference_id: 'B' }] }) + '\n');
+  const failed = new Map([[225, { attempts: [detail], mapping: null, unavailable_reason: 'publisher unavailable' }]]);
+  const retained = retainOlirSubmissions(failed, previous, () => bytes);
+  validateOlirCandidate(retained, previous);
+  assert.ok(retained.get(225).retainedBytes.equals(bytes));
+  assert.deepEqual(retained.get(225).retainedItem, previous[0]);
+  assert.equal(failed.get(225).mapping, null);
+  assert.throws(() => retainOlirSubmissions(failed, previous, () => Buffer.from('{}')), /evidence mismatch/);
+  assert.throws(() => retainOlirSubmissions(failed, [{ ...previous[0], map_file: '../other' }], () => bytes), /invalid retained mapping path/);
+  const recovered = retainOlirSubmissions(new Map([[225, validMapping]]), previous, () => { throw new Error('unnecessary reread'); });
+  assert.equal(recovered.get(225).retainedBytes, undefined);
 });

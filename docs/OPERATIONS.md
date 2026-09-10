@@ -30,6 +30,12 @@ reason. NARA keeps previously disclosed missing detail pages visible, while loss
 of any previously accepted detail blocks the candidate. OLIR submissions without
 importable mappings remain individually recorded and quarantined; they do not
 block unrelated mappings. Previously imported mappings remain protected.
+If an existing OLIR submission cannot be fetched, its exact accepted mapping
+bytes and original provenance are retained. Separate `refresh_status`,
+`refresh_error` and `latest_retrieval_attempts` fields disclose the failed check;
+`retained_count` reports these submissions. Successful retrieval replaces the
+retained version and clears those fields automatically. Retention does not admit
+the submitter's external host into the official-source fetch allowlist.
 Recurring identical source alerts retain their original issue and occurrence
 link; changed diagnostics, new failures and recovery update the issue. Each
 subprocess has a 15-minute deadline and preserves failure diagnostics.
