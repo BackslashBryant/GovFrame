@@ -204,7 +204,7 @@
     "fflate": "^0.8.3",
     "graphology": "^0.26.0",
     "minisearch": "^7.2.0",
-    "node-html-parser": "^9.0.1",
+    "node-html-parser": "^9.0.3",
     "orbital-archive-no-01": "https://github.com/rambulls/orbital-archive-no-01/archive/refs/tags/v1.8.0.tar.gz",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
