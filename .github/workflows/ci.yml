@@ -784,6 +784,8 @@ jobs:
         with:
           name: source-refresh-sbom-cdx-json
           path: artifacts/sbom.cdx.json
+      - name: Restore tracked SBOM before source admission
+        run: git restore --worktree -- artifacts/sbom.cdx.json
       - run: node scripts/report-refresh-diff.mjs refresh-pr-body.md
       - name: Create repository-scoped publisher token after validation
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3

@@ -38,6 +38,7 @@ test('source refresh opens one App PR after the full gate and requires independe
   assert.match(workflow, /npx playwright install --with-deps chromium/);
   assert.match(workflow, /npm run precommit:incremental/);
   assert.match(workflow, /npm run sbom:generate/);
+  assert.match(workflow, /name: Restore tracked SBOM before source admission\s+run: git restore --worktree -- artifacts\/sbom\.cdx\.json/);
   assert.match(workflow, /peter-evans\/create-pull-request@[0-9a-f]{40}/);
   assert.match(workflow, /branch: automation\/source-refresh/);
   assert.match(workflow, /draft: false/);
@@ -45,6 +46,8 @@ test('source refresh opens one App PR after the full gate and requires independe
   assert.match(workflow, /node tools\/verify-refresh-admission.mjs/);
   assert.match(workflow, /node tools\/report-refresh-alerts.mjs/);
   assert.ok(workflow.indexOf('name: Create repository-scoped publisher token') > workflow.indexOf('name: Verify refreshed repository'));
+  assert.ok(workflow.indexOf('Restore tracked SBOM before source admission') > workflow.indexOf('name: source-refresh-sbom-cdx-json'));
+  assert.ok(workflow.indexOf('node scripts/report-refresh-diff.mjs') > workflow.indexOf('Restore tracked SBOM before source admission'));
   assert.match(workflow, /data\/\*\*/);
   assert.match(workflow, /maps\/\*\*/);
   assert.doesNotMatch(workflow, /git push|\[skip ci\]|auto-merge/i);
