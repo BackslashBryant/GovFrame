@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { assertRefreshPaths, refreshMergeDecision } from '../tools/automerge-source-refresh.mjs';
+import { assertCompletePullFileInventory, assertRefreshPaths, refreshMergeDecision } from '../tools/automerge-source-refresh.mjs';
 
 const repository = 'RAMBULLS/control-atlas';
 const pr = { state: 'open', draft: false, user: { login: 'control-atlas-source-refresh[bot]' },
@@ -27,4 +27,14 @@ test('untrusted PR authors, branches, forks and code paths cannot reach merge', 
     'data/source-refresh-contract.json', 'data/schemas/source-baselines.schema.json', 'data/generated/nodes.json', 'data/../evil.json']) {
     assert.throws(() => assertRefreshPaths([path]), /protected/);
   }
+});
+
+test('paginated file inventory tolerates unavailable REST counts but rejects positive mismatches', () => {
+  const paths = ['data/ccis.json', 'maps/cci-to-800-53.json'];
+  assert.doesNotThrow(() => assertCompletePullFileInventory({ changed_files: 0 }, paths));
+  assert.doesNotThrow(() => assertCompletePullFileInventory({ changed_files: 2 }, paths));
+  assert.throws(
+    () => assertCompletePullFileInventory({ changed_files: 3 }, paths),
+    /Incomplete PR file inventory/,
+  );
 });

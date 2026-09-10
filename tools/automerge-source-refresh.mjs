@@ -12,6 +12,16 @@ export function assertRefreshPaths(paths) {
   }
 }
 
+export function assertCompletePullFileInventory(pr, paths) {
+  assertRefreshPaths(paths);
+  // GitHub can temporarily report changed_files as zero while the paginated
+  // files endpoint already returns the complete comparison. A positive count
+  // remains a useful cross-check; zero means the metadata count is unavailable.
+  if (Number.isSafeInteger(pr.changed_files) && pr.changed_files > 0 && paths.length !== pr.changed_files) {
+    throw new Error('Incomplete PR file inventory');
+  }
+}
+
 export function refreshMergeDecision(pr, paths, runs, repository = 'RAMBULLS/control-atlas') {
   if (pr.state !== 'open' || pr.draft) return { ready: false, reason: 'not_open_ready_pr' };
   if (pr.head?.repo?.full_name !== repository || pr.base?.repo?.full_name !== repository ||
@@ -45,7 +55,7 @@ export function autoMergeRefresh(env = process.env) {
     paths.push(...files.map((file) => file.filename));
     if (files.length < 100) break;
   }
-  if (paths.length !== pr.changed_files) throw new Error('Incomplete PR file inventory');
+  assertCompletePullFileInventory(pr, paths);
   const runs = api(`repos/${repository}/actions/runs?head_sha=${pr.head.sha}&event=pull_request&per_page=100`).workflow_runs;
   const decision = refreshMergeDecision(pr, paths, runs, repository);
   if (!decision.ready) return decision;
