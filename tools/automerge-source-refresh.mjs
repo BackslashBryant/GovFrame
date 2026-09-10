@@ -35,6 +35,7 @@ export function refreshMergeDecision(pr, paths, runs, repository = 'RAMBULLS/con
       return { ready: false, reason: `waiting_for_${workflow}` };
     }
   }
+  if (pr.mergeable === null || pr.mergeable_state === 'unknown') return { ready: false, reason: 'mergeability_pending' };
   if (pr.mergeable !== true || pr.mergeable_state !== 'clean') return { ready: false, reason: 'branch_protection_or_merge_conflict' };
   return { ready: true, sha: pr.head.sha };
 }
@@ -65,6 +66,15 @@ export function autoMergeRefresh(env = process.env) {
   return { ...decision, merged: true, number: pr.number, merge_sha: merged.sha };
 }
 
+export async function mergeWhenReady(attempt = autoMergeRefresh, wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))) {
+  for (let index = 0; index < 6; index += 1) {
+    const result = attempt();
+    if (result.reason !== 'mergeability_pending') return result;
+    if (index === 5) throw new Error('GitHub mergeability remained unresolved after six checks');
+    await wait(10000);
+  }
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  console.log(JSON.stringify(autoMergeRefresh()));
+  console.log(JSON.stringify(await mergeWhenReady()));
 }

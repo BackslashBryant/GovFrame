@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { assertCompletePullFileInventory, assertRefreshPaths, refreshMergeDecision } from '../tools/automerge-source-refresh.mjs';
+import { assertCompletePullFileInventory, assertRefreshPaths, refreshMergeDecision, mergeWhenReady } from '../tools/automerge-source-refresh.mjs';
 
 const repository = 'RAMBULLS/control-atlas';
 const pr = { state: 'open', draft: false, user: { login: 'control-atlas-source-refresh[bot]' },
@@ -37,4 +37,20 @@ test('paginated file inventory tolerates unavailable REST counts but rejects pos
     () => assertCompletePullFileInventory({ changed_files: 3 }, paths),
     /Incomplete PR file inventory/,
   );
+});
+
+test('unresolved GitHub mergeability is retried, but failed gates and conflicts are never bypassed', async () => {
+  const pending = refreshMergeDecision({ ...pr, mergeable: null, mergeable_state: 'unknown' }, ['data/ccis.json'], runs);
+  let calls = 0;
+  const waits = [];
+  const result = await mergeWhenReady(() => ++calls < 3 ? pending : { merged: true }, async (ms) => waits.push(ms));
+  assert.equal(result.merged, true);
+  assert.deepEqual(waits, [10000, 10000]);
+  for (const blocked of [refreshMergeDecision({ ...pr, mergeable_state: 'dirty' }, ['data/ccis.json'], runs),
+    refreshMergeDecision(pr, ['data/ccis.json'], [])]) {
+    assert.deepEqual(await mergeWhenReady(() => blocked, () => { throw new Error('must not retry a failed gate'); }), blocked);
+  }
+  calls = 0;
+  await assert.rejects(mergeWhenReady(() => { calls++; return pending; }, async () => {}), /six checks/);
+  assert.equal(calls, 6);
 });
