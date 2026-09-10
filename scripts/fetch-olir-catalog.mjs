@@ -96,20 +96,22 @@ async function retrieveDetail(id) {
   }
 }
 
-async function retrieveEntry(entry) {
+export async function retrieveOlirEntry(entry, options = {}) {
   const id = entry.informativeReferenceFrameworkVersionId;
-  const detail = await retrieveDetail(id);
-  const candidates = [detail.json_file_url, detail.submission_url, detail.reference_url, entry.referenceUrl];
+  const detail = await (options.retrieveDetail || retrieveDetail)(id);
+  // Reference URLs describe the publication being mapped. They are not
+  // submission artifacts, even when that publication offers other workbooks.
+  const candidates = [detail.json_file_url, detail.submission_url];
   const retrieved = await retrieveStructuredOlirArtifact(candidates, {
     focalCatalogId: FOCAL_CATALOG_MAP.get(entry.focusDocName),
     sourceIdentifier: entry.frameworkVersionIdentifier,
-    fetchImpl: createRegisteredOlirFetch([detail.json_file_url, detail.submission_url]),
+    fetchImpl: options.fetchImpl || createRegisteredOlirFetch(candidates),
   });
   const attempts = [detail, ...retrieved.attempted];
   if (!retrieved.artifact) return {
     attempts, mapping: null,
     unsupported: !detail.json_file_url && attempts.every((attempt) => !attempt.error && attempt.status >= 200 && attempt.status < 300),
-    unavailable_reason: 'no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL',
+    unavailable_reason: 'no public relationship mapping could be downloaded from the registered NIST submission locations',
   };
   try {
     const parsed = await parseOlirStructuredArtifact(retrieved.artifact, { focalCatalogId: FOCAL_CATALOG_MAP.get(entry.focusDocName) });
@@ -208,7 +210,7 @@ export async function fetchOlirCatalog() {
   const retrievedById = new Map(
     (await mapWithConcurrency(applicableFinalEntries, 6, async (entry) => [
       entry.informativeReferenceFrameworkVersionId,
-      await retrieveEntry(entry),
+      await retrieveOlirEntry(entry),
     ])).map(([id, retrieval]) => [id, retrieval]),
   );
   const retrievalById = retainOlirSubmissions(retrievedById, previousItems,

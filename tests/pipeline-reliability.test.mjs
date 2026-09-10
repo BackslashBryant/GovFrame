@@ -5,8 +5,36 @@ import { discoverOlirLinks, olirHtmlTables } from '../tools/relationship-builder
 import { applyOlirRetentionHealth, planAlertChanges } from '../tools/report-refresh-alerts.mjs';
 import { productionLighthousePlan } from '../tools/collect-production-lighthouse.mjs';
 import { validateLighthouseReport, routeThresholdFailures } from '../tools/lighthouse-metrics.mjs';
+import { retrieveOlirEntry } from '../scripts/fetch-olir-catalog.mjs';
 
 const htmlArtifact = (html, url) => ({ url, content_type: 'text/html', bytes: Buffer.from(html) });
+
+test('reference publications cannot substitute their workbooks for a registered submission', async () => {
+  const calls = [];
+  const result = await retrieveOlirEntry({ informativeReferenceFrameworkVersionId: 181,
+    focusDocName: 'Security and Privacy Controls for Information Systems and Organizations',
+    referenceUrl: 'https://csrc.nist.gov/publication.xlsx',
+  }, {
+    retrieveDetail: async () => ({ status: 200, submission_url: 'https://43828014.hs-sites.com/mapping', reference_url: 'https://csrc.nist.gov/publication.xlsx' }),
+    fetchImpl: async (url) => { calls.push(url); return new Response('<html>Publisher download form</html>', { headers: { 'content-type': 'text/html' } }); },
+  });
+  assert.deepEqual(calls, ['https://43828014.hs-sites.com/mapping']);
+  assert.equal(result.mapping, null);
+  assert.equal(result.parse_failed, undefined);
+});
+
+test('a registered Zenodo DOI grants its canonical record redirect, not other records', async () => {
+  const doi = 'https://doi.org/10.5281/zenodo.18498447';
+  const record = 'https://zenodo.org/records/18498447';
+  const calls = [];
+  const scoped = createRegisteredOlirFetch([doi], { fetchImpl: async (url) => {
+    calls.push(url);
+    return url === doi ? new Response('', { status: 302, headers: { location: record } }) : new Response('record');
+  } });
+  assert.equal(await (await scoped(doi)).text(), 'record');
+  assert.deepEqual(calls, [doi, record]);
+  await assert.rejects(scoped('https://zenodo.org/records/18363217'), /policy/);
+});
 
 test('HTML tables keep framework boundaries and actual publisher row locators', async () => {
   const artifact = htmlArtifact('<table><tr><th>BXAI-OS Step</th><th>NIST Focal Element</th><th>Relationship</th><th>Rationale</th></tr><tr><td>Step 1</td><td>AI RMF GOVERN 1.1\nCSF 2.0 ID.AM-01</td><td>Superset of</td><td>Functional</td></tr><tr><td colspan="4">Publisher note</td></tr><tr><td>Step 2</td><td>AI RMF MAP 1.1</td><td>supports</td><td>Functional</td></tr></table>', 'https://bxaios.com/nist-alignment/');

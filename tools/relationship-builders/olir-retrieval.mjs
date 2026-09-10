@@ -29,8 +29,10 @@ export function createRegisteredOlirFetch(registeredUrls, options = {}) {
     if (url.protocol !== 'https:' || url.username || url.password || url.port || !OLIR_HOSTS.has(url.hostname)) return false;
     if (/[\\\s]/.test(input) || /%(?:2e|2f|5c|25)/i.test(url.pathname)) return false;
     exact.add(url.href);
-    if (url.hostname === 'doi.org' && /^\/10\.5281\/zenodo\.\d+$/.test(url.pathname)) {
+    const zenodoId = url.pathname.match(/^\/10\.5281\/zenodo\.(\d+)$/)?.[1];
+    if (url.hostname === 'doi.org' && zenodoId) {
       exact.add(`https://zenodo.org/doi${url.pathname}`);
+      exact.add(`https://zenodo.org/records/${zenodoId}`);
     }
     if (url.hostname === 'content.securecontrolsframework.com') {
       exact.add('https://securecontrolsframework.com/free-content/scf-download');
