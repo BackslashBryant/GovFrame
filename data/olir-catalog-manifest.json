@@ -1,14 +1,209 @@
 {
-  "generated_at": "2026-08-09T01:19:49.800Z",
+  "generated_at": "2026-09-10T16:29:49.586Z",
   "source": "https://csrc.nist.gov/projects/olir/informative-reference-catalog",
   "api_endpoint": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog",
-  "total_entries": 101,
-  "final_count": 88,
-  "applicable_final_count": 48,
+  "total_entries": 102,
+  "final_count": 92,
+  "applicable_final_count": 51,
   "ingested_count": 26,
-  "quarantined_count": 75,
-  "unresolved_count": 22,
+  "quarantined_count": 76,
+  "unresolved_count": 25,
+  "retained_count": 12,
   "processed_items": [
+    {
+      "id": 232,
+      "framework_version_identifier": "NIST-SP800-53r5.2-to-NERC-CIP-OLIR-Mapping",
+      "name": "NERC Critical Infrastructure Protection (CIP) Reliability Standards.",
+      "focal_document": "Security and Privacy Controls for Information Systems and Organizations",
+      "resolved_catalog_id": "nist-800-53",
+      "reference_document_version": "SP 800-53 Rev 5.2.0",
+      "version": "1.0.0",
+      "status": "Final",
+      "authority_description": "Owner",
+      "submission_category": "Private Sector",
+      "developer": "NIST; North American Electric Reliability Corporation, Security Working Group",
+      "posted_date": "2026-09-08",
+      "reference_date": "2026-09-08",
+      "submission_artifact_url": "https://www.nerc.com/standards/reliability-standards/cip",
+      "authority_tier": 1,
+      "authority_tier_label": "NIST owner-authority Final",
+      "mapping_model": null,
+      "ingested": false,
+      "map_file": null,
+      "artifact_id": null,
+      "artifact": null,
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
+      "retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/232",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/232",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/swg/nist-sp800-53r5.2-to-nerc-cip-olir-mapping.xlsx",
+          "reference_url": "https://www.nerc.com/standards/reliability-standards/cip",
+          "mapping_summary": "<p>The purpose of this OLIR is to provide the relationship between NIST SP800-53 r5.2.0 and the NERC Critical Infrastructure Protection (CIP) Standards.</p>",
+          "mapping_comment": "<p>Once you access NERC's US Reliability Standards - CIP web page, select one of two links entitled, All Standards or Subject to Enforcement</p>\n<p>All Standards</p>\n<p>Subject to Enforcement</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/swg/nist-sp800-53r5.2-to-nerc-cip-olir-mapping.xlsx",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://www.nerc.com/standards/reliability-standards/cip",
+          "error": "source URL policy rejected unapproved destination"
+        }
+      ]
+    },
+    {
+      "id": 234,
+      "framework_version_identifier": "NICE-Framework-DCWF-v1.0.0",
+      "name": "Department of Defense Cyber Workforce Framework",
+      "focal_document": "Workforce Framework for Cybersecurity (NICE Framework) (NIST SP 800-181 Rev 1)",
+      "resolved_catalog_id": null,
+      "reference_document_version": "NICE Components v2.2.0",
+      "version": "1.0.0",
+      "status": "Final",
+      "authority_description": "Non-Owner",
+      "submission_category": "Public Sector",
+      "developer": "NICE Program Office (NIST)",
+      "posted_date": "2026-09-08",
+      "reference_date": "2026-09-08",
+      "submission_artifact_url": "https://www.cyber.mil/dod-workforce-innovation-directorate/dod-cyber-workforce-framework",
+      "authority_tier": 3,
+      "authority_tier_label": "Other government Final",
+      "mapping_model": null,
+      "ingested": false,
+      "map_file": null,
+      "artifact_id": null,
+      "artifact": null,
+      "quarantine_reason": "focal document \"Workforce Framework for Cybersecurity (NICE Framework) (NIST SP 800-181 Rev 1)\" is not a Control Atlas catalog (current-publication scope only)",
+      "retrieval_attempts": []
+    },
+    {
+      "id": 230,
+      "framework_version_identifier": "GuardianSDK-to-800-53-r5.2.0 ",
+      "name": "Ethicore Engine™ — Guardian SDK",
+      "focal_document": "Security and Privacy Controls for Information Systems and Organizations",
+      "resolved_catalog_id": "nist-800-53",
+      "reference_document_version": "SP 800-53 Rev 5.2.0",
+      "version": "1.0.0",
+      "status": "Final",
+      "authority_description": "Owner",
+      "submission_category": "Private Sector",
+      "developer": "Oracles Technologies LLC",
+      "posted_date": "2026-09-03",
+      "reference_date": "2026-09-03",
+      "submission_artifact_url": "https://github.com/OraclesTech/guardian-sdk",
+      "authority_tier": 4,
+      "authority_tier_label": "Validated third-party Final",
+      "mapping_model": null,
+      "ingested": false,
+      "map_file": null,
+      "artifact_id": null,
+      "artifact": null,
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
+      "retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/230",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/230",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://github.com/OraclesTech/guardian-sdk/tree/main/docs/compliance/olir/SP%20800-53",
+          "reference_url": "https://github.com/OraclesTech/guardian-sdk",
+          "mapping_summary": "<p>Guardian SDK is a production-grade, real-time threat detection library for Python LLM and agentic applications. It operates as an eight-intercept pipeline &mdash; four pre-flight layers (Pattern, Semantic, Behavioral, ML), two post-flight layers (OutputAnalyzer, AdversarialLearner), and two agentic pipeline gates (ToolCallValidator, ToolOutputScanner) &mdash; detecting and blocking prompt injection, jailbreaks, role hijacking, system-prompt exfiltration, RAG/indirect injection, agentic tool hijacking, and multimodal threats (image-embedded payloads, cross-modal attacks, and video payload injection) introduced in v2.1.0. All inference runs on-device via ONNX Runtime with no input data leaving the deployment. This OLIR maps Guardian SDK's capabilities to NIST SP 800-53 Release 5.2.0.</p>",
+          "mapping_comment": "<p>Mapping covers Guardian SDK v2.7.0 against NIST SP 800-53 Release 5.2.0 (Set Theory). 40 relationship rows across SI, AU, AC, SC, SR, SA, RA, CM, IR, and CA. Reference elements GS-CF-04..07 (supply-chain integrity/SBOM, self-integrity verification, rate limiting/quota, and adversarial benchmark/red-team) extend the element catalog used in the CSF 2.0 and AI RMF submissions. Guardian is positioned as a software component operating within the customer authorization boundary; controls are related where Guardian implements the AI-layer portion. Inherited/customer-responsible controls (identity, boundary, crypto modules, contingency, physical, audit retention) are deliberately not claimed.</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/OraclesTech/guardian-sdk/tree/main/docs/compliance/olir/SP%20800-53",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/OraclesTech/guardian-sdk",
+          "error": "source URL policy rejected unapproved destination"
+        }
+      ]
+    },
+    {
+      "id": 236,
+      "framework_version_identifier": "Evidence Continuity-AI-RMF-1.0",
+      "name": "Evidence Continuity for AI Governance: Normative Concept Specification",
+      "focal_document": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+      "resolved_catalog_id": "nist-ai-rmf",
+      "reference_document_version": "AI RMF 1.0",
+      "version": "1.0.0",
+      "status": "Draft",
+      "authority_description": "Owner",
+      "submission_category": "Private Sector",
+      "developer": "Yarion",
+      "posted_date": "2026-08-27",
+      "reference_date": "2026-08-27",
+      "submission_artifact_url": "https://drive.google.com/drive/folders/11qgNa4EavIN5YFh0gfTl9D-4VJISBe-p?usp=sharing",
+      "authority_tier": 5,
+      "authority_tier_label": "Draft",
+      "mapping_model": null,
+      "ingested": false,
+      "map_file": null,
+      "artifact_id": null,
+      "artifact": null,
+      "quarantine_reason": "OLIR status is \"Draft\", not Final — held out of the published graph pending NIST finalization",
+      "retrieval_attempts": []
+    },
+    {
+      "id": 229,
+      "framework_version_identifier": "AISVS-v1.0-to-SP-800-53-R5.2.0",
+      "name": "Artificial Intelligence Security Verification Standard (AISVS)",
+      "focal_document": "Security and Privacy Controls for Information Systems and Organizations",
+      "resolved_catalog_id": "nist-800-53",
+      "reference_document_version": "SP 800-53 Rev 5.2.0",
+      "version": "1.0.0",
+      "status": "Final",
+      "authority_description": "Non-Owner",
+      "submission_category": "Private Sector",
+      "developer": "Keystone Digital Holdings LLC",
+      "posted_date": "2026-08-14",
+      "reference_date": "2026-08-14",
+      "submission_artifact_url": "https://github.com/OWASP/AISVS/tree/main/1.0/en",
+      "authority_tier": 7,
+      "authority_tier_label": "Community candidate Final",
+      "mapping_model": null,
+      "ingested": false,
+      "map_file": null,
+      "artifact_id": null,
+      "artifact": null,
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
+      "retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/229",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/229",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://olir.keystonedigitalholdingsgroup.com/aisvs-v1.0-to-sp800-53r5.xlsx",
+          "reference_url": "https://github.com/OWASP/AISVS/tree/main/1.0/en",
+          "mapping_summary": "<p>A Set Theory Relationship Mapping of OWASP Artificial Intelligence Security Verification Standard (AISVS) Version 1.0 requirements to NIST SP 800-53 Rev. 5 (Release 5.2.0) security controls and control enhancements. The mapping focuses on AISVS requirements with clean, defensible relationships to 800-53, concentrated in access control and identity (C5), orchestration and agentic security (C9), MCP security (C10), model lifecycle integrity (C3), supply chain (C6), and monitoring/logging (C12).</p>",
+          "mapping_comment": "<p>Reference Document is OWASP AISVS 1.0, published 06/24/2026 at OWASP Global AppSec Vienna; the 1.0 release folder is locked. Requirement identifiers use the canonical C{chapter}.{section}.{requirement} form (AISVS 1.0 has 12 requirement chapters, C1-C12). Mapping authored against SP 800-53 Rev. 5 Release 5.2.0 control text (control/enhancement titles common to 5.1.1). Set Theory Relationship Mapping per NIST IR 8278A Rev. 1 Section 3.2; Comprehensive = No because many 800-53 controls are unmapped and several relationships are \"intersects with.\" AISVS is explicitly not a governance framework and positions itself as the technical control layer complementary to NIST frameworks, so this is an informative control-to-control reference, not an equivalence claim.</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://olir.keystonedigitalholdingsgroup.com/aisvs-v1.0-to-sp800-53r5.xlsx",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/OWASP/AISVS/tree/main/1.0/en",
+          "error": "source URL policy rejected unapproved destination"
+        }
+      ]
+    },
     {
       "id": 225,
       "framework_version_identifier": "IPACS-AI-to-AI-RMF-1.0",
@@ -74,6 +269,32 @@
           "content_type": "application/octet-stream",
           "byte_length": 33225
         }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/225",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/225",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://github.com/greerfam2020-rgb/IPAC-AI-Framework-Review/blob/main/IPACS_AI_RMF_Crosswalk_v3-5.xlsx",
+          "reference_url": "https://github.com/greerfam2020-rgb/IPAC-AI-Framework-Review/blob/main/IPACS_AI_NIST_Submission_Final-1.pdf",
+          "mapping_summary": "<p>AI stays open. Anonymity for malicious use ends.</p>\n<p>Every component of this framework - FIDO2 hardware attestation, the middleware layer, direct memory injection, and the WORM immutable audit trail - exists to enforce one guarantee: legitimate developers lose nothing, malicious actors lose anonymity.</p>\n<p>This Informative Reference maps the Identity-Proofed Access Control System for AI (IPACS-AI) - a zero-trust middleware framework for AI coding tools-to the NIST AI RMF 1.0. IPACS-AI closes the accountability gap created by anonymous AI access through identity-proofed, hardware-attested, time-bounded session controls. It eliminates clipboard code smuggling via direct memory injection, classifies AI-generated code risk via AST parsing, and maintains an immutable WORM hash-chained audit trail at zero per-transaction cost using local FIDO2/TPM 2.0 attestation and OIDC/SAML 2.0 federated identity. The crosswalk shows strong or exact alignment across all four AI RMF functions.</p>",
+          "mapping_comment": "<p>IPACS-AI is an independent, open-source framework submission. All 72 AI RMF 1.0 subcategories are addressed in the crosswalk. Documented gaps (DEI team documentation, formal TEVV testing) are transparently disclosed with planned remediation through a mandatory independent security audit prior to production deployment. The framework is licensed MIT/Apache 2.0 with no commercial restrictions. Local FIDO2/TPM attestation enables zero per-transaction cost and full offline resilience. Scope is explicitly bounded to API-connected AI services; fully air-gapped local inference is acknowledged as out of scope.</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/greerfam2020-rgb/IPAC-AI-Framework-Review/blob/main/IPACS_AI_RMF_Crosswalk_v3-5.xlsx",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/greerfam2020-rgb/IPAC-AI-Framework-Review/blob/main/IPACS_AI_NIST_Submission_Final-1.pdf",
+          "error": "source URL policy rejected unapproved destination"
+        }
       ]
     },
     {
@@ -98,7 +319,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -115,112 +336,9 @@
         {
           "kind": "artifact download",
           "url": "https://drive.google.com/drive/folders/1uqUpwlj7NeP-TDSPR2sHaVXHOQlabCCG?usp=sharing",
-          "status": 200,
-          "final_url": "https://drive.google.com/drive/folders/1uqUpwlj7NeP-TDSPR2sHaVXHOQlabCCG?usp=sharing",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 308361
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
-    },
-    {
-      "id": 232,
-      "framework_version_identifier": "NIST-SP800-53r5.2-to-NERC-CIP-OLIR-Mapping",
-      "name": "NERC Critical Infrastructure Protection (CIP) Reliability Standards.",
-      "focal_document": "Security and Privacy Controls for Information Systems and Organizations",
-      "resolved_catalog_id": "nist-800-53",
-      "reference_document_version": "SP 800-53 Rev 5.2.0",
-      "version": "1.0.0",
-      "status": "Draft",
-      "authority_description": "Owner",
-      "submission_category": "Private Sector",
-      "developer": "NIST; North American Electric Reliability Corporation, Security Working Group",
-      "posted_date": "2026-08-05",
-      "reference_date": "2026-08-05",
-      "submission_artifact_url": "https://www.nerc.com/standards/reliability-standards/cip",
-      "authority_tier": 5,
-      "authority_tier_label": "Draft",
-      "mapping_model": null,
-      "ingested": false,
-      "map_file": null,
-      "artifact_id": null,
-      "artifact": null,
-      "quarantine_reason": "OLIR status is \"Draft\", not Final — held out of the published graph pending NIST finalization",
-      "retrieval_attempts": []
-    },
-    {
-      "id": 234,
-      "framework_version_identifier": "NICE-Framework-DCWF-v1.0.0",
-      "name": "Department of Defense Cyber Workforce Framework",
-      "focal_document": "Workforce Framework for Cybersecurity (NICE Framework) (NIST SP 800-181 Rev 1)",
-      "resolved_catalog_id": null,
-      "reference_document_version": "NICE Components v2.2.0",
-      "version": "1.0.0",
-      "status": "Draft",
-      "authority_description": "Non-Owner",
-      "submission_category": "Public Sector",
-      "developer": "NICE Program Office (NIST)",
-      "posted_date": "2026-08-05",
-      "reference_date": "2026-08-05",
-      "submission_artifact_url": "https://www.cyber.mil/dod-workforce-innovation-directorate/dod-cyber-workforce-framework",
-      "authority_tier": 5,
-      "authority_tier_label": "Draft",
-      "mapping_model": null,
-      "ingested": false,
-      "map_file": null,
-      "artifact_id": null,
-      "artifact": null,
-      "quarantine_reason": "focal document \"Workforce Framework for Cybersecurity (NICE Framework) (NIST SP 800-181 Rev 1)\" is not a Control Atlas catalog (current-publication scope only)",
-      "retrieval_attempts": []
-    },
-    {
-      "id": 230,
-      "framework_version_identifier": "GuardianSDK-to-800-53-r5.2.0 ",
-      "name": "Ethicore Engine™ — Guardian SDK",
-      "focal_document": "Security and Privacy Controls for Information Systems and Organizations",
-      "resolved_catalog_id": "nist-800-53",
-      "reference_document_version": "SP 800-53 Rev 5.2.0",
-      "version": "1.0.0",
-      "status": "Draft",
-      "authority_description": "Owner",
-      "submission_category": "Private Sector",
-      "developer": "Oracles Technologies LLC",
-      "posted_date": "2026-08-03",
-      "reference_date": "2026-08-03",
-      "submission_artifact_url": "https://github.com/OraclesTech/guardian-sdk",
-      "authority_tier": 5,
-      "authority_tier_label": "Draft",
-      "mapping_model": null,
-      "ingested": false,
-      "map_file": null,
-      "artifact_id": null,
-      "artifact": null,
-      "quarantine_reason": "OLIR status is \"Draft\", not Final — held out of the published graph pending NIST finalization",
-      "retrieval_attempts": []
-    },
-    {
-      "id": 229,
-      "framework_version_identifier": "AISVS-v1.0-to-SP-800-53-R5.2.0",
-      "name": "Artificial Intelligence Security Verification Standard (AISVS)",
-      "focal_document": "Security and Privacy Controls for Information Systems and Organizations",
-      "resolved_catalog_id": "nist-800-53",
-      "reference_document_version": "SP 800-53 Rev 5.2.0",
-      "version": "1.0.0",
-      "status": "Draft",
-      "authority_description": "Non-Owner",
-      "submission_category": "Private Sector",
-      "developer": "Keystone Digital Holdings LLC",
-      "posted_date": "2026-07-14",
-      "reference_date": "2026-07-14",
-      "submission_artifact_url": "https://github.com/OWASP/AISVS/tree/main/1.0/en",
-      "authority_tier": 5,
-      "authority_tier_label": "Draft",
-      "mapping_model": null,
-      "ingested": false,
-      "map_file": null,
-      "artifact_id": null,
-      "artifact": null,
-      "quarantine_reason": "OLIR status is \"Draft\", not Final — held out of the published graph pending NIST finalization",
-      "retrieval_attempts": []
     },
     {
       "id": 218,
@@ -284,6 +402,32 @@
           "content_type": "application/octet-stream",
           "byte_length": 21824
         }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/218",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/218",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://github.com/JoergPauloweit/ISO27001-NIST-Mapping",
+          "reference_url": "https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-3:v1:en",
+          "mapping_summary": "<p>Mapping of ISO/IEC 27001:2022 controls to the NIST Cybersecurity Framework 2.0 using the OLIR Crosswalk template.</p>",
+          "mapping_comment": "<p>N/A</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/JoergPauloweit/ISO27001-NIST-Mapping",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-3:v1:en",
+          "error": "source URL policy rejected unapproved destination"
+        }
       ]
     },
     {
@@ -308,7 +452,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -325,18 +469,12 @@
         {
           "kind": "artifact download",
           "url": "https://aamcyber.com/sdos/reference/csf-2-0/",
-          "status": 200,
-          "final_url": "https://aamcyber.com/sdos/reference/csf-2-0/",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 119259
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://aamcyber.com/sdos/reference/v1/",
-          "status": 200,
-          "final_url": "https://aamcyber.com/sdos/reference/v1/",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 131955
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -362,7 +500,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -379,18 +517,12 @@
         {
           "kind": "artifact download",
           "url": "https://aamcyber.com/sdos/reference/sp-800-53/",
-          "status": 200,
-          "final_url": "https://aamcyber.com/sdos/reference/sp-800-53/",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 124275
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://aamcyber.com/sdos/reference/v1/",
-          "status": 200,
-          "final_url": "https://aamcyber.com/sdos/reference/v1/",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 131955
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -458,6 +590,32 @@
           "content_type": "application/octet-stream",
           "byte_length": 23832
         }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/209",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/209",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://github.com/OraclesTech/guardian-sdk/tree/main/docs/compliance/olir/csf20",
+          "reference_url": "https://github.com/OraclesTech/guardian-sdk",
+          "mapping_summary": "<p>Guardian SDK is a production-grade, real-time threat detection library for Python LLM and agentic applications. It operates as an eight-intercept pipeline &mdash; four pre-flight layers (Pattern, Semantic, Behavioral, ML), two post-flight layers (OutputAnalyzer, AdversarialLearner), and two agentic pipeline gates (ToolCallValidator, ToolOutputScanner) &mdash; detecting and blocking prompt injection, jailbreaks, role hijacking, system-prompt exfiltration, RAG/indirect injection, agentic tool hijacking, and multimodal threats (image-embedded payloads, cross-modal attacks, and video payload injection) introduced in v2.1.0. All inference runs on-device via ONNX Runtime with no input data leaving the deployment. This OLIR maps Guardian SDK's capabilities to CSF 2.0 subcategory outcomes across all six Functions using the Set Theory Relationship Mapping approach.</p>",
+          "mapping_comment": "<p>Mapping covers Guardian SDK v2.1.0. Tier availability is noted in the Comments column of each mapping row (All tiers / API tiers). The Relationship Type field (semantic / syntactic / functional, per IR 8278Ar1 &sect;3.2.7) is included in the Comments column of the Relationships sheet.</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/OraclesTech/guardian-sdk/tree/main/docs/compliance/olir/csf20",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/OraclesTech/guardian-sdk",
+          "error": "source URL policy rejected unapproved destination"
+        }
       ]
     },
     {
@@ -482,7 +640,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -499,18 +657,12 @@
         {
           "kind": "artifact download",
           "url": "https://cyberoon.com/research/ai-soc-v10-to-nist-csf-20-informative-reference-mapping",
-          "status": 200,
-          "final_url": "https://cyberoon.com/research/ai-soc-v10-to-nist-csf-20-informative-reference-mapping",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 2093622
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://github.com/cyberoon/ai-soc-nist-csf-mapping/blob/main/docs/AI_SOC_Controls_Catalog_v1_0.pdf",
-          "status": 200,
-          "final_url": "https://github.com/cyberoon/ai-soc-nist-csf-mapping/blob/main/docs/AI_SOC_Controls_Catalog_v1_0.pdf",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 241624
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -536,7 +688,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -553,10 +705,7 @@
         {
           "kind": "artifact download",
           "url": "https://aamcyber.com/sdos/reference/v1/",
-          "status": 200,
-          "final_url": "https://aamcyber.com/sdos/reference/v1/",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 131955
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -622,6 +771,32 @@
           "final_url": "https://raw.githubusercontent.com/OraclesTech/guardian-sdk/main/docs/compliance/olir/AI_RMF/GuardianSDK_AIRMF_OLIR_Submission.xlsx",
           "content_type": "application/octet-stream",
           "byte_length": 19302
+        }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/223",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/223",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://github.com/OraclesTech/guardian-sdk/tree/main/docs/compliance/olir/AI_RMF",
+          "reference_url": "https://github.com/OraclesTech/guardian-sdk",
+          "mapping_summary": "<p>Guardian SDK is a production-grade, real-time threat detection library for Python LLM and agentic applications. It operates as an eight-intercept pipeline &mdash; four pre-flight layers (Pattern, Semantic, Behavioral, ML), two post-flight layers (OutputAnalyzer, AdversarialLearner), and two agentic pipeline gates (ToolCallValidator, ToolOutputScanner) &mdash; detecting and blocking prompt injection, jailbreaks, role hijacking, system-prompt exfiltration, RAG/indirect injection, agentic tool hijacking, and multimodal threats (image, video, cross-modal attacks) introduced in v2.1.0. All inference runs on-device via ONNX Runtime with no input data leaving the deployment.&nbsp;</p>\n<p>The OLIR maps across all four functions addressing AI risk governance policy, threat context documentation, TEVV-informed security design, privacy-by-architecture, continuous improvement, and post-deployment monitoring as they apply specifically to the LLM and agentic AI application security domain.</p>",
+          "mapping_comment": "<p>Mapping covers Guardian SDK v2.1.0, which introduced multimodal threat detection (image, video, QR code, cross-modal attacks). Tier availability is noted in the Comments column of each mapping row (All tiers / API tiers). Relationship type (Functional/Semantic/Syntactic per IR 8278Ar1 &sect;3.2.7) is noted in Column C (Rationale) and elaborated in Column G (Comments) of the Relationships sheet. A separate CSF 2.0 OLIR submission (GuardianSDK-CSF20) has also been submitted concurrently.</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/OraclesTech/guardian-sdk/tree/main/docs/compliance/olir/AI_RMF",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/OraclesTech/guardian-sdk",
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -689,6 +864,48 @@
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "byte_length": 21218
         }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/221",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/221",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://docs.google.com/spreadsheets/d/1HnbzkMSaUVcqj4hqaDFxTTfcyc5RyOeP/edit?usp=sharing&ouid=100790643046296837536&rtpof=true&sd=true",
+          "reference_url": "https://drive.google.com/file/d/1tak27m9Un8RdwSkzqBqSyXhMcp2LnVJG/view",
+          "mapping_summary": "<p>GATE (Governance, Accountability, Traceability, Execution) is an operational control model designed to support implementation of the NIST AI Risk Management Framework (AI RMF). It enables structured ownership, traceability, and execution of AI risk controls across systems, data, and third-party dependencies.</p>",
+          "mapping_comment": "<p>GATE complements existing governance and risk management frameworks by providing an operational execution and traceability layer. It is not intended to provide full coverage of all AI RMF functions.</p>"
+        },
+        {
+          "kind": "Google Drive export",
+          "url": "https://docs.google.com/spreadsheets/d/1HnbzkMSaUVcqj4hqaDFxTTfcyc5RyOeP/edit?usp=sharing&ouid=100790643046296837536&rtpof=true&sd=true",
+          "status": 200,
+          "resolved_urls": [
+            "https://docs.google.com/spreadsheets/d/1HnbzkMSaUVcqj4hqaDFxTTfcyc5RyOeP/export?format=xlsx"
+          ]
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://docs.google.com/spreadsheets/d/1HnbzkMSaUVcqj4hqaDFxTTfcyc5RyOeP/export?format=xlsx",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "Google Drive export",
+          "url": "https://drive.google.com/file/d/1tak27m9Un8RdwSkzqBqSyXhMcp2LnVJG/view",
+          "status": 200,
+          "resolved_urls": [
+            "https://drive.google.com/uc?export=download&id=1tak27m9Un8RdwSkzqBqSyXhMcp2LnVJG"
+          ]
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://drive.google.com/uc?export=download&id=1tak27m9Un8RdwSkzqBqSyXhMcp2LnVJG",
+          "error": "source URL policy rejected unapproved destination"
+        }
       ]
     },
     {
@@ -713,7 +930,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 202; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -730,18 +947,12 @@
         {
           "kind": "artifact download",
           "url": "https://bxaios.com/nist-alignment/",
-          "status": 202,
-          "final_url": "https://bxaios.com/nist-alignment/",
-          "content_type": "text/html",
-          "byte_length": 186
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://www.amazon.com/dp/B0FWBSDMVR",
-          "status": 200,
-          "final_url": "https://www.amazon.com/dp/B0FWBSDMVR",
-          "content_type": "text/html;charset=UTF-8",
-          "byte_length": 1499811
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -767,7 +978,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 202; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -784,18 +995,12 @@
         {
           "kind": "artifact download",
           "url": "https://bxaios.com/nist-alignment/",
-          "status": 202,
-          "final_url": "https://bxaios.com/nist-alignment/",
-          "content_type": "text/html",
-          "byte_length": 186
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://www.amazon.com/dp/B0FWBSDMVR",
-          "status": 200,
-          "final_url": "https://www.amazon.com/dp/B0FWBSDMVR",
-          "content_type": "text/html;charset=UTF-8",
-          "byte_length": 1494929
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -821,7 +1026,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -838,10 +1043,7 @@
         {
           "kind": "artifact download",
           "url": "https://www.infoblox.com/solutions/compliance/",
-          "status": 200,
-          "final_url": "https://www.infoblox.com/solutions/compliance/",
-          "content_type": "text/html; charset=UTF-8",
-          "byte_length": 427632
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
@@ -916,6 +1118,32 @@
           "content_type": "application/octet-stream",
           "byte_length": 35913
         }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/198",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/198",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://github.com/Aviral2642/nist-olir-owasp-llm-top10-csf2/raw/main/NIST_CSF2.0_to_OWASP_LLM_Top10_v2.0_OLIR.xlsx",
+          "reference_url": "https://genai.owasp.org",
+          "mapping_summary": "<p>This mapping identifies relationships between NIST CSF 2.0 subcategories and the ten most critical security risks for Large Language Model applications as defined by OWASP. It contains 169 set theory relationship entries covering 77 of 106 CSF subcategories across all six CSF Functions. Each entry includes a functional rationale explaining the specific technical connection and a strength of relationship score on the 0-10 scale. This mapping enables organizations using the CSF as their risk management framework to identify where LLM-specific security risks intersect with established cybersecurity outcomes and to integrate appropriate AI security controls into their existing programs.</p>",
+          "mapping_comment": "<p>To the developer's knowledge, this is the first OLIR submission mapping an AI security framework to CSF 2.0.</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/Aviral2642/nist-olir-owasp-llm-top10-csf2/raw/main/NIST_CSF2.0_to_OWASP_LLM_Top10_v2.0_OLIR.xlsx",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://genai.owasp.org",
+          "error": "source URL policy rejected unapproved destination"
+        }
       ]
     },
     {
@@ -972,6 +1200,32 @@
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "byte_length": 16571
         }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/194",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/194",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://p-sscrm.github.io/assets/data/P-SSCRM_to_SSDF_CROSSWALK_20260219.xlsx",
+          "reference_url": "https://p-sscrm.github.io/",
+          "mapping_summary": "<p>Crosswalk between P-SSCRM v2.0 and SSDF v1.1</p>",
+          "mapping_comment": "<p>N/A</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://p-sscrm.github.io/assets/data/P-SSCRM_to_SSDF_CROSSWALK_20260219.xlsx",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://p-sscrm.github.io/",
+          "error": "source URL policy rejected unapproved destination"
+        }
       ]
     },
     {
@@ -996,7 +1250,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1013,18 +1267,12 @@
         {
           "kind": "artifact download",
           "url": "https://doi.org/10.5281/zenodo.18498447",
-          "status": 200,
-          "final_url": "https://zenodo.org/records/18498447",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 94597
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://zenodo.org/records/18363217",
-          "status": 200,
-          "final_url": "https://zenodo.org/records/18363217",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 208784
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -1050,7 +1298,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1067,10 +1315,7 @@
         {
           "kind": "artifact download",
           "url": "http://43828014.hs-sites.com/171r2-to-53r5-mapping-download",
-          "status": 200,
-          "final_url": "https://43828014.hs-sites.com/171r2-to-53r5-mapping-download",
-          "content_type": "text/html; charset=UTF-8",
-          "byte_length": 37697
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
@@ -1144,6 +1389,32 @@
           "content_type": "application/octet-stream",
           "byte_length": 67547
         }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/183",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/183",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://github.com/Glimpz1/grc-mappings/tree/main/olir/csf-2.0_pci-4.0.1_supportive",
+          "reference_url": "https://www.pcisecuritystandards.org/document_library/",
+          "mapping_summary": "<p>This OLIR provides a Set Theory mapping from NIST CSF 2.0 Subcategories (focal) to PCI DSS v4.0.1 Defined Approach Requirements (reference). Each relationship is expressed as supports / is supported by, with Relationship Property classified as example of, integral to, or precedes. PCI requirements are referenced by their official identifiers. Intended use: scoping, gap analysis, and traceability with CSF as the pivot.</p>",
+          "mapping_comment": "<p>Mappings are performed at the level of CSF Subcategory and PCI DSS Defined Approach Requirement.</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://github.com/Glimpz1/grc-mappings/tree/main/olir/csf-2.0_pci-4.0.1_supportive",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://www.pcisecuritystandards.org/document_library/",
+          "error": "source URL policy rejected unapproved destination"
+        }
       ]
     },
     {
@@ -1168,7 +1439,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1185,18 +1456,12 @@
         {
           "kind": "artifact download",
           "url": "https://www.cisecurity.org/insights/white-papers/cis-controls-v8-1-mapping-to-nist-csf-2-0",
-          "status": 200,
-          "final_url": "https://www.cisecurity.org/insights/white-papers/cis-controls-v8-1-mapping-to-nist-csf-2-0",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 115794
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://www.cisecurity.org/controls/v8-1",
-          "status": 200,
-          "final_url": "https://www.cisecurity.org/controls/v8-1",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 262888
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -1415,7 +1680,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1432,18 +1697,12 @@
         {
           "kind": "artifact download",
           "url": "https://www.gov.uk/government/publications/cyber-governance-mapping/mapping-cyber-governance-code-to-nist-cyber-security-framework",
-          "status": 200,
-          "final_url": "https://www.gov.uk/government/publications/cyber-governance-mapping/mapping-cyber-governance-code-to-nist-cyber-security-framework",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 88408
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://www.gov.uk/government/publications/cyber-governance-code-of-practice",
-          "status": 200,
-          "final_url": "https://www.gov.uk/government/publications/cyber-governance-code-of-practice",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 84619
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -1469,7 +1728,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download 403",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1486,18 +1745,15 @@
         {
           "kind": "artifact download",
           "url": "http://43828014.hs-sites.com/171r2-cmmc-mapping",
-          "status": 200,
-          "final_url": "https://43828014.hs-sites.com/171r2-cmmc-mapping",
-          "content_type": "text/html; charset=UTF-8",
-          "byte_length": 37801
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverviewv2.pdf",
-          "status": 200,
+          "status": 403,
           "final_url": "https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverviewv2.pdf",
-          "content_type": "application/pdf",
-          "byte_length": 977491
+          "content_type": "text/html",
+          "byte_length": 436
         }
       ]
     },
@@ -1523,7 +1779,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download 403",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1540,18 +1796,15 @@
         {
           "kind": "artifact download",
           "url": "http://43828014.hs-sites.com/171r2-cmmc-mapping",
-          "status": 200,
-          "final_url": "https://43828014.hs-sites.com/171r2-cmmc-mapping",
-          "content_type": "text/html; charset=UTF-8",
-          "byte_length": 37801
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverviewv2.pdf",
-          "status": 200,
+          "status": 403,
           "final_url": "https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverviewv2.pdf",
-          "content_type": "application/pdf",
-          "byte_length": 977491
+          "content_type": "text/html",
+          "byte_length": 436
         }
       ]
     },
@@ -1633,7 +1886,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1650,18 +1903,12 @@
         {
           "kind": "artifact download",
           "url": "https://cyberriskinstitute.org/the-profile/",
-          "status": 200,
-          "final_url": "https://cyberriskinstitute.org/the-profile/",
-          "content_type": "text/html; charset=UTF-8",
-          "byte_length": 83131
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://CyberRiskInstitute.org/The-Profile/",
-          "status": 200,
-          "final_url": "https://cyberriskinstitute.org/The-Profile/",
-          "content_type": "text/html; charset=UTF-8",
-          "byte_length": 83131
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -1687,7 +1934,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 403",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -1704,18 +1951,12 @@
         {
           "kind": "artifact download",
           "url": "https://www.razil.io/post/nist-csf-2-0-to-iso-27001-2022-annexure-a-mapping",
-          "status": 200,
-          "final_url": "https://www.razil.io/post/nist-csf-2-0-to-iso-27001-2022-annexure-a-mapping",
-          "content_type": "text/html;charset=utf-8",
-          "byte_length": 87204
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-3:v1:en",
-          "status": 403,
-          "final_url": "https://www.iso.org/obp/ui/",
-          "content_type": "text/html; charset=UTF-8",
-          "byte_length": 5486
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -1776,6 +2017,32 @@
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "byte_length": 97586
         }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/152",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/152",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-800-171-r3.xlsx",
+          "reference_url": "https://securecontrolsframework.com/scf-download/",
+          "mapping_summary": "<p>A mapping between NIST SP 800-171 R3 controls and Secure Controls Framework (SCF) controls.</p>",
+          "mapping_comment": "<p>The SCF is a metaframework that contains commonly-used cybersecurity and privacy laws, regulations and frameworks to assist an organization with identifying and conveying mandatory and discretionary controls with the goal of becoming both secure and compliant.</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-800-171-r3.xlsx",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://securecontrolsframework.com/scf-download/",
+          "error": "source URL policy rejected unapproved destination"
+        }
       ]
     },
     {
@@ -1834,6 +2101,32 @@
           "final_url": "https://content.securecontrolsframework.com/olir/scf-olir-strm-nist-csf-2-0.xlsx",
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "byte_length": 67606
+        }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/153",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/153",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-csf-2-0.xlsx",
+          "reference_url": "https://securecontrolsframework.com/scf-download/",
+          "mapping_summary": "<p>A mapping between NIST CSF controls and Secure Controls Framework (SCF) controls.</p>",
+          "mapping_comment": "<p>The SCF is a metaframework that contains commonly-used cybersecurity and privacy laws, regulations and frameworks to assist an organization with identifying and conveying mandatory and discretionary controls with the goal of becoming both secure and compliant.</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-csf-2-0.xlsx",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://securecontrolsframework.com/scf-download/",
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -2025,6 +2318,32 @@
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "byte_length": 216482
         }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/144",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/144",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-800-53-r5-1-1.xlsx",
+          "reference_url": "https://securecontrolsframework.com/scf-download/",
+          "mapping_summary": "<p>A mapping between NIST SP 800-53 R5.1.1 controls and Secure Controls Framework (SCF) controls.</p>",
+          "mapping_comment": "<p>The SCF is a metaframework that contains commonly-used cybersecurity and privacy laws, regulations and frameworks to assist an organization with identifying and conveying mandatory and discretionary controls with the goal of becoming both secure and compliant.</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-800-53-r5-1-1.xlsx",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://securecontrolsframework.com/scf-download/",
+          "error": "source URL policy rejected unapproved destination"
+        }
       ]
     },
     {
@@ -2083,6 +2402,32 @@
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "byte_length": 43833
         }
+      ],
+      "refresh_status": "retained_last_good",
+      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "latest_retrieval_attempts": [
+        {
+          "kind": "NIST catalog detail endpoint",
+          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/145",
+          "status": 200,
+          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/145",
+          "json_file_url": null,
+          "publisher_sha256": null,
+          "submission_url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-800-171-r2.xlsx",
+          "reference_url": "https://securecontrolsframework.com/scf-download/",
+          "mapping_summary": "<p>A mapping between NIST SP 800-171 R2 controls and Secure Controls Framework (SCF) controls.</p>",
+          "mapping_comment": "<p>The SCF is a metaframework that contains commonly-used cybersecurity and privacy laws, regulations and frameworks to assist an organization with identifying and conveying mandatory and discretionary controls with the goal of becoming both secure and compliant.</p>"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-800-171-r2.xlsx",
+          "error": "source URL policy rejected unapproved destination"
+        },
+        {
+          "kind": "artifact download",
+          "url": "https://securecontrolsframework.com/scf-download/",
+          "error": "source URL policy rejected unapproved destination"
+        }
       ]
     },
     {
@@ -2107,7 +2452,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; Google Drive export 200; artifact download 401; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; Google Drive export 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -2132,18 +2477,12 @@
         {
           "kind": "artifact download",
           "url": "https://docs.google.com/spreadsheets/d/1UrlVUnmAvaaoddMntklZzHZhemLqn7l8/export?format=xlsx",
-          "status": 401,
-          "final_url": "https://docs.google.com/spreadsheets/d/1UrlVUnmAvaaoddMntklZzHZhemLqn7l8/export?format=xlsx",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 8949
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://cloudsecurityalliance.org/research/cloud-controls-matrix",
-          "status": 200,
-          "final_url": "https://cloudsecurityalliance.org/research/cloud-controls-matrix",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 82708
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -2300,7 +2639,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -2317,10 +2656,7 @@
         {
           "kind": "artifact download",
           "url": "https://workforce-builder.herokuapp.com/tools/olirs",
-          "status": 200,
-          "final_url": "https://workforce-builder.herokuapp.com/tools/olirs",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 5923
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
@@ -2354,7 +2690,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download 200",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -2371,10 +2707,7 @@
         {
           "kind": "artifact download",
           "url": "https://workforce-builder.herokuapp.com/tools/olirs",
-          "status": 200,
-          "final_url": "https://workforce-builder.herokuapp.com/tools/olirs",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 5923
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
@@ -2408,7 +2741,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -2425,10 +2758,7 @@
         {
           "kind": "artifact download",
           "url": "https://CyberRiskInstitute.org/The-Profile/",
-          "status": 200,
-          "final_url": "https://cyberriskinstitute.org/The-Profile/",
-          "content_type": "text/html; charset=UTF-8",
-          "byte_length": 83131
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -2454,7 +2784,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -2471,18 +2801,12 @@
         {
           "kind": "artifact download",
           "url": "https://www.cisecurity.org/controls",
-          "status": 200,
-          "final_url": "https://www.cisecurity.org/controls",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 276022
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://learn.cisecurity.org/cis-controls-download",
-          "status": 200,
-          "final_url": "https://learn.cisecurity.org/cis-controls-download",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 61082
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },
@@ -2969,7 +3293,7 @@
       "map_file": null,
       "artifact_id": null,
       "artifact": null,
-      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download 200; artifact download 200",
+      "quarantine_reason": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL; retrieval evidence: NIST catalog detail endpoint 200; artifact download source URL policy rejected unapproved destination; artifact download source URL policy rejected unapproved destination",
       "retrieval_attempts": [
         {
           "kind": "NIST catalog detail endpoint",
@@ -2986,18 +3310,12 @@
         {
           "kind": "artifact download",
           "url": "https://content.securecontrolsframework.com/olir/Secure-Controls-Framework-SCFv2023.2-to-NIST-800-171-R2.xlsx",
-          "status": 200,
-          "final_url": "https://securecontrolsframework.com/free-content/scf-download",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 49472
+          "error": "source URL policy rejected unapproved destination"
         },
         {
           "kind": "artifact download",
           "url": "https://securecontrolsframework.com/scf-download/",
-          "status": 200,
-          "final_url": "https://securecontrolsframework.com/free-content/scf-download",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 49472
+          "error": "source URL policy rejected unapproved destination"
         }
       ]
     },

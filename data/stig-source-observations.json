@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T16:08:26.104Z",
+  "generated_at": "2026-09-10T16:29:26.652Z",
   "observations": [
     {
       "source_id": "cyber-mil-stig-compilations",
-      "observed_at": "2026-09-10T16:08:26.104Z",
+      "observed_at": "2026-09-10T16:29:26.652Z",
       "required": true,
       "available": true,
       "retrieval_status": "skip",
@@ -21,7 +21,7 @@
     },
     {
       "source_id": "cyber-mil-stig-downloads",
-      "observed_at": "2026-09-10T16:08:26.104Z",
+      "observed_at": "2026-09-10T16:29:26.652Z",
       "required": true,
       "available": true,
       "retrieval_status": "skip",
@@ -38,7 +38,7 @@
     },
     {
       "source_id": "cyber-mil-stig-gpo",
-      "observed_at": "2026-09-10T16:08:26.104Z",
+      "observed_at": "2026-09-10T16:29:26.652Z",
       "required": true,
       "available": true,
       "retrieval_status": "skip",
@@ -55,7 +55,7 @@
     },
     {
       "source_id": "nuwcdivnpt-stig-manager",
-      "observed_at": "2026-09-10T16:08:26.104Z",
+      "observed_at": "2026-09-10T16:29:26.652Z",
       "required": false,
       "available": true,
       "retrieval_status": "updated",
