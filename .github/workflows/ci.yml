@@ -633,6 +633,7 @@ jobs:
           BROWSER_RESULT: ${{ needs.nightly-browser.result }}
           ACCESSIBILITY_RESULT: ${{ needs.nightly-accessibility.result }}
           REFRESH_RESULT: ${{ needs.refresh.result }}
+          ALERT_LABEL: ${{ (inputs.task == 'refresh' || github.event.schedule == '17 7 * * 3') && 'sweep-red-refresh' || 'sweep-red-nightly' }}
         run: |
           set -euo pipefail
           failed=0
@@ -659,14 +660,15 @@ jobs:
             else
               echo "Sweep green. Repository Issues are disabled, so no persistent alert state was changed."
             fi
-            exit 0
+            echo "::error::Persistent scheduled alerts require repository Issues."
+            exit 1
           fi
 
-          open_issue="$(gh issue list --repo "$REPO" --label sweep-red --state open             --limit 1 --json number --jq '.[0].number // empty')"
+          open_issue="$(gh issue list --repo "$REPO" --label "$ALERT_LABEL" --state open             --limit 1 --json number --jq '.[0].number // empty')"
 
           if [ "$failed" -eq 1 ] && [ -z "$open_issue" ]; then
-            gh label create sweep-red --repo "$REPO" --color B60205               --description "Scheduled Control Atlas job is failing" --force >/dev/null 2>&1 || true
-            gh issue create --repo "$REPO" --label sweep-red               --title "Scheduled Control Atlas job is failing"               --body "A scheduled job failed. Jobs that did not run for this schedule show as skipped.
+            gh label create "$ALERT_LABEL" --repo "$REPO" --color B60205               --description "Scheduled Control Atlas job is failing" --force >/dev/null
+            gh issue create --repo "$REPO" --label "$ALERT_LABEL"               --title "Scheduled Control Atlas job is failing: $ALERT_LABEL"               --body "A scheduled job failed. Jobs that did not run for this schedule show as skipped.
 
           Build: $BUILD_RESULT
           Browser: $BROWSER_RESULT

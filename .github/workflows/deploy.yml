@@ -171,21 +171,12 @@ jobs:
           done
           echo "Production did not converge to $EXPECTED_SHA within two minutes."
           exit 1
-      - name: Run three production Lighthouse passes
+      - name: Warm the runner and measure three production Lighthouse passes
         env:
           TARGET_URL: ${{ needs.deploy.outputs.page_url }}
         shell: bash
         run: |
-          mkdir -p artifacts/deployed-lighthouse
-          for pass in 1 2 3; do
-            npx lighthouse "$TARGET_URL" \
-              --quiet \
-              --chrome-flags='--headless --no-sandbox' \
-              --form-factor=mobile \
-              --screenEmulation.mobile \
-              --output=json \
-              --output-path="artifacts/deployed-lighthouse/run-${pass}.report.json"
-          done
+          npm run lighthouse:production
           LIGHTHOUSE_REPORT_DIR=artifacts/deployed-lighthouse node tools/summarize-lighthouse.mjs
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         if: always()

@@ -45,6 +45,7 @@ const SOURCE_REFRESH_PATHS = new Set([
   'tools/relationship-builders/800-171-mapping-adapter.mjs',
   'tools/relationship-builders/olir-adapter.mjs',
   'tools/relationship-builders/olir-retrieval.mjs',
+  'tools/relationship-builders/olir-html.mjs',
 ]);
 
 function addStep(steps, step) {
@@ -53,6 +54,23 @@ function addStep(steps, step) {
 
 export function createVerificationPlan(paths, changeMap) {
   const steps = [];
+  const pipelinePaths = new Set([
+    'tools/collect-production-lighthouse.mjs', 'tools/lighthouse-metrics.mjs',
+    'tools/summarize-lighthouse.mjs', 'tools/report-refresh-alerts.mjs',
+    'tools/relationship-builders/olir-html.mjs', 'tools/relationship-builders/olir-retrieval.mjs',
+    'scripts/fetch-olir-catalog.mjs', 'tests/pipeline-reliability.test.mjs',
+    'tests/olir-retrieval.test.mjs', 'tests/refresh-alerts.test.mjs',
+  ]);
+  if (paths.length && paths.every((path) => pipelinePaths.has(path))) {
+    return {
+      blocked: false, reasons: [], paths, changeMap,
+      steps: [
+        { id: 'pipeline-lint', command: ['npm', 'run', 'lint:pipeline-reliability'], expectedTests: 0, workers: 1, budgetSeconds: 10 },
+        { id: 'pipeline-source-lint', command: ['npm', 'run', 'lint:source-refresh'], expectedTests: 0, workers: 1, budgetSeconds: 10 },
+        { id: 'pipeline-contracts', command: ['node', '--test', 'tests/pipeline-reliability.test.mjs', 'tests/olir-retrieval.test.mjs', 'tests/refresh-alerts.test.mjs'], expectedTests: 25, workers: 3, budgetSeconds: 40 },
+      ], totalExpectedTests: 25, totalBudgetSeconds: 60,
+    };
+  }
   const refreshSafetyPaths = new Set([
     'scripts/lib/catalog-refresh-profiles.mjs', 'scripts/lib/publisher-inventory.mjs', 'scripts/lib/cci-inventory.mjs',
     'scripts/lib/refresh-candidate-gate.mjs', 'scripts/lib/refresh-source-outputs.mjs',

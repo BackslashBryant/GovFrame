@@ -7,6 +7,7 @@ import {
   routeThresholdFailures,
   selectLatestRouteRuns,
   summarizeRouteMedians,
+  validateLighthouseReport,
 } from './lighthouse-metrics.mjs';
 
 const REPORT_DIR = process.env.LIGHTHOUSE_REPORT_DIR
@@ -23,9 +24,12 @@ if (reportFiles.length === 0) {
 const rows = [];
 for (const reportFile of reportFiles) {
   const report = JSON.parse(await readFile(join(REPORT_DIR, reportFile), 'utf8'));
+  validateLighthouseReport(report);
   rows.push({
     url: report.requestedUrl || report.finalDisplayedUrl || report.finalUrl,
     fetchTime: report.fetchTime,
+    benchmarkIndex: report.environment?.benchmarkIndex ?? null,
+    longTasks: report.audits['long-tasks']?.details?.items ?? [],
     performance: Math.round((report.categories.performance?.score ?? 0) * 100),
     accessibility: Math.round((report.categories.accessibility?.score ?? 0) * 100),
     lcpMs: Math.round(report.audits['largest-contentful-paint']?.numericValue ?? 0),
@@ -40,7 +44,7 @@ const routeMedians = summarizeRouteMedians(currentRows);
 const thresholdFailures = routeThresholdFailures(routeMedians);
 const summary = {
   generatedAt: new Date().toISOString(),
-  evidence: 'local-or-CI synthetic Lighthouse; not field, real-device, or deployed evidence',
+  evidence: 'synthetic Lighthouse for the recorded requested URLs; not field or real-device evidence',
   thresholds: LIGHTHOUSE_THRESHOLDS,
   routeMedians,
   thresholdFailures,

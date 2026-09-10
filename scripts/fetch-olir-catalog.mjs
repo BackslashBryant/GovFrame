@@ -6,7 +6,7 @@
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createRegisteredOlirFetch, parseOlirStructuredArtifact, retrieveStructuredOlirArtifact } from '../tools/relationship-builders/olir-retrieval.mjs';
+import { createRegisteredOlirFetch, olirAvailability, parseOlirStructuredArtifact, retrieveStructuredOlirArtifact } from '../tools/relationship-builders/olir-retrieval.mjs';
 import { strictConditionalFetch } from './lib/strict-conditional-fetch.mjs';
 import { writeJsonAtomically } from './lib/write-json-atomically.mjs';
 
@@ -55,7 +55,7 @@ function quarantineReason(entry, catalogId) {
   if (entry.statusDescription !== 'Final') {
     return `OLIR status is "${entry.statusDescription}", not Final — held out of the published graph pending NIST finalization`;
   }
-  return 'no downloadable structured relationship artifact at this submission — the OLIR catalog list API exposes only a pointer to the referenced publication (referenceUrl), not a machine-parseable crosswalk file; NIST\'s per-entry submission-artifact endpoint (/details/{id}, /reference-detail/{id}) returns 404 from this environment for every id tried';
+  return 'no public relationship mapping discovered at the registered submission locations; see retrieval evidence';
 }
 
 async function mapWithConcurrency(items, limit, work) {
@@ -101,6 +101,8 @@ async function retrieveEntry(entry) {
   const detail = await retrieveDetail(id);
   const candidates = [detail.json_file_url, detail.submission_url, detail.reference_url, entry.referenceUrl];
   const retrieved = await retrieveStructuredOlirArtifact(candidates, {
+    focalCatalogId: FOCAL_CATALOG_MAP.get(entry.focusDocName),
+    sourceIdentifier: entry.frameworkVersionIdentifier,
     fetchImpl: createRegisteredOlirFetch([detail.json_file_url, detail.submission_url]),
   });
   const attempts = [detail, ...retrieved.attempted];
@@ -110,7 +112,7 @@ async function retrieveEntry(entry) {
     unavailable_reason: 'no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL',
   };
   try {
-    const parsed = await parseOlirStructuredArtifact(retrieved.artifact);
+    const parsed = await parseOlirStructuredArtifact(retrieved.artifact, { focalCatalogId: FOCAL_CATALOG_MAP.get(entry.focusDocName) });
     if (!parsed.relationships.length) {
       return { attempts, mapping: null, parse_failed: true, unavailable_reason: `downloaded structured artifact contains no parseable OLIR relationships (${parsed.parser})` };
     }
@@ -122,6 +124,7 @@ async function retrieveEntry(entry) {
       sha256: retrieved.artifact.sha256,
       byte_length: retrieved.artifact.bytes.length,
       parser: parsed.parser,
+      extraction_scope: parsed.parser === 'olir-html' ? 'published_html_relationships' : 'structured_artifact',
       relationships: parsed.relationships,
     };
     return {
@@ -133,6 +136,7 @@ async function retrieveEntry(entry) {
         checksum: retrieved.artifact.sha256,
         byte_length: retrieved.artifact.bytes.length,
         parser: parsed.parser,
+        extraction_scope: parsed.parser === 'olir-html' ? 'published_html_relationships' : 'structured_artifact',
         relationship_count: parsed.relationships.length,
         relationship_semantics: [...new Set(parsed.relationships.map((relationship) => relationship.relationship_type))].sort(),
       },
@@ -225,6 +229,7 @@ export async function fetchOlirCatalog() {
     if (retrieval?.retainedItem) return {
       ...retrieval.retainedItem,
       refresh_status: 'retained_last_good',
+      availability: olirAvailability(retrievedById.get(id)),
       refresh_error: retrieval.unavailable_reason || 'Mapping could not be refreshed',
       latest_retrieval_attempts: retrieval_attempts,
     };
@@ -248,6 +253,7 @@ export async function fetchOlirCatalog() {
       authority_tier_label: authority.label,
       mapping_model: ingested?.relationship_semantics?.join(', ') || null,
       ingested: Boolean(ingested),
+      availability: !catalogId ? 'outside_catalog_scope' : entry.statusDescription !== 'Final' ? 'not_final' : olirAvailability(retrieval),
       map_file: ingested?.map_file || null,
       artifact_id: null,
       artifact: ingested,

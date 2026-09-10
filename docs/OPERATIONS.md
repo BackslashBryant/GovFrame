@@ -2,7 +2,7 @@
 
 - **Owner:** Nexus and Pixel
 - **Status:** Canonical
-- **Last reviewed:** 2026-09-09
+- **Last reviewed:** 2026-09-10
 - **Supersession:** Update this contract and the corresponding package scripts or workflows in the same approved change.
 
 ## Unattended weekly source refresh
@@ -21,6 +21,9 @@ quarantined sources. `tools/report-refresh-alerts.mjs` creates, updates or reope
 one generated GitHub issue per quarantined source, and closes it after an explicit
 accepted recovery. Missing or untouched source results never imply recovery.
 Alert delivery errors fail the job.
+Nightly sweeps and weekly refreshes have separate incident labels, so an
+unrelated successful schedule cannot close a failed refresh's alert. Disabling
+repository Issues fails the alert job instead of silently degrading to a warning.
 
 Refresh health measures faithful handling of publisher material, not perfection
 of the publisher's metadata. Unchanged official content is healthy; the shared
@@ -36,6 +39,8 @@ bytes and original provenance are retained. Separate `refresh_status`,
 `retained_count` reports these submissions. Successful retrieval replaces the
 retained version and clears those fields automatically. Retention does not admit
 the submitter's external host into the official-source fetch allowlist.
+An accepted OLIR source transaction with retained submissions keeps its source
+issue open. Only a subsequent accepted run with no retained submissions closes it.
 
 NIST OLIR registers developer-hosted mappings; an official catalog entry does
 not make its assertions NIST-authored or NIST-endorsed. The
@@ -50,6 +55,24 @@ document ID. New filenames within a registered GitHub directory need no code edi
 Workbook ingestion reads every sheet with relationship headers, preserves sheet
 and row locators, and stores strength and explanation separately from relationship
 type. Spreadsheet presentation objects are excluded from cell-data parsing.
+Registered public landing pages may expose structured downloads or explicit
+relationship tables. Discovery grants only linked artifact locations on audited
+hosts; it does not grant arbitrary redirects or sibling paths. CSV parsing
+preserves quoted commas and multiline cells. HTML extraction preserves the
+published framework identifiers and row or paragraph locators. Its
+`extraction_scope: published_html_relationships` means only the relationships
+actually printed on that page, which may be a publisher-selected subset. It is
+not a claim that the complete registered crosswalk is available.
+
+Each manifest entry records `availability`: structured artifact, published HTML
+relationships, access restricted, download replaced by HTML, no public mapping
+discovered, retrieval failure, parse failure, or outside the active catalog/Final
+scope. These are observations, not guesses about unpublished material. The
+weekly run retries applicable entries, including previously unavailable ones.
+It never fills out publisher forms, bypasses authentication, or substitutes a
+current workbook for an older registered download that redirects to a generic
+page. A previously accepted mapping remains protected by retention and admission
+checks regardless of its current availability.
 
 Recurring identical source alerts retain their original issue and occurrence
 link; changed diagnostics, new failures and recovery update the issue. Each
@@ -79,6 +102,21 @@ token for source requests and issue alerts; it obtains the App token only after
 validation. Required branch protections remain binding.
 
 ## Local gates
+
+### Production performance measurement
+
+`npm run lighthouse:production` uses two fixed host warmups followed by three
+measured cold-browser runs. All three measured runs enter the median; scores do
+not trigger retries or selective sampling. LCP, TBT and CLS budgets remain
+2500 ms, 200 ms and 0.1. Missing metrics and Lighthouse runtime failures fail
+closed. Reports, traces and DevTools logs are retained for diagnosis.
+
+Host warmups follow Lighthouse's
+[variance guidance](https://github.com/GoogleChrome/lighthouse/blob/main/docs/variability.md).
+They address observed cold-run/garbage-collection variance, not application
+regressions. A failed median still fails deployment verification and must be
+investigated from the saved reports. Express's transitive `qs` override retains
+the compatible security-fixed version until Express updates its own dependency.
 
 ### Recover a validated refresh PR
 

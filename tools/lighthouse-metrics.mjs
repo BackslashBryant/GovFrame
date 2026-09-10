@@ -4,6 +4,18 @@ export const LIGHTHOUSE_THRESHOLDS = Object.freeze({
   cls: 0.1,
 });
 
+export function validateLighthouseReport(report) {
+  if (report.runtimeError) throw new Error(`Lighthouse runtime failure: ${report.runtimeError.code}`);
+  for (const key of ['largest-contentful-paint', 'total-blocking-time', 'cumulative-layout-shift']) {
+    const value = report.audits?.[key]?.numericValue;
+    if (!Number.isFinite(value) || value < 0) throw new Error(`Missing or invalid Lighthouse metric: ${key}`);
+  }
+  for (const key of ['performance', 'accessibility']) {
+    const score = report.categories?.[key]?.score;
+    if (!Number.isFinite(score) || score < 0 || score > 1) throw new Error(`Missing or invalid Lighthouse score: ${key}`);
+  }
+}
+
 export function median(values) {
   if (values.length === 0) return null;
   const sorted = [...values].sort((left, right) => left - right);
