@@ -1,0 +1,59 @@
+:root {
+  color-scheme: dark;
+  --not-found-orbit: #10191d;
+  --not-found-bone: #f2eee4;
+  --not-found-dust: #c7c1b5;
+  --not-found-signal: #69cbd0;
+  --not-found-focus: #ff8a33;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--not-found-orbit);
+  color: var(--not-found-bone);
+  font-family: system-ui, sans-serif;
+}
+
+main {
+  width: min(100% - 2rem, 42rem);
+  margin: 0 auto;
+  padding: clamp(4rem, 12vw, 8rem) 0;
+}
+
+.eyebrow {
+  color: var(--not-found-signal);
+  font: 700 0.75rem/1.4 ui-monospace, monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 12ch;
+  margin: 0.75rem 0 1rem;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+p {
+  max-width: 40rem;
+  color: var(--not-found-dust);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--not-found-signal);
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--not-found-focus);
+  outline-offset: 5px;
+}

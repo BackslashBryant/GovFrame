@@ -158,6 +158,18 @@ test('unmapped runtime and data changes fail before an expensive fallback', () =
   }
 });
 
+test('public shell metadata and static assets use the focused browser contract', () => {
+  const paths = ['src/index.html', 'src/public/robots.txt', 'src/public/og-image.png'];
+  const plan = createVerificationPlan(paths, classifyChangedPaths(paths));
+  assert.equal(plan.blocked, false);
+  assert.ok(plan.steps.some((step) => step.id === 'incremental-site-build'));
+  const shell = plan.steps.find((step) => step.id === 'public-shell-contract');
+  assert.ok(shell);
+  assert.deepEqual(shell.command, ['node', '--test', 'tests/browser-contract.test.mjs']);
+  assert.equal(shell.expectedTests, 28);
+  assert.equal(shell.workers, 1);
+});
+
 test('known STIG observation changes use the source-specific refresh contract', () => {
   const paths = [
     'scripts/fetch-stig-source-observations.mjs',

@@ -166,6 +166,13 @@ export function createVerificationPlan(paths, changeMap) {
     path === 'src/ui/pages/PlaybooksPage.tsx' ||
     path === 'src/ui/pages/TemplatesPage.tsx' ||
     path === 'tests/e2e/phase4-content-coherence.spec.mjs');
+  const publicShellChanged = paths.some((path) =>
+    path === 'src/index.html' ||
+    path === 'src/public/404.html' ||
+    path === 'src/public/apple-touch-icon.png' ||
+    path === 'src/public/og-image.png' ||
+    path === 'src/public/robots.txt' ||
+    path === 'src/public/sitemap.xml');
   const stigObservationChanged = paths.some((path) =>
     path === 'scripts/fetch-stig-source-observations.mjs' ||
     path === 'tests/stig-source-observer.test.mjs');
@@ -182,7 +189,7 @@ export function createVerificationPlan(paths, changeMap) {
     path === 'tests/commons-operator-ecosystem.test.mjs');
   const phase4DataChanged = paths.some((path) => path === 'data/template-registry.json');
   const mappedData = stigObservationChanged || incrementalDataChanged || sourceRefreshChanged || operatorEcosystemChanged || phase4DataChanged;
-  const mappedRuntime = changeMap.dependenciesChanged || sourceTrustChanged || compareWorkbenchChanged || boundedWorkbenchesChanged || phase4SurfacesChanged || mappedData || eolPolicyChanged || e2ePaths.length > 0;
+  const mappedRuntime = changeMap.dependenciesChanged || sourceTrustChanged || compareWorkbenchChanged || boundedWorkbenchesChanged || phase4SurfacesChanged || publicShellChanged || mappedData || eolPolicyChanged || e2ePaths.length > 0;
 
   if (changeMap.evidenceOnly) {
     addStep(steps, {
@@ -402,6 +409,15 @@ export function createVerificationPlan(paths, changeMap) {
       expectedTests: 7,
       workers: 2,
       budgetSeconds: 60,
+    });
+  }
+  if (publicShellChanged && !nodeTests.includes('tests/browser-contract.test.mjs')) {
+    addStep(steps, {
+      id: 'public-shell-contract',
+      command: ['node', '--test', 'tests/browser-contract.test.mjs'],
+      expectedTests: 28,
+      workers: 1,
+      budgetSeconds: 10,
     });
   }
   if (!sourceTrustChanged && !compareWorkbenchChanged && !boundedWorkbenchesChanged && !phase4SurfacesChanged && e2ePaths.length > 0) {
