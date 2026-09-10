@@ -1013,7 +1013,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-10T13:21:21Z",
-          "latestRepositoryUpdateAt": "2026-09-10T13:24:10Z",
+          "latestRepositoryUpdateAt": "2026-09-10T16:48:22Z",
           "license": "Apache-2.0",
           "description": "CLI tool and library for generating a Software Bill of Materials from container images and filesystems"
         }
@@ -11043,11 +11043,11 @@
         "installation": {
           "status": "documented",
           "text": "pip3 install git+https://github.com/elastic/detection-rules.git subdirectory=lib/kibana pip3 install git+https://github.com/elastic/detection-rules.git subdirectory=lib/kql",
-          "sourceUrl": "https://github.com/elastic/detection-rules/blob/784f0c76c5d6f8c928856c523c6636571e9f0754/README.md"
+          "sourceUrl": "https://github.com/elastic/detection-rules/blob/ffc8ad66570d0b5838705ef7b1c132c1c75c0d28/README.md"
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T16:17:26Z.",
+          "text": "Latest repository push: 2026-09-10T16:49:29Z.",
           "sourceUrl": "https://api.github.com/repos/elastic/detection-rules"
         },
         "release": {
@@ -11061,7 +11061,7 @@
       },
       "overview": {
         "text": "Detection Rules is the home for rules used by Elastic Security. This repository is used for the development, maintenance, testing, validation, and release of rules for Elastic Security’s Detection Engine.",
-        "sourceUrl": "https://github.com/elastic/detection-rules/blob/784f0c76c5d6f8c928856c523c6636571e9f0754/README.md",
+        "sourceUrl": "https://github.com/elastic/detection-rules/blob/ffc8ad66570d0b5838705ef7b1c132c1c75c0d28/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -11069,10 +11069,10 @@
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/elastic/detection-rules",
-        "commitSha": "784f0c76c5d6f8c928856c523c6636571e9f0754",
-        "commitUrl": "https://github.com/elastic/detection-rules/commit/784f0c76c5d6f8c928856c523c6636571e9f0754",
+        "commitSha": "ffc8ad66570d0b5838705ef7b1c132c1c75c0d28",
+        "commitUrl": "https://github.com/elastic/detection-rules/commit/ffc8ad66570d0b5838705ef7b1c132c1c75c0d28",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/elastic/detection-rules/blob/784f0c76c5d6f8c928856c523c6636571e9f0754/README.md",
+        "readmeUrl": "https://github.com/elastic/detection-rules/blob/ffc8ad66570d0b5838705ef7b1c132c1c75c0d28/README.md",
         "readmeSha256": "sha256:d7a3468cfa4fb40e378242bc5723455c0253898eb3c8d486c02f71a67a45e054",
         "readmeByteLength": 11709,
         "overviewExcerpt": "Detection Rules is the home for rules used by Elastic Security. This repository is used for the development, maintenance, testing, validation, and release of rules for Elastic Security’s Detection Engine.",
@@ -11112,8 +11112,8 @@
             "threat-hunting"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T16:17:26Z",
-          "latestRepositoryUpdateAt": "2026-09-10T15:54:08Z",
+          "lastPushedAt": "2026-09-10T16:49:29Z",
+          "latestRepositoryUpdateAt": "2026-09-10T16:39:17Z",
           "license": "NOASSERTION",
           "description": null
         }
@@ -11121,7 +11121,7 @@
       "currentVersion": "dev-v2.2.0",
       "lastReleaseAt": "2026-09-08T12:52:29Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T16:17:26Z"
+      "lastCommitAt": "2026-09-10T16:49:29Z"
     },
     {
       "id": "community-elastic-security",
@@ -17617,14 +17617,14 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-10T11:43:38Z",
-          "latestRepositoryUpdateAt": "2026-09-09T09:09:57Z",
+          "latestRepositoryUpdateAt": "2026-09-10T16:36:55Z",
           "license": "AGPL-3.0",
           "description": "MISP (core software) - Open Source Threat Intelligence and Sharing Platform"
         }
       },
       "currentVersion": "v2.5.46",
       "lastReleaseAt": "2026-09-10T08:04:11Z",
-      "publisherUpdatedAt": "2026-09-09",
+      "publisherUpdatedAt": "2026-09-10",
       "lastCommitAt": "2026-09-10T11:43:38Z",
       "license": "AGPL-3.0"
     },
@@ -21853,8 +21853,8 @@
             "vulnerability-scanner"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T15:41:53Z",
-          "latestRepositoryUpdateAt": "2026-09-10T16:10:37Z",
+          "lastPushedAt": "2026-09-10T16:45:21Z",
+          "latestRepositoryUpdateAt": "2026-09-10T16:51:34Z",
           "license": "MIT",
           "description": "Nuclei is a fast, customizable vulnerability scanner powered by the global security community and built on a simple YAML-based DSL, enabling collaboration to tackle trending vulnerabilities on the internet. It helps you find vulnerabilities in your applications, APIs, networks, DNS, and cloud configurations."
         }
@@ -21862,7 +21862,7 @@
       "currentVersion": "v3.11.1",
       "lastReleaseAt": "2026-08-08T12:21:32Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T15:41:53Z",
+      "lastCommitAt": "2026-09-10T16:45:21Z",
       "license": "MIT"
     },
     {
@@ -32378,7 +32378,7 @@
             "xdr"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T16:10:06Z",
+          "lastPushedAt": "2026-09-10T16:56:06Z",
           "latestRepositoryUpdateAt": "2026-09-10T15:22:14Z",
           "license": "NOASSERTION",
           "description": "Wazuh - The Open Source Security Platform. Unified XDR and SIEM protection for endpoints and cloud workloads."
@@ -32406,7 +32406,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T16:10:06Z.",
+          "text": "Latest repository push: 2026-09-10T16:56:06Z.",
           "sourceUrl": "https://api.github.com/repos/wazuh/wazuh"
         },
         "release": {
@@ -32419,7 +32419,7 @@
         }
       },
       "lastReleaseAt": "2026-07-30T16:32:45Z",
-      "lastCommitAt": "2026-09-10T16:10:06Z",
+      "lastCommitAt": "2026-09-10T16:56:06Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -32929,9 +32929,9 @@
     },
     {
       "id": "resource:catalog-elastic-detection-rules:publisher-destination",
-      "sourceUrl": "https://github.com/elastic/detection-rules/commit/784f0c76c5d6f8c928856c523c6636571e9f0754",
+      "sourceUrl": "https://github.com/elastic/detection-rules/commit/ffc8ad66570d0b5838705ef7b1c132c1c75c0d28",
       "locatorType": "repository_commit",
-      "locator": "784f0c76c5d6f8c928856c523c6636571e9f0754",
+      "locator": "ffc8ad66570d0b5838705ef7b1c132c1c75c0d28",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },
