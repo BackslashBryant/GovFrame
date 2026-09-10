@@ -1,4 +1,5 @@
 import { Readable } from 'node:stream';
+import { setTimeout as wait } from 'node:timers/promises';
 import { createHash } from 'node:crypto';
 import ExcelJS from 'exceljs';
 import { discoverOlirLinks, olirHtmlTables } from './olir-html.mjs';
@@ -164,6 +165,16 @@ export async function retrieveStructuredOlirArtifact(candidates, options = {}) {
   const attempted = [];
   const queue = [...new Set(candidates.filter(Boolean).map((url) => url.replace(/^http:\/\/43828014\.hs-sites\.com/, 'https://43828014.hs-sites.com')))];
   const visited = new Set();
+  const retried = new Set();
+  async function retryCandidate(candidate, index) {
+    if (retried.has(candidate)) return;
+    retried.add(candidate);
+    visited.delete(candidate);
+    queue.splice(index + 1, 0, candidate);
+    // Retries count toward the same 24-candidate ceiling. A partial source
+    // transaction can be accepted, so its outer retry cannot heal this failure.
+    await (options.wait || wait)(1000);
+  }
   for (let index = 0; index < queue.length && index < 24; index += 1) {
     const candidate = queue[index];
     if (visited.has(candidate)) continue;
@@ -183,11 +194,17 @@ export async function retrieveStructuredOlirArtifact(candidates, options = {}) {
       }
       const result = await requestBytes(candidate, fetchImpl);
       attempted.push({ kind: 'artifact download', url: candidate, status: result.status, final_url: result.final_url, content_type: result.content_type, byte_length: result.bytes.length });
+      if (result.status === 429 || result.status >= 500) {
+        await retryCandidate(candidate, index);
+        continue;
+      }
       if (result.status >= 200 && result.status < 300 && /html/i.test(result.content_type || '') && result.bytes.subarray(0, 2).toString('utf8') !== 'PK') {
         // A retired, version-specific download may redirect to today's generic
         // download page. Never replace that registered release with another one.
         if (STRUCTURED_EXTENSIONS.test(new URL(candidate).pathname)) {
-          attempted.at(-1).availability = 'artifact_replaced_by_html';
+          const sameArtifactPath = STRUCTURED_EXTENSIONS.test(new URL(result.final_url).pathname);
+          attempted.at(-1).availability = sameArtifactPath ? 'unexpected_html_response' : 'artifact_replaced_by_html';
+          if (sameArtifactPath) await retryCandidate(candidate, index);
           continue;
         }
         const tables = olirHtmlTables(result.bytes.toString('utf8'), result.final_url, options.focalCatalogId);
@@ -205,6 +222,10 @@ export async function retrieveStructuredOlirArtifact(candidates, options = {}) {
       }
     } catch (error) {
       attempted.push({ kind: 'artifact download', url: candidate, error: error instanceof Error ? error.message : String(error) });
+      if (['ECONNRESET', 'ECONNREFUSED', 'ETIMEDOUT', 'EAI_AGAIN'].includes(error?.code) ||
+          error?.name === 'TimeoutError' || /stale cached bytes|timed?\s*out|socket hang up|fetch failed/i.test(error?.message || '')) {
+        await retryCandidate(candidate, index);
+      }
     }
   }
   return { artifact: null, attempted };
@@ -214,6 +235,7 @@ export function olirAvailability(retrieval) {
   if (retrieval?.parse_failed) return 'parse_failed';
   if (retrieval?.mapping) return retrieval.mapping.extraction_scope === 'published_html_relationships' ? 'published_html_relationships' : 'structured_artifact';
   const attempts = retrieval?.attempts || [];
+  if (attempts.some((attempt) => attempt.availability === 'unexpected_html_response')) return 'unexpected_html_response';
   if (attempts.some((attempt) => attempt.error)) return 'retrieval_failed';
   if (attempts.some((attempt) => [401, 403].includes(attempt.status))) return 'access_restricted';
   if (attempts.some((attempt) => attempt.availability === 'artifact_replaced_by_html')) return 'artifact_replaced_by_html';
