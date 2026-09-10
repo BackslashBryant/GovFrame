@@ -90,3 +90,15 @@ test('source policy rejects non-publishers, unsafe transport and ambiguous paths
     'https://raw.githubusercontent.com/usnistgov/unapproved/main/data.json',
   ]) assert.throws(() => assertOfficialSourceUrl(url), /source URL policy/, url);
 });
+
+test('NIST registered OLIR artifact paths are admitted without trusting whole developer repositories', () => {
+  assert.ok(assertOfficialSourceUrl('https://api.github.com/repos/Glimpz1/grc-mappings/contents/olir/csf-2.0_pci-4.0.1_supportive?ref=main'));
+  assert.ok(assertOfficialSourceUrl('https://raw.githubusercontent.com/Glimpz1/grc-mappings/main/olir/csf-2.0_pci-4.0.1_supportive/csf-v2_pci-dss_v4.0.1_olir-supportive.xlsx'));
+  assert.ok(assertOfficialSourceUrl('https://raw.githubusercontent.com/greerfam2020-rgb/IPAC-AI-Framework-Review/main/IPACS_AI_RMF_Crosswalk_v3-5.xlsx'));
+  for (const url of [
+    'https://api.github.com/repos/Glimpz1/grc-mappings/contents/?ref=main',
+    'https://raw.githubusercontent.com/Glimpz1/grc-mappings/main/other.xlsx',
+    'https://raw.githubusercontent.com/Glimpz1/grc-mappings/main/olir/csf-2.0_pci-4.0.1_supportive/csf-v2_pci-dss_v4.0.1_olir-supportive.xlsx?redirect=elsewhere',
+    'https://www.nerc.com/other.xlsx',
+  ]) assert.throws(() => assertOfficialSourceUrl(url), /source URL policy/);
+});

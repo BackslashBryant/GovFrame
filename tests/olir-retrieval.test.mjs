@@ -52,3 +52,31 @@ test('public Google Sheets submission resolves through its deterministic XLSX ex
     globalThis.fetch = originalFetch;
   }
 });
+
+test('OLIR workbook preserves every relationship sheet and keeps strength separate from type', async () => {
+  const { default: ExcelJS } = await import('exceljs');
+  const { parseOlirStructuredArtifact } = await import('../tools/relationship-builders/olir-retrieval.mjs');
+  const workbook = new ExcelJS.Workbook();
+  workbook.addWorksheet('General Information').addRow(['Field Name', 'Value']);
+  workbook.getWorksheet('General Information').addRow(['Informative Reference Name', 'Mapping (Focal: CSF 2.0)']);
+  for (const family of ['AC', 'SR']) {
+    const sheet = workbook.addWorksheet(family === 'AC' ? 'Relationships-AC' : 'SR');
+    sheet.addRow(['Focal Document Element', 'Reference Document Element', 'Strength of Relationship (Optional)', 'Relationship Explanation']);
+    sheet.addRow([`${family}-01`, 'CIP-003-9', 8, 'Publisher explanation']);
+  }
+  const supportive = workbook.addWorksheet('Relationships-Supportive');
+  supportive.addRow(['Focal Document Element', 'Reference Document Element', 'Relationship Type', 'Strength of Relationship']);
+  supportive.addRow(['GV.OC-01', '12.1.1', 'supports', 5]);
+  const artifact = { url: 'https://example.org/mapping.xlsx', bytes: Buffer.from(await workbook.xlsx.writeBuffer()) };
+  const result = await parseOlirStructuredArtifact(artifact);
+  assert.equal(result.relationships.length, 3);
+  assert.deepEqual(result.relationships.map(row => row.focal_id), ['AC-01', 'SR-01', 'GV.OC-01']);
+  assert.equal(result.relationships[0].relationship_type, 'Concept Crosswalk');
+  assert.equal(result.relationships[0].relationship_strength, '8');
+  assert.equal(result.relationships[0].relationship_explanation, 'Publisher explanation');
+  assert.match(result.relationships[1].source_locator, /^SR#/);
+  assert.equal(result.relationships[2].relationship_type, 'Supportive');
+  assert.equal(result.relationships[2].raw_relationship_type, 'supports');
+  workbook.addWorksheet('Relationships-Broken').addRow(['Unrecognized content']);
+  await assert.rejects(parseOlirStructuredArtifact({ ...artifact, bytes: Buffer.from(await workbook.xlsx.writeBuffer()) }), /columns are absent/);
+});

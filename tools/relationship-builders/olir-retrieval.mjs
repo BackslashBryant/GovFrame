@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import readXlsxFile from 'read-excel-file/node';
+import ExcelJS from 'exceljs';
 import { strictConditionalFetch } from '../../scripts/lib/strict-conditional-fetch.mjs';
 
 const STRUCTURED_EXTENSIONS = /\.(xlsx|csv|json|xml)$/i;
@@ -110,6 +110,12 @@ function textCell(value) {
   return value == null ? '' : String(value).trim();
 }
 
+function isRelationshipHeader(row) {
+  const headers = row.map((cell) => textCell(cell).replace(/\s+/g, ' ').toLowerCase());
+  return headers.some((header) => /^focal(?: document)?[ _](element|id)$/.test(header)) &&
+    headers.some((header) => /^reference(?: document)?[ _](element|id)$/.test(header));
+}
+
 function relationshipType(raw) {
   const value = raw || 'Concept Crosswalk';
   const lower = value.toLowerCase();
@@ -131,7 +137,9 @@ function parseRows(rows, sourceLocator) {
   const headers = rows[headerRow].map((value) => textCell(value).replace(/\s+/g, ' ').toLowerCase());
   const focal = headers.findIndex((header) => header.includes('focal'));
   const reference = headers.findIndex((header) => header.includes('reference'));
-  const relation = headers.findIndex((header) => header.includes('relationship') || header.includes('strength'));
+  const relation = headers.findIndex((header) => /^(relationship|relationship[ _]type)$/.test(header));
+  const strength = headers.findIndex((header) => header.includes('strength'));
+  const explanation = headers.findIndex((header) => header.includes('explanation'));
   const comment = headers.findIndex((header) => header.includes('comment') || header.includes('rationale'));
   if (focal < 0 || reference < 0) throw new Error('focal/reference relationship columns are absent');
   const seen = new Set();
@@ -144,7 +152,7 @@ function parseRows(rows, sourceLocator) {
       const key = `${focalId}\u0000${referenceId}\u0000${raw}`;
       if (!focalId || seen.has(key)) return [];
       seen.add(key);
-      return [{ focal_id: focalId, reference_id: referenceId, relationship_type: relationshipType(raw), raw_relationship_type: raw || 'Concept Crosswalk', rationale: why || null, source_locator: `${sourceLocator}#row-${headerRow + rowIndex + 2}` }];
+      return [{ focal_id: focalId, reference_id: referenceId, relationship_type: relationshipType(raw), raw_relationship_type: raw || 'Concept Crosswalk', relationship_strength: textCell(row[strength]) || null, relationship_explanation: textCell(row[explanation]) || null, rationale: why || null, source_locator: `${sourceLocator}#row-${headerRow + rowIndex + 2}` }];
     });
   });
 }
@@ -152,9 +160,23 @@ function parseRows(rows, sourceLocator) {
 export async function parseOlirStructuredArtifact(artifact) {
   const extension = new URL(artifact.url).pathname.match(/\.([a-z0-9]+)$/i)?.[1]?.toLowerCase();
   if (extension === 'xlsx' || Buffer.from(artifact.bytes).subarray(0, 2).toString('utf8') === 'PK') {
-    const sheets = await readXlsxFile(artifact.bytes);
-    const selected = sheets.find((sheet) => /relationships|olir|mapping|crosswalk/i.test(sheet.sheet)) || sheets[0];
-    return { parser: 'olir-xlsx', relationships: parseRows(selected?.data || [], selected?.sheet || 'workbook') };
+    const workbook = new ExcelJS.Workbook();
+    // Presentation tables and drawings are not relationship data. Some submitted
+    // workbooks contain broken table references while their cells remain intact.
+    await workbook.xlsx.load(artifact.bytes, { ignoreNodes: ['tableParts', 'drawing', 'dataValidations'] });
+    const sheets = workbook.worksheets.map((sheet) => {
+      const data = [];
+      sheet.eachRow((row, rowNumber) => {
+        // Keep blank rows so evidence locators retain publisher row numbers.
+        while (data.length < rowNumber - 1) data.push([]);
+        data.push(Array.from({ length: row.cellCount }, (_, index) => row.getCell(index + 1).text));
+      });
+      return { sheet: sheet.name, data };
+    });
+    const matching = sheets.filter((sheet) => /relationships|olir|mapping|crosswalk/i.test(sheet.sheet) ||
+      sheet.data.some(isRelationshipHeader));
+    const selected = matching.length ? matching : sheets.slice(0, 1);
+    return { parser: 'olir-xlsx', relationships: selected.flatMap((sheet) => parseRows(sheet.data || [], sheet.sheet || 'workbook')) };
   }
   if (extension === 'csv' || /csv/i.test(artifact.content_type || '')) {
     const rows = Buffer.from(artifact.bytes).toString('utf8').split(/\r?\n/).filter(Boolean).map((line) => line.split(','));
