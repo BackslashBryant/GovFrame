@@ -13,8 +13,8 @@
     "reconcile",
     "publish"
   ],
-  "started_at": "2026-09-10T02:40:51.210Z",
-  "completed_at": "2026-09-10T02:44:39.680Z",
+  "started_at": "2026-09-10T16:08:21.506Z",
+  "completed_at": "2026-09-10T16:11:35.737Z",
   "status": "complete_with_quarantine",
   "failed_task": null,
   "results": [
@@ -30,7 +30,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 739,
+      "duration_ms": 324,
       "source_results": [
         {
           "source_id": "discover-nist-pages",
@@ -49,14 +49,14 @@
       "scope": [
         "nist-pages"
       ],
-      "status": "quarantined",
-      "attempts": 2,
-      "duration_ms": 33937,
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 4088,
       "source_results": [
         {
           "source_id": "discover-nist-structured-assets",
-          "status": "quarantined",
-          "attempts": 2
+          "status": "accepted",
+          "attempts": 1
         }
       ]
     },
@@ -72,7 +72,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 36
+      "duration_ms": 35
     },
     {
       "task_id": "observe-disa-sources",
@@ -87,7 +87,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1015,
+      "duration_ms": 1253,
       "source_results": [
         {
           "source_id": "observe-disa-sources",
@@ -109,7 +109,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 7118,
+      "duration_ms": 6671,
       "source_results": [
         {
           "source_id": "nist-800-53-rev5",
@@ -166,7 +166,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 543,
+      "duration_ms": 686,
       "source_results": [
         {
           "source_id": "fetch-fedramp-rules",
@@ -187,14 +187,14 @@
       "scope": [
         "cui-policy"
       ],
-      "status": "quarantined",
-      "attempts": 2,
-      "duration_ms": 2121,
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 5615,
       "source_results": [
         {
           "source_id": "fetch-nara-cui",
-          "status": "quarantined",
-          "attempts": 2
+          "status": "accepted",
+          "attempts": 1
         }
       ]
     },
@@ -212,7 +212,7 @@
       ],
       "status": "quarantined",
       "attempts": 2,
-      "duration_ms": 13851,
+      "duration_ms": 15231,
       "source_results": [
         {
           "source_id": "fetch-olir-catalog",
@@ -235,7 +235,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 502,
+      "duration_ms": 504,
       "source_results": [
         {
           "source_id": "fetch-olir-mappings",
@@ -258,7 +258,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1283,
+      "duration_ms": 1391,
       "source_results": [
         {
           "source_id": "fetch-ccis",
@@ -282,7 +282,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 19755,
+      "duration_ms": 12757,
       "source_results": [
         {
           "source_id": "fetch-disa-library",
@@ -306,7 +306,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 2428,
+      "duration_ms": 2646,
       "source_results": [
         {
           "source_id": "fetch-mitre",
@@ -330,7 +330,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 2354,
+      "duration_ms": 2335,
       "source_results": [
         {
           "source_id": "fetch-zero-trust-workbooks",
@@ -352,7 +352,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 4268,
+      "duration_ms": 6329,
       "source_results": [
         {
           "source_id": "fetch-nist-zero-trust",
@@ -376,7 +376,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1301,
+      "duration_ms": 1333,
       "source_results": [
         {
           "source_id": "fetch-nist-structured-catalogs",
@@ -397,7 +397,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 548
+      "duration_ms": 552
     },
     {
       "task_id": "sync-zero-trust-registry",
@@ -415,7 +415,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 59
+      "duration_ms": 60
     },
     {
       "task_id": "sync-source-bundles",
@@ -429,7 +429,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 49
+      "duration_ms": 47
     },
     {
       "task_id": "migrate-source-truth-before-build",
@@ -445,7 +445,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 196
+      "duration_ms": 194
     },
     {
       "task_id": "sync-inventory-contracts",
@@ -460,7 +460,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 53
+      "duration_ms": 51
     },
     {
       "task_id": "hydrate-artifacts",
@@ -473,9 +473,9 @@
       "scope": [
         "all-artifacts"
       ],
-      "status": "partial",
-      "attempts": 2,
-      "duration_ms": 43860,
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 30652,
       "source_results": [
         {
           "source_id": "artifact-nist-800-171-rev2",
@@ -649,8 +649,8 @@
         },
         {
           "source_id": "artifact-dod-rai-toolkit",
-          "status": "quarantined",
-          "attempts": 2
+          "status": "accepted",
+          "attempts": 1
         },
         {
           "source_id": "artifact-ai-mil-responsible-ai",
@@ -927,7 +927,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1083
+      "duration_ms": 1084
     },
     {
       "task_id": "build-taxonomy-registry",
@@ -942,7 +942,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 64
+      "duration_ms": 62
     },
     {
       "task_id": "build-framework-data",
@@ -960,7 +960,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 15046
+      "duration_ms": 14908
     },
     {
       "task_id": "enrich-commons-resources",
@@ -977,9 +977,9 @@
       "scope": [
         "all-resources"
       ],
-      "status": "partial",
-      "attempts": 2,
-      "duration_ms": 62302,
+      "status": "complete",
+      "attempts": 1,
+      "duration_ms": 71373,
       "source_results": [
         {
           "source_id": "tool-grype-vulnerability-scanner",
@@ -993,8 +993,8 @@
         },
         {
           "source_id": "tool-ansible-lockdown",
-          "status": "quarantined",
-          "attempts": 2
+          "status": "accepted",
+          "attempts": 1
         },
         {
           "source_id": "tool-atomic-red-team",
@@ -1098,8 +1098,8 @@
         },
         {
           "source_id": "tool-compliance-trestle",
-          "status": "quarantined",
-          "attempts": 2
+          "status": "accepted",
+          "attempts": 1
         },
         {
           "source_id": "tool-kics",
@@ -1148,8 +1148,8 @@
         },
         {
           "source_id": "tool-mitre-caldera",
-          "status": "quarantined",
-          "attempts": 2
+          "status": "accepted",
+          "attempts": 1
         },
         {
           "source_id": "tool-mitre-emass-client",
@@ -1312,7 +1312,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 201
+      "duration_ms": 194
     },
     {
       "task_id": "build-source-inventory",
@@ -1328,7 +1328,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1272
+      "duration_ms": 1265
     },
     {
       "task_id": "build-commons-index",
@@ -1345,7 +1345,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 201
+      "duration_ms": 199
     },
     {
       "task_id": "build-source-count-ledger",
@@ -1360,7 +1360,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 3574
+      "duration_ms": 3702
     },
     {
       "task_id": "check-data-size",
@@ -1374,7 +1374,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 770
+      "duration_ms": 766
     },
     {
       "task_id": "audit-coverage",
@@ -1388,7 +1388,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1913
+      "duration_ms": 1888
     },
     {
       "task_id": "verify-discovery",
@@ -1402,7 +1402,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 42
+      "duration_ms": 40
     },
     {
       "task_id": "verify-manifests",
@@ -1418,7 +1418,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 2212
+      "duration_ms": 2230
     },
     {
       "task_id": "build-publication-identity-index",
@@ -1433,7 +1433,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 96
+      "duration_ms": 95
     },
     {
       "task_id": "build-publication-audit-report",
@@ -1448,7 +1448,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 67
+      "duration_ms": 61
     },
     {
       "task_id": "build-source-semantic-audit",
@@ -1463,7 +1463,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 630
+      "duration_ms": 648
     },
     {
       "task_id": "build-discovery-index",
@@ -1478,7 +1478,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 392
+      "duration_ms": 395
     },
     {
       "task_id": "verify-completeness",
@@ -1492,7 +1492,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 30
+      "duration_ms": 31
     },
     {
       "task_id": "verify-ingestion-contract",
@@ -1508,7 +1508,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 1960
+      "duration_ms": 1959
     },
     {
       "task_id": "verify-resource-ingestion",
@@ -1525,7 +1525,7 @@
       ],
       "status": "complete",
       "attempts": 1,
-      "duration_ms": 81
+      "duration_ms": 77
     }
   ]
 }

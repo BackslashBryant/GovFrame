@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T02:43:07.206Z",
+  "generated_at": "2026-09-10T16:09:54.253Z",
   "hydrated": 1,
   "removed_orphans": [],
   "results": [
@@ -44,16 +44,6 @@
       "retrieved_at": "2026-08-25"
     },
     {
-      "id": "artifact-dod-rai-toolkit",
-      "status": "OK",
-      "http": 200,
-      "url": "https://rai.acqbot.com/executive-summary",
-      "sha256": "sha256:720a7b775d90380a28f0b73f428bae7acb7cf3774be44a4f4b6447abe1fa7f91",
-      "byte_length": 41933,
-      "record_count": null,
-      "retrieved_at": "2026-08-07"
-    },
-    {
       "id": "artifact-nist-800-171-rev2",
       "status": "OK",
       "http": 200,
@@ -81,7 +71,7 @@
       "sha256": "sha256:135707003f0aaa5ceb10d7d32c2681e5b1585a4eaf4403d0d135837787e5ae8e",
       "byte_length": 567435,
       "record_count": 5,
-      "retrieved_at": "2026-08-07"
+      "retrieved_at": "2026-09-10"
     },
     {
       "id": "artifact-disa-cci-list",
@@ -91,7 +81,7 @@
       "sha256": "sha256:077cbb6d2ae5f8fdbaaf416d87a34a8621767cdba490f3283feb0c5c35892700",
       "byte_length": 417323,
       "record_count": 5137,
-      "retrieved_at": "2026-08-07"
+      "retrieved_at": "2026-09-10"
     },
     {
       "id": "artifact-nist-800-53",
@@ -418,12 +408,22 @@
       "attestation": "committed page-complete pdfplumber extraction from previously downloaded publisher PDF"
     },
     {
+      "id": "artifact-dod-rai-toolkit",
+      "status": "OK",
+      "http": 200,
+      "url": "https://rai.acqbot.com/executive-summary",
+      "sha256": "sha256:720a7b775d90380a28f0b73f428bae7acb7cf3774be44a4f4b6447abe1fa7f91",
+      "byte_length": 41933,
+      "record_count": null,
+      "retrieved_at": "2026-08-07"
+    },
+    {
       "id": "artifact-ai-mil-responsible-ai",
       "status": "OK",
       "http": 200,
       "url": "https://www.ai.mil/Initiatives/About/Resources/Pathway-to-AI-Readiness/Responsible-AI/",
-      "sha256": "sha256:d7ad019c4cb57577ced2dd0d5619b0b30a998978654e485342c5ba12b5cee971",
-      "byte_length": 105052,
+      "sha256": "sha256:70c0bb14fa4854813fb154a5c7e2425a2f10920737b88c97fa289665c32e61fd",
+      "byte_length": 105777,
       "record_count": null,
       "retrieved_at": "2026-09-10"
     },
@@ -462,7 +462,7 @@
       "status": "OK",
       "http": 200,
       "url": "https://csrc.nist.gov/extensions/nudp/services/json/csf/download?olirids=all",
-      "sha256": "sha256:80e8d6af2e69e49c8e026ea0582f68546e0c72db749f9879edfaafd20d51742f",
+      "sha256": "sha256:402168873e1c42e2e50b09cb2bf912c21bb7936c3ef1840ae0c6f81e7c5e7f7f",
       "byte_length": 144518,
       "record_count": null,
       "retrieved_at": "2026-09-10"
@@ -543,7 +543,7 @@
       "status": "OK",
       "http": "local",
       "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/v1.5.0/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json",
-      "sha256": "sha256:2c07a747c8a779b93907aa7ac79a8b67f8fa39faf5f5af1dc2d38a65993440ef",
+      "sha256": "sha256:6f456dbc3ae6dec075d19f5a1ac9e94893b456395d5ae3b7d976a250286fd796",
       "byte_length": 1865,
       "record_count": null,
       "retrieved_at": "2026-09-10"
