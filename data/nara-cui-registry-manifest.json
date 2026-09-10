@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-10T18:40:00.964Z",
+  "generated_at": "2026-09-10T19:08:32.874Z",
   "source": "https://www.archives.gov/cui/registry/category-list",
   "list_page": {
     "url": "https://www.archives.gov/cui/registry/category-list",
     "byte_length": 52477,
-    "sha256": "fceba1c3878c7320247974c77cc700b034f234e2fb5dff6f698392763d428966"
+    "sha256": "b37009dafe606afaea78f34f21ac540f5c662066e1a82b9c9fcf888d79d119b9"
   },
   "change_log": {
     "url": "https://www.archives.gov/cui/registry/registry-change-log",
@@ -37,7 +37,7 @@
       "last_modified": "2025-05-07T13:22:59-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/ammonium-nitrate",
       "byte_length": 34965,
-      "sha256": "6a32b28dfe3792326092a4dac96f05b4b0a47fd5fb0b236ca7827ac9e408adfd",
+      "sha256": "553b476c8767df17d9140c8b11783b5e4bf77ae2537d61473a5a601723c2db8f",
       "status": "OK"
     },
     {
@@ -70,7 +70,7 @@
       "last_modified": "2025-05-08T09:48:17-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/chemical-terrorism-vulnerability-information",
       "byte_length": 35437,
-      "sha256": "539ea9eb53a21a6d982c518924273aee34d47f73f44ffbb413233d82b8dc953d",
+      "sha256": "cb71a9d90198ab49309c403c4bf3dc8c241a43ec99dcedd6c0e7d71dc4cab0a3",
       "status": "OK"
     },
     {
@@ -101,7 +101,7 @@
       "last_modified": "2025-05-07T13:16:33-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/critical-energy-infrastructure-information",
       "byte_length": 35782,
-      "sha256": "3e7ddc17f17a15c9082e83f8cf40705b7dd44f55826422bf2ea7d7c4e2173aca",
+      "sha256": "3eb21200ed930ea3e4684db97ba6a82a26f22f1761a33768c9c8f19f9c74dd94",
       "status": "OK"
     },
     {
@@ -127,7 +127,7 @@
       "last_modified": "2026-01-22T10:47:58-05:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/emergency-mgmt",
       "byte_length": 34985,
-      "sha256": "ece4850771987258f520f8e376b017d14081b596e68f84a11a01f29996c6b18d",
+      "sha256": "ea8c235f2ebfe93a868f66eabe9fa71e5bb489c5825461bd009176af5e81ca65",
       "status": "OK"
     },
     {
@@ -153,7 +153,7 @@
       "last_modified": "2025-08-22T12:42:56-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/critical-infrastructure",
       "byte_length": 35444,
-      "sha256": "ec3da25317ea16da5e64299c8ef76b4eb1d3550add859e0869d2d5ab622c4b71",
+      "sha256": "871a689702189233c796c4f3b9f98b0438998dc46bfc092abf94a049a5acbb0f",
       "status": "OK"
     },
     {
@@ -186,7 +186,7 @@
       "last_modified": "2025-05-07T14:13:12-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/info-systems-vulnerability-info",
       "byte_length": 35532,
-      "sha256": "96d1feb71e6edff14d62bfc045823c024b6250c699fc9747bff77a6b9b5ad08a",
+      "sha256": "2e31a0489c39d2aca862c79a4f6d8952538ba65df59fed837ce7c57f9ed8cfd1",
       "status": "OK"
     },
     {
@@ -219,7 +219,7 @@
       "last_modified": "2026-02-06T08:07:00-05:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/physical-security",
       "byte_length": 34676,
-      "sha256": "6f9ac85120e79a929bca88f5bf533aa5e3acc183ea9d0ff9a100bfd1e34ee139",
+      "sha256": "d44227249ab099fff9ac3e123cbef76527fa247eab27d81c279e23c74c7c2d62",
       "status": "OK"
     },
     {
@@ -243,7 +243,7 @@
       "last_modified": "2025-05-13T12:13:39-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/protected-critical-infrastructure-information",
       "byte_length": 35113,
-      "sha256": "23b7aeab7e37c9d3f080cfe5ef47b66e78fe2eba90902fe39804be5d8df21977",
+      "sha256": "a08c98a3f810dfa46f6ad89cde8af9c046386f585955b5d411062eda89f02d19",
       "status": "OK"
     },
     {
@@ -276,7 +276,7 @@
       "last_modified": "2025-05-07T14:03:20-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/safety-act-info",
       "byte_length": 36150,
-      "sha256": "2364bde06360e28cabfe30b5cbe21bc2a113f785609ae0f92317f5fb8a267f98",
+      "sha256": "ebe9a6085af7e59be232dff096d2f8b7768f87921c744a38c4a1bb877760ac82",
       "status": "OK"
     },
     {
@@ -335,7 +335,7 @@
       "last_modified": "2025-05-07T14:01:20-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/toxic-substances",
       "byte_length": 35740,
-      "sha256": "96e977119c25cfce0411aa03b2b9d3fba99ea966236469371993f1cae7fb4eec",
+      "sha256": "435044e90d7cf35fa6f719ad3bf80ba3ce666f22831d4dd2c943b85b9a5fd9fa",
       "status": "OK"
     },
     {
@@ -361,7 +361,7 @@
       "last_modified": "2026-04-06T11:40:34-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/water-assessments",
       "byte_length": 35358,
-      "sha256": "8afb280a83d19390327afd624a6a773b0767d416eb8f7229836b65325bda11d2",
+      "sha256": "2c709656ee44c1c81c4d8ec5b1e44591e7cabc81f6439d80427215f0e082429b",
       "status": "OK"
     },
     {
@@ -385,7 +385,7 @@
       "last_modified": "2025-05-08T09:45:45-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/controlled-technical-info",
       "byte_length": 35840,
-      "sha256": "1974bb5f330fa2f05295f370003bad2f56555bf8d88a907de9d11215268967d6",
+      "sha256": "1ef5cc96bd4f879f5425c0931cb8510eb131278a89d94e0783e9f88828120421",
       "status": "OK"
     },
     {
@@ -411,7 +411,7 @@
       "last_modified": "2025-05-08T11:48:48-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/dod-critical-infrastructure-security-information",
       "byte_length": 35925,
-      "sha256": "50bc2c65e2e8d092d745c5e6293406df7d522e04ca885ebc4121841994a3c342",
+      "sha256": "53f63b9c6810558d65b7b67b8bbdbd29669a80bf63ebdfbf0f8e8bae14561b36",
       "status": "OK"
     },
     {
@@ -444,7 +444,7 @@
       "last_modified": "2025-05-07T14:08:51-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/naval-nuclear-propulsion-info",
       "byte_length": 35716,
-      "sha256": "2602c19449d4a4ef889436ea5509ca75325553aa2050051abb337808d257addf",
+      "sha256": "e5ea1d587d56559844f00e6c4c38b76f3cacfd4364aa19abb110dc06af0138e9",
       "status": "OK"
     },
     {
@@ -484,7 +484,7 @@
       "last_modified": "2025-05-08T11:52:40-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/ucni-dod",
       "byte_length": 35061,
-      "sha256": "d83af3ef950571449fe51b6570c0d44381af1ce73f8aacdef2024f8211e8a7ac",
+      "sha256": "e25dafc7c899e3cdc3672e1bf475ac6b767ccbf1ff9c8dd309f43015e0a3cf4d",
       "status": "OK"
     },
     {
@@ -608,7 +608,7 @@
       "last_modified": "2025-05-08T07:04:11-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/export-control",
       "byte_length": 37806,
-      "sha256": "e4548c0fbd081711922bb68f46bccfc7f87628346986103a3babcecee68edd54",
+      "sha256": "f31f0fe2913051d8ee2a5c5159743c4632d473480a963566c0d42d736f133d00",
       "status": "OK"
     },
     {
@@ -634,7 +634,7 @@
       "last_modified": "2025-05-08T10:16:07-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/export-controlled-research",
       "byte_length": 34519,
-      "sha256": "ecaec910c90122bf1bba0eae417d755bfa333bc5acd2813d0254ffa1c067cc18",
+      "sha256": "d8d31dacc830e07292fb933fbae79521d4ae248e3d0f3ac8c0cb9924a0e31815",
       "status": "OK"
     },
     {
@@ -688,7 +688,7 @@
       "last_modified": "2025-05-08T12:04:05-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/bank-secrecy",
       "byte_length": 38351,
-      "sha256": "9e825119b83c870a7632a7860201bb7b3b7369f3c3be29a78158cf15e7f7ceff",
+      "sha256": "9d972545b6c5fe4304e4cc898107742fd0a54bb6ccea9834b98e427094991338",
       "status": "OK"
     },
     {
@@ -712,7 +712,7 @@
       "last_modified": "2026-04-02T08:47:33-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/budget",
       "byte_length": 34503,
-      "sha256": "0996c533840155ed5ffd3d23ec37a5e0f2be1353e5a27dac5e7891bbc6b11aef",
+      "sha256": "f55807107b9f0564ab3d5e787ae0ae289dca96dfb8981fc8352da3585ef6cc85",
       "status": "OK"
     },
     {
@@ -738,7 +738,7 @@
       "last_modified": "2025-07-25T14:09:17-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/comptroller-general",
       "byte_length": 35096,
-      "sha256": "91c0e5e94107a6a7c29d61e1eb9b157eb0edeb93782538708a7f812b92a81150",
+      "sha256": "4af79f50a080f1571d4c17ea5a1586a83017dc47e324f56b25baf87190272b2e",
       "status": "OK"
     },
     {
@@ -762,7 +762,7 @@
       "last_modified": "2025-07-25T14:11:16-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/consumer-complaint-information",
       "byte_length": 34972,
-      "sha256": "8e9f81c4b434bdad06e2235ff4546610fd593982ea0aed02d0c579801521418c",
+      "sha256": "0b4abce8be55fae14f70f4822020aebf222550da79cd8f3644e3f7abd394faf2",
       "status": "OK"
     },
     {
@@ -788,7 +788,7 @@
       "last_modified": "2025-05-08T07:17:16-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/electronic-funds-transfer",
       "byte_length": 34956,
-      "sha256": "8914d65a18687ddbdb74490ed72e4e371f0510be588df15e262e3c0d0345b648",
+      "sha256": "988a7748aaa5b3ad8c39053376646be5a1f2815ad6ddb847a4e8cce6ba3d64b7",
       "status": "OK"
     },
     {
@@ -814,7 +814,7 @@
       "last_modified": "2025-07-25T14:15:02-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/fhfa-nonpublic-info",
       "byte_length": 35891,
-      "sha256": "e1f59c1a4301b8c43f7512ed45b4cef32241cdd44316813530f63707ce15de3e",
+      "sha256": "b6a42369128ea205400545262a040c06b352c9aa5a68ec5884af7a528ffd1b07",
       "status": "OK"
     },
     {
@@ -875,7 +875,7 @@
       "last_modified": "2025-07-25T14:11:59-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/financial-supervision-information",
       "byte_length": 35367,
-      "sha256": "8f999cc97e7ba7dc0e8cad680ef86b7fd0995e75a71fd580743164f21d53ff4c",
+      "sha256": "698516f54d5cda56bd1178fa2abb4e0b33315f912eecefa9c29166a55dfb300e",
       "status": "OK"
     },
     {
@@ -936,7 +936,7 @@
       "last_modified": "2025-05-08T07:20:12-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/financial",
       "byte_length": 36151,
-      "sha256": "8ec1c92c2916933a839461edf5f44c0ad9021294b7ab1e507b68779055f63092",
+      "sha256": "1adedab866835e347c47cb9e9675706a2d38a776a4cb0b1f2b27c80a55ce3464",
       "status": "OK"
     },
     {
@@ -962,7 +962,7 @@
       "last_modified": "2025-07-25T14:16:20-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/international-financial-institutions",
       "byte_length": 35275,
-      "sha256": "f89ba1fe956c47553f09da898f7a4b78979e31b283105fa77b2ae92bae7a1c2d",
+      "sha256": "7f7c6fa95526500827f2603904fca8549b54fe0b69176f4de9ece975206ce47b",
       "status": "OK"
     },
     {
@@ -995,7 +995,7 @@
       "last_modified": "2025-07-25T14:19:56-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/mergers",
       "byte_length": 35010,
-      "sha256": "24c1598fa42a4d4beb1ee2f1aec4d0b348776a2857c88cffa6c0a158954cb039",
+      "sha256": "9e440eb78b75dae406c26e836ee93d301fd47186fe19bb91032b35618804d8f8",
       "status": "OK"
     },
     {
@@ -1021,7 +1021,7 @@
       "last_modified": "2025-05-08T08:06:57-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/net-worth",
       "byte_length": 34981,
-      "sha256": "90ef705fab7f9a3af8a4fb43ee2a28a462bad9a92ad24f9cf86f15c8483cd8a5",
+      "sha256": "0b5607f7d6b8f531abc683be2d9b6c929f8a0dfb239a93755617de4818f16d89",
       "status": "OK"
     },
     {
@@ -1068,7 +1068,7 @@
       "last_modified": "2025-07-25T14:22:45-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/retirement",
       "byte_length": 35274,
-      "sha256": "f1dac18627e427a8248ae14aa210cd6a8510da23f9de54f338ca25e0f4ea969b",
+      "sha256": "d775c0fdbe9fd2a537f0e5984fca80a0cf408bc403d728bbb291de8294df881b",
       "status": "OK"
     },
     {
@@ -1101,7 +1101,7 @@
       "last_modified": "2025-07-25T14:24:07-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/asylee",
       "byte_length": 35050,
-      "sha256": "bc9b7c36a207186806e18085239f7b9bb5da1a6c3b8ea98687f9dd18654ac841",
+      "sha256": "9f4b35c43dd549d6a5369728503ff3bc7f0358d63756f58eaaa1053a8c3cc66d",
       "status": "OK"
     },
     {
@@ -1132,7 +1132,7 @@
       "last_modified": "2025-05-08T07:25:15-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/battered-spouse-or-child",
       "byte_length": 35041,
-      "sha256": "e748b1b85700358a1a846bde69b375d7abd8cc027bc3d4139bb637c534df555f",
+      "sha256": "abdad040df991b28450bb0eceeb11603fd566fa3a2c23f3724ad00086a061ef4",
       "status": "OK"
     },
     {
@@ -1158,7 +1158,7 @@
       "last_modified": "2025-07-25T14:26:12-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/permanent-resident-status",
       "byte_length": 35032,
-      "sha256": "200ccc5ade6b99b04e11fdc1374651dca81ae7c001ada12320ed830c458e3db3",
+      "sha256": "0deb3effd04b9b91a4c601df23d1c3f5de8aa6bd2dad8fcdde6b08ef428d0128",
       "status": "OK"
     },
     {
@@ -1191,7 +1191,7 @@
       "last_modified": "2025-07-25T14:28:49-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/status-adjustment",
       "byte_length": 35065,
-      "sha256": "54b58e8b4e4c4f33f0a92270f15fcb3b3e7be9223c8515072b5062611d1bab5d",
+      "sha256": "4a834b86f9bcf4742d2878bba616f27bb141b29d5cab8b792bc2dae7f98ad037",
       "status": "OK"
     },
     {
@@ -1224,7 +1224,7 @@
       "last_modified": "2025-07-25T14:29:56-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/temporary-protected-status",
       "byte_length": 35041,
-      "sha256": "c0617c88610e75614b86617574c3a48ffebeb2a4f1b642f192dd97b54bbb6232",
+      "sha256": "c74c51e7e50fca8ec2ad0dc3bfe4c1668cb6f14f1cc20985042d95f7973323be",
       "status": "OK"
     },
     {
@@ -1248,7 +1248,7 @@
       "last_modified": "2025-07-25T14:30:56-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/victims-of-human-trafficking",
       "byte_length": 34809,
-      "sha256": "ef9aea746ae9d4ce2254ba97fbea20ee402e10ae4114a5f94539211152d746b6",
+      "sha256": "83853b18c9a0a4dfcd3da917c4d2c5ed7c25e86b860eec83e28364231d7cddd8",
       "status": "OK"
     },
     {
@@ -1274,7 +1274,7 @@
       "last_modified": "2025-07-25T14:31:57-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/visas",
       "byte_length": 34699,
-      "sha256": "4f5342aa1f425d02e7805137538370cd42f85ecb7fbed84a4c0e7f1ded0c6bec",
+      "sha256": "b3e7f229cd2fcd906e3289af98d7a64b01c8a20fa7941398eb0a0c1d4ff6559e",
       "status": "OK"
     },
     {
@@ -1300,7 +1300,7 @@
       "last_modified": "2025-05-08T07:47:22-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/agriculture",
       "byte_length": 34930,
-      "sha256": "0a1b5469dc3c21e120d71439df88ea7aa1e89d4544ce447fa1adbc6b2ba81bfe",
+      "sha256": "8485d3dcc5400f8912b4a447772601135fecab9b8379f9a3b28a0bf05a5e16fb",
       "status": "OK"
     },
     {
@@ -1338,7 +1338,7 @@
       "last_modified": "2025-07-25T14:46:05-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/foreign-intelligence-surveillance-act",
       "byte_length": 35044,
-      "sha256": "e09ce1a0dedc5d7bf78ed797d73a547bc63b4a8e1557ea988e6fb29a55483018",
+      "sha256": "d405807bfb237b716db35ed4c4610c4da498ca72ce1ca15c95b0ea97186dee04",
       "status": "OK"
     },
     {
@@ -1362,7 +1362,7 @@
       "last_modified": "2025-07-25T14:50:15-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/foreign-intelligence-surveillance-act-business-records",
       "byte_length": 35150,
-      "sha256": "0652c84263769409a4fa6ed2af7bfd5d72d7b0b2c4e6a661681d0592cffaf523",
+      "sha256": "d3d7be11509f74eea0a28dc678a3db84630b84eabe2b24d903b5514c4555604b",
       "status": "OK"
     },
     {
@@ -1444,7 +1444,7 @@
       "last_modified": "2025-06-12T10:21:31-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/intelligence",
       "byte_length": 36173,
-      "sha256": "f54699a927ff7f52c1ce6f86993b0304ed934f23bcf48854c5ec316ba91c1090",
+      "sha256": "5eabd014fc268b91c7db0b5a97d8aa75cb46206b602859acd710068a911aff41",
       "status": "OK"
     },
     {
@@ -1468,7 +1468,7 @@
       "last_modified": "2025-07-25T14:52:49-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/geodetic-product-info",
       "byte_length": 34745,
-      "sha256": "f2781e5fec67ec454dd69d57f135736bf2640db11d716e65ce80d8f5346ec1ee",
+      "sha256": "53603dc7e08e2f7ed8d0d788dfbfb7af1f18dd6d77d246bf641f1f01e1f7183a",
       "status": "OK"
     },
     {
@@ -1492,7 +1492,7 @@
       "last_modified": "2025-07-25T14:53:53-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/intelligence-financial-records",
       "byte_length": 34939,
-      "sha256": "c4d13f404a06b03c149906b90451798fd3a959d5bb9ed79a6192092b963bae4a",
+      "sha256": "d08f8b15fb3ee7535cdd7571520b5aca02d0949a9c7c716b9a158d867b4cbd15",
       "status": "OK"
     },
     {
@@ -1539,7 +1539,7 @@
       "last_modified": "2025-05-08T08:03:33-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/internal-data",
       "byte_length": 35595,
-      "sha256": "ac8454d393ef6929e403e6c6c4a64fffca3b0c3e088b2dcb80a6fea428533aef",
+      "sha256": "f512a373938b214e2df7c0ef27668e08d4e001b5da88ad45b6ce369da00bf12f",
       "status": "OK"
     },
     {
@@ -1565,7 +1565,7 @@
       "last_modified": "2025-05-12T13:39:55-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/opsec",
       "byte_length": 35444,
-      "sha256": "276c7e422361223b63d1a1de0ab497490d1420af7176b8576d94a2ac81cafbed",
+      "sha256": "5802651be6797f6d5f13f8e75c5949b2ed81af3756bff97e9ef6d2984ee3e543",
       "status": "OK"
     },
     {
@@ -1589,7 +1589,7 @@
       "last_modified": "2025-07-25T15:53:15-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/international-agreements",
       "byte_length": 36130,
-      "sha256": "d66b35478dddce645f10c8651dd023a7872c93fcf5716a1f8ccca360a4e8f205",
+      "sha256": "0dded70a74690eb721a046bf7061a3b6ab1955d23978079504a98a2980fa165c",
       "status": "OK"
     },
     {
@@ -1620,7 +1620,7 @@
       "last_modified": "2025-05-08T08:14:00-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/accident-investigation",
       "byte_length": 35180,
-      "sha256": "83c4f382c2077ebb452c164b9246ec97d124562558666acb03ff4151de2c4a59",
+      "sha256": "ff21e1208c1ba7f6a4b00a259f9b51c612f9098b8f92c0c0c8e49042fc65b6e9",
       "status": "OK"
     },
     {
@@ -1651,7 +1651,7 @@
       "last_modified": "2025-07-29T08:57:11-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/campaign-funds",
       "byte_length": 34950,
-      "sha256": "004fd33748ea961df77231e55d216d5697f5e00d315121ad45ec4ca0de303d61",
+      "sha256": "f0a62cc32978dd7b138db16e0f642a020bace686767c04d9ae511547bdebec77",
       "status": "OK"
     },
     {
@@ -1677,7 +1677,7 @@
       "last_modified": "2025-07-29T08:59:03-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/committed-person",
       "byte_length": 34851,
-      "sha256": "2ed907cb56bb202df03dec08c41990efd3247f2d94f4a0f66b6893c0611014d1",
+      "sha256": "5ae4f80efdb1656a1d338da96a484d21371ad15fecbf7c1e2f83b80c7b91d6c8",
       "status": "OK"
     },
     {
@@ -1710,7 +1710,7 @@
       "last_modified": "2025-05-08T09:41:34-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/communications",
       "byte_length": 35055,
-      "sha256": "db8b42fb051a4d17e4478229742eb0564f937c3aba92042277037c573ae10df1",
+      "sha256": "bfe39412f83e8079eb66eb05902c2d6de1baefb96c5f4e1d5d2cc4a3703b5fce",
       "status": "OK"
     },
     {
@@ -1734,7 +1734,7 @@
       "last_modified": "2025-07-29T09:00:37-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/controlled-substances",
       "byte_length": 34791,
-      "sha256": "efd1e2bc22a45c5cec4add237e7a05b09c46abc45f6933fddfb4755b95bdea64",
+      "sha256": "63a296a62f8f8c0d270c629688e113d7a311054dacb47848ec3a2dcd7f353dd0",
       "status": "OK"
     },
     {
@@ -1758,7 +1758,7 @@
       "last_modified": "2025-07-29T09:04:37-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/criminal-history-records-info",
       "byte_length": 35119,
-      "sha256": "e12f43d5daacf9f0eafbc5167fb7a8598bc039627447981d370dedb09fb9844e",
+      "sha256": "ed9117695329c0ce1d6b811e9f0c208b17b3d882ce7879cc77575613af559e12",
       "status": "OK"
     },
     {
@@ -1782,7 +1782,7 @@
       "last_modified": "2025-05-08T10:10:06-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/dna",
       "byte_length": 34573,
-      "sha256": "4d0eb97b6f921e79a65f77c89689fc93f3f86f1069e1ac10288c6929e0e5baa5",
+      "sha256": "a6725b2f7a193d04d20d3df8ba731302c49a3694dc4053540d51163534865e6d",
       "status": "OK"
     },
     {
@@ -1815,7 +1815,7 @@
       "last_modified": "2025-07-29T09:06:44-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/general-law-enforcement",
       "byte_length": 35218,
-      "sha256": "d638004b7f6411642bfe1e3a0877bedd2bf3def2e1da64d75d72bad9b2c3241c",
+      "sha256": "d19e0127bec2aeebdfb2ae0dbc5d95a66b7809890d7ac5f99b77ae9f318ab791",
       "status": "OK"
     },
     {
@@ -1869,7 +1869,7 @@
       "last_modified": "2025-07-29T09:09:44-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/informant",
       "byte_length": 34994,
-      "sha256": "ef29c83a1804f03369f59af74d73d3331a7f01decd4c59113b1e80139910ed7b",
+      "sha256": "d7fa0153e8fce8c8f2cbf86898183dfcda11f79ee5a1cf42fafebed110ee051c",
       "status": "OK"
     },
     {
@@ -1951,7 +1951,7 @@
       "last_modified": "2025-05-12T13:49:23-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/investigation",
       "byte_length": 35892,
-      "sha256": "eef6e26b6ceda5689ccd9316dfbaadb5b94115d98a3e92b78560a7a4d808efa3",
+      "sha256": "9f14ef1d8c5cc4c97cd342a3398400f2c3cb79fc0c8d9992582852bb3cbb213c",
       "status": "OK"
     },
     {
@@ -1991,7 +1991,7 @@
       "last_modified": "2025-07-29T09:11:14-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/juvenile",
       "byte_length": 35057,
-      "sha256": "5862eee09960e1ca6e194af33319ae385b182ea8384725c3cc2b0fd569ebd246",
+      "sha256": "7bdd50a6929b404cb27bb46f34526c5d476b2007a9d0135762c372d7f6b7aa99",
       "status": "OK"
     },
     {
@@ -2015,7 +2015,7 @@
       "last_modified": "2025-07-29T09:12:25-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/law-enforcement-financial-records",
       "byte_length": 34859,
-      "sha256": "b8b451d4b5118a8e8e506fbdc76bac0890a155c193c71d602ac125d560fd0f9c",
+      "sha256": "c984c214de3ea4f4f725cd10e555a5a92301d818c52d2fec337367de7ecd4bd4",
       "status": "OK"
     },
     {
@@ -2041,7 +2041,7 @@
       "last_modified": "2025-05-08T10:12:07-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/national-security-letter",
       "byte_length": 35022,
-      "sha256": "06915938ff0d3bbf422c639780d69bf50d859f93914a5e3f0fe3e96081b8f8cf",
+      "sha256": "bb1936a93ea1c906daa493863fe000f2ac65cdabfb91b2167339e16ca29ece1b",
       "status": "OK"
     },
     {
@@ -2067,7 +2067,7 @@
       "last_modified": "2025-07-29T09:13:49-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/pen-register-trap-and-trace",
       "byte_length": 34967,
-      "sha256": "ba55849bcace925ecdf2179c839db2c650ae3faff810f39d6b48c482913e3567",
+      "sha256": "8519812b64f4a0dfd7626a7de7c976069eb00672cddd5756de897aa776954278",
       "status": "OK"
     },
     {
@@ -2093,7 +2093,7 @@
       "last_modified": "2025-07-29T09:14:50-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/reward",
       "byte_length": 34669,
-      "sha256": "6c4e613a622604a2112e50199270079e63b101404902690ceb97e468a4176de8",
+      "sha256": "88449e603576da9e7c320b5fa45240027c0b1272d3339a32c2f5876c1cd47cfa",
       "status": "OK"
     },
     {
@@ -2119,7 +2119,7 @@
       "last_modified": "2025-05-08T10:16:27-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/sex-crime-victim",
       "byte_length": 34794,
-      "sha256": "cffdd52b670e883d8dff609154d6e7fa4bcb74335f99d65f050e846d2bbf71d8",
+      "sha256": "6d4985f8c8c66f02be16db335528d5b7b8cecf7de3b465c36423099c0eab11f4",
       "status": "OK"
     },
     {
@@ -2145,7 +2145,7 @@
       "last_modified": "2025-07-29T09:15:47-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/terrorist-screening",
       "byte_length": 34802,
-      "sha256": "a0fb7d46e65179f27813f789be37e6eb5845c115bfefb4084ebafb73c2660bb1",
+      "sha256": "bca592776f2c27319a513c3e9195bbe2ce0f4be82768f0b7d2a5409ea0939fe1",
       "status": "OK"
     },
     {
@@ -2192,7 +2192,7 @@
       "last_modified": "2025-07-29T09:19:04-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/whistleblower-identity",
       "byte_length": 35625,
-      "sha256": "049c0f0d2e2e264a50e6bcd6c4a40f7a7514594cd70d7a207ce49bd74d3ea3e7",
+      "sha256": "194c3481e8449ad4d8b13c63c01eff331952185208e1f71b202d83c731dc0524",
       "status": "OK"
     },
     {
@@ -2309,7 +2309,7 @@
       "last_modified": "2025-05-12T14:16:54-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/admin-proceedings",
       "byte_length": 36770,
-      "sha256": "11f34dd0e6e5aecf0ff2a99f888c006d186fe080c7ad1b8ba2ca812cad1d4df7",
+      "sha256": "2fd3dc56b31fc9549ea9fabdb6d47e68daad94d1420742286f774a5792f6ce60",
       "status": "OK"
     },
     {
@@ -2333,7 +2333,7 @@
       "last_modified": "2025-07-29T09:20:11-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/child-pornography",
       "byte_length": 35578,
-      "sha256": "51da138ae84b1a1378863011dd89f24af066a5e3537b0e1d82f20cdd3726434c",
+      "sha256": "5f314e4ceb6ce1935d4e655b3c15f9f424c02f95918f6a963a72c46ea8616e5c",
       "status": "OK"
     },
     {
@@ -2359,7 +2359,7 @@
       "last_modified": "2025-07-29T09:23:35-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/child-victim-witness",
       "byte_length": 34905,
-      "sha256": "922eaf80fe43201b54240a16a51d925edb2206c691faa0dec0326176cd214976",
+      "sha256": "ad87b9edd26191c3dce6233505c0cf5cb495b3ec6e02cb7acf29e3499dbb9a07",
       "status": "OK"
     },
     {
@@ -2385,7 +2385,7 @@
       "last_modified": "2025-05-08T10:23:50-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/collective-bargaining",
       "byte_length": 35103,
-      "sha256": "c955ad72559dfe6a481dd7b5f3cf2635c4adc05414180129185420e926b13f14",
+      "sha256": "5f7e51711e2b0e7bc68aeeeda8bdbaded3d8009723e3e9d89554013b04f2b27c",
       "status": "OK"
     },
     {
@@ -2425,7 +2425,7 @@
       "last_modified": "2025-07-29T09:27:59-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/federal-grand-jury",
       "byte_length": 36040,
-      "sha256": "c81d3ac27eeeef1e30d042f05f89ab87f25fbe3dd08453c7d4c32e832ef2245b",
+      "sha256": "888060ffe4705f90e6cb8ae45c16715da4a7cfa46d5a1fbc1bdf95425e207582",
       "status": "OK"
     },
     {
@@ -2528,7 +2528,7 @@
       "last_modified": "2025-07-29T09:41:06-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/legal-privilege",
       "byte_length": 38791,
-      "sha256": "75d59f10929ce35d331ff3b40ed7a00da3aab82a773faede031458ae3988c201",
+      "sha256": "7785daedb1f875a1d5cbf41a6c841e171247532dd05f9540064e0336f22930c5",
       "status": "OK"
     },
     {
@@ -2554,7 +2554,7 @@
       "last_modified": "2025-05-12T14:59:47-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/legislative-materials",
       "byte_length": 35485,
-      "sha256": "d0e533b6cf29efb890c2fe9b5361a1d07d586811bb63180a307da7f8513963a5",
+      "sha256": "a42bcfee95e225e82cc9809ff428dba9c7730a852d83dadfede7237cc3ffd2b6",
       "status": "OK"
     },
     {
@@ -2580,7 +2580,7 @@
       "last_modified": "2025-06-10T11:20:43-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/presentence-report",
       "byte_length": 35034,
-      "sha256": "455588bf1d6c532402beba20e84a2bc52e605707143aaa3d7797ea580b8c4b56",
+      "sha256": "a5b37ee08f06caf3b0c89caa445de55842352fbc3d963b35d9cd157da93e7f2d",
       "status": "OK"
     },
     {
@@ -2606,7 +2606,7 @@
       "last_modified": "2025-07-29T09:42:03-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/prior-arrest",
       "byte_length": 34899,
-      "sha256": "2ea1ada8ba3bb7ee9697f560597754b588a99ff80a3c26020867763a64b55d89",
+      "sha256": "a3c98976442ed269e722a70d384a1d91c4b4dc625eb8b2745413cdf2de337fa6",
       "status": "OK"
     },
     {
@@ -2695,7 +2695,7 @@
       "last_modified": "2025-05-12T15:11:51-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/protective-order",
       "byte_length": 36244,
-      "sha256": "6a4367c93d00422071605f870c417ec14ccccc531ff43cd424b69f673d80cfd2",
+      "sha256": "c7978558b215db122b878aa8e2890e51e82d0a494d298bd47f62cdb08b935bb3",
       "status": "OK"
     },
     {
@@ -2728,7 +2728,7 @@
       "last_modified": "2025-07-29T09:43:47-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/victim",
       "byte_length": 35010,
-      "sha256": "d67455d97f73d1621f3d19ce3f7503fb66f07a3efff3bf638d1bcd2b795cd7b9",
+      "sha256": "1fb7d40e3b32a61e4623594ae1ef24d5f8d31a7d64d35332aff53ebb681a5b02",
       "status": "OK"
     },
     {
@@ -2761,7 +2761,7 @@
       "last_modified": "2025-07-29T09:45:07-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/witness-protection",
       "byte_length": 35131,
-      "sha256": "79003296fd1f78d28d66ad2063487a814cad75dc0770a1a7ae2169470a5dc3c2",
+      "sha256": "5ae1461c90a8d7991c1f63d18f5f8eb2c13fe2453f88f24da4ca3e85e72905c9",
       "status": "OK"
     },
     {
@@ -2794,7 +2794,7 @@
       "last_modified": "2025-05-08T13:25:44-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/archaeological-resources",
       "byte_length": 35331,
-      "sha256": "1d7ad587e3fdb239dbbe424d12daf0f0fccc5d88444b2c7c6f9c5f946c95acdd",
+      "sha256": "5936b5537e78a956d641b13981f0609e1b6d099b855dd0dcaa6b04751cfa7764",
       "status": "OK"
     },
     {
@@ -2832,7 +2832,7 @@
       "last_modified": "2025-07-29T09:46:27-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/historic-properties",
       "byte_length": 35078,
-      "sha256": "83dd0228ae8bb9dd2d36a766f4f318c9d837c01576d5d78736e4b887b28e811c",
+      "sha256": "6d98f63656c4a3fea29cce7f8561a28c89f7b0f40858cff895a0d0d413b3631b",
       "status": "OK"
     },
     {
@@ -2856,7 +2856,7 @@
       "last_modified": "2025-07-29T09:48:10-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/national-park-system-resources",
       "byte_length": 34944,
-      "sha256": "1a3e1bb027a23a80d4810fa4d72c9cb1306020bee3dceb90d3050dc2d920a94b",
+      "sha256": "faab8480520e398b9207e2da286f2b89686dfd62058a3c25a04e2c9ff110d63c",
       "status": "OK"
     },
     {
@@ -2880,7 +2880,7 @@
       "last_modified": "2025-05-08T13:43:15-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/nato-restricted",
       "byte_length": 35307,
-      "sha256": "421d157107a462f9bb876b241af22eda921f567dd82dd8575831c04bdf19ccc5",
+      "sha256": "33dfc257a87c01941f3c7ba6dcc6a4975f158ab8955e3ee6f0ebd33a60834efa",
       "status": "OK"
     },
     {
@@ -2911,7 +2911,7 @@
       "last_modified": "2026-01-29T10:42:42-05:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/nato-unclassified",
       "byte_length": 35015,
-      "sha256": "0846df68e2b61d827fd7d54c7c8b0e9519bac34efe7492a3ff72265eaef3a9e7",
+      "sha256": "b20e8fc4a94cc815e7fd9f2fdcb28cb7633f97721a98ec4bc7fb1c56f8803092",
       "status": "OK"
     },
     {
@@ -2951,7 +2951,7 @@
       "last_modified": "2025-07-29T13:52:39-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/nuclear",
       "byte_length": 34936,
-      "sha256": "c166ee6d4b29a118e9f8c3c5ce314c37283f7ff3ebf76cf922091e64f6fa668c",
+      "sha256": "13fa6369e4111f593cea140adda992375930a9abe825be1449839d4c1b3a4813",
       "status": "OK"
     },
     {
@@ -2991,7 +2991,7 @@
       "last_modified": "2025-05-12T14:55:06-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/nuclear-recommendation-material",
       "byte_length": 35155,
-      "sha256": "f95eec8e9378c8c5b547dc735b647d0764fa8653ba2c9ab01534377d0ea3becb",
+      "sha256": "9b4757f5369fdbe90403559da33a9f374f15849fdb8015dace8123aa165678a8",
       "status": "OK"
     },
     {
@@ -3015,7 +3015,7 @@
       "last_modified": "2025-07-29T13:54:01-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/nuclear-security-related-info",
       "byte_length": 35687,
-      "sha256": "c143d61c97824f37466c87eece19cd578bfe6652f716bcdb0ecaf0d4a6c1377a",
+      "sha256": "c3cc9e2ec6c582e922b20c1aab4b8434738794837944b481164ad0d99765d6f2",
       "status": "OK"
     },
     {
@@ -3039,7 +3039,7 @@
       "last_modified": "2025-07-29T13:56:36-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/safeguards-info",
       "byte_length": 34866,
-      "sha256": "bfba9a5fac55ba2986c017ee4769500c5b1936bdfd7060714033e6eb675f3376",
+      "sha256": "62722a32c809b36548a1e021b4deaf7dfe5c64cd808ef9e81d234951a8aa8905",
       "status": "OK"
     },
     {
@@ -3079,7 +3079,7 @@
       "last_modified": "2025-05-13T08:36:08-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/ucni-doe",
       "byte_length": 35364,
-      "sha256": "9082f07390687779b7ab89a4bc475d95a08c62c2431e44b400fe0fb7489d1379",
+      "sha256": "f50487ef644562d90bca1d9a7095b80568f8d54ecea2a181c0c696e496cf936c",
       "status": "OK"
     },
     {
@@ -3119,7 +3119,7 @@
       "last_modified": "2025-07-29T14:09:36-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/patent-application",
       "byte_length": 35733,
-      "sha256": "c1dee881f89efbf9e10392a0c73dac04c96ca2423c269d0b050ee019c8eb3d5b",
+      "sha256": "9267964fb9c9d362e88d8958cf97f7f5d595f8dd656f1fe7ae92fd18bf0af592",
       "status": "OK"
     },
     {
@@ -3173,7 +3173,7 @@
       "last_modified": "2025-07-29T14:13:27-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/inventions",
       "byte_length": 35685,
-      "sha256": "a5b3e7b90c0c745bd5e9fa745ea13b5940670862f06bc4427c24a82ece526917",
+      "sha256": "58045b5e3cee7d0a690a3019ec6c54d532e493d20df03fcae8b3ef85f1649833",
       "status": "OK"
     },
     {
@@ -3199,7 +3199,7 @@
       "last_modified": "2025-05-08T13:48:29-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/secrecy-orders",
       "byte_length": 35029,
-      "sha256": "20feaf09105e3f3d9d64f6388296566de6719031524c1a6a541f1f8b05348094",
+      "sha256": "e092efac4784461046282466647245c58c72e7f8bcfc69a090a5294010d740ab",
       "status": "OK"
     },
     {
@@ -3230,7 +3230,7 @@
       "last_modified": "2025-07-29T14:14:39-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/contract-use",
       "byte_length": 34893,
-      "sha256": "49044cb1115601fdc4ce58037ac9fb54b7b668394bc06305db1288092a686e30",
+      "sha256": "1cde6d8d0619e4de0b17e991527a990ff370b878db57a4f536f8378031ac2dfc",
       "status": "OK"
     },
     {
@@ -3256,7 +3256,7 @@
       "last_modified": "2025-07-29T14:16:12-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/death-records",
       "byte_length": 34832,
-      "sha256": "57c3ee75b217bf979a1b6c7d88911976c88a88bf685cb991bfe579c617a11a13",
+      "sha256": "9951d4a0c2ece102d03e21e513dca92094f15b3b114304da8de7075dfd538d3f",
       "status": "OK"
     },
     {
@@ -3380,7 +3380,7 @@
       "last_modified": "2026-07-20T13:15:06-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/privacy",
       "byte_length": 37301,
-      "sha256": "a3b1b6805c5be9715166b17562fd60cbf6ba8ee4d038f9d84a65354ce450b0b5",
+      "sha256": "c552673012bd526bb84404a460445b73942915d7ebeae6806086014e0ab32113",
       "status": "OK"
     },
     {
@@ -3420,7 +3420,7 @@
       "last_modified": "2025-07-29T14:17:52-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/genetic-info",
       "byte_length": 35538,
-      "sha256": "96ac1337e907d79cbc1c978472b02940565f61bd1d582e2e55ef09a4eb33009c",
+      "sha256": "bda7d12c597a9a348d4824cc157d4d9cba07d3d9b91c70b11e1504630e1a9694",
       "status": "OK"
     },
     {
@@ -3635,7 +3635,7 @@
       "last_modified": "2025-07-29T14:48:27-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/health-info",
       "byte_length": 40332,
-      "sha256": "986c777d6b86a48c3a7a26586b471366ba7a38dd388505303e2688e52a4a5b96",
+      "sha256": "ee77ac7c0bbf13b3ae0f122d5a18fad0c9a503fed5a1cc917cc903f33c8e5267",
       "status": "OK"
     },
     {
@@ -3703,7 +3703,7 @@
       "last_modified": "2026-07-20T14:05:31-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/inspector-general-protected",
       "byte_length": 35716,
-      "sha256": "9c609c46bd15e5ebc7000adb8fa06401fd8cdf01b9c1726a168c0b399b2c84b0",
+      "sha256": "7def76edeebce6e4988c822e66a0e805ca070743edc486510e840b216c5452a7",
       "status": "OK"
     },
     {
@@ -3757,7 +3757,7 @@
       "last_modified": "2025-07-30T13:40:34-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/military-personnel-records",
       "byte_length": 35108,
-      "sha256": "6fc0b4c1ee65b1b9690ff26f1c1df68e8886315c038243ba9fde558c59026da3",
+      "sha256": "6ef55bf6df0dac65329baf88799500b7e6bdf2e953d5c9bde0262b4c8e3ca52f",
       "status": "OK"
     },
     {
@@ -3790,7 +3790,7 @@
       "last_modified": "2025-07-30T13:42:57-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/personnel-records",
       "byte_length": 35226,
-      "sha256": "9d186196f20c939ae32edea9437c69dd18fc30d035708f3082c3d01243c0bdd3",
+      "sha256": "c77805c89dec4d428ae5499561e8299985e3098cdeccb79863835fad5a739231",
       "status": "OK"
     },
     {
@@ -3851,7 +3851,7 @@
       "last_modified": "2025-05-13T09:31:48-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/student-records",
       "byte_length": 35626,
-      "sha256": "4432a36b294b1b947d2b69aa0ec4e6396190d73f61cdcd97f60f3fdb3165dc47",
+      "sha256": "6981752880a9d2b2d87d42bc25dd1ffc7c8645e2133e6646322f7258ce89f394",
       "status": "OK"
     },
     {
@@ -3889,7 +3889,7 @@
       "last_modified": "2025-07-30T13:46:39-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/procurement-acquisition",
       "byte_length": 35263,
-      "sha256": "1c82b4a7bc1f28ce78586ea4613e0327803694320d3ff7a037751ddfe4d6d4e7",
+      "sha256": "db52c81a52dfe6bf2ff70e97103845824224ba3e3752b8bc9aa8a1310a948e95",
       "status": "OK"
     },
     {
@@ -3915,7 +3915,7 @@
       "last_modified": "2025-07-30T13:47:59-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/small-business-research-and-technology",
       "byte_length": 35349,
-      "sha256": "35ee9c1093ae7e0c74ade6db313e422e7e9cb2b32a7389031f10b39dfd8b6b38",
+      "sha256": "5bc0f80a3b232430a3abed35fdef243faec1a83abc925f9dd7c8bb5059ead4a1",
       "status": "OK"
     },
     {
@@ -4053,7 +4053,7 @@
       "last_modified": "2025-07-30T13:52:05-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/source-selection",
       "byte_length": 37881,
-      "sha256": "7ad86dcbd22c4a6b52781d523f73ca5e083e02960459071d3cd91eeff8a8e1c0",
+      "sha256": "871d6c9f499222654515dd085d82350ede4c68b84c74a2336d4335f9f50c1f4c",
       "status": "OK"
     },
     {
@@ -4079,7 +4079,7 @@
       "last_modified": "2025-07-30T14:22:02-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/entity-registration-info",
       "byte_length": 35159,
-      "sha256": "cfd975279c594ddd5d0f77322b59be3ace155679ac0a88f5b4a0439900c615f6",
+      "sha256": "22d7b6176e5c6aedbdeee81289ad0307c1957e6af025f124ae2ee94814ddcd6a",
       "status": "OK"
     },
     {
@@ -4679,7 +4679,7 @@
       "last_modified": "2025-07-30T14:24:10-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/proprietary-business-info",
       "byte_length": 48473,
-      "sha256": "7b908cb0828118ceb2e81821984cff05e7688248b21b15a887ed8a0d32345d45",
+      "sha256": "a81e83f875b8e42b5cf22da2f95c02d71d6b06a016439bd9ac89b415480e9a95",
       "status": "OK"
     },
     {
@@ -4697,7 +4697,7 @@
       "last_modified": "2025-05-12T07:48:41-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/occ-mto-agreements",
       "byte_length": 35225,
-      "sha256": "cda3124d36922a0cc0da82cd233b6e1432339cfb77b89a88ef33a56385445c04",
+      "sha256": "24ac7d622e43b4a8726814be26eceb79ef947599b45dfd93b201c86aa8f3806c",
       "status": "OK"
     },
     {
@@ -4737,7 +4737,7 @@
       "last_modified": "2025-06-24T14:18:31-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/ocean-common-carrier-service-contracts",
       "byte_length": 35145,
-      "sha256": "0390c213445e142bd673322574e8ff0a0a4554f91db1d4412b6dda40838ca8b6",
+      "sha256": "0e352434eb9248e7dc22a7ba2ecb5fb766fcbd68be6a0d075cb41e1c69da4d8f",
       "status": "OK"
     },
     {
@@ -4761,7 +4761,7 @@
       "last_modified": "2025-06-13T08:09:40-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/proprietary-manufacturer",
       "byte_length": 34772,
-      "sha256": "d02e659da6d54e0a05da30f4cf12db13257e699e9173a50e9f9c7e21acd36e72",
+      "sha256": "747fd79c7666752dcbc2b7092b4cac55e29761be372f406725b787cb52b94d9d",
       "status": "OK"
     },
     {
@@ -4801,7 +4801,7 @@
       "last_modified": "2025-05-13T09:40:51-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/proprietary-postal",
       "byte_length": 35251,
-      "sha256": "ac8a10e29b372be3f761c73314f6a3c8e2387b0701d4663cbcafbbc85472c9a2",
+      "sha256": "ae775d928e95a8499a585764b728f9bab9f0bed6b2c551f7396a7735df70480c",
       "status": "OK"
     },
     {
@@ -4825,7 +4825,7 @@
       "last_modified": "2025-05-08T10:20:27-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/homeland-security-agreement-info",
       "byte_length": 35194,
-      "sha256": "72dde6db3fe8cfaba30b64e857aebd0d14e93e5ced729910cca01072b20a6d52",
+      "sha256": "1c9a2bf73c5022b78c08c748f052f1cb56569a9d0219fc93a31cb67cdbc98b49",
       "status": "OK"
     },
     {
@@ -4849,7 +4849,7 @@
       "last_modified": "2025-05-08T10:20:03-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/homeland-security-enforcement-info",
       "byte_length": 35151,
-      "sha256": "5c9d387b657cac803c924acbcc69f874873010197f1069fd954679ae208a9584",
+      "sha256": "a75ec1056ebba0a2adeab0eeac314c6798870a33a41b7b8d420ab0c6f6365202",
       "status": "OK"
     },
     {
@@ -4873,7 +4873,7 @@
       "last_modified": "2025-05-08T10:19:51-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/information-systems-vulnerability-info-homeland",
       "byte_length": 35948,
-      "sha256": "3559c22e3ece1b5002cce79e5ae211b94bdaecc4d90867d7df39959dea4637dd",
+      "sha256": "645bf878c21bebcc2b2aac202d9a756eaa81d0f0858d4fdb3e84105860c22902",
       "status": "OK"
     },
     {
@@ -4897,7 +4897,7 @@
       "last_modified": "2025-05-08T10:18:55-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/international-agreement-info-homeland",
       "byte_length": 35253,
-      "sha256": "803531155aa9410d5cefbac87fc154f25f4ac23d37b427069ec59e1a70f58410",
+      "sha256": "5c7aa62619cca7da6f370a3794eaa259b00205ed128e90692a8e30c902d7ed08",
       "status": "OK"
     },
     {
@@ -4921,7 +4921,7 @@
       "last_modified": "2025-05-08T10:18:20-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/operations-security-info",
       "byte_length": 34843,
-      "sha256": "ebadf0932e0cbdb44f3b8fcc22a6cb0e04738d2ffcff75010e02c1b2aa26b417",
+      "sha256": "3e7cd4db2df63b20440271b7ae7b7d3ba86ff9ef652491c10c531124b4d7503f",
       "status": "OK"
     },
     {
@@ -4945,7 +4945,7 @@
       "last_modified": "2025-05-08T10:17:53-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/personnel-security-info",
       "byte_length": 34657,
-      "sha256": "e2484bd30807f293db7b468ae999cca518da32ff59cdd6aa95c422feafc096d3",
+      "sha256": "188d9266693f4da3127b74e54a456e48650d673d2464aa9211aadab25715f785",
       "status": "OK"
     },
     {
@@ -4969,7 +4969,7 @@
       "last_modified": "2025-05-08T10:17:28-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/physical-security-homeland",
       "byte_length": 35162,
-      "sha256": "868c27ed09d78f5505d81e46376f3ea121c466298d2812b96afee85c1a90d4f1",
+      "sha256": "a352702a21ad95a0d1cfc53b98b11047d53ea09e5f25778042111409c3626a69",
       "status": "OK"
     },
     {
@@ -4993,7 +4993,7 @@
       "last_modified": "2025-05-08T10:16:53-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/privacy-info",
       "byte_length": 34912,
-      "sha256": "37962bd124b4f1266dbaae800b37f91151dc845de41cfb1f4dcad65596d974ea",
+      "sha256": "2bf36983537997c0f81ac842714d2e4095e17cb90f7361a044d09aaca6be35cb",
       "status": "OK"
     },
     {
@@ -5017,7 +5017,7 @@
       "last_modified": "2025-05-08T10:15:53-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/sensitive-personally-identifiable-info",
       "byte_length": 36569,
-      "sha256": "fcb59a83110516d448908a6dc7c47d7487da6e4e8653533a9d4279457d83c690",
+      "sha256": "a142b366b5ea2b07ff450984a809134f1b094b549d39d275f989c832bbaf109c",
       "status": "OK"
     },
     {
@@ -5050,7 +5050,7 @@
       "last_modified": "2025-06-24T15:16:54-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/investment-survey",
       "byte_length": 34820,
-      "sha256": "2ec2e29835bdbdddb24f3e67214130868f6e9161a3c663d315b2711df74f3a06",
+      "sha256": "c02c20e040287d0a9a9ec1d7ba58ad3ffb8bf500ad461b90eb5116234622e311",
       "status": "OK"
     },
     {
@@ -5076,7 +5076,7 @@
       "last_modified": "2025-06-13T08:12:47-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/pesticide-producer-survey",
       "byte_length": 35114,
-      "sha256": "fdc2910a1465d1e55e18a7074df29b0d38182a3de44eeddb9a4e61531f0430ab",
+      "sha256": "c3cde0d1a32e40c33b267a602f4c0ed6cae80210c3712f0d9aac21ebf7176cfb",
       "status": "OK"
     },
     {
@@ -5137,7 +5137,7 @@
       "last_modified": "2025-05-12T07:57:51-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/statistical",
       "byte_length": 36391,
-      "sha256": "30523d91a3828615bfebfdc60cec8f6a384325608835b3225db7e5d163bcd6ba",
+      "sha256": "4042e57837100e429650b37eaaa505185c547d77dd78f6ff3ebdc966ab98555d",
       "status": "OK"
     },
     {
@@ -5168,7 +5168,7 @@
       "last_modified": "2025-06-13T08:38:50-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/census",
       "byte_length": 35276,
-      "sha256": "eee8521e3560602dd2ebe1ff3580b8a5b451af5b36584468d3a70810e069e6b8",
+      "sha256": "4e4222b69f28044902bec2d449c657619ab05f07399521fca2c85b9dfcddac4c",
       "status": "OK"
     },
     {
@@ -5220,7 +5220,7 @@
       "last_modified": "2025-06-13T08:25:22-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/federal-taxpayer-info",
       "byte_length": 37173,
-      "sha256": "7808f51cf026610057a5ffd1271f49098f93e44d9f94ba34c1cd1d129d278b2f",
+      "sha256": "acf6020b5af1711ee033d060d6a3822506ac08d9156d238d6ce1144d21169b51",
       "status": "OK"
     },
     {
@@ -5246,7 +5246,7 @@
       "last_modified": "2025-05-12T07:59:40-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/tax-convention",
       "byte_length": 35526,
-      "sha256": "c49ec53dcab1eaf3ec6258f1276ffbe81196fee3b04a79754079eb3c322bd785",
+      "sha256": "b924a3136794358c4a5183b2baf95201badb5a7803b4d466267cafab8dd91143",
       "status": "OK"
     },
     {
@@ -5272,7 +5272,7 @@
       "last_modified": "2025-06-25T11:04:28-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/taxpayer-advocate-info",
       "byte_length": 35669,
-      "sha256": "5da7233b92b39281d3c7eb5040c175f5b2b77a2c0ad445694ebc8f23ddfeb4d2",
+      "sha256": "946511eef3cbc0bc87dec68ff06f910747f7a3e1661189373d6f95c0e499847c",
       "status": "OK"
     },
     {
@@ -5296,7 +5296,7 @@
       "last_modified": "2025-06-13T08:28:54-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/written-determinations",
       "byte_length": 35110,
-      "sha256": "5aa84cd440c3411c5f01bacc2adb36d7fc7608715fac43688d63973bcc704f93",
+      "sha256": "75a1ea9041c920da442a4c6f44316efa0fdce4b361c80010bbd0ecd87da3e7c8",
       "status": "OK"
     },
     {
@@ -5322,7 +5322,7 @@
       "last_modified": "2025-06-25T11:19:52-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/railroad-safety-analysis-records",
       "byte_length": 35460,
-      "sha256": "3c88257cd2295149ed4301e6345e87e162c28862aa8f2acdee83fda78166ae71",
+      "sha256": "88c58eba74821621e702507616bc113e2251ff85b067b1dd8d6379371b2a29c0",
       "status": "OK"
     },
     {
@@ -5353,7 +5353,7 @@
       "last_modified": "2025-06-13T08:31:15-04:00",
       "detail_url": "https://www.archives.gov/cui/registry/category-detail/sensitive-security-info",
       "byte_length": 35722,
-      "sha256": "8c35dff61aea9282a0107f94e584ea5f05c176ed1afccfdf486c4bc3823bbf62",
+      "sha256": "e8e6f1adc7c3e3ad19aeb566128fc0786f03cc719ec79b3b4ae360b5d40f297d",
       "status": "OK"
     }
   ]

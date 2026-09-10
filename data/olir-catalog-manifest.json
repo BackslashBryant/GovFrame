@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T18:40:22.952Z",
+  "generated_at": "2026-09-10T19:08:48.214Z",
   "source": "https://csrc.nist.gov/projects/olir/informative-reference-catalog",
   "api_endpoint": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog",
   "total_entries": 102,
@@ -8,7 +8,7 @@
   "ingested_count": 40,
   "quarantined_count": 62,
   "unresolved_count": 11,
-  "retained_count": 2,
+  "retained_count": 0,
   "processed_items": [
     {
       "id": 232,
@@ -365,7 +365,7 @@
           "status": 200,
           "final_url": "https://drive.google.com/drive/folders/1uqUpwlj7NeP-TDSPR2sHaVXHOQlabCCG?usp=sharing",
           "content_type": "text/html; charset=utf-8",
-          "byte_length": 315609
+          "byte_length": 316138
         },
         {
           "kind": "artifact download",
@@ -683,7 +683,7 @@
           "status": 200,
           "final_url": "https://cyberoon.com/research/ai-soc-v10-to-nist-csf-20-informative-reference-mapping",
           "content_type": "text/html; charset=utf-8",
-          "byte_length": 2093612
+          "byte_length": 2093642
         },
         {
           "kind": "artifact download",
@@ -691,7 +691,7 @@
           "status": 200,
           "final_url": "https://github.com/cyberoon/ai-soc-nist-csf-mapping/blob/main/docs/AI_SOC_Controls_Catalog_v1_0.pdf",
           "content_type": "text/html; charset=utf-8",
-          "byte_length": 247385
+          "byte_length": 247393
         },
         {
           "kind": "artifact download",
@@ -699,7 +699,7 @@
           "status": 200,
           "final_url": "https://github.com/cyberoon/ai-soc-nist-csf-mapping",
           "content_type": "text/html; charset=utf-8",
-          "byte_length": 286982
+          "byte_length": 286981
         },
         {
           "kind": "artifact download",
@@ -707,7 +707,7 @@
           "status": 200,
           "final_url": "https://github.com/cyberoon/ai-soc-nist-csf-mapping/releases/tag/v1.0.0",
           "content_type": "text/html; charset=utf-8",
-          "byte_length": 205638
+          "byte_length": 205637
         },
         {
           "kind": "GitHub Contents API",
@@ -913,7 +913,7 @@
           "kind": "artifact download",
           "url": "https://docs.google.com/spreadsheets/d/1HnbzkMSaUVcqj4hqaDFxTTfcyc5RyOeP/export?format=xlsx",
           "status": 200,
-          "final_url": "https://doc-0c-98-sheets.googleusercontent.com/export/54bogvaave6cua4cdnls17ksc4/j1j9m4b5c6ugg70ngn46fl4um4/1789065610000/100790643046296837536/*/1HnbzkMSaUVcqj4hqaDFxTTfcyc5RyOeP?format=xlsx",
+          "final_url": "https://doc-0c-98-sheets.googleusercontent.com/export/54bogvaave6cua4cdnls17ksc4/jjc9lfdldkjsiuhcectv7b3uec/1789067320000/100790643046296837536/*/1HnbzkMSaUVcqj4hqaDFxTTfcyc5RyOeP?format=xlsx",
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "byte_length": 21218
         }
@@ -1672,7 +1672,7 @@
       "artifact": {
         "map_file": "maps/olir/176.json",
         "artifact_url": "https://www.gov.uk/government/publications/cyber-governance-mapping/mapping-cyber-governance-code-to-nist-cyber-security-framework",
-        "checksum": "sha256:350db739f220513beaef0a3b3c633b6f53307ef65acf7dc66ad78e5cda327df5",
+        "checksum": "sha256:f072f9263ac68930a9232106841037e06e494b2912b90d8cce414ac1dde58114",
         "byte_length": 88237,
         "parser": "olir-html",
         "extraction_scope": "published_html_relationships",
@@ -2015,6 +2015,7 @@
       "authority_tier_label": "Validated third-party Final",
       "mapping_model": "Set Theory: Equal, Set Theory: Subset, intersects with, not related to",
       "ingested": true,
+      "availability": "structured_artifact",
       "map_file": "maps/olir/152.json",
       "artifact_id": null,
       "artifact": {
@@ -2023,6 +2024,7 @@
         "checksum": "sha256:f72e928c9eea6a9f53caae758fcae80c6f8aad728c36d9f0a9a0c3cbd57d82f7",
         "byte_length": 97586,
         "parser": "olir-xlsx",
+        "extraction_scope": "structured_artifact",
         "relationship_count": 1014,
         "relationship_semantics": [
           "Set Theory: Equal",
@@ -2052,37 +2054,6 @@
           "final_url": "https://content.securecontrolsframework.com/olir/scf-olir-strm-nist-800-171-r3.xlsx",
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "byte_length": 97586
-        }
-      ],
-      "refresh_status": "retained_last_good",
-      "availability": "retrieval_failed",
-      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
-      "latest_retrieval_attempts": [
-        {
-          "kind": "NIST catalog detail endpoint",
-          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/152",
-          "status": 200,
-          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/152",
-          "json_file_url": null,
-          "publisher_sha256": null,
-          "submission_url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-800-171-r3.xlsx",
-          "reference_url": "https://securecontrolsframework.com/scf-download/",
-          "mapping_summary": "<p>A mapping between NIST SP 800-171 R3 controls and Secure Controls Framework (SCF) controls.</p>",
-          "mapping_comment": "<p>The SCF is a metaframework that contains commonly-used cybersecurity and privacy laws, regulations and frameworks to assist an organization with identifying and conveying mandatory and discretionary controls with the goal of becoming both secure and compliant.</p>"
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-800-171-r3.xlsx",
-          "status": 200,
-          "final_url": "https://content.securecontrolsframework.com/olir/scf-olir-strm-nist-800-171-r3.xlsx",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 7038,
-          "availability": "artifact_replaced_by_html"
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://securecontrolsframework.com/scf-download/",
-          "error": "OLIR source URL policy rejected destination outside registered submission"
         }
       ]
     },
@@ -2302,6 +2273,7 @@
       "authority_tier_label": "Validated third-party Final",
       "mapping_model": "Intersects With, Set Theory: Equal, Set Theory: Subset, not related to",
       "ingested": true,
+      "availability": "structured_artifact",
       "map_file": "maps/olir/144.json",
       "artifact_id": null,
       "artifact": {
@@ -2310,6 +2282,7 @@
         "checksum": "sha256:ee2f064bbcdf7a2a5dc2bf2de6dcdb9360d9b11c35da55ced6fb0a491717026c",
         "byte_length": 216482,
         "parser": "olir-xlsx",
+        "extraction_scope": "structured_artifact",
         "relationship_count": 1501,
         "relationship_semantics": [
           "Intersects With",
@@ -2339,37 +2312,6 @@
           "final_url": "https://content.securecontrolsframework.com/olir/scf-olir-strm-nist-800-53-r5-1-1.xlsx",
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "byte_length": 216482
-        }
-      ],
-      "refresh_status": "retained_last_good",
-      "availability": "retrieval_failed",
-      "refresh_error": "no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
-      "latest_retrieval_attempts": [
-        {
-          "kind": "NIST catalog detail endpoint",
-          "url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/144",
-          "status": 200,
-          "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/olir/informative-reference-catalog/details/144",
-          "json_file_url": null,
-          "publisher_sha256": null,
-          "submission_url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-800-53-r5-1-1.xlsx",
-          "reference_url": "https://securecontrolsframework.com/scf-download/",
-          "mapping_summary": "<p>A mapping between NIST SP 800-53 R5.1.1 controls and Secure Controls Framework (SCF) controls.</p>",
-          "mapping_comment": "<p>The SCF is a metaframework that contains commonly-used cybersecurity and privacy laws, regulations and frameworks to assist an organization with identifying and conveying mandatory and discretionary controls with the goal of becoming both secure and compliant.</p>"
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://securecontrolsframework.com/content/olir/scf-olir-strm-nist-800-53-r5-1-1.xlsx",
-          "status": 200,
-          "final_url": "https://content.securecontrolsframework.com/olir/scf-olir-strm-nist-800-53-r5-1-1.xlsx",
-          "content_type": "text/html; charset=utf-8",
-          "byte_length": 7118,
-          "availability": "artifact_replaced_by_html"
-        },
-        {
-          "kind": "artifact download",
-          "url": "https://securecontrolsframework.com/scf-download/",
-          "error": "OLIR source URL policy rejected destination outside registered submission"
         }
       ]
     },
@@ -2867,7 +2809,7 @@
           "status": 200,
           "final_url": "https://www.cisecurity.org/controls",
           "content_type": "text/html; charset=utf-8",
-          "byte_length": 276384
+          "byte_length": 276434
         },
         {
           "kind": "artifact download",
@@ -3395,9 +3337,9 @@
           "kind": "artifact download",
           "url": "https://content.securecontrolsframework.com/olir/Secure-Controls-Framework-SCFv2023.2-to-NIST-800-171-R2.xlsx",
           "status": 200,
-          "final_url": "https://content.securecontrolsframework.com/olir/Secure-Controls-Framework-SCFv2023.2-to-NIST-800-171-R2.xlsx",
+          "final_url": "https://securecontrolsframework.com/free-content/scf-download",
           "content_type": "text/html; charset=utf-8",
-          "byte_length": 7156,
+          "byte_length": 50240,
           "availability": "artifact_replaced_by_html"
         },
         {
