@@ -1,4 +1,6 @@
 import { expect, test } from "@playwright/test";
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import {
   attachPageDiagnostics,
   dismissOnboarding,
@@ -88,6 +90,16 @@ test("a drilled branch survives refresh and the trail steps back one level", asy
 });
 
 test("a section shows its own records and only its own", async ({ page }) => {
+  const root = existsSync(join(process.cwd(), "dist", "site", "data", "generated"))
+    ? join(process.cwd(), "dist", "site", "data", "generated")
+    : join(process.cwd(), "data", "generated");
+  const catalog = JSON.parse(readFileSync(join(root, "catalog-records", "nist-800-53.json"), "utf8"));
+  const expectedIds = catalog.catalog_records.nodes
+    .map((node) => node.metadata?.item_id)
+    .filter((id) => /^AC-\d/.test(id || "") || id === "FAMILY-AC")
+    .map((id) => id === "FAMILY-AC" ? "AC" : id)
+    .sort();
+  expect(expectedIds.length).toBeGreaterThan(1);
   await gotoApp(page, "/#/atlas?atlasLanding=publishers");
   await waitForAppReady(page);
   await dismissOnboarding(page);
@@ -100,7 +112,13 @@ test("a section shows its own records and only its own", async ({ page }) => {
   // The drawing stops where every child is one record; the panel lists them.
   await expect(panel(page).getByRole("heading", { level: 2 })).toContainText("Access Control");
   const records = panel(page).locator(".atlas-detail__links button");
-  await expect(records).toHaveCount(148);
+  await expect(records).toHaveCount(expectedIds.length);
+  // AtlasGraphProjection uses recordDisplayTitle: the publisher identifier
+  // precedes " — ". Enhancement IDs stay dotted (AC-2.1), not parenthesized.
+  const actualIds = (await records.locator(".atlas-detail__link-name").allTextContents())
+    .map((label) => label.trim().split(" — ")[0])
+    .sort();
+  expect(actualIds, "Access Control must include its entire family and no other family").toEqual(expectedIds);
   await expect(records.first()).toContainText("AC-1");
 
   await records.first().click();

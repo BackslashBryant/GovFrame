@@ -59,9 +59,10 @@ test("real spine focus states stay within the 120-node render budget", () => {
 test("technology gate is general and matches the real DISA branches", () => {
   assert.equal(TECHNOLOGY_GATE_THRESHOLD, 60);
   assert.ok((model.nodesById.get("disa-stig:CATALOG")?.childCount || 0) > TECHNOLOGY_GATE_THRESHOLD);
-  assert.equal(model.nodesById.get("disa-srg:CATALOG")?.childCount, 25);
+  const srgChildren = model.nodes.filter((node) => node.parentId === "disa-srg:CATALOG");
+  assert.equal(model.nodesById.get("disa-srg:CATALOG")?.childCount, srgChildren.length);
   assert.equal(requiresTechnologyGate(model.nodesById.get("disa-stig:CATALOG")!), true);
-  assert.equal(requiresTechnologyGate(model.nodesById.get("disa-srg:CATALOG")!), false);
+  assert.equal(requiresTechnologyGate(model.nodesById.get("disa-srg:CATALOG")!), srgChildren.length > TECHNOLOGY_GATE_THRESHOLD);
   const gated = renderedAtlasSet({ model, focusId: "disa-stig:CATALOG" });
   assert.ok(gated.some((node) => node.id === "technology-gate:disa-stig:CATALOG"));
   assert.equal(gated.filter((node) => node.parentId === "disa-stig:CATALOG").length, 1);
@@ -76,15 +77,17 @@ test("technology gate is general and matches the real DISA branches", () => {
   );
 });
 
-test("the real 448-rule benchmark buckets as a pure function of sorted input", async () => {
+test("the accepted benchmark buckets preserve exact membership independent of input order", async () => {
   const benchmarkId = "disa-stig:BENCHMARK-ORACLE-LINUX-9-STIG";
   const children = benchmarkChildren(benchmarkId);
-  assert.equal(children.length, 448);
+  assert.equal(children.length, model.nodesById.get(benchmarkId)?.childCount);
   assert.equal(requiresTechnologyGate(model.nodesById.get(benchmarkId)!), false);
   const first = aggregateAtlasChildren(benchmarkId, children);
   const reversed = aggregateAtlasChildren(benchmarkId, [...children].reverse());
   assert.equal(JSON.stringify(first), JSON.stringify(reversed));
-  assert.equal(first.length, 12);
+  const memberIds = first.flatMap((node) => "memberIds" in node ? node.memberIds : [node.id]);
+  assert.deepEqual([...memberIds].sort(), children.map((node) => node.id).sort());
+  assert.equal(new Set(memberIds).size, children.length);
   assert.ok(first.every((bucket) => "aggregate" in bucket && bucket.aggregate));
   const rendered = renderedAtlasSet({
     model,
@@ -92,7 +95,8 @@ test("the real 448-rule benchmark buckets as a pure function of sorted input", a
     selectedTechnologyId: benchmarkId,
     dynamicChildren: children,
   });
-  assert.equal(rendered.length, 16);
+  assert.ok(rendered.length <= ATLAS_RENDER_NODE_CAP);
+  assert.deepEqual(rendered.filter((node) => node.parentId === benchmarkId).map((node) => node.id).sort(), first.map((node) => node.id).sort());
   assert.deepEqual(
     atlasTreeCollisions(await layoutAtlasTree({ model, rendered, focusId: benchmarkId })),
     [],

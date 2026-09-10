@@ -1,7 +1,25 @@
 import { expect, test } from "@playwright/test";
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import commonsDataset from "../../data/commons-resource-dataset.json" with { type: "json" };
 
 import { attachPageDiagnostics, gotoApp, waitForAppReady } from "./support.mjs";
+
+function supplyChainMatchCount() {
+  const root = existsSync(join(process.cwd(), "dist", "site", "data", "generated"))
+    ? join(process.cwd(), "dist", "site", "data", "generated")
+    : join(process.cwd(), "data", "generated");
+  const manifest = JSON.parse(readFileSync(join(root, "library-search-index.json"), "utf8"));
+  const fields = manifest.library_search_index.fields;
+  const searchable = ["item_id", "title", "control_family", "source_name", "publisher_name", "official_text_preview"];
+  return manifest.sharded_collection.shards.reduce((count, shard) => {
+    const { columns } = JSON.parse(readFileSync(join(root, shard.path), "utf8")).library_search_index;
+    return count + columns[0].filter((_, index) => {
+      const text = searchable.map((field) => String(columns[fields.indexOf(field)][index] || "").toLowerCase()).join(" ");
+      return text.includes("supply") && text.includes("chain");
+    }).length;
+  }, 0);
+}
 
 test.beforeEach(async ({ page }) => {
   attachPageDiagnostics(page);
@@ -62,6 +80,8 @@ test("WS3 Library uses Template C browse, facets, and fully linked record rows",
 });
 
 test("WS3 Library communicates visible, loaded, and total search scope", async ({ page }) => {
+  const total = supplyChainMatchCount();
+  expect(total, "query must exercise the 100-result relevance cap").toBeGreaterThan(100);
   await page.setViewportSize({ width: 1440, height: 1000 });
   await gotoApp(page, "/#/library?q=supply%20chain");
   await waitForAppReady(page, { allowPartial: true });
@@ -69,14 +89,14 @@ test("WS3 Library communicates visible, loaded, and total search scope", async (
   // The header names the way to the matches past the cap, so a reader who never
   // scrolls 100 rows still learns the list is not all of them.
   await expect(page.locator(".workspace-result-count")).toHaveText(
-    "206 matches · showing 25 of the 100 most relevant · narrow with filters to reach the rest",
+    `${total.toLocaleString("en-US")} matches · showing 25 of the 100 most relevant · narrow with filters to reach the rest`,
   );
   const rows = page.locator('[data-result-class="published-record"]');
   await expect(rows).toHaveCount(25);
   await page.getByRole("button", { name: "Show 25 more" }).click();
   await expect(rows).toHaveCount(50);
   await expect(page.locator(".workspace-result-count")).toHaveText(
-    "206 matches · showing 50 of the 100 most relevant · narrow with filters to reach the rest",
+    `${total.toLocaleString("en-US")} matches · showing 50 of the 100 most relevant · narrow with filters to reach the rest`,
   );
 
   await page.getByRole("button", { name: "Map", exact: true }).click();
@@ -89,6 +109,8 @@ test("WS3 Library communicates visible, loaded, and total search scope", async (
 });
 
 test("WS3 Resources shares Template C with real list, map, and comparison modes", async ({ page }) => {
+  const resourceCount = commonsDataset.resources.length;
+  expect(resourceCount).toBeGreaterThan(75);
   await page.setViewportSize({ width: 1440, height: 1000 });
   await gotoApp(page, "/#/resources");
   await waitForAppReady(page, { allowPartial: true });
@@ -118,7 +140,7 @@ test("WS3 Resources shares Template C with real list, map, and comparison modes"
 
   await workspace.getByRole("button", { name: /Browse all \d+ resources/ }).click();
   await expect(page.locator('[data-result-bar-order="count,sort,view,compare"]')).toBeVisible();
-  await expect(page.locator(".workspace-result-count")).toHaveText("202 results · showing 25");
+  await expect(page.locator(".workspace-result-count")).toHaveText(`${resourceCount.toLocaleString("en-US")} results · showing 25`);
   await expect(page.locator('[data-result-class="resource"]')).toHaveCount(25);
   const firstRow = page.locator('[data-result-class="resource"]').first();
   await expect(firstRow).toBeVisible();
@@ -130,9 +152,9 @@ test("WS3 Resources shares Template C with real list, map, and comparison modes"
   await workspace.getByRole("button", { name: "Map", exact: true }).click();
   const map = page.getByRole("region", { name: "Map of Resource results" });
   await expect(map).toBeVisible();
-  await expect(map.getByRole("heading", { name: "75 of 202 resources mapped" })).toBeVisible();
+  await expect(map.getByRole("heading", { name: `75 of ${resourceCount.toLocaleString("en-US")} resources mapped` })).toBeVisible();
   await expect(map.locator('[data-map-node-id]')).toHaveCount(75);
-  await expect(page.locator(".workspace-result-count")).toHaveText("202 results · mapping 75");
+  await expect(page.locator(".workspace-result-count")).toHaveText(`${resourceCount.toLocaleString("en-US")} results · mapping 75`);
   await workspace.getByRole("button", { name: "List", exact: true }).click();
   const compare = workspace.getByRole("button", { name: "Compare", exact: true });
   await expect(compare).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
