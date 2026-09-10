@@ -17,6 +17,8 @@ test('a quarantined source creates one alert and repeated identical failures are
   assert.match(change.payload.body, /Attempts: 2/);
   const existing = { ...change.payload, number: 12, state: 'open' };
   assert.deepEqual(planAlertChanges([failure], [existing], run), []);
+  assert.deepEqual(planAlertChanges([failure], [existing], run.replace('123', '456')), []);
+  assert.equal(planAlertChanges([{ ...failure, error: 'HTTP 404' }], [existing], run.replace('123', '456')).length, 1);
 });
 
 test('recurring quarantine updates or reopens the same issue and consolidates duplicate generated alerts', () => {

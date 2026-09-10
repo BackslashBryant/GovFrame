@@ -3,7 +3,7 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, rmdirSync, wr
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test, { after } from 'node:test';
-import { runRefreshPipeline } from '../scripts/refresh-data.mjs';
+import { runRefreshPipeline, executeRefreshUnit } from '../scripts/refresh-data.mjs';
 import { INGESTION_TASKS, validateIngestionPipelineDefinition } from '../scripts/lib/ingestion-pipeline.mjs';
 import { sourceUnitsForTask, localProjectionForTask } from '../scripts/lib/refresh-source-outputs.mjs';
 import { fetchFrameworkCatalogs } from '../scripts/fetch-framework-catalogs.mjs';
@@ -21,6 +21,13 @@ function setup(t) {
 const task = (id, remote = true) => ({ id, script: `${id}.mjs`, args: [], stages: ['acquire'], scope: [id], retries: 1, remote_fetch: remote, isolation: remote ? 'quarantinable' : 'fail_fast' });
 const descriptor = (task) => [{ taskId: task.id, sourceId: task.id, script: task.script, args: [], paths: ['data/shared.json'], retries: task.retries }];
 const gates = { validateCandidate: () => {}, finalize: () => {}, describeProjection: () => null };
+
+test('failed subprocess reports the actual source diagnostic and has a finite deadline', () => {
+  assert.throws(() => executeRefreshUnit({ script: 'example.mjs', args: [] }, '.', (_exe, _args, options) => {
+    assert.equal(options.timeout, 900000);
+    return { status: 1, stderr: 'HTTP 404: official publisher detail is missing' };
+  }), /HTTP 404: official publisher detail is missing/);
+});
 
 test('every production remote task has explicit outputs and local isolation cannot quarantine', () => {
   assert.deepEqual(validateIngestionPipelineDefinition(), []);

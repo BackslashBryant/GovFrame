@@ -48,6 +48,10 @@ test('DISA curl denies unapproved URLs before spawning and enforces HTTPS with n
 test('source policy permits inventoried publishers and precise upstream repository endpoints', () => {
   for (const url of [
     'https://csrc.nist.gov/files/catalog.xlsx',
+    'https://rai.acqbot.com/executive-summary',
+    'https://api.github.com/repos/ansible-lockdown/.github/readme',
+    'https://api.github.com/repos/oscal-compass/compliance-trestle',
+    'https://api.github.com/repos/apache/caldera',
     'https://download.microsoft.com/download/Zero%20Trust.xlsx',
     'https://api.github.com/repos/NUWCDIVNPT/stig-manager',
     'https://api.github.com/repos/mitre/saf/commits/main',
@@ -81,6 +85,8 @@ test('source policy rejects non-publishers, unsafe transport and ambiguous paths
     'https://github.com/usnistgov%5coscal-content/',
     'https://github.com/usnistgov\\oscal-content/',
     'https://api.github.com/repositories/12345',
+    'https://rai.acqbot.com/assessment/standard/intake',
+    'https://api.github.com/repos/apache/unapproved',
     'https://raw.githubusercontent.com/usnistgov/unapproved/main/data.json',
   ]) assert.throws(() => assertOfficialSourceUrl(url), /source URL policy/, url);
 });

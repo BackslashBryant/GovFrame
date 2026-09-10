@@ -18,7 +18,7 @@ import { strictConditionalFetch } from './lib/strict-conditional-fetch.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LIST_URL = 'https://www.archives.gov/cui/registry/category-list';
-const CHANGE_LOG_URL = 'https://www.archives.gov/cui/registry/changelog';
+const CHANGE_LOG_URL = 'https://www.archives.gov/cui/registry/registry-change-log';
 const DETAIL_BASE = 'https://www.archives.gov/cui/registry/category-detail/';
 
 function sha256(buffer) {
@@ -133,10 +133,13 @@ function parseCategoryDetail(html, slug) {
   };
 }
 
-export function validateNaraCandidate(manifest) {
+export function validateNaraCandidate(manifest, previous = { results: [] }) {
   const failures = Array.from(manifest.results).filter((entry) => entry?.status !== 'OK');
-  if (failures.length || manifest.results.length !== manifest.total_entries || !manifest.change_log || manifest.change_log.status === 'FAILED') {
-    throw new Error(`NARA CUI refresh incomplete: ${failures.length} detail failure(s); change log ${manifest.change_log?.status === 'FAILED' ? 'failed' : 'retrieved'}`);
+  const knownMissing = new Set(previous.results.filter((entry) => entry.status === 'FAILED').map((entry) => entry.slug));
+  const lost = previous.results.filter((entry) => entry.status === 'OK')
+    .filter((entry) => !manifest.results.some((next) => next?.slug === entry.slug && next.status === 'OK'));
+  if (failures.some((entry) => !entry || !knownMissing.has(entry.slug)) || lost.length || manifest.results.length !== manifest.total_entries || !manifest.change_log || manifest.change_log.status === 'FAILED') {
+    throw new Error(`NARA CUI refresh incomplete: ${failures.length} detail failure(s); ${lost.length} previously accepted details lost; change log ${manifest.change_log?.status === 'FAILED' ? 'failed' : 'retrieved'}; ${failures.map((entry) => entry?.error || entry?.slug || 'missing detail').join('; ')}`);
   }
 }
 
@@ -203,7 +206,8 @@ export async function fetchNaraCuiRegistry({ concurrency = 8 } = {}) {
     results,
   };
 
-  validateNaraCandidate(manifest);
+  const previous = JSON.parse(readFileSync(join(ROOT, 'data', 'nara-cui-registry-manifest.json'), 'utf8'));
+  validateNaraCandidate(manifest, previous);
   const registryPath = join(ROOT, 'data', 'source-registry.json');
   const registry = JSON.parse(readFileSync(registryPath, 'utf8'));
   const artifact = registry.artifacts?.find(

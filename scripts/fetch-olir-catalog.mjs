@@ -146,9 +146,12 @@ export function validateOlirCandidate(retrievalById, previousItems = []) {
   for (const [id, retrieval] of retrievalById) {
     const detail = retrieval.attempts?.[0];
     const successful = (attempt) => !attempt.error && Number.isInteger(attempt.status) && attempt.status >= 200 && attempt.status < 300;
-    const supportedExclusion = retrieval.unsupported && retrieval.attempts?.every(successful);
+    // The catalog includes publisher pointers that never supplied an importable
+    // mapping. Keep those entries and their failure evidence as quarantined;
+    // they must not prevent unrelated mappings from refreshing. Existing
+    // published mappings still cannot disappear or silently regress.
     if (!detail || !successful(detail)
-      || retrieval.parse_failed || (!retrieval.mapping && (!supportedExclusion || previouslyIngested.has(id)))) {
+      || (previouslyIngested.has(id) && (!retrieval.mapping || retrieval.parse_failed))) {
       throw new Error(`OLIR refresh incomplete for ${id}: ${retrieval.unavailable_reason || detail?.error || 'missing expected detail or artifact'}`);
     }
   }

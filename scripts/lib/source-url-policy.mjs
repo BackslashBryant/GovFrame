@@ -13,6 +13,7 @@ const PUBLISHER_HOSTS = new Set([
 // repository URLs and fetcher literals. This static list deliberately does not
 // read refreshed data or admit arbitrary repositories under these owners.
 const PUBLISHER_REPOSITORIES = new Set([
+  'ansible-lockdown/.github', 'oscal-compass/compliance-trestle', 'apache/caldera',
   'anchore/grype', 'anchore/syft', 'aquasecurity/kube-bench', 'aquasecurity/trivy',
   'bridgecrewio/checkov', 'checkmarx/kics', 'cisagov/cset', 'cisagov/decider',
   'cisagov/malcolm', 'cisagov/scubagear', 'cisagov/vulnrichment', 'cisofy/lynis',
@@ -42,6 +43,9 @@ export function assertOfficialSourceUrl(input) {
   let url;
   try { url = new URL(raw); } catch { reject(); }
   if (url.protocol !== 'https:' || url.username || url.password || url.port) reject();
+  // DoD's toolkit is linked by official Army guidance (UTP 3-10.4).
+  // Admit only its existing public summary, not the hosted assessment app.
+  if (url.hostname === 'rai.acqbot.com' && url.pathname === '/executive-summary' && !url.search) return url;
   // Reject ambiguous encoded path separators, dot segments, and nested encoding.
   if (/%(?:2e|2f|5c|25)/i.test(url.pathname)) reject();
   if (PUBLISHER_HOSTS.has(url.hostname)) return url;

@@ -11,15 +11,18 @@ import { runSourceTransaction } from './lib/source-transaction.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
-export function executeRefreshUnit(unit, root) {
+export function executeRefreshUnit(unit, root, spawn = spawnSync) {
   const args = unit.script === 'fetch-disa-stigs.mjs' && process.platform === 'win32'
     ? ['--max-old-space-size=1024', '--expose-gc', join(root, 'scripts', unit.script), ...unit.args]
     : [join(root, 'scripts', unit.script), ...unit.args];
-  const result = spawnSync(process.execPath, args, {
-    cwd: root, stdio: 'inherit', env: { ...process.env, CONTROL_ATLAS_REQUIRE_FRESH_FETCH: '1' },
+  const result = spawn(process.execPath, args, {
+    cwd: root, stdio: ['ignore', 'inherit', 'pipe'], encoding: 'utf8',
+    maxBuffer: 4 * 1024 * 1024, timeout: 15 * 60 * 1000,
+    env: { ...process.env, CONTROL_ATLAS_REQUIRE_FRESH_FETCH: '1' },
   });
+  if (result.stderr) process.stderr.write(result.stderr);
   if (result.error) throw result.error;
-  if (result.status !== 0) throw new Error(`${unit.script} exited ${result.status}`);
+  if (result.status !== 0) throw new Error(`${unit.script} exited ${result.status}: ${String(result.stderr || result.signal || 'No diagnostic was recorded').trim().slice(-4000)}`);
 }
 
 export async function runRefreshPipeline({
