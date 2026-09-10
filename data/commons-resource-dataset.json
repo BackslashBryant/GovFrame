@@ -1013,7 +1013,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-10T17:08:31Z",
-          "latestRepositoryUpdateAt": "2026-09-10T16:48:22Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:59:27Z",
           "license": "Apache-2.0",
           "description": "CLI tool and library for generating a Software Bill of Materials from container images and filesystems"
         }
@@ -2207,7 +2207,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T16:17:58Z.",
+          "text": "Latest repository push: 2026-09-10T17:39:30Z.",
           "sourceUrl": "https://api.github.com/repos/SpecterOps/BloodHound"
         },
         "release": {
@@ -2263,7 +2263,7 @@
           "primaryLanguage": "Go",
           "topics": [],
           "archived": false,
-          "lastPushedAt": "2026-09-10T16:17:58Z",
+          "lastPushedAt": "2026-09-10T17:39:30Z",
           "latestRepositoryUpdateAt": "2026-09-10T15:54:13Z",
           "license": "Apache-2.0",
           "description": "Six Degrees of Domain Admin"
@@ -2272,7 +2272,7 @@
       "currentVersion": "v9.7.0",
       "lastReleaseAt": "2026-09-10T16:12:45Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T16:17:58Z",
+      "lastCommitAt": "2026-09-10T17:39:30Z",
       "license": "Apache-2.0"
     },
     {
@@ -4589,9 +4589,9 @@
       "maturity": "established",
       "maintenanceStatus": "active",
       "currentVersion": "v1.8.0",
-      "publisherUpdatedAt": "2026-09-09",
+      "publisherUpdatedAt": "2026-09-10",
       "lastReleaseAt": "2026-05-07T21:44:29Z",
-      "lastCommitAt": "2026-09-10T17:17:45Z",
+      "lastCommitAt": "2026-09-10T18:40:58Z",
       "lastCheckedAt": "2026-08-03",
       "nextCheckAt": "2026-11-03",
       "updateMethod": "manual_primary_source_review",
@@ -4630,7 +4630,7 @@
       ],
       "overview": {
         "text": "ScubaGear is an assessment tool that verifies that a Microsoft 365 (M365) tenant’s configuration conforms to the policies described in the Secure Cloud Business Applications (SCuBA) Secure Configuration Baseline documents.",
-        "sourceUrl": "https://github.com/cisagov/ScubaGear/blob/926dafdf124edf8e0c6f7fe7e4d939bb4f9d8943/README.md",
+        "sourceUrl": "https://github.com/cisagov/ScubaGear/blob/7ef9501d7de9804ddb9d6013af6b665cccfb39d9/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -4640,17 +4640,17 @@
           "Windows"
         ],
         "environments": [],
-        "sourceUrl": "https://github.com/cisagov/ScubaGear/blob/926dafdf124edf8e0c6f7fe7e4d939bb4f9d8943/README.md",
+        "sourceUrl": "https://github.com/cisagov/ScubaGear/blob/7ef9501d7de9804ddb9d6013af6b665cccfb39d9/README.md",
         "note": "Supported environments stated in the commit-pinned repository README."
       },
       "repositoryEvidence": {
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/cisagov/ScubaGear",
-        "commitSha": "926dafdf124edf8e0c6f7fe7e4d939bb4f9d8943",
-        "commitUrl": "https://github.com/cisagov/ScubaGear/commit/926dafdf124edf8e0c6f7fe7e4d939bb4f9d8943",
+        "commitSha": "7ef9501d7de9804ddb9d6013af6b665cccfb39d9",
+        "commitUrl": "https://github.com/cisagov/ScubaGear/commit/7ef9501d7de9804ddb9d6013af6b665cccfb39d9",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/cisagov/ScubaGear/blob/926dafdf124edf8e0c6f7fe7e4d939bb4f9d8943/README.md",
+        "readmeUrl": "https://github.com/cisagov/ScubaGear/blob/7ef9501d7de9804ddb9d6013af6b665cccfb39d9/README.md",
         "readmeSha256": "sha256:39148e23c7f269ac38e2b2f5d530de5977ae2691fa1886144bc78faaad8e7e31",
         "readmeByteLength": 12654,
         "overviewExcerpt": "ScubaGear is an assessment tool that verifies that a Microsoft 365 (M365) tenant’s configuration conforms to the policies described in the Secure Cloud Business Applications (SCuBA) Secure Configuration Baseline documents.",
@@ -4704,8 +4704,8 @@
             "security-automation"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T17:17:45Z",
-          "latestRepositoryUpdateAt": "2026-09-09T21:08:55Z",
+          "lastPushedAt": "2026-09-10T18:40:58Z",
+          "latestRepositoryUpdateAt": "2026-09-10T18:11:07Z",
           "license": "CC0-1.0",
           "description": "Automation to assess the state of your M365 tenant against CISA's baselines"
         }
@@ -4726,17 +4726,17 @@
         "outputs": {
           "status": "documented",
           "text": "- HTML Reports : Interactive, user-friendly compliance reports. Sample BaselineReports.html - JSON Output : Structured results for reporting and parsing. Sample ScubaResults.json - CSV Export : Spreadsheet-compatible data for analysis. Sample ScubaResults.csv",
-          "sourceUrl": "https://github.com/cisagov/ScubaGear/blob/926dafdf124edf8e0c6f7fe7e4d939bb4f9d8943/README.md"
+          "sourceUrl": "https://github.com/cisagov/ScubaGear/blob/7ef9501d7de9804ddb9d6013af6b665cccfb39d9/README.md"
         },
         "installation": {
           "status": "documented",
           "text": "To install ScubaGear from PSGallery, open a PowerShell 5 terminal on a Windows computer and install the module: powershell",
-          "sourceUrl": "https://github.com/cisagov/ScubaGear/blob/926dafdf124edf8e0c6f7fe7e4d939bb4f9d8943/README.md"
+          "sourceUrl": "https://github.com/cisagov/ScubaGear/blob/7ef9501d7de9804ddb9d6013af6b665cccfb39d9/README.md"
         },
         "usage": {
           "status": "documented",
           "text": "Before launching ScubaGear , it's important to ensure your environment is properly configured. This includes having the necessary dependencies and permissions in place. Please review the prerequisites section to verify that your system meets all requirements. This will help avoid errors during execution and ensure a smooth experience when using ScubaGear. [!NOTE] After installing ScubaGear in your environment, we recommend using the built-in update functions and features when you need to update to the latest version. See the Update Guide for more information.",
-          "sourceUrl": "https://github.com/cisagov/ScubaGear/blob/926dafdf124edf8e0c6f7fe7e4d939bb4f9d8943/README.md"
+          "sourceUrl": "https://github.com/cisagov/ScubaGear/blob/7ef9501d7de9804ddb9d6013af6b665cccfb39d9/README.md"
         },
         "license": {
           "status": "documented",
@@ -4745,7 +4745,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T17:17:45Z.",
+          "text": "Latest repository push: 2026-09-10T18:40:58Z.",
           "sourceUrl": "https://api.github.com/repos/cisagov/ScubaGear"
         },
         "release": {
@@ -4931,7 +4931,7 @@
       ],
       "overview": {
         "text": "The CISA Vulnrichment project is the public repository of CISA's enrichment of public CVE records through CISA's ADP (Authorized Data Publisher) container. In this phase of the project, CISA is assessing new and recent CVEs and adding key SSVC decision points. Once scored, some higher-risk CVEs will also receive enrichment of CWE and/or CVSS data points, where possible.",
-        "sourceUrl": "https://github.com/cisagov/vulnrichment/blob/24015e507a1e45c909f58a1d66ecb0ca795ef5fe/README.md",
+        "sourceUrl": "https://github.com/cisagov/vulnrichment/blob/8817e157c07b6ee57458bbf5807dc23f97282607/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -4939,10 +4939,10 @@
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/cisagov/vulnrichment",
-        "commitSha": "24015e507a1e45c909f58a1d66ecb0ca795ef5fe",
-        "commitUrl": "https://github.com/cisagov/vulnrichment/commit/24015e507a1e45c909f58a1d66ecb0ca795ef5fe",
+        "commitSha": "8817e157c07b6ee57458bbf5807dc23f97282607",
+        "commitUrl": "https://github.com/cisagov/vulnrichment/commit/8817e157c07b6ee57458bbf5807dc23f97282607",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/cisagov/vulnrichment/blob/24015e507a1e45c909f58a1d66ecb0ca795ef5fe/README.md",
+        "readmeUrl": "https://github.com/cisagov/vulnrichment/blob/8817e157c07b6ee57458bbf5807dc23f97282607/README.md",
         "readmeSha256": "sha256:ffec1da10bdea8a98458362f7136d31b4143ef21875b6aa4b5d7bd9041164ba9",
         "readmeByteLength": 8501,
         "overviewExcerpt": "The CISA Vulnrichment project is the public repository of CISA's enrichment of public CVE records through CISA's ADP (Authorized Data Publisher) container. In this phase of the project, CISA is assessing new and recent CVEs and adding key SSVC decision points. Once scored, some higher-risk CVEs will also receive enrichment of CWE and/or CVSS data points, where possible.",
@@ -4970,14 +4970,14 @@
           "primaryLanguage": null,
           "topics": [],
           "archived": false,
-          "lastPushedAt": "2026-09-10T17:16:26Z",
-          "latestRepositoryUpdateAt": "2026-09-10T17:16:34Z",
+          "lastPushedAt": "2026-09-10T18:16:39Z",
+          "latestRepositoryUpdateAt": "2026-09-10T18:16:46Z",
           "license": "CC0-1.0",
           "description": "A repo to conduct vulnerability enrichment."
         }
       },
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T17:16:26Z",
+      "lastCommitAt": "2026-09-10T18:16:39Z",
       "license": "CC0-1.0"
     },
     {
@@ -7123,7 +7123,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-09T17:22:10Z",
-          "latestRepositoryUpdateAt": "2026-09-10T14:53:39Z",
+          "latestRepositoryUpdateAt": "2026-09-10T18:21:46Z",
           "license": "Apache-2.0",
           "description": "The Cyber Swiss Army Knife - a web app for encryption, encoding, compression and data analysis"
         }
@@ -11043,11 +11043,11 @@
         "installation": {
           "status": "documented",
           "text": "pip3 install git+https://github.com/elastic/detection-rules.git subdirectory=lib/kibana pip3 install git+https://github.com/elastic/detection-rules.git subdirectory=lib/kql",
-          "sourceUrl": "https://github.com/elastic/detection-rules/blob/ffc8ad66570d0b5838705ef7b1c132c1c75c0d28/README.md"
+          "sourceUrl": "https://github.com/elastic/detection-rules/blob/f68a077c93aed41fb38ff99d20e82a29ed60236a/README.md"
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T16:49:29Z.",
+          "text": "Latest repository push: 2026-09-10T18:31:47Z.",
           "sourceUrl": "https://api.github.com/repos/elastic/detection-rules"
         },
         "release": {
@@ -11061,7 +11061,7 @@
       },
       "overview": {
         "text": "Detection Rules is the home for rules used by Elastic Security. This repository is used for the development, maintenance, testing, validation, and release of rules for Elastic Security’s Detection Engine.",
-        "sourceUrl": "https://github.com/elastic/detection-rules/blob/ffc8ad66570d0b5838705ef7b1c132c1c75c0d28/README.md",
+        "sourceUrl": "https://github.com/elastic/detection-rules/blob/f68a077c93aed41fb38ff99d20e82a29ed60236a/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -11069,10 +11069,10 @@
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/elastic/detection-rules",
-        "commitSha": "ffc8ad66570d0b5838705ef7b1c132c1c75c0d28",
-        "commitUrl": "https://github.com/elastic/detection-rules/commit/ffc8ad66570d0b5838705ef7b1c132c1c75c0d28",
+        "commitSha": "f68a077c93aed41fb38ff99d20e82a29ed60236a",
+        "commitUrl": "https://github.com/elastic/detection-rules/commit/f68a077c93aed41fb38ff99d20e82a29ed60236a",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/elastic/detection-rules/blob/ffc8ad66570d0b5838705ef7b1c132c1c75c0d28/README.md",
+        "readmeUrl": "https://github.com/elastic/detection-rules/blob/f68a077c93aed41fb38ff99d20e82a29ed60236a/README.md",
         "readmeSha256": "sha256:d7a3468cfa4fb40e378242bc5723455c0253898eb3c8d486c02f71a67a45e054",
         "readmeByteLength": 11709,
         "overviewExcerpt": "Detection Rules is the home for rules used by Elastic Security. This repository is used for the development, maintenance, testing, validation, and release of rules for Elastic Security’s Detection Engine.",
@@ -11112,8 +11112,8 @@
             "threat-hunting"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T16:49:29Z",
-          "latestRepositoryUpdateAt": "2026-09-10T16:39:17Z",
+          "lastPushedAt": "2026-09-10T18:31:47Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:21:14Z",
           "license": "NOASSERTION",
           "description": null
         }
@@ -11121,7 +11121,7 @@
       "currentVersion": "dev-v2.2.0",
       "lastReleaseAt": "2026-09-08T12:52:29Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T16:49:29Z"
+      "lastCommitAt": "2026-09-10T18:31:47Z"
     },
     {
       "id": "community-elastic-security",
@@ -11578,7 +11578,7 @@
       "nextCheckAt": "2026-11-03",
       "overview": {
         "text": "Falco is a cloud native runtime security tool for Linux operating systems. It is designed to detect and alert on abnormal behavior and potential security threats in real-time.",
-        "sourceUrl": "https://github.com/falcosecurity/falco/blob/ed6210b32b7080107b977505aadb9a8440e4be53/README.md",
+        "sourceUrl": "https://github.com/falcosecurity/falco/blob/6b531e52cc030729e2ea4d1f184f1b553a5ad041/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -11586,10 +11586,10 @@
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/falcosecurity/falco",
-        "commitSha": "ed6210b32b7080107b977505aadb9a8440e4be53",
-        "commitUrl": "https://github.com/falcosecurity/falco/commit/ed6210b32b7080107b977505aadb9a8440e4be53",
+        "commitSha": "6b531e52cc030729e2ea4d1f184f1b553a5ad041",
+        "commitUrl": "https://github.com/falcosecurity/falco/commit/6b531e52cc030729e2ea4d1f184f1b553a5ad041",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/falcosecurity/falco/blob/ed6210b32b7080107b977505aadb9a8440e4be53/README.md",
+        "readmeUrl": "https://github.com/falcosecurity/falco/blob/6b531e52cc030729e2ea4d1f184f1b553a5ad041/README.md",
         "readmeSha256": "sha256:51d6bc97d21a0503e7d25d5129a3219ca17d69f54709b7cfde452b3edc5dc869",
         "readmeByteLength": 12611,
         "overviewExcerpt": "Falco is a cloud native runtime security tool for Linux operating systems. It is designed to detect and alert on abnormal behavior and potential security threats in real-time.",
@@ -11631,8 +11631,8 @@
             "security"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T16:26:57Z",
-          "latestRepositoryUpdateAt": "2026-09-10T14:45:15Z",
+          "lastPushedAt": "2026-09-10T17:29:30Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:29:33Z",
           "license": "Apache-2.0",
           "description": "Cloud Native Runtime Security"
         }
@@ -11654,7 +11654,7 @@
         "usage": {
           "status": "documented",
           "text": "If you're new to Falco, begin your journey with our Getting Started guide. For production deployments, please refer to our comprehensive Setup documentation. As final recommendations before deploying Falco, verify environment compatibility, define your detection goals, optimize performance, choose the appropriate build, and plan for SIEM or data lake integration to ensure effective incident response.",
-          "sourceUrl": "https://github.com/falcosecurity/falco/blob/ed6210b32b7080107b977505aadb9a8440e4be53/README.md"
+          "sourceUrl": "https://github.com/falcosecurity/falco/blob/6b531e52cc030729e2ea4d1f184f1b553a5ad041/README.md"
         },
         "license": {
           "status": "documented",
@@ -11663,7 +11663,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T16:26:57Z.",
+          "text": "Latest repository push: 2026-09-10T17:29:30Z.",
           "sourceUrl": "https://api.github.com/repos/falcosecurity/falco"
         },
         "release": {
@@ -11676,7 +11676,7 @@
         }
       },
       "lastReleaseAt": "2026-06-11T07:53:06Z",
-      "lastCommitAt": "2026-09-10T16:26:57Z",
+      "lastCommitAt": "2026-09-10T17:29:30Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -15788,7 +15788,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-09T06:55:16Z",
-          "latestRepositoryUpdateAt": "2026-09-10T10:20:51Z",
+          "latestRepositoryUpdateAt": "2026-09-10T18:35:56Z",
           "license": "GPL-3.0",
           "description": "Lynis - Security auditing tool for Linux, macOS, and UNIX-based systems. Assists with compliance testing (HIPAA/ISO27001/PCI DSS) and system hardening. Agentless, and installation optional."
         }
@@ -20565,7 +20565,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T16:26:17Z.",
+          "text": "Latest repository push: 2026-09-10T18:33:33Z.",
           "sourceUrl": "https://api.github.com/repos/usnistgov/macos_security"
         },
         "release": {
@@ -20630,7 +20630,7 @@
             "zsh"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T16:26:17Z",
+          "lastPushedAt": "2026-09-10T18:33:33Z",
           "latestRepositoryUpdateAt": "2026-09-09T20:54:22Z",
           "license": "NOASSERTION",
           "description": "macOS Security Compliance Project"
@@ -20639,7 +20639,7 @@
       "currentVersion": "tahoe_rev3",
       "lastReleaseAt": "2026-06-22T14:39:04Z",
       "publisherUpdatedAt": "2026-09-09",
-      "lastCommitAt": "2026-09-10T16:26:17Z"
+      "lastCommitAt": "2026-09-10T18:33:33Z"
     },
     {
       "id": "repository-nist-ncp",
@@ -21853,8 +21853,8 @@
             "vulnerability-scanner"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T17:00:10Z",
-          "latestRepositoryUpdateAt": "2026-09-10T17:01:15Z",
+          "lastPushedAt": "2026-09-10T17:53:40Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:51:44Z",
           "license": "MIT",
           "description": "Nuclei is a fast, customizable vulnerability scanner powered by the global security community and built on a simple YAML-based DSL, enabling collaboration to tackle trending vulnerabilities on the internet. It helps you find vulnerabilities in your applications, APIs, networks, DNS, and cloud configurations."
         }
@@ -21862,7 +21862,7 @@
       "currentVersion": "v3.11.1",
       "lastReleaseAt": "2026-08-08T12:21:32Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T17:00:10Z",
+      "lastCommitAt": "2026-09-10T17:53:40Z",
       "license": "MIT"
     },
     {
@@ -22198,7 +22198,7 @@
       "nextCheckAt": "2026-11-03",
       "overview": {
         "text": "Open Policy Agent (OPA) is an open source, general-purpose policy engine that enables unified, context-aware policy enforcement across the entire stack.",
-        "sourceUrl": "https://github.com/open-policy-agent/opa/blob/bb7e58db963da4a06022e1becbc4e980b083caac/README.md",
+        "sourceUrl": "https://github.com/open-policy-agent/opa/blob/8ce961d78fc6398ff25be63aa087d628c65927d2/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -22206,10 +22206,10 @@
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/open-policy-agent/opa",
-        "commitSha": "bb7e58db963da4a06022e1becbc4e980b083caac",
-        "commitUrl": "https://github.com/open-policy-agent/opa/commit/bb7e58db963da4a06022e1becbc4e980b083caac",
+        "commitSha": "8ce961d78fc6398ff25be63aa087d628c65927d2",
+        "commitUrl": "https://github.com/open-policy-agent/opa/commit/8ce961d78fc6398ff25be63aa087d628c65927d2",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/open-policy-agent/opa/blob/bb7e58db963da4a06022e1becbc4e980b083caac/README.md",
+        "readmeUrl": "https://github.com/open-policy-agent/opa/blob/8ce961d78fc6398ff25be63aa087d628c65927d2/README.md",
         "readmeSha256": "sha256:e69b5027d2200383478d14c61a51f07bfd48a66bce826869448c2329e8ad2103",
         "readmeByteLength": 9132,
         "overviewExcerpt": "Open Policy Agent (OPA) is an open source, general-purpose policy engine that enables unified, context-aware policy enforcement across the entire stack.",
@@ -22246,8 +22246,8 @@
             "policy"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T15:04:07Z",
-          "latestRepositoryUpdateAt": "2026-09-10T15:16:56Z",
+          "lastPushedAt": "2026-09-10T17:34:11Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:34:21Z",
           "license": "Apache-2.0",
           "description": "Open Policy Agent (OPA) is an open source, general-purpose policy engine."
         }
@@ -22274,7 +22274,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T15:04:07Z.",
+          "text": "Latest repository push: 2026-09-10T17:34:11Z.",
           "sourceUrl": "https://api.github.com/repos/open-policy-agent/opa"
         },
         "release": {
@@ -22287,7 +22287,7 @@
         }
       },
       "lastReleaseAt": "2026-09-03T21:00:27Z",
-      "lastCommitAt": "2026-09-10T15:04:07Z",
+      "lastCommitAt": "2026-09-10T17:34:11Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -22774,7 +22774,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-10T16:27:33Z",
-          "latestRepositoryUpdateAt": "2026-09-10T15:30:32Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:49:51Z",
           "license": "NOASSERTION",
           "description": "Open Cyber Threat Intelligence Platform"
         }
@@ -27888,7 +27888,7 @@
         "usage": {
           "status": "documented",
           "text": "1. From the Semgrep AppSec Platform 2. From the CLI For new users, we recommend starting with the Semgrep AppSec Platform because it provides a visual interface, a demo project, result triaging and exploration workflows, and makes setup in CI/CD fast. Scans are still local and code isn't uploaded. Alternatively, you can also start with the CLI and navigate the terminal output to run one-off searches.",
-          "sourceUrl": "https://github.com/semgrep/semgrep/blob/ad20f09ece0b652f4e532803ce3bcf0e1586c618/README.md"
+          "sourceUrl": "https://github.com/semgrep/semgrep/blob/0516c0f23a3dceac5c8f5ff3fecd402af4450182/README.md"
         },
         "license": {
           "status": "documented",
@@ -27897,7 +27897,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T04:05:48Z.",
+          "text": "Latest repository push: 2026-09-10T18:24:32Z.",
           "sourceUrl": "https://api.github.com/repos/semgrep/semgrep"
         },
         "release": {
@@ -27911,7 +27911,7 @@
       },
       "overview": {
         "text": "Semgrep is a fast, open-source, static analysis tool that searches code, finds bugs, and enforces secure guardrails and coding standards. Semgrep supports 30+ languages and can run in an IDE, as a pre-commit check, and as part of CI/CD workflows.",
-        "sourceUrl": "https://github.com/semgrep/semgrep/blob/ad20f09ece0b652f4e532803ce3bcf0e1586c618/README.md",
+        "sourceUrl": "https://github.com/semgrep/semgrep/blob/0516c0f23a3dceac5c8f5ff3fecd402af4450182/README.md",
         "sourceType": "repository_readme",
         "exactPublisherText": true
       },
@@ -27922,7 +27922,7 @@
             "kind": "publisher_screenshot",
             "url": "https://raw.githubusercontent.com/semgrep/semgrep/develop/images/semgrep-example-rules-editor.jpg",
             "alt": "Semgrep rule example for finding Python print() statements",
-            "sourceUrl": "https://github.com/semgrep/semgrep/blob/ad20f09ece0b652f4e532803ce3bcf0e1586c618/README.md",
+            "sourceUrl": "https://github.com/semgrep/semgrep/blob/0516c0f23a3dceac5c8f5ff3fecd402af4450182/README.md",
             "sha256": "sha256:d4cf55feb982e51835c762780989c23f0f0a744faefde496009309b2fe4b2056",
             "byteLength": 270550,
             "contentType": "image/jpeg",
@@ -27931,19 +27931,19 @@
             "license": "LGPL-2.1",
             "licenseBasis": "repository_license",
             "retrievedAt": "2026-09-10",
-            "commitSha": "ad20f09ece0b652f4e532803ce3bcf0e1586c618"
+            "commitSha": "0516c0f23a3dceac5c8f5ff3fecd402af4450182"
           }
         ],
-        "sourceUrl": "https://github.com/semgrep/semgrep/blob/ad20f09ece0b652f4e532803ce3bcf0e1586c618/README.md"
+        "sourceUrl": "https://github.com/semgrep/semgrep/blob/0516c0f23a3dceac5c8f5ff3fecd402af4450182/README.md"
       },
       "repositoryEvidence": {
         "capturedAt": "2026-09-10",
         "repositoryScope": "repository",
         "repositoryApiUrl": "https://api.github.com/repos/semgrep/semgrep",
-        "commitSha": "ad20f09ece0b652f4e532803ce3bcf0e1586c618",
-        "commitUrl": "https://github.com/semgrep/semgrep/commit/ad20f09ece0b652f4e532803ce3bcf0e1586c618",
+        "commitSha": "0516c0f23a3dceac5c8f5ff3fecd402af4450182",
+        "commitUrl": "https://github.com/semgrep/semgrep/commit/0516c0f23a3dceac5c8f5ff3fecd402af4450182",
         "readmePath": "README.md",
-        "readmeUrl": "https://github.com/semgrep/semgrep/blob/ad20f09ece0b652f4e532803ce3bcf0e1586c618/README.md",
+        "readmeUrl": "https://github.com/semgrep/semgrep/blob/0516c0f23a3dceac5c8f5ff3fecd402af4450182/README.md",
         "readmeSha256": "sha256:cb039cfdcd7f53d69a1e3ac960113a02b9803885f069e6bb299f91b88d78b064",
         "readmeByteLength": 20250,
         "overviewExcerpt": "Semgrep is a fast, open-source, static analysis tool that searches code, finds bugs, and enforces secure guardrails and coding standards. Semgrep supports 30+ languages and can run in an IDE, as a pre-commit check, and as part of CI/CD workflows.",
@@ -27965,7 +27965,7 @@
             "kind": "publisher_screenshot",
             "url": "https://raw.githubusercontent.com/semgrep/semgrep/develop/images/semgrep-example-rules-editor.jpg",
             "alt": "Semgrep rule example for finding Python print() statements",
-            "sourceUrl": "https://github.com/semgrep/semgrep/blob/ad20f09ece0b652f4e532803ce3bcf0e1586c618/README.md",
+            "sourceUrl": "https://github.com/semgrep/semgrep/blob/0516c0f23a3dceac5c8f5ff3fecd402af4450182/README.md",
             "sha256": "sha256:d4cf55feb982e51835c762780989c23f0f0a744faefde496009309b2fe4b2056",
             "byteLength": 270550,
             "contentType": "image/jpeg",
@@ -27974,7 +27974,7 @@
             "license": "LGPL-2.1",
             "licenseBasis": "repository_license",
             "retrievedAt": "2026-09-10",
-            "commitSha": "ad20f09ece0b652f4e532803ce3bcf0e1586c618"
+            "commitSha": "0516c0f23a3dceac5c8f5ff3fecd402af4450182"
           }
         ],
         "release": {
@@ -27987,7 +27987,7 @@
         },
         "facts": {
           "defaultBranch": "develop",
-          "primaryLanguage": "OCaml",
+          "primaryLanguage": "C",
           "topics": [
             "c",
             "go",
@@ -28003,8 +28003,8 @@
             "typescript"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T04:05:48Z",
-          "latestRepositoryUpdateAt": "2026-09-10T16:30:14Z",
+          "lastPushedAt": "2026-09-10T18:24:32Z",
+          "latestRepositoryUpdateAt": "2026-09-10T18:25:00Z",
           "license": "LGPL-2.1",
           "description": "Lightweight static analysis for many languages. Find bug variants with patterns that look like source code."
         }
@@ -28012,7 +28012,7 @@
       "currentVersion": "v1.176.0",
       "lastReleaseAt": "2026-09-01T19:52:12Z",
       "publisherUpdatedAt": "2026-09-10",
-      "lastCommitAt": "2026-09-10T04:05:48Z",
+      "lastCommitAt": "2026-09-10T18:24:32Z",
       "license": "LGPL-2.1"
     },
     {
@@ -29500,7 +29500,7 @@
             "stig-manager"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-09T22:43:45Z",
+          "lastPushedAt": "2026-09-10T18:40:02Z",
           "latestRepositoryUpdateAt": "2026-09-09T17:45:01Z",
           "license": "NOASSERTION",
           "description": "An API and client for managing STIG assessments"
@@ -29534,7 +29534,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-09T22:43:45Z.",
+          "text": "Latest repository push: 2026-09-10T18:40:02Z.",
           "sourceUrl": "https://api.github.com/repos/NUWCDIVNPT/stig-manager"
         },
         "release": {
@@ -29547,7 +29547,7 @@
         }
       },
       "lastReleaseAt": "2026-09-01T17:47:49Z",
-      "lastCommitAt": "2026-09-09T22:43:45Z",
+      "lastCommitAt": "2026-09-10T18:40:02Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -31241,7 +31241,7 @@
           ],
           "archived": false,
           "lastPushedAt": "2026-09-10T14:51:35Z",
-          "latestRepositoryUpdateAt": "2026-09-10T15:53:14Z",
+          "latestRepositoryUpdateAt": "2026-09-10T17:41:45Z",
           "license": "Apache-2.0",
           "description": "Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more"
         }
@@ -32378,7 +32378,7 @@
             "xdr"
           ],
           "archived": false,
-          "lastPushedAt": "2026-09-10T17:16:18Z",
+          "lastPushedAt": "2026-09-10T18:38:33Z",
           "latestRepositoryUpdateAt": "2026-09-10T15:22:14Z",
           "license": "NOASSERTION",
           "description": "Wazuh - The Open Source Security Platform. Unified XDR and SIEM protection for endpoints and cloud workloads."
@@ -32406,7 +32406,7 @@
         },
         "maintenance": {
           "status": "active",
-          "text": "Latest repository push: 2026-09-10T17:16:18Z.",
+          "text": "Latest repository push: 2026-09-10T18:38:33Z.",
           "sourceUrl": "https://api.github.com/repos/wazuh/wazuh"
         },
         "release": {
@@ -32419,7 +32419,7 @@
         }
       },
       "lastReleaseAt": "2026-07-30T16:32:45Z",
-      "lastCommitAt": "2026-09-10T17:16:18Z",
+      "lastCommitAt": "2026-09-10T18:38:33Z",
       "entityKind": "resource",
       "profileId": "resource.tool",
       "origin": "atlas_editorial",
@@ -32929,9 +32929,9 @@
     },
     {
       "id": "resource:catalog-elastic-detection-rules:publisher-destination",
-      "sourceUrl": "https://github.com/elastic/detection-rules/commit/ffc8ad66570d0b5838705ef7b1c132c1c75c0d28",
+      "sourceUrl": "https://github.com/elastic/detection-rules/commit/f68a077c93aed41fb38ff99d20e82a29ed60236a",
       "locatorType": "repository_commit",
-      "locator": "ffc8ad66570d0b5838705ef7b1c132c1c75c0d28",
+      "locator": "f68a077c93aed41fb38ff99d20e82a29ed60236a",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },
@@ -33265,9 +33265,9 @@
     },
     {
       "id": "resource:dataset-cisa-vulnrichment:publisher-destination",
-      "sourceUrl": "https://github.com/cisagov/vulnrichment/commit/24015e507a1e45c909f58a1d66ecb0ca795ef5fe",
+      "sourceUrl": "https://github.com/cisagov/vulnrichment/commit/8817e157c07b6ee57458bbf5807dc23f97282607",
       "locatorType": "repository_commit",
-      "locator": "24015e507a1e45c909f58a1d66ecb0ca795ef5fe",
+      "locator": "8817e157c07b6ee57458bbf5807dc23f97282607",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },
@@ -34233,9 +34233,9 @@
     },
     {
       "id": "resource:tool-cisa-scubagear:publisher-destination",
-      "sourceUrl": "https://github.com/cisagov/ScubaGear/commit/926dafdf124edf8e0c6f7fe7e4d939bb4f9d8943",
+      "sourceUrl": "https://github.com/cisagov/ScubaGear/commit/7ef9501d7de9804ddb9d6013af6b665cccfb39d9",
       "locatorType": "repository_commit",
-      "locator": "926dafdf124edf8e0c6f7fe7e4d939bb4f9d8943",
+      "locator": "7ef9501d7de9804ddb9d6013af6b665cccfb39d9",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },
@@ -34313,9 +34313,9 @@
     },
     {
       "id": "resource:tool-falco-runtime-security:publisher-destination",
-      "sourceUrl": "https://github.com/falcosecurity/falco/commit/ed6210b32b7080107b977505aadb9a8440e4be53",
+      "sourceUrl": "https://github.com/falcosecurity/falco/commit/6b531e52cc030729e2ea4d1f184f1b553a5ad041",
       "locatorType": "repository_commit",
-      "locator": "ed6210b32b7080107b977505aadb9a8440e4be53",
+      "locator": "6b531e52cc030729e2ea4d1f184f1b553a5ad041",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },
@@ -34505,9 +34505,9 @@
     },
     {
       "id": "resource:tool-open-policy-agent:publisher-destination",
-      "sourceUrl": "https://github.com/open-policy-agent/opa/commit/bb7e58db963da4a06022e1becbc4e980b083caac",
+      "sourceUrl": "https://github.com/open-policy-agent/opa/commit/8ce961d78fc6398ff25be63aa087d628c65927d2",
       "locatorType": "repository_commit",
-      "locator": "bb7e58db963da4a06022e1becbc4e980b083caac",
+      "locator": "8ce961d78fc6398ff25be63aa087d628c65927d2",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },
@@ -34593,9 +34593,9 @@
     },
     {
       "id": "resource:tool-semgrep:publisher-destination",
-      "sourceUrl": "https://github.com/semgrep/semgrep/commit/ad20f09ece0b652f4e532803ce3bcf0e1586c618",
+      "sourceUrl": "https://github.com/semgrep/semgrep/commit/0516c0f23a3dceac5c8f5ff3fecd402af4450182",
       "locatorType": "repository_commit",
-      "locator": "ad20f09ece0b652f4e532803ce3bcf0e1586c618",
+      "locator": "0516c0f23a3dceac5c8f5ff3fecd402af4450182",
       "retrievedAt": "2026-09-10",
       "reviewStatus": "reviewed"
     },

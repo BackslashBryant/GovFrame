@@ -1,0 +1,281 @@
+{
+  "schema_version": "1.0",
+  "olir_id": 217,
+  "source_artifact": "https://aamcyber.com/sdos/reference/sp-800-53/",
+  "sha256": "sha256:e43a40fd0d0f94e62c9053687954cd95cf8ee600b84ffe67c63e3a9b0549c1be",
+  "byte_length": 124589,
+  "parser": "olir-html",
+  "extraction_scope": "published_html_relationships",
+  "relationships": [
+    {
+      "focal_id": "AC-03",
+      "reference_id": "SDOS-AD-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Default-deny pre-admission is the runtime enforcement of approved authorizations at the governed dispatch boundary",
+      "rationale": null,
+      "source_locator": "table-5#row-2"
+    },
+    {
+      "focal_id": "AC-06",
+      "reference_id": "SDOS-AD-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Default-deny pre-admission is the architectural enforcement of least privilege within the governance-relevant scope",
+      "rationale": null,
+      "source_locator": "table-5#row-3"
+    },
+    {
+      "focal_id": "AC-24",
+      "reference_id": "SDOS-AD-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Access control decisions are applied to each access request through default-deny pre-admission at the dispatch boundary",
+      "rationale": null,
+      "source_locator": "table-5#row-4"
+    },
+    {
+      "focal_id": "AU-09",
+      "reference_id": "SDOS-AU-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Append-only audit log integrity is the architectural protection against unauthorized modification or deletion of audit information",
+      "rationale": null,
+      "source_locator": "table-6#row-2"
+    },
+    {
+      "focal_id": "AU-09(01)",
+      "reference_id": "SDOS-AU-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Append-only audit log integrity is the software analogue of write-once media for governance-relevant audit records",
+      "rationale": null,
+      "source_locator": "table-6#row-3"
+    },
+    {
+      "focal_id": "AU-10",
+      "reference_id": "SDOS-AU-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Non-repudiation is provided by per-invocation audit records that bind every governed operation to its attested principal identity",
+      "rationale": null,
+      "source_locator": "table-6#row-4"
+    },
+    {
+      "focal_id": "AU-12",
+      "reference_id": "SDOS-AU-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Audit record generation capability for governance-relevant events is implemented through per-invocation audit records produced at every dispatch",
+      "rationale": null,
+      "source_locator": "table-6#row-5"
+    },
+    {
+      "focal_id": "CM-02",
+      "reference_id": "SDOS-GV-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "For the governance-relevant scope, configuration-governed module activation is the runtime baseline; the signed activation manifest is honored by the dispatch engine. Whole-system baseline coverage is outside this scope.",
+      "rationale": null,
+      "source_locator": "table-7#row-2"
+    },
+    {
+      "focal_id": "CM-02(02)",
+      "reference_id": "SDOS-GV-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Currency, completeness, accuracy, and availability of the governance-relevant dispatch baseline are automated through configuration-governed module activation",
+      "rationale": null,
+      "source_locator": "table-7#row-3"
+    },
+    {
+      "focal_id": "CM-03(05)",
+      "reference_id": "SDOS-AD-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Default-deny pre-admission implements automated security response to unauthorized baseline changes within the governance-relevant scope",
+      "rationale": null,
+      "source_locator": "table-7#row-4"
+    },
+    {
+      "focal_id": "CM-06",
+      "reference_id": "SDOS-GV-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Configuration-governed module activation is the establishment and enforcement of governance-relevant configuration settings",
+      "rationale": null,
+      "source_locator": "table-7#row-5"
+    },
+    {
+      "focal_id": "CM-06(01)",
+      "reference_id": "SDOS-GV-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Automated management, application, and verification of governance-relevant configuration settings is the core function of configuration-governed module activation",
+      "rationale": null,
+      "source_locator": "table-7#row-6"
+    },
+    {
+      "focal_id": "CM-06(02)",
+      "reference_id": "SDOS-GV-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Configuration-governed module activation detects unauthorized governance-relevant setting changes by rejecting manifests that fail signature or version checks",
+      "rationale": null,
+      "source_locator": "table-7#row-7"
+    },
+    {
+      "focal_id": "CM-07",
+      "reference_id": "SDOS-AD-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Within the governance-relevant scope, default-deny pre-admission enforces least functionality at the governed dispatch boundary. Host-OS and network-stack functions outside the governed scope are not enforced by SDOS.",
+      "rationale": null,
+      "source_locator": "table-7#row-8"
+    },
+    {
+      "focal_id": "CM-07(05)",
+      "reference_id": "SDOS-AD-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Default-deny pre-admission is the allow-by-exception execution policy for governance-relevant modules",
+      "rationale": null,
+      "source_locator": "table-7#row-9"
+    },
+    {
+      "focal_id": "IA-02",
+      "reference_id": "SDOS-IA-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Attested agent identity uniquely identifies and authenticates principals at the dispatch boundary",
+      "rationale": null,
+      "source_locator": "table-8#row-2"
+    },
+    {
+      "focal_id": "IA-03",
+      "reference_id": "SDOS-IA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "For governance-relevant service-to-service and module-to-module communication, attested module identity provides cryptographic verification at the dispatch boundary. Hardware/network-layer device authentication is outside this scope.",
+      "rationale": null,
+      "source_locator": "table-8#row-3"
+    },
+    {
+      "focal_id": "IA-09",
+      "reference_id": "SDOS-IA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Unique identification and authentication of governance-relevant system services and applications is provided by attested module identity",
+      "rationale": null,
+      "source_locator": "table-8#row-4"
+    },
+    {
+      "focal_id": "SC-07(05)",
+      "reference_id": "SDOS-AD-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Default-deny pre-admission is the deny-by-default, allow-by-exception enforcement at the governed dispatch boundary",
+      "rationale": null,
+      "source_locator": "table-9#row-2"
+    },
+    {
+      "focal_id": "SI-07",
+      "reference_id": "SDOS-IA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Attested module identity is the integrity verification mechanism for governance-relevant software and firmware",
+      "rationale": null,
+      "source_locator": "table-10#row-2"
+    },
+    {
+      "focal_id": "SI-07(01)",
+      "reference_id": "SDOS-IA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Attested module identity performs an integrity check at every dispatch event and at startup",
+      "rationale": null,
+      "source_locator": "table-10#row-3"
+    },
+    {
+      "focal_id": "SI-07(05)",
+      "reference_id": "SDOS-AD-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Default-deny pre-admission automatically implements the configured response on integrity violation",
+      "rationale": null,
+      "source_locator": "table-10#row-4"
+    },
+    {
+      "focal_id": "SI-07(06)",
+      "reference_id": "SDOS-IA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "For governance-relevant software modules, attested module identity is the cryptographic mechanism that detects unauthorized changes. Firmware and arbitrary information at rest are outside this scope unless encapsulated as governed modules.",
+      "rationale": null,
+      "source_locator": "table-10#row-5"
+    },
+    {
+      "focal_id": "SI-07(12)",
+      "reference_id": "SDOS-IA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Attested module identity verifies module integrity prior to execution; dispatch is blocked until cryptographic verification succeeds",
+      "rationale": null,
+      "source_locator": "table-10#row-6"
+    },
+    {
+      "focal_id": "SI-07(15)",
+      "reference_id": "SDOS-IA-02",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "For governance-relevant software and firmware components, attested module identity is the cryptographic mechanism authenticating components prior to admission",
+      "rationale": null,
+      "source_locator": "table-10#row-7"
+    },
+    {
+      "focal_id": "CA-07",
+      "reference_id": "SDOS-AU-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Per-invocation audit records emit structured monitoring evidence synchronously with every dispatch decision, providing the continuous-monitoring substrate for governance-relevant control effectiveness. Organizational monitoring strategy, frequency definition, and assessment-result reporting are outside this scope.",
+      "rationale": null,
+      "source_locator": "table-11#row-2"
+    },
+    {
+      "focal_id": "PT-02(02)",
+      "reference_id": "SDOS-AD-01",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": "Default-deny pre-admission is the automated mechanism enforcing authorized processing of PII at the governed dispatch boundary",
+      "rationale": null,
+      "source_locator": "table-12#row-2"
+    }
+  ]
+}

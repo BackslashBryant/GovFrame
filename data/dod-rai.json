@@ -11,7 +11,7 @@
       "description": "Apply the toolkit in a modular and tailorable way.",
       "source": {
         "key": "dod-rai-toolkit",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "executive-summary#modular-and-tailorable"
       }
     },
@@ -24,7 +24,7 @@
       "description": "Align responsible AI activities with accountable roles.",
       "source": {
         "key": "dod-rai-toolkit",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "executive-summary#rasci-matrix"
       }
     },
@@ -37,7 +37,7 @@
       "description": "Assess responsible AI holistically across the lifecycle.",
       "source": {
         "key": "dod-rai-toolkit",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "executive-summary#holistic"
       }
     },
@@ -50,7 +50,7 @@
       "description": "Operationalize Department of War AI Ethical Principles.",
       "source": {
         "key": "dod-rai-toolkit",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "executive-summary#ethical-principles"
       }
     },
@@ -63,7 +63,7 @@
       "description": "Use a maintained list of supporting responsible AI tools.",
       "source": {
         "key": "dod-rai-toolkit",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "executive-summary#tools-list"
       }
     },
@@ -76,7 +76,7 @@
       "description": "Set foundations for responsible AI.",
       "source": {
         "key": "dod-rai-toolkit",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "executive-summary#shield-set"
       }
     },
@@ -89,7 +89,7 @@
       "description": "Hone responsible AI operationalizations.",
       "source": {
         "key": "dod-rai-toolkit",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "executive-summary#shield-hone"
       }
     },
@@ -102,7 +102,7 @@
       "description": "Improve and innovate responsible AI practices.",
       "source": {
         "key": "dod-rai-toolkit",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "executive-summary#shield-improve"
       }
     },
@@ -115,7 +115,7 @@
       "description": "Evaluate responsible AI status.",
       "source": {
         "key": "dod-rai-toolkit",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "executive-summary#shield-evaluate"
       }
     },
@@ -128,7 +128,7 @@
       "description": "Log responsible AI decisions and evidence for traceability.",
       "source": {
         "key": "dod-rai-toolkit",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "executive-summary#shield-log"
       }
     },
@@ -141,7 +141,7 @@
       "description": "Detect responsible AI concerns through continuous monitoring.",
       "source": {
         "key": "dod-rai-toolkit",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "executive-summary#shield-detect"
       }
     }

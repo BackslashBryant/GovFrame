@@ -20,7 +20,7 @@
       },
       "source": {
         "key": "nist-800-37-rev2",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "sp800-37#prepare"
       }
     },
@@ -52,7 +52,7 @@
       },
       "source": {
         "key": "nist-800-37-rev2",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "sp800-37#categorize"
       }
     },
@@ -89,7 +89,7 @@
       },
       "source": {
         "key": "nist-800-37-rev2",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "sp800-37#select"
       }
     },
@@ -111,7 +111,7 @@
       },
       "source": {
         "key": "nist-800-37-rev2",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "sp800-37#implement"
       }
     },
@@ -133,7 +133,7 @@
       },
       "source": {
         "key": "nist-800-37-rev2",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "sp800-37#assess"
       }
     },
@@ -165,7 +165,7 @@
       },
       "source": {
         "key": "nist-800-37-rev2",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "sp800-37#authorize"
       }
     },
@@ -187,7 +187,7 @@
       },
       "source": {
         "key": "nist-800-37-rev2",
-        "snapshot_date": "2026-09-10T17:18:37.215Z",
+        "snapshot_date": "2026-09-10T18:39:58.182Z",
         "locator": "sp800-37#monitor"
       }
     }

@@ -1,0 +1,611 @@
+{
+  "schema_version": "1.0",
+  "olir_id": 176,
+  "source_artifact": "https://www.gov.uk/government/publications/cyber-governance-mapping/mapping-cyber-governance-code-to-nist-cyber-security-framework",
+  "sha256": "sha256:350db739f220513beaef0a3b3c633b6f53307ef65acf7dc66ad78e5cda327df5",
+  "byte_length": 88237,
+  "parser": "olir-html",
+  "extraction_scope": "published_html_relationships",
+  "relationships": [
+    {
+      "focal_id": "GV.OC-02",
+      "reference_id": "A1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A1: Gain assurance that the technology processes, information and services critical to the organisation’s objectives have been identified, prioritised and agreed.",
+      "source_locator": "published-paragraphs#row-12"
+    },
+    {
+      "focal_id": "GV.OC-03",
+      "reference_id": "A1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A1: Gain assurance that the technology processes, information and services critical to the organisation’s objectives have been identified, prioritised and agreed.",
+      "source_locator": "published-paragraphs#row-12"
+    },
+    {
+      "focal_id": "GV.OC-04",
+      "reference_id": "A1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A1: Gain assurance that the technology processes, information and services critical to the organisation’s objectives have been identified, prioritised and agreed.",
+      "source_locator": "published-paragraphs#row-12"
+    },
+    {
+      "focal_id": "GV.RM-01",
+      "reference_id": "A1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A1: Gain assurance that the technology processes, information and services critical to the organisation’s objectives have been identified, prioritised and agreed.",
+      "source_locator": "published-paragraphs#row-12"
+    },
+    {
+      "focal_id": "ID.AM-05",
+      "reference_id": "A1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A1: Gain assurance that the technology processes, information and services critical to the organisation’s objectives have been identified, prioritised and agreed.",
+      "source_locator": "published-paragraphs#row-12"
+    },
+    {
+      "focal_id": "GV.RR.01",
+      "reference_id": "A2",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A2: Agree senior ownership of cyber security risks and gain assurance that they are integrated into the organisation’s wider enterprise risk management and internal controls.",
+      "source_locator": "published-paragraphs#row-14"
+    },
+    {
+      "focal_id": "GV.RM.03",
+      "reference_id": "A2",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A2: Agree senior ownership of cyber security risks and gain assurance that they are integrated into the organisation’s wider enterprise risk management and internal controls.",
+      "source_locator": "published-paragraphs#row-14"
+    },
+    {
+      "focal_id": "GV.OC.01",
+      "reference_id": "A3",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A3: Define and clearly communicate the organisation’s cyber security risk appetite and gain assurance that the organisation has an action plan to meet these risk expectations.",
+      "source_locator": "published-paragraphs#row-16"
+    },
+    {
+      "focal_id": "GV.RM.02",
+      "reference_id": "A3",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A3: Define and clearly communicate the organisation’s cyber security risk appetite and gain assurance that the organisation has an action plan to meet these risk expectations.",
+      "source_locator": "published-paragraphs#row-16"
+    },
+    {
+      "focal_id": "GV.SC.01",
+      "reference_id": "A4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A4: Gain assurance that supplier information is routinely assessed, proportionate to their level of risk and that the organisation is resilient to cyber security risks from its supply chain and business partners.",
+      "source_locator": "published-paragraphs#row-18"
+    },
+    {
+      "focal_id": "GV.SC.02",
+      "reference_id": "A4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A4: Gain assurance that supplier information is routinely assessed, proportionate to their level of risk and that the organisation is resilient to cyber security risks from its supply chain and business partners.",
+      "source_locator": "published-paragraphs#row-18"
+    },
+    {
+      "focal_id": "GV.SC.03",
+      "reference_id": "A4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A4: Gain assurance that supplier information is routinely assessed, proportionate to their level of risk and that the organisation is resilient to cyber security risks from its supply chain and business partners.",
+      "source_locator": "published-paragraphs#row-18"
+    },
+    {
+      "focal_id": "GV.SC.04",
+      "reference_id": "A4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A4: Gain assurance that supplier information is routinely assessed, proportionate to their level of risk and that the organisation is resilient to cyber security risks from its supply chain and business partners.",
+      "source_locator": "published-paragraphs#row-18"
+    },
+    {
+      "focal_id": "GV.SC.05",
+      "reference_id": "A4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A4: Gain assurance that supplier information is routinely assessed, proportionate to their level of risk and that the organisation is resilient to cyber security risks from its supply chain and business partners.",
+      "source_locator": "published-paragraphs#row-18"
+    },
+    {
+      "focal_id": "GV.SC.06",
+      "reference_id": "A4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A4: Gain assurance that supplier information is routinely assessed, proportionate to their level of risk and that the organisation is resilient to cyber security risks from its supply chain and business partners.",
+      "source_locator": "published-paragraphs#row-18"
+    },
+    {
+      "focal_id": "GV.SC.07",
+      "reference_id": "A4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A4: Gain assurance that supplier information is routinely assessed, proportionate to their level of risk and that the organisation is resilient to cyber security risks from its supply chain and business partners.",
+      "source_locator": "published-paragraphs#row-18"
+    },
+    {
+      "focal_id": "GV.SC.08",
+      "reference_id": "A4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A4: Gain assurance that supplier information is routinely assessed, proportionate to their level of risk and that the organisation is resilient to cyber security risks from its supply chain and business partners.",
+      "source_locator": "published-paragraphs#row-18"
+    },
+    {
+      "focal_id": "GV.SC.09",
+      "reference_id": "A4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A4: Gain assurance that supplier information is routinely assessed, proportionate to their level of risk and that the organisation is resilient to cyber security risks from its supply chain and business partners.",
+      "source_locator": "published-paragraphs#row-18"
+    },
+    {
+      "focal_id": "GV.SC.10",
+      "reference_id": "A4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A4: Gain assurance that supplier information is routinely assessed, proportionate to their level of risk and that the organisation is resilient to cyber security risks from its supply chain and business partners.",
+      "source_locator": "published-paragraphs#row-18"
+    },
+    {
+      "focal_id": "ID.RA.10",
+      "reference_id": "A4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A4: Gain assurance that supplier information is routinely assessed, proportionate to their level of risk and that the organisation is resilient to cyber security risks from its supply chain and business partners.",
+      "source_locator": "published-paragraphs#row-18"
+    },
+    {
+      "focal_id": "ID.RA.01",
+      "reference_id": "A5",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A5: Gain assurance that risk assessments are conducted regularly and that risk mitigations account for recent, or expected, changes in the organisation, technology, regulations or wider threat landscape.",
+      "source_locator": "published-paragraphs#row-20"
+    },
+    {
+      "focal_id": "ID.RA.02",
+      "reference_id": "A5",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A5: Gain assurance that risk assessments are conducted regularly and that risk mitigations account for recent, or expected, changes in the organisation, technology, regulations or wider threat landscape.",
+      "source_locator": "published-paragraphs#row-20"
+    },
+    {
+      "focal_id": "ID.RA.03",
+      "reference_id": "A5",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A5: Gain assurance that risk assessments are conducted regularly and that risk mitigations account for recent, or expected, changes in the organisation, technology, regulations or wider threat landscape.",
+      "source_locator": "published-paragraphs#row-20"
+    },
+    {
+      "focal_id": "ID.RA.04",
+      "reference_id": "A5",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A5: Gain assurance that risk assessments are conducted regularly and that risk mitigations account for recent, or expected, changes in the organisation, technology, regulations or wider threat landscape.",
+      "source_locator": "published-paragraphs#row-20"
+    },
+    {
+      "focal_id": "ID.RA.05",
+      "reference_id": "A5",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A5: Gain assurance that risk assessments are conducted regularly and that risk mitigations account for recent, or expected, changes in the organisation, technology, regulations or wider threat landscape.",
+      "source_locator": "published-paragraphs#row-20"
+    },
+    {
+      "focal_id": "ID.RA.06",
+      "reference_id": "A5",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A5: Gain assurance that risk assessments are conducted regularly and that risk mitigations account for recent, or expected, changes in the organisation, technology, regulations or wider threat landscape.",
+      "source_locator": "published-paragraphs#row-20"
+    },
+    {
+      "focal_id": "ID.RA.07",
+      "reference_id": "A5",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A5: Gain assurance that risk assessments are conducted regularly and that risk mitigations account for recent, or expected, changes in the organisation, technology, regulations or wider threat landscape.",
+      "source_locator": "published-paragraphs#row-20"
+    },
+    {
+      "focal_id": "ID.RA.08",
+      "reference_id": "A5",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A5: Gain assurance that risk assessments are conducted regularly and that risk mitigations account for recent, or expected, changes in the organisation, technology, regulations or wider threat landscape.",
+      "source_locator": "published-paragraphs#row-20"
+    },
+    {
+      "focal_id": "ID.RA.09",
+      "reference_id": "A5",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action A5: Gain assurance that risk assessments are conducted regularly and that risk mitigations account for recent, or expected, changes in the organisation, technology, regulations or wider threat landscape.",
+      "source_locator": "published-paragraphs#row-20"
+    },
+    {
+      "focal_id": "GV.RM.04",
+      "reference_id": "B1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action B1: Gain assurance that the organisation has developed a cyber strategy and this is aligned with, and embedded within, the wider organisational strategy.",
+      "source_locator": "published-paragraphs#row-22"
+    },
+    {
+      "focal_id": "GV.RM.04",
+      "reference_id": "B2",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action B2: Gain assurance that the cyber strategy aligns with the agreed cyber risk appetite (Action A3), meets relevant regulatory obligations, and accounts for current or expected changes (Action A5).",
+      "source_locator": "published-paragraphs#row-24"
+    },
+    {
+      "focal_id": "GV.RR.02",
+      "reference_id": "B4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action B4: Gain assurance that the cyber strategy is being delivered effectively and is achieving the intended outcomes.",
+      "source_locator": "published-paragraphs#row-28"
+    },
+    {
+      "focal_id": "GV.RR.01",
+      "reference_id": "C1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action C1: Promote a cyber security culture that encourages positive behaviours and accountability across all levels. This should be aligned with the organisation’s strategy (Action B1).",
+      "source_locator": "published-paragraphs#row-30"
+    },
+    {
+      "focal_id": "GV.RR.04",
+      "reference_id": "C1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action C1: Promote a cyber security culture that encourages positive behaviours and accountability across all levels. This should be aligned with the organisation’s strategy (Action B1).",
+      "source_locator": "published-paragraphs#row-30"
+    },
+    {
+      "focal_id": "GV.PO.01",
+      "reference_id": "C2",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action C2: Gain assurance that there are clear policies that support a positive cyber security culture.",
+      "source_locator": "published-paragraphs#row-32"
+    },
+    {
+      "focal_id": "GV.PO.02",
+      "reference_id": "C2",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action C2: Gain assurance that there are clear policies that support a positive cyber security culture.",
+      "source_locator": "published-paragraphs#row-32"
+    },
+    {
+      "focal_id": "GV.PO.01",
+      "reference_id": "C3",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action C3: Undertake training to improve your own cyber literacy and take responsibility for the security of the data and digital assets that you use.",
+      "source_locator": "published-paragraphs#row-34"
+    },
+    {
+      "focal_id": "PR.AT.01",
+      "reference_id": "C3",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action C3: Undertake training to improve your own cyber literacy and take responsibility for the security of the data and digital assets that you use.",
+      "source_locator": "published-paragraphs#row-34"
+    },
+    {
+      "focal_id": "PR.AT.02",
+      "reference_id": "C3",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action C3: Undertake training to improve your own cyber literacy and take responsibility for the security of the data and digital assets that you use.",
+      "source_locator": "published-paragraphs#row-34"
+    },
+    {
+      "focal_id": "PR.AT.01",
+      "reference_id": "C4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action C4: Gain assurance using suitable metrics that the organisation has an effective cyber security training, education and awareness programme.",
+      "source_locator": "published-paragraphs#row-36"
+    },
+    {
+      "focal_id": "PR.AT.02",
+      "reference_id": "C4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action C4: Gain assurance using suitable metrics that the organisation has an effective cyber security training, education and awareness programme.",
+      "source_locator": "published-paragraphs#row-36"
+    },
+    {
+      "focal_id": "RS.MA.01",
+      "reference_id": "D1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action D1: Gain assurance that the organisation has a plan to respond to and recover from a cyber incident impacting business critical technology processes, information and services.",
+      "source_locator": "published-paragraphs#row-38"
+    },
+    {
+      "focal_id": "RC.RP-01",
+      "reference_id": "D1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action D1: Gain assurance that the organisation has a plan to respond to and recover from a cyber incident impacting business critical technology processes, information and services.",
+      "source_locator": "published-paragraphs#row-38"
+    },
+    {
+      "focal_id": "ID.IM.02",
+      "reference_id": "D2",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action D2: Gain assurance that there is at least annual exercising of the plan involving relevant internal and external stakeholders and that lessons from the exercise are reflected in the incident plan (Action D1) and risk assessments (Action A5).",
+      "source_locator": "published-paragraphs#row-40"
+    },
+    {
+      "focal_id": "GV.OC.03",
+      "reference_id": "D3",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action D3: In the event of an incident, take responsibility for individual regulatory obligations, such as reporting, and support the organisation in critical decision making and external communications.",
+      "source_locator": "published-paragraphs#row-42"
+    },
+    {
+      "focal_id": "RS.MA.02",
+      "reference_id": "D3",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action D3: In the event of an incident, take responsibility for individual regulatory obligations, such as reporting, and support the organisation in critical decision making and external communications.",
+      "source_locator": "published-paragraphs#row-42"
+    },
+    {
+      "focal_id": "RS.AN.03",
+      "reference_id": "D4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action D4: Gain assurance that a post incident review process is in place to incorporate lessons learned into future risk assessments (Action A5), response and recovery plans (Action D1) and exercising (Action D2).",
+      "source_locator": "published-paragraphs#row-44"
+    },
+    {
+      "focal_id": "GV.RR.02",
+      "reference_id": "E1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E1: Establish a cyber governance structure which is embedded within the wider governance structure of the organisation. This should include clear definition of roles and responsibilities, including ownership of cyber at executive and non-executive director level.",
+      "source_locator": "published-paragraphs#row-46"
+    },
+    {
+      "focal_id": "GV.PO-02",
+      "reference_id": "E1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E1: Establish a cyber governance structure which is embedded within the wider governance structure of the organisation. This should include clear definition of roles and responsibilities, including ownership of cyber at executive and non-executive director level.",
+      "source_locator": "published-paragraphs#row-46"
+    },
+    {
+      "focal_id": "GV.OV-01",
+      "reference_id": "E1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E1: Establish a cyber governance structure which is embedded within the wider governance structure of the organisation. This should include clear definition of roles and responsibilities, including ownership of cyber at executive and non-executive director level.",
+      "source_locator": "published-paragraphs#row-46"
+    },
+    {
+      "focal_id": "GV.OV-02",
+      "reference_id": "E1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E1: Establish a cyber governance structure which is embedded within the wider governance structure of the organisation. This should include clear definition of roles and responsibilities, including ownership of cyber at executive and non-executive director level.",
+      "source_locator": "published-paragraphs#row-46"
+    },
+    {
+      "focal_id": "GV.OV-03",
+      "reference_id": "E1",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E1: Establish a cyber governance structure which is embedded within the wider governance structure of the organisation. This should include clear definition of roles and responsibilities, including ownership of cyber at executive and non-executive director level.",
+      "source_locator": "published-paragraphs#row-46"
+    },
+    {
+      "focal_id": "GV.RR.02",
+      "reference_id": "E2",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E2: Require formal reporting on at least a quarterly basis, set suitable metrics to track, and agree tolerances for each. These should be aligned to the cyber strategy (Action B1) and based on the agreed cyber risk appetite (Action A3).",
+      "source_locator": "published-paragraphs#row-48"
+    },
+    {
+      "focal_id": "GV.OC-02",
+      "reference_id": "E2",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E2: Require formal reporting on at least a quarterly basis, set suitable metrics to track, and agree tolerances for each. These should be aligned to the cyber strategy (Action B1) and based on the agreed cyber risk appetite (Action A3).",
+      "source_locator": "published-paragraphs#row-48"
+    },
+    {
+      "focal_id": "GV.OC-03",
+      "reference_id": "E2",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E2: Require formal reporting on at least a quarterly basis, set suitable metrics to track, and agree tolerances for each. These should be aligned to the cyber strategy (Action B1) and based on the agreed cyber risk appetite (Action A3).",
+      "source_locator": "published-paragraphs#row-48"
+    },
+    {
+      "focal_id": "GV.RR.01",
+      "reference_id": "E3",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E3: Establish regular two-way dialogue with relevant senior executives, including but not limited to, the chief information security officer (or equivalent).",
+      "source_locator": "published-paragraphs#row-50"
+    },
+    {
+      "focal_id": "GV.OC-02",
+      "reference_id": "E3",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E3: Establish regular two-way dialogue with relevant senior executives, including but not limited to, the chief information security officer (or equivalent).",
+      "source_locator": "published-paragraphs#row-50"
+    },
+    {
+      "focal_id": "GV.OC-03",
+      "reference_id": "E3",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E3: Establish regular two-way dialogue with relevant senior executives, including but not limited to, the chief information security officer (or equivalent).",
+      "source_locator": "published-paragraphs#row-50"
+    },
+    {
+      "focal_id": "GV.OC-03",
+      "reference_id": "E4",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E4: Gain assurance that cyber security considerations (including the actions in this code) are integrated and consistent with existing internal and external audit and assurance mechanisms.",
+      "source_locator": "published-paragraphs#row-52"
+    },
+    {
+      "focal_id": "GV.OC-03",
+      "reference_id": "E5",
+      "relationship_type": "Concept Crosswalk",
+      "raw_relationship_type": "Concept Crosswalk",
+      "relationship_strength": null,
+      "relationship_explanation": null,
+      "rationale": "Action E5: Gain assurance that senior executives are aware of relevant regulatory obligations, as well as best practice contained within other Codes of Practice.",
+      "source_locator": "published-paragraphs#row-54"
+    }
+  ]
+}

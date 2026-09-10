@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "olir_id": 203,
+  "source_artifact": "https://bxaios.com/nist-alignment/",
+  "sha256": "sha256:9f6dd52f34a5ac651cc647f1f5e95c756e3541b52c364c26698ae57f9684469a",
+  "byte_length": 143534,
+  "parser": "olir-html",
+  "extraction_scope": "published_html_relationships",
+  "relationships": [
+    {
+      "focal_id": "ID.AM-01",
+      "reference_id": "Step 1 — Map the Chaos (Shadow Ledger)",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": "Functional",
+      "rationale": null,
+      "source_locator": "table-1#row-2"
+    },
+    {
+      "focal_id": "GV.OC-01",
+      "reference_id": "Step 2 — Unify the Vision",
+      "relationship_type": "Supportive",
+      "raw_relationship_type": "Supports",
+      "relationship_strength": null,
+      "relationship_explanation": "Functional",
+      "rationale": null,
+      "source_locator": "table-1#row-4"
+    },
+    {
+      "focal_id": "GV.PO-01",
+      "reference_id": "Step 3 — The Charter (POP Framework)",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": "Functional",
+      "rationale": null,
+      "source_locator": "table-1#row-6"
+    },
+    {
+      "focal_id": "PR.DS-01",
+      "reference_id": "Step 4 — Architect the Receipts",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": "Functional",
+      "rationale": null,
+      "source_locator": "table-1#row-8"
+    },
+    {
+      "focal_id": "ID.AM-01",
+      "reference_id": "Step 5 — Blueprint the Ecosystem",
+      "relationship_type": "Set Theory: Superset",
+      "raw_relationship_type": "Superset of",
+      "relationship_strength": null,
+      "relationship_explanation": "Functional",
+      "rationale": null,
+      "source_locator": "table-1#row-10"
+    },
+    {
+      "focal_id": "GV.RR-01",
+      "reference_id": "Step 8 — Activate the Champions",
+      "relationship_type": "Supportive",
+      "raw_relationship_type": "Supports",
+      "relationship_strength": null,
+      "relationship_explanation": "Functional",
+      "rationale": null,
+      "source_locator": "table-1#row-16"
+    }
+  ]
+}
