@@ -3352,8 +3352,8 @@
       "retrieval_method": "extracted_from_official_publication",
       "retrieved_at": "2026-09-10",
       "artifact_url": "https://www.ai.mil/Initiatives/About/Resources/Pathway-to-AI-Readiness/Responsible-AI/",
-      "byte_length": 105052,
-      "sha256": "sha256:d7ad019c4cb57577ced2dd0d5619b0b30a998978654e485342c5ba12b5cee971",
+      "byte_length": 105777,
+      "sha256": "sha256:70c0bb14fa4854813fb154a5c7e2425a2f10920737b88c97fa289665c32e61fd",
       "parser": "ai-mil-responsible-ai-html",
       "parser_version": "1.0.0",
       "record_count": 0,
@@ -3978,13 +3978,13 @@
       "source_role": "enrichment",
       "authority_class": "publisher",
       "format": "html",
-      "version": "2026-08-09",
+      "version": "2026-09-10",
       "lifecycle_status": "active",
       "retrieval_method": "extracted_from_official_publication",
-      "retrieved_at": "2026-08-09",
+      "retrieved_at": "2026-09-10",
       "artifact_url": "https://www.archives.gov/cui/registry/category-list",
-      "byte_length": 53932,
-      "sha256": "sha256:13b8c9cb5559df6fab4a2974ca318d2de891f2bd9a9058f1b17f21449d8c552e",
+      "byte_length": 52477,
+      "sha256": "sha256:03974b25df8d43b64d3064f5f4dd660217528f367e2dd9d3ef50ecdce1b3aeeb",
       "parser": "nara-cui-registry-html",
       "parser_version": "1.0.0",
       "record_count": 126,
@@ -4153,7 +4153,7 @@
       "retrieved_at": "2026-09-10",
       "artifact_url": "https://raw.githubusercontent.com/usnistgov/oscal-content/v1.5.0/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json",
       "byte_length": 1865,
-      "sha256": "sha256:2c07a747c8a779b93907aa7ac79a8b67f8fa39faf5f5af1dc2d38a65993440ef",
+      "sha256": "sha256:6f456dbc3ae6dec075d19f5a1ac9e94893b456395d5ae3b7d976a250286fd796",
       "parser": "oscal-profile",
       "parser_version": "1.5.0",
       "record_count": 5,
@@ -4249,7 +4249,7 @@
       "retrieved_at": "2026-09-10",
       "artifact_url": "https://csrc.nist.gov/extensions/nudp/services/json/csf/download?olirids=all",
       "byte_length": 144518,
-      "sha256": "sha256:80e8d6af2e69e49c8e026ea0582f68546e0c72db749f9879edfaafd20d51742f",
+      "sha256": "sha256:402168873e1c42e2e50b09cb2bf912c21bb7936c3ef1840ae0c6f81e7c5e7f7f",
       "parser": "csf-reference-tool-xlsx",
       "parser_version": "1.0.0",
       "record_count": 106,
@@ -7359,7 +7359,7 @@
       "retrieval_method": "extracted_from_official_publication",
       "artifact_url": "https://www.ai.mil/Latest/Blog/Article-Display/Article/3940314/responsible-ai-toolkit/",
       "artifact_type": "publication",
-      "checksum": "sha256:d7ad019c4cb57577ced2dd0d5619b0b30a998978654e485342c5ba12b5cee971",
+      "checksum": "sha256:70c0bb14fa4854813fb154a5c7e2425a2f10920737b88c97fa289665c32e61fd",
       "access_status": "public",
       "license_or_use": "CDAO public resource; no separate license stated",
       "lifecycle_status": "active",
@@ -8143,7 +8143,7 @@
         "sync_model": "auto_synced",
         "last_checked": "2026-09-10",
         "last_imported": "2026-09-10",
-        "hash": "sha256:de80184cb331f9a90f2a06b5721a8676f4918ac4444a91e41d619918b8f1af66"
+        "hash": "sha256:55d671448ffb6e90477eaa205e6be1618be4751577a1ebb3e0d7590f47238eca"
       },
       {
         "source_id": "nist-800-53",
@@ -8485,59 +8485,11 @@
   },
   "quarantine": [
     {
-      "id": "discover-nist-structured-assets",
-      "refresh_source_id": "discover-nist-structured-assets",
-      "task_id": "discover-nist-structured-assets",
-      "reason": "discover-nist-structured-assets.mjs exited 1",
-      "attempted_at": "2026-09-10T02:41:25.882Z",
-      "disposition": "retained_last_good"
-    },
-    {
-      "id": "artifact-isoo-cui-regulation",
-      "refresh_source_id": "fetch-nara-cui",
-      "task_id": "fetch-nara-cui",
-      "reason": "fetch-nara-cui-registry.mjs exited 1",
-      "attempted_at": "2026-09-10T02:41:36.718Z",
-      "disposition": "retained_last_good"
-    },
-    {
       "id": "fetch-olir-catalog",
       "refresh_source_id": "fetch-olir-catalog",
       "task_id": "fetch-olir-catalog",
-      "reason": "fetch-olir-catalog.mjs exited 1",
-      "attempted_at": "2026-09-10T02:41:50.568Z",
-      "disposition": "retained_last_good"
-    },
-    {
-      "id": "artifact-dod-rai-toolkit",
-      "refresh_source_id": "artifact-dod-rai-toolkit",
-      "task_id": "hydrate-artifacts",
-      "reason": "hydrate-artifacts.mjs exited 1",
-      "attempted_at": "2026-09-10T02:42:45.266Z",
-      "disposition": "retained_last_good"
-    },
-    {
-      "id": "tool-ansible-lockdown",
-      "refresh_source_id": "tool-ansible-lockdown",
-      "task_id": "enrich-commons-resources",
-      "reason": "enrich-commons-resources.mjs exited 1",
-      "attempted_at": "2026-09-10T02:43:25.787Z",
-      "disposition": "retained_last_good"
-    },
-    {
-      "id": "tool-compliance-trestle",
-      "refresh_source_id": "tool-compliance-trestle",
-      "task_id": "enrich-commons-resources",
-      "reason": "enrich-commons-resources.mjs exited 1",
-      "attempted_at": "2026-09-10T02:43:46.799Z",
-      "disposition": "retained_last_good"
-    },
-    {
-      "id": "tool-mitre-caldera",
-      "refresh_source_id": "tool-mitre-caldera",
-      "task_id": "enrich-commons-resources",
-      "reason": "enrich-commons-resources.mjs exited 1",
-      "attempted_at": "2026-09-10T02:43:57.273Z",
+      "reason": "fetch-olir-catalog.mjs exited 1: OLIR refresh incomplete for 225: no structured artifact could be downloaded from the NIST detail JSON, submission, reference, or catalog URL",
+      "attempted_at": "2026-09-10T16:08:55.409Z",
       "disposition": "retained_last_good"
     }
   ]

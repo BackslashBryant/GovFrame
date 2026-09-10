@@ -1,6 +1,6 @@
 {
   "schema_version": "4.0",
-  "generated_at": "2026-09-10T02:44:35.880Z",
+  "generated_at": "2026-09-10T16:11:31.945Z",
   "completeness": {
     "total_publications": 101,
     "total_artifacts": 92,
@@ -74,7 +74,7 @@
       "methods": [
         "extracted_from_official_publication"
       ],
-      "last_refresh": "2026-08-09",
+      "last_refresh": "2026-09-10",
       "has_shard": true
     },
     {
