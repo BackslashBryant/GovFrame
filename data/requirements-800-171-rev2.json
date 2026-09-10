@@ -882,5 +882,23 @@
       "family": "System and Information Integrity",
       "description": "Identify unauthorized use of organizational systems. System monitoring includes external and internal monitoring. System monitoring can detect unauthorized use of organizational systems. System monitoring is an integral part of continuous monitoring and incident response programs. Monitoring is achieved through a variety of tools and techniques (e.g., intrusion detection systems, intrusion prevention systems, malicious code protection software, scanning tools, audit record monitoring software, network monitoring software). Output from system monitoring serves as input to continuous monitoring and incident response programs. Unusual/unauthorized activities or conditions related to inbound and outbound communications traffic include internal traffic that indicates the presence of malicious code in systems or propagating among system components, the unauthorized exporting of information, or signaling to external systems. Evidence of malicious code is used to identify potentially compromised systems or system components. System monitoring requirements, including the need for specific types of system monitoring, may be referenced in other requirements. [SP 800-94] provides guidance on intrusion detection and prevention systems."
     }
-  ]
+  ],
+  "publisher_inventory": {
+    "raw_count": 111,
+    "eligible_count": 110,
+    "imported_count": 110,
+    "excluded": [
+      {
+        "id": "csv:header",
+        "reason": "publisher column header"
+      }
+    ],
+    "raw_identity_sha256": "sha256:aaa40b25c52e548ba1c34f665301daf8419c4c06f764606cd870a37212792e96",
+    "imported_identity_sha256": "sha256:ca2fec5d80f3ef8b857700b75f4c3aed0e035311f1cb3eae1f309155689ebdd5",
+    "source_url": "https://csrc.nist.gov/files/pubs/sp/800/171/r2/upd1/final/docs/sp800-171r2-security-reqs.csv",
+    "source_sha256": "sha256:0f4d59413bbcc9998da80495ce46ebfe0475e392803c4d2ed38d9941d83f138d",
+    "source_byte_length": 113309,
+    "publisher_version": null,
+    "publisher_version_reason": "Publisher payload does not declare a version field"
+  }
 }

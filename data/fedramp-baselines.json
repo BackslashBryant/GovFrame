@@ -9,6 +9,7 @@
       "title": "LI-SaaS Baseline",
       "family": "Rev. 5 Baselines",
       "description": "FedRAMP Tailored baseline for low-impact software-as-a-service offerings.",
+      "status": "historical",
       "metadata": {
         "controls": [
           "AC-1",
@@ -171,7 +172,7 @@
       },
       "source": {
         "key": "fedramp-rev5",
-        "snapshot_date": "2026-08-12T15:11:58.549Z",
+        "snapshot_date": "2026-09-10T02:41:33.062Z",
         "locator": "rev5/documents-templates/#LI-SaaS"
       }
     },
@@ -182,6 +183,7 @@
       "title": "Low Baseline",
       "family": "Rev. 5 Baselines",
       "description": "FedRAMP Rev. 5 Low security control baseline.",
+      "status": "historical",
       "metadata": {
         "controls": [
           "AC-1",
@@ -344,7 +346,7 @@
       },
       "source": {
         "key": "fedramp-rev5",
-        "snapshot_date": "2026-08-12T15:11:58.549Z",
+        "snapshot_date": "2026-09-10T02:41:33.062Z",
         "locator": "rev5/documents-templates/#Low"
       }
     },
@@ -355,6 +357,7 @@
       "title": "Moderate Baseline",
       "family": "Rev. 5 Baselines",
       "description": "FedRAMP Rev. 5 Moderate security control baseline.",
+      "status": "historical",
       "metadata": {
         "controls": [
           "AC-1",
@@ -684,7 +687,7 @@
       },
       "source": {
         "key": "fedramp-rev5",
-        "snapshot_date": "2026-08-12T15:11:58.549Z",
+        "snapshot_date": "2026-09-10T02:41:33.062Z",
         "locator": "rev5/documents-templates/#Moderate"
       }
     },
@@ -695,6 +698,7 @@
       "title": "High Baseline",
       "family": "Rev. 5 Baselines",
       "description": "FedRAMP Rev. 5 High security control baseline.",
+      "status": "historical",
       "metadata": {
         "controls": [
           "AC-1",
@@ -1111,7 +1115,7 @@
       },
       "source": {
         "key": "fedramp-rev5",
-        "snapshot_date": "2026-08-12T15:11:58.549Z",
+        "snapshot_date": "2026-09-10T02:41:33.062Z",
         "locator": "rev5/documents-templates/#High"
       }
     }
