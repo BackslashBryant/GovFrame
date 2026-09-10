@@ -13,11 +13,11 @@
   },
   "record_count": 444,
   "publisher_inventory": {
-    "input_sha256": "sha256:3269d6ea6febcde7a404950186327dd07b756a32b20d727c2efad7c2b9255833",
-    "input_byte_length": 366409,
     "source_url": null,
     "source_sha256": null,
     "source_byte_length": null,
+    "input_sha256": "sha256:3269d6ea6febcde7a404950186327dd07b756a32b20d727c2efad7c2b9255833",
+    "input_byte_length": 366409,
     "source_evidence_reason": "Input bytes do not match retained downloaded-byte evidence; only the local input checksum is verified",
     "raw_count": 446,
     "eligible_count": 444,
