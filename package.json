@@ -211,5 +211,6 @@
     "tailwind-merge": "^3.6.0",
     "yaml": "^2.9.0",
     "yauzl": "3.4.0"
-  }
+  },
+  "packageManager": "npm@10.9.8"
 }

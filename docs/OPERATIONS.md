@@ -152,6 +152,13 @@ iteration step may exceed 50 tests or two minutes; the affected runner enforces
 those per-step limits. Run corpus rebuilds and browser matrices only at final
 integration unless a changed input explicitly invalidates their evidence.
 
+`packageManager` pins the npm resolver used to validate lockfiles against CI.
+`npm run verify:lockfile` checks isolated copies of the manifests with that npm
+version, so existing local dependencies cannot conceal missing lock entries.
+Refresh dependency metadata with
+`npm exec --yes --package=npm@10.9.8 -- npm install --package-lock-only --ignore-scripts`.
+Keep the resolver pin and this command aligned when upgrading npm.
+
 ## Shipping contract
 
 1. Work on a feature branch and keep commits narrow.
