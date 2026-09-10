@@ -52,6 +52,9 @@ public hosting services. GitHub discovery stays within the registered directory
 and branch; other directories remain outside the grant. SCF content-host redirects
 preserve the registered path, and Google export redirects preserve the registered
 document ID. New filenames within a registered GitHub directory need no code edit.
+Zenodo DOI redirects preserve the registered record ID. Discovery starts only
+from the NIST detail's submission or JSON artifact URL; reference publication
+pages cannot supply substitute mappings or unrelated workbooks.
 Workbook ingestion reads every sheet with relationship headers, preserves sheet
 and row locators, and stores strength and explanation separately from relationship
 type. Spreadsheet presentation objects are excluded from cell-data parsing.
