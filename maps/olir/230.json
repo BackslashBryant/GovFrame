@@ -5,6 +5,7 @@
   "sha256": "sha256:8cf5588ff068a6d942f7a5621ea7485bc4ed9189a81a5f2a865287f50682f899",
   "byte_length": 154777,
   "parser": "olir-xlsx",
+  "extraction_scope": "structured_artifact",
   "relationships": [
     {
       "focal_id": "AC-03",

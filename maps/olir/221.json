@@ -5,6 +5,7 @@
   "sha256": "sha256:b05442d4a1ef91debc5673f3b3344ef94dc1e1381ddc33c300d0a6891aed3847",
   "byte_length": 21218,
   "parser": "olir-xlsx",
+  "extraction_scope": "structured_artifact",
   "relationships": [
     {
       "focal_id": "GOVERN 1.1",
