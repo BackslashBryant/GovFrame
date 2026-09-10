@@ -121,14 +121,40 @@ async function main() {
     pages: pageEvidence,
     assets,
   };
-  validateStructuredAssetCandidate(output);
+  const previous = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : { assets: [] };
+  retainUnavailableDiscovery(output, previous);
+  validateStructuredAssetCandidate(output, previous);
   writeJsonAtomically(OUT, output);
   console.log(`Discovered ${assets.length} structured assets across ${pageEvidence.length} NIST Pages pages.`);
 }
 
-export function validateStructuredAssetCandidate(output) {
-  const failures = output.pages.filter((page) => page.status !== 'fetched');
-  if (failures.length) throw new Error(`NIST structured discovery incomplete: ${failures.length} page retrieval/parse failure(s); first: ${failures[0].url}`);
+export function retainUnavailableDiscovery(output, previous) {
+  const fetched = new Set(output.pages.filter((page) => page.status === 'fetched').flatMap((page) => [page.url, page.requested_url]));
+  const urls = new Set(output.assets.map((asset) => asset.url));
+  for (const asset of previous.assets || []) {
+    if (!urls.has(asset.url) && (asset.source_pages || []).some((page) => !fetched.has(page))) {
+      output.assets.push({ ...asset, retention_reason: 'Discovery page unavailable or not checked; retained previously discovered asset' });
+    }
+  }
+  output.assets.sort((a, b) => a.url.localeCompare(b.url, 'en'));
+  output.reconciliation.structured_assets_discovered = output.assets.length;
+  output.reconciliation.assets_retained = output.assets.filter((asset) => asset.retention_reason).length;
+  output.reconciliation.spreadsheets_discovered = output.assets.filter((asset) => ['xlsx', 'xls'].includes(asset.format)).length;
+  output.reconciliation.csv_files_discovered = output.assets.filter((asset) => asset.format === 'csv').length;
+}
+
+export function validateStructuredAssetCandidate(output, previous = { assets: [] }) {
+  const fetched = new Set(output.pages.filter((page) => page.status === 'fetched').flatMap((page) => [page.url, page.requested_url]));
+  if (!output.pages.some((page) => page.status === 'fetched')) throw new Error('NIST structured discovery incomplete: no pages retrieved');
+  if (previous.assets?.length && !output.assets?.length) throw new Error('NIST structured discovery incomplete: previously populated inventory became empty');
+  // Discovery is a research inventory, not a claim that all publisher pages
+  // work. Failed pages remain explicit and cannot erase their accepted assets.
+  for (const asset of previous.assets || []) {
+    if ((asset.source_pages || []).some((page) => !fetched.has(page)) &&
+        !(output.assets || []).some((next) => next.url === asset.url)) {
+      throw new Error(`NIST structured discovery incomplete: unavailable page lost accepted asset ${asset.url}`);
+    }
+  }
 }
 
 if (process.argv[1]?.includes('discover-nist-structured-assets.mjs')) {

@@ -63,7 +63,11 @@ export function planAlertChanges(results, issues = [], runUrl = null) {
     const body = `${marker}\nThe latest source refresh failed validation or retrieval. Its previously accepted files were retained.\n\nSource: ${sourceId}\n\nAttempts: ${attempts}\n\nReported failure: ${safeText(result.error || 'No diagnostic was recorded.')}\n\nReview the publisher response and refresh validation before retrying.${link}`;
     const [existing, ...duplicates] = matching;
     if (!existing) plans.push({ type: 'create', sourceId, payload: { title, body } });
-    else if (existing.state !== 'open' || existing.title !== title || existing.body !== body) {
+    // A new weekly run URL is not a new incident. Preserve the original
+    // occurrence link until the diagnostic changes or the source recovers.
+    else if (existing.state !== 'open' || existing.title !== title ||
+      existing.body?.replace(/\n\n\[Refresh run\]\(https:\/\/github\.com\/[^\s)]+\/actions\/runs\/\d+\)$/, '') !==
+      body.replace(/\n\n\[Refresh run\]\(https:\/\/github\.com\/[^\s)]+\/actions\/runs\/\d+\)$/, '')) {
       plans.push({ type: 'update', sourceId, number: existing.number, payload: { title, body, state: 'open' } });
     }
     for (const duplicate of duplicates.filter((entry) => entry.state === 'open')) {

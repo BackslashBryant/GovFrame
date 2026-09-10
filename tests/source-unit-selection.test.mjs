@@ -5,7 +5,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test, { after } from 'node:test';
 import { hydrateArtifacts, hydrationResolutions, countXlsxRows } from '../scripts/hydrate-artifacts.mjs';
-import { enrichCommonsDataset, repositoryResourceIds } from '../scripts/enrich-commons-resources.mjs';
+import { enrichCommonsDataset, repositoryResourceIds, repositoryIdentity } from '../scripts/enrich-commons-resources.mjs';
 import { sourceUnitsForTask, loadSourceUnitInventory } from '../scripts/lib/refresh-source-outputs.mjs';
 
 const fixtures = join(dirname(fileURLToPath(import.meta.url)), '..', '.local', 'source-unit-tests');
@@ -19,6 +19,12 @@ function setup(t) {
   return { root, put, get };
 }
 const checksum = (bytes) => `sha256:${createHash('sha256').update(bytes).digest('hex')}`;
+
+test('audited publisher repository transfers resolve before requesting API evidence', () => {
+  assert.deepEqual(repositoryIdentity({ repositoryUrl: 'https://github.com/IBM/compliance-trestle' }), { owner: 'oscal-compass', repo: 'compliance-trestle', scope: 'repository' });
+  assert.deepEqual(repositoryIdentity({ repositoryUrl: 'https://github.com/mitre/caldera' }), { owner: 'apache', repo: 'caldera', scope: 'repository' });
+  assert.equal(repositoryIdentity({ repositoryUrl: 'https://github.com/mitre/unknown' }).owner, 'mitre');
+});
 
 test('exact hydration failure cannot carry prior OK forward or write either file', async (t) => {
   const { root, put, get } = setup(t);

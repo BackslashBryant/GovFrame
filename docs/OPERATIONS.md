@@ -22,6 +22,26 @@ one generated GitHub issue per quarantined source, and closes it after an explic
 accepted recovery. Missing or untouched source results never imply recovery.
 Alert delivery errors fail the job.
 
+Refresh health measures faithful handling of publisher material, not perfection
+of the publisher's metadata. Unchanged official content is healthy; the shared
+HTTP cache revalidates responses instead of treating publication age as failure.
+NIST discovery retains assets from unavailable pages with an explicit retention
+reason. NARA keeps previously disclosed missing detail pages visible, while loss
+of any previously accepted detail blocks the candidate. OLIR submissions without
+importable mappings remain individually recorded and quarantined; they do not
+block unrelated mappings. Previously imported mappings remain protected.
+Recurring identical source alerts retain their original issue and occurrence
+link; changed diagnostics, new failures and recovery update the issue. Each
+subprocess has a 15-minute deadline and preserves failure diagnostics.
+
+Audited repository transfers resolve IBM/compliance-trestle to
+oscal-compass/compliance-trestle and mitre/caldera to apache/caldera. GitHub's
+repository API supplies that transfer evidence; arbitrary redirects do not expand
+the allowlist. The existing public DoD RAI Toolkit summary is admitted at
+`https://rai.acqbot.com/executive-summary`; official Army UTP 3-10.4 identifies
+that toolkit in its AI guidance. Assessment application routes remain outside
+the fetch boundary.
+
 After repository verification and SBOM generation, a repository-scoped GitHub
 App creates a ready PR on `automation/source-refresh`. Independent PR CI and
 security runs must pass for its current commit. The merge workflow verifies the

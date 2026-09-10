@@ -44,6 +44,13 @@ export function repositoryIdentity(resource) {
     if (url.hostname !== "github.com") return null;
     const parts = url.pathname.split("/").filter(Boolean);
     if (parts.length === 2) {
+      // GitHub's repository API confirms these publisher transfers. Resolve
+      // audited identities before requests; numeric API redirects stay denied.
+      const transferred = {
+        'ibm/compliance-trestle': ['oscal-compass', 'compliance-trestle'],
+        'mitre/caldera': ['apache', 'caldera'],
+      }[parts.join('/').toLowerCase()];
+      if (transferred) return { owner: transferred[0], repo: transferred[1], scope: 'repository' };
       return { owner: parts[0], repo: parts[1].replace(/\.git$/, ""), scope: "repository" };
     }
     if (parts.length === 1 && resource.id === "tool-ansible-lockdown") {

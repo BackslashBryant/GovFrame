@@ -1,16 +1,33 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { validateStructuredAssetCandidate } from '../scripts/discover-nist-structured-assets.mjs';
+import { validateStructuredAssetCandidate, retainUnavailableDiscovery } from '../scripts/discover-nist-structured-assets.mjs';
 import { validateNaraCandidate } from '../scripts/fetch-nara-cui-registry.mjs';
 import { validateOlirCandidate } from '../scripts/fetch-olir-catalog.mjs';
 
-test('structured discovery rejects caught network and parser failures before publication', () => {
+test('discovery discloses unavailable pages and rejects total retrieval failure', () => {
   assert.doesNotThrow(() => validateStructuredAssetCandidate({ pages: [{ status: 'fetched' }] }));
   for (const status of ['failed', 'parse_failed']) {
-    assert.throws(() => validateStructuredAssetCandidate({ pages: [
+    assert.doesNotThrow(() => validateStructuredAssetCandidate({ pages: [
       { status: 'fetched' }, { url: 'https://pages.nist.gov/example/', status },
-    ] }), /discovery incomplete/);
+    ] }));
+    assert.throws(() => validateStructuredAssetCandidate({ pages: [{ status }] }), /discovery incomplete/);
   }
+});
+
+test('failed discovery pages retain their prior assets and recovered pages replace that evidence', () => {
+  const asset = { url: 'https://pages.nist.gov/a/data.csv', format: 'csv', source_pages: ['https://pages.nist.gov/a/'] };
+  const previous = { assets: [asset] };
+  const output = { pages: [{ url: 'https://pages.nist.gov/a/', status: 'failed' }, { url: 'https://pages.nist.gov/b/', status: 'fetched' }], assets: [], reconciliation: {} };
+  assert.throws(() => validateStructuredAssetCandidate(output, previous), /inventory became empty|lost accepted asset/);
+  assert.throws(() => validateStructuredAssetCandidate({ ...output, pages: [{ status: 'fetched', url: asset.source_pages[0] }] }, previous), /inventory became empty/);
+  retainUnavailableDiscovery(output, previous);
+  validateStructuredAssetCandidate(output, previous);
+  assert.equal(output.assets[0].url, asset.url);
+  assert.equal(output.reconciliation.assets_retained, 1);
+  assert.equal(previous.assets[0].retention_reason, undefined);
+  const recovered = { pages: [{ url: 'https://pages.nist.gov/a/', status: 'fetched' }], assets: [asset], reconciliation: {} };
+  retainUnavailableDiscovery(recovered, output);
+  assert.equal(recovered.reconciliation.assets_retained, 0);
 });
 
 test('NARA rejects failed or missing details and unavailable change log', () => {
@@ -22,19 +39,38 @@ test('NARA rejects failed or missing details and unavailable change log', () => 
   assert.throws(() => validateNaraCandidate({ ...candidate, change_log: { status: 'FAILED' } }), /refresh incomplete/);
 });
 
+test('NARA preserves disclosed publisher gaps but rejects loss of previously accepted content', () => {
+  const good = { slug: 'good', status: 'OK' };
+  const missing = { slug: 'missing', status: 'FAILED', error: 'HTTP 404' };
+  const previous = { results: [good, missing] };
+  const candidate = { total_entries: 2, results: [good, missing], change_log: { byte_length: 10 } };
+  assert.doesNotThrow(() => validateNaraCandidate(candidate, previous));
+  assert.throws(() => validateNaraCandidate({ ...candidate, results: [missing, { ...good, status: 'FAILED' }] }, previous), /refresh incomplete/);
+  assert.throws(() => validateNaraCandidate({ ...candidate, total_entries: 1, results: [missing] }, previous), /previously accepted details lost/);
+  assert.doesNotThrow(() => validateNaraCandidate({ ...candidate, results: [good, { ...missing, status: 'OK' }] }, previous));
+});
+
 const detail = { kind: 'NIST catalog detail endpoint', status: 200 };
 const validMapping = { attempts: [detail], mapping: { map_file: 'maps/olir/1.json' } };
 
-test('OLIR rejects missing detail, failed artifact, and parser failure despite other successful entries', () => {
+test('OLIR rejects failed catalog detail evidence despite other successful entries', () => {
   for (const failure of [
     { attempts: [{ error: 'offline' }], mapping: null },
     { attempts: [{ status: 503 }], mapping: {} },
+  ]) {
+    assert.throws(() => validateOlirCandidate(new Map([[1, validMapping], [2, failure]])), /incomplete for 2/);
+  }
+});
+
+test('OLIR isolates unimportable new entries but never loses previously published mappings', () => {
+  for (const failure of [
     { attempts: [detail, { status: 503 }], mapping: null },
     { attempts: [detail], mapping: null, parse_failed: true },
     { attempts: [detail], mapping: null },
-    { attempts: [detail, { error: 'offline' }], mapping: null, unsupported: true },
   ]) {
-    assert.throws(() => validateOlirCandidate(new Map([[1, validMapping], [2, failure]])), /incomplete for 2/);
+    const entries = new Map([[1, validMapping], [2, failure]]);
+    assert.doesNotThrow(() => validateOlirCandidate(entries, [{ id: 2, ingested: false }]));
+    assert.throws(() => validateOlirCandidate(entries, [{ id: 2, ingested: true }]), /incomplete for 2/);
   }
 });
 
