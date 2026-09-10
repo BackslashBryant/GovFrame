@@ -29,7 +29,8 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.01.03E",
-      "family": "Access Control"
+      "family": "Access Control",
+      "description": ""
     },
     {
       "id": "3.1.4E",
@@ -278,7 +279,8 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.04.01E",
-      "family": "Configuration Management"
+      "family": "Configuration Management",
+      "description": ""
     },
     {
       "id": "3.4.2E",
@@ -538,14 +540,16 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.09.01E",
-      "family": "Personnel Security"
+      "family": "Personnel Security",
+      "description": ""
     },
     {
       "id": "3.9.2E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.09.02E",
-      "family": "Personnel Security"
+      "family": "Personnel Security",
+      "description": ""
     },
     {
       "id": "3.9.3E",
@@ -629,28 +633,32 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.11.04E",
-      "family": "Risk Assessment"
+      "family": "Risk Assessment",
+      "description": ""
     },
     {
       "id": "3.11.5E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.11.05E",
-      "family": "Risk Assessment"
+      "family": "Risk Assessment",
+      "description": ""
     },
     {
       "id": "3.11.6E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.11.06E",
-      "family": "Risk Assessment"
+      "family": "Risk Assessment",
+      "description": ""
     },
     {
       "id": "3.11.7E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.11.07E",
-      "family": "Risk Assessment"
+      "family": "Risk Assessment",
+      "description": ""
     },
     {
       "id": "3.11.8E",
@@ -943,14 +951,16 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.14.02E",
-      "family": "System and Information Integrity"
+      "family": "System and Information Integrity",
+      "description": ""
     },
     {
       "id": "3.14.3E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.14.03E",
-      "family": "System and Information Integrity"
+      "family": "System and Information Integrity",
+      "description": ""
     },
     {
       "id": "3.14.4E",
@@ -979,14 +989,16 @@
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.14.06E",
-      "family": "System and Information Integrity"
+      "family": "System and Information Integrity",
+      "description": ""
     },
     {
       "id": "3.14.7E",
       "type": "800-172-requirement",
       "framework": "800-172",
       "title": "03.14.07E",
-      "family": "System and Information Integrity"
+      "family": "System and Information Integrity",
+      "description": ""
     },
     {
       "id": "3.14.8E",
@@ -1219,5 +1231,86 @@
         "discussion": "Authoritative information regarding the internal composition of system components and the provenance of technology, products, and services provides a strong basis for trust. The validation of the internal composition and provenance of technologies, products, and services is referred to as the pedigree. For microelectronics, this includes the material composition of components. For software this includes the composition of open-source and proprietary code, including the version of the component at a given point in time. Pedigrees increase the assurance that the claims suppliers assert about the internal composition and provenance of the products, services, and technologies they provide are valid. The validation of the internal composition and provenance can be achieved by various evidentiary artifacts or records that manufacturers and suppliers produce during the research, development, design, manufacturing, acquisition, delivery, integration, operations, maintenance, and disposal of technology, products, and services. Evidentiary artifacts include software identification (SWID) tags, software component inventory, the manufacturers’ declarations of platform attributes (e.g., serial numbers, hardware component inventory), and measurements (e.g., firmware hashes) that are tightly bound to the hardware. This requirement does not enhance a specific requirement in SP 800-171 but can be used to strengthen the protection of CUI associated with critical programs or high value assets."
       }
     }
-  ]
+  ],
+  "publisher_inventory": {
+    "raw_count": 132,
+    "eligible_count": 115,
+    "imported_count": 115,
+    "excluded": [
+      {
+        "id": "SP_800_172_3_0_0_3.1",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.2",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.3",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.4",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.5",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.6",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.7",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.8",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.9",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.10",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.11",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.12",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.13",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.14",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.15",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.16",
+        "reason": "structural or non-target OSCAL unit"
+      },
+      {
+        "id": "SP_800_172_3_0_0_3.17",
+        "reason": "structural or non-target OSCAL unit"
+      }
+    ],
+    "raw_identity_sha256": "sha256:ef769421856c8cf53bca05bf0219f9306ebabe745bf74f3e520e9060aba35668",
+    "imported_identity_sha256": "sha256:1bf1456c1e83fb23613ff68c3873330fe3eb95dc4b9dbb14a7c465b73a2b6bde",
+    "source_url": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-172/rev3/json/NIST_SP800-172_rev3_catalog.json",
+    "source_sha256": "sha256:21c6df17c7ff1c8330f16334fdddd488ffc10f71051078dd73c18595a33da5ab",
+    "source_byte_length": 980722,
+    "publisher_version": "1.0.0"
+  }
 }

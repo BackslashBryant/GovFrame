@@ -8656,5 +8656,334 @@
   ],
   "reconciliation": {
     "subcategories": 106
+  },
+  "publisher_inventory": {
+    "raw_count": 185,
+    "eligible_count": 106,
+    "imported_count": 106,
+    "excluded": [
+      {
+        "id": "ID.AM-06",
+        "reason": "[Withdrawn: Incorporated into GV.RR-02, GV.SC-02]"
+      },
+      {
+        "id": "ID.BE-01",
+        "reason": "[Withdrawn: Incorporated into GV.OC-05]"
+      },
+      {
+        "id": "ID.BE-02",
+        "reason": "[Withdrawn: Incorporated into GV.OC-01]"
+      },
+      {
+        "id": "ID.BE-03",
+        "reason": "[Withdrawn: Incorporated into GV.OC-01]"
+      },
+      {
+        "id": "ID.BE-04",
+        "reason": "[Withdrawn: Incorporated into GV.OC-04, GV.OC-05]"
+      },
+      {
+        "id": "ID.BE-05",
+        "reason": "[Withdrawn: Incorporated into GV.OC-04]"
+      },
+      {
+        "id": "ID.GV-01",
+        "reason": "[Withdrawn: Incorporated into GV.PO, GV.PO-01, GV.PO-02]"
+      },
+      {
+        "id": "ID.GV-02",
+        "reason": "[Withdrawn: Incorporated into GV.OC-02, GV.RR, GV.RR-02]"
+      },
+      {
+        "id": "ID.GV-03",
+        "reason": "[Withdrawn: Moved to GV.OC-03]"
+      },
+      {
+        "id": "ID.GV-04",
+        "reason": "[Withdrawn: Moved to GV.RM-04]"
+      },
+      {
+        "id": "ID.RM-01",
+        "reason": "[Withdrawn: Incorporated into GV.RM-01, GV.RM-06, GV.RR-03]"
+      },
+      {
+        "id": "ID.RM-02",
+        "reason": "[Withdrawn: Incorporated into GV.RM-02, GV.RM-04]"
+      },
+      {
+        "id": "ID.RM-03",
+        "reason": "[Withdrawn: Moved into GV.RM-02]"
+      },
+      {
+        "id": "ID.SC-01",
+        "reason": "[Withdrawn: Incorporated into GV.RM-05, GV.SC-01, GV.SC-06, GV.SC-09, GV.SC-10]"
+      },
+      {
+        "id": "ID.SC-02",
+        "reason": "[Withdrawn: Incorporated into GV.OC-02, GV.SC-03, GV.SC-04, GV.SC-07, ID.RA-10]"
+      },
+      {
+        "id": "ID.SC-03",
+        "reason": "[Withdrawn: Moved to GV.SC-05]"
+      },
+      {
+        "id": "ID.SC-04",
+        "reason": "[Withdrawn: Incorporated into GV.SC-07, ID.RA-10]"
+      },
+      {
+        "id": "ID.SC-05",
+        "reason": "[Withdrawn: Incorporated into GV.SC-08, ID.IM-02]"
+      },
+      {
+        "id": "PR.AT-03",
+        "reason": "[Withdrawn: Incorporated into PR.AT-01, PR.AT-02]"
+      },
+      {
+        "id": "PR.AT-04",
+        "reason": "[Withdrawn: Incorporated into PR.AT-02]"
+      },
+      {
+        "id": "PR.AT-05",
+        "reason": "[Withdrawn: Incorporated into PR.AT-02]"
+      },
+      {
+        "id": "PR.DS-03",
+        "reason": "[Withdrawn: Incorporated into ID.AM-08, PR.PS-03]"
+      },
+      {
+        "id": "PR.DS-04",
+        "reason": "[Withdrawn: Moved to PR.IR-04]"
+      },
+      {
+        "id": "PR.DS-05",
+        "reason": "[Withdrawn: Incorporated into PR.DS-01, PR.DS-02, PR.DS-10]"
+      },
+      {
+        "id": "PR.DS-06",
+        "reason": "[Withdrawn: Incorporated into PR.DS-01, DE.CM-09]"
+      },
+      {
+        "id": "PR.DS-07",
+        "reason": "[Withdrawn: Incorporated into PR.IR-01]"
+      },
+      {
+        "id": "PR.DS-08",
+        "reason": "[Withdrawn: Incorporated into ID.RA-09, DE.CM-09]"
+      },
+      {
+        "id": "PR.AC-01",
+        "reason": "[Withdrawn: Incorporated into PR.AA-01, PR.AA-05]"
+      },
+      {
+        "id": "PR.AC-02",
+        "reason": "[Withdrawn: Moved to PR.AA-06]"
+      },
+      {
+        "id": "PR.AC-03",
+        "reason": "[Withdrawn: Incorporated into PR.AA-03, PR.AA-05, PR.IR-01]"
+      },
+      {
+        "id": "PR.AC-04",
+        "reason": "[Withdrawn: Moved to PR.AA-05]"
+      },
+      {
+        "id": "PR.AC-05",
+        "reason": "[Withdrawn: Incorporated into PR.IR-01]"
+      },
+      {
+        "id": "PR.AC-06",
+        "reason": "[Withdrawn: Moved to PR.AA-02]"
+      },
+      {
+        "id": "PR.AC-07",
+        "reason": "[Withdrawn: Moved to PR.AA-03]"
+      },
+      {
+        "id": "PR.IP-01",
+        "reason": "[Withdrawn: Incorporated into PR.PS-01]"
+      },
+      {
+        "id": "PR.IP-02",
+        "reason": "[Withdrawn: Incorporated into ID.AM-08, PR.PS-06]"
+      },
+      {
+        "id": "PR.IP-03",
+        "reason": "[Withdrawn: Incorporated into PR.PS-01, ID.RA-07]"
+      },
+      {
+        "id": "PR.IP-04",
+        "reason": "[Withdrawn: Moved to PR.DS-11]"
+      },
+      {
+        "id": "PR.IP-05",
+        "reason": "[Withdrawn: Moved to PR.IR-02]"
+      },
+      {
+        "id": "PR.IP-06",
+        "reason": "[Withdrawn: Incorporated into ID.AM-08]"
+      },
+      {
+        "id": "PR.IP-07",
+        "reason": "[Withdrawn: Incorporated into ID.IM, ID.IM-03]"
+      },
+      {
+        "id": "PR.IP-08",
+        "reason": "[Withdrawn: Moved to ID.IM-03]"
+      },
+      {
+        "id": "PR.IP-09",
+        "reason": "[Withdrawn: Moved to ID.IM-04]"
+      },
+      {
+        "id": "PR.IP-10",
+        "reason": "[Withdrawn: Incorporated into ID.IM-02, ID.IM-04]"
+      },
+      {
+        "id": "PR.IP-11",
+        "reason": "[Withdrawn: Moved to GV.RR-04]"
+      },
+      {
+        "id": "PR.IP-12",
+        "reason": "[Withdrawn: Incorporated into ID.RA-01, PR.PS-02]"
+      },
+      {
+        "id": "PR.MA-01",
+        "reason": "[Withdrawn: Incorporated into ID.AM-08, PR.PS-03]"
+      },
+      {
+        "id": "PR.MA-02",
+        "reason": "[Withdrawn: Incorporated into ID.AM-08, PR.PS-02]"
+      },
+      {
+        "id": "PR.PT-01",
+        "reason": "[Withdrawn: Incorporated into PR.PS-04]"
+      },
+      {
+        "id": "PR.PT-02",
+        "reason": "[Withdrawn: Incorporated into PR.DS-01, PR.PS-01]"
+      },
+      {
+        "id": "PR.PT-03",
+        "reason": "[Withdrawn: Incorporated into PR.PS-01]"
+      },
+      {
+        "id": "PR.PT-04",
+        "reason": "[Withdrawn: Incorporated into PR.AA-06, PR.IR-01]"
+      },
+      {
+        "id": "PR.PT-05",
+        "reason": "[Withdrawn: Moved to PR.IR-03]"
+      },
+      {
+        "id": "DE.CM-04",
+        "reason": "[Withdrawn: Incorporated into DE.CM-01, DE.CM-09]"
+      },
+      {
+        "id": "DE.CM-05",
+        "reason": "[Withdrawn: Incorporated into DE.CM-01, DE.CM-09]"
+      },
+      {
+        "id": "DE.CM-07",
+        "reason": "[Withdrawn: Incorporated into DE.CM-01, DE.CM-03, DE.CM-06, DE.CM-09]"
+      },
+      {
+        "id": "DE.CM-08",
+        "reason": "[Withdrawn: Incorporated into ID.RA-01]"
+      },
+      {
+        "id": "DE.AE-01",
+        "reason": "[Withdrawn: Incorporated into ID.AM-03]"
+      },
+      {
+        "id": "DE.AE-05",
+        "reason": "[Withdrawn: Moved to DE.AE-08]"
+      },
+      {
+        "id": "DE.DP-01",
+        "reason": "[Withdrawn: Incorporated into GV.RR-02]"
+      },
+      {
+        "id": "DE.DP-02",
+        "reason": "[Withdrawn: Incorporated into DE.AE]"
+      },
+      {
+        "id": "DE.DP-03",
+        "reason": "[Withdrawn: Incorporated into ID.IM-02]"
+      },
+      {
+        "id": "DE.DP-04",
+        "reason": "[Withdrawn: Incorporated into DE.AE-06]"
+      },
+      {
+        "id": "DE.DP-05",
+        "reason": "[Withdrawn: Incorporated into ID.IM, ID.IM-03]"
+      },
+      {
+        "id": "RS.AN-01",
+        "reason": "[Withdrawn: Incorporated into RS.MA-02]"
+      },
+      {
+        "id": "RS.AN-02",
+        "reason": "[Withdrawn: Incorporated into RS.MA-02, RS.MA-03, RS.MA-04]"
+      },
+      {
+        "id": "RS.AN-04",
+        "reason": "[Withdrawn: Moved to RS.MA-03]"
+      },
+      {
+        "id": "RS.AN-05",
+        "reason": "[Withdrawn: Moved to ID.RA-08]"
+      },
+      {
+        "id": "RS.CO-01",
+        "reason": "[Withdrawn: Incorporated into PR.AT-01]"
+      },
+      {
+        "id": "RS.CO-04",
+        "reason": "[Withdrawn: Incorporated into RS.MA-01, RS.MA-04]"
+      },
+      {
+        "id": "RS.CO-05",
+        "reason": "[Withdrawn: Incorporated into RS.CO-03]"
+      },
+      {
+        "id": "RS.MI-03",
+        "reason": "[Withdrawn: Incorporated into ID.RA-06]"
+      },
+      {
+        "id": "RS.RP-01",
+        "reason": "[Withdrawn: Incorporated into RS.MA-01]"
+      },
+      {
+        "id": "RS.IM-01",
+        "reason": "[Withdrawn: Incorporated into ID.IM-03, ID.IM-04]"
+      },
+      {
+        "id": "RS.IM-02",
+        "reason": "[Withdrawn: Incorporated into ID.IM-03]"
+      },
+      {
+        "id": "RC.CO-01",
+        "reason": "[Withdrawn: Incorporated into RC.CO-04]"
+      },
+      {
+        "id": "RC.CO-02",
+        "reason": "[Withdrawn: Incorporated into RC.CO-04]"
+      },
+      {
+        "id": "RC.IM-01",
+        "reason": "[Withdrawn: Incorporated into ID.IM-03, ID.IM-04]"
+      },
+      {
+        "id": "RC.IM-02",
+        "reason": "[Withdrawn: Incorporated into ID.IM-03]"
+      }
+    ],
+    "raw_identity_sha256": "sha256:6ca06c15edaca0311d22938bfd03ba705bcd9a7ca4c7ff75c659642c67ca54d1",
+    "imported_identity_sha256": "sha256:6ceda3e66f0d8543a1682dc9fb8fd876c7f129436fad7e2063946f81299d85e1",
+    "source_url": "https://csrc.nist.gov/extensions/nudp/services/json/csf/download?olirids=all",
+    "source_sha256": "sha256:4ff61f52f2f162b57339e317b7136b302cb118cd6da0ccf6e859e81eedc248b3",
+    "source_byte_length": 144519,
+    "publisher_version": "2.0"
   }
 }
