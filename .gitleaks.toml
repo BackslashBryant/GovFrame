@@ -28,6 +28,11 @@ regexes = [
   # values intentionally match that bounded capture, not arbitrary NIST keys.
   '''^nist-sp-1800-35-e3b$''',
   '''^nist-sp-1800-35-csf2-mappi$''',
+  # Exact detector captures for two additional public SP 1800-35 source keys
+  # retrieved by the refresh. Gitleaks truncates both values at its generic
+  # API-key capture boundary; these patterns cannot match arbitrary secrets.
+  '''^nist-sp-1800-35-critical-soft$''',
+  '''^nist-sp-1800-35-csf2-$''',
 ]
 commits = [
   "8993f4968ef5e019f6cdffe0d6bffec606f30b38",
